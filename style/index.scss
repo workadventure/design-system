@@ -1,0 +1,244 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@tailwind utilities;
+
+/**
+ * Use this directive to control where Tailwind injects the hover, focus,
+ * responsive, dark mode, and other variants of each class.
+ *
+ * If omitted, Tailwind will append these classes to the very end of
+ * your stylesheet by default.
+ */
+@tailwind variants;
+
+* {
+  @apply tw-text-contrast tw-font-main;
+}
+
+h1, h2, h3, h4, h5, h6,
+.tw-h1, .tw-h2, .tw-h3, .tw-h4, .tw-h5, .tw-h6 {
+  @apply tw-font-title tw-m-0;
+}
+h1, .tw-h1 {
+  @apply tw-text-[44px];
+}
+h2, .tw-h2 {
+  @apply tw-text-[40px];
+}
+h3, .tw-h3 {
+  @apply tw-text-[36px];
+}
+h4, .tw-h4 {
+  @apply tw-text-[32px];
+}
+h5, .tw-h5 {
+  @apply tw-text-[28px];
+}
+h6, .tw-h6 {
+  @apply tw-text-[24px];
+}
+
+.tw-btn {
+  @apply tw-px-3 tw-py-2 tw-rounded tw-inline-block tw-text-center tw-text-base tw-text-neutral-100 tw-bg-contrast tw-font-main tw-font-regular tw-no-underline;
+  &.tw-btn-primary {
+    @apply tw-bg-primary;
+  }
+  &.tw-btn-secondary {
+    @apply tw-bg-secondary hover:tw-bg-secondary-600;
+  }
+  &.tw-btn-contrast {
+    @apply tw-bg-contrast ;
+  }
+  &.tw-btn-neutral {
+    @apply tw-bg-neutral hover:tw-bg-neutral-800;
+  }
+  &.tw-btn-danger {
+    @apply tw-bg-danger hover:tw-bg-danger-800;
+  }
+  &.tw-btn-warning {
+    @apply tw-bg-warning hover:tw-bg-warning-600;
+  }
+  &.tw-btn-success {
+    @apply tw-bg-success hover:tw-bg-success-800;
+  }
+  &.tw-btn-light {
+    @apply tw-bg-neutral-100 tw-text-contrast hover:tw-bg-neutral-200;
+  }
+
+  &.tw-btn-border {
+    @apply tw-border tw-border-solid tw-bg-transparent;
+    &.tw-btn-primary {
+      @apply  tw-border-primary tw-text-primary;
+    }
+    &.tw-btn-secondary {
+      @apply tw-border-secondary tw-text-secondary hover:tw-bg-secondary-600/10;
+    }
+    &.tw-btn-contrast {
+      @apply tw-border-contrast tw-text-contrast;
+    }
+    &.tw-btn-neutral {
+      @apply tw-border-neutral tw-text-neutral hover:tw-bg-neutral-800/10;
+    }
+    &.tw-btn-danger {
+      @apply tw-border-danger tw-text-danger hover:tw-bg-danger-800/10;
+    }
+    &.tw-btn-warning {
+      @apply tw-border-warning tw-text-warning hover:tw-bg-warning-600/10;
+    }
+    &.tw-btn-success {
+      @apply tw-border-success tw-text-success hover:tw-bg-success-800/10;
+    }
+    &.tw-btn-light {
+      @apply tw-border-neutral-100 tw-text-neutral-100 hover:tw-bg-neutral-200/10;
+    }
+  }
+
+  &.tw-btn-ghost {
+    @apply tw-border-none tw-bg-transparent;
+    &.tw-btn-primary {
+      @apply  tw-text-primary;
+    }
+    &.tw-btn-secondary {
+      @apply tw-text-secondary hover:tw-bg-secondary-600/10;
+    }
+    &.tw-btn-contrast {
+      @apply tw-text-contrast;
+    }
+    &.tw-btn-neutral {
+      @apply tw-text-neutral hover:tw-bg-neutral-800/10;
+    }
+    &.tw-btn-danger {
+      @apply tw-text-danger hover:tw-bg-danger-800/10;
+    }
+    &.tw-btn-warning {
+      @apply tw-text-warning hover:tw-bg-warning-600/10;
+    }
+    &.tw-btn-success {
+      @apply tw-text-success hover:tw-bg-success-800/10;
+    }
+    &.tw-btn-light {
+      @apply tw-text-neutral-100 hover:tw-bg-neutral-200/10;
+    }
+  }
+
+  &.tw-btn-lg {
+    @apply tw-text-lg tw-px-4 tw-py-3;
+  }
+  &.tw-btn-sm {
+    @apply tw-text-sm tw-px-2 tw-py-1;
+  }
+  &.tw-btn-xs {
+    @apply tw-text-xs tw-px-2 tw-py-1;
+  }
+}
+
+.tw-paragraph {
+  @apply tw-text tw-font-regular;
+  &-xxs {
+    @apply tw-text-xxs;
+  }
+  &-xs {
+    @apply tw-text-xs;
+  }
+  &-sm {
+    @apply tw-text-sm;
+  }
+  &-lg {
+    @apply tw-text-lg;
+  }
+  &-bold {
+    @apply tw-font-bold;
+  }
+  &-italic {
+    @apply tw-italic;
+  }
+}
+
+input[type="text"] {
+
+}
+
+.notification {
+  @apply tw-aspect-square tw-w-6 tw-h-6 tw-bg-contrast tw-rounded-full tw-paragraph-bold tw-text-center;
+  & > .notification-value {
+    @apply tw-text-neutral-100 tw-block tw-pt-1;
+  }
+  &-lg {
+    @apply tw-aspect-square tw-w-8 tw-h-8 tw-paragraph-lg;
+  }
+  &-sm {
+    @apply tw-aspect-square tw-w-5 tw-h-5 tw-paragraph-xs;
+    & > .notification-value {
+      @apply tw-pt-0;
+    }
+  }
+  &-xs {
+    @apply tw-aspect-square tw-w-4 tw-h-4 tw-paragraph-xxs;
+    & > .notification-value {
+      @apply tw-pt-0;
+    }
+  }
+  &-xxs {
+    @apply tw-aspect-square tw-w-2 tw-h-2;
+  }
+  &-4px {
+    @apply tw-aspect-square tw-w-1 tw-h-1;
+  }
+  &-danger {
+    @apply tw-bg-danger;
+  }
+  &-success {
+    @apply tw-bg-success;
+  }
+  &-warning {
+    @apply tw-bg-warning;
+  }
+  &-light {
+    @apply tw-bg-neutral-100 ;
+    & > .notification-value {
+      @apply tw-text-contrast;
+    }
+  }
+}
+
+.avatar {
+  @apply tw-w-10 tw-aspect-square tw-bg-cover tw-bg-center tw-rounded-md tw-block tw-bg-neutral-300 tw-relative;
+  & > .avatar-name {
+    @apply tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-m-auto tw-absolute  tw-paragraph-bold tw-text-center tw-h-6;
+  }
+  &-lg {
+    @apply tw-w-12;
+    & > .avatar-name {
+      @apply tw-paragraph-lg tw-paragraph-bold tw-h-6;
+    }
+  }
+  &-sm {
+    @apply tw-w-8 tw-rounded;
+    & > .avatar-name {
+      @apply tw-paragraph-sm tw-paragraph-bold tw-h-5;
+    }
+  }
+  &-xs {
+    @apply tw-w-7 tw-rounded;
+    & > .avatar-name {
+      @apply tw-paragraph-xs tw-paragraph-bold  tw-h-5;
+    }
+  }
+  &-circle {
+    @apply tw-rounded-full;
+  }
+}
