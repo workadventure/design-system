@@ -9,6 +9,16 @@ module.exports = {
   theme: {
 
     extend: {
+      container: {
+        // default breakpoints but with 40px removed
+        screens: {
+          sm: '600px',
+          md: '728px',
+          lg: '984px',
+          xl: '1240px',
+          '2xl': '1496px',
+        },
+      },
       colors: ({ colors }) => ({
       'neutral': {
         100: '#FAFBFC',
@@ -138,7 +148,7 @@ module.exports = {
       // ************ END LEGACY CODE *************
 
       }),
-      blur: {
+      backdropBlur: {
         none: '0',
         sm: '4px',
         DEFAULT: '8px',
@@ -174,7 +184,7 @@ module.exports = {
           'Arial'
         ],
         title: [
-          'Bebas Neue',
+          'Oswald',
           'Arial'
         ]
       },
@@ -206,7 +216,7 @@ module.exports = {
         95: '0.95',
         100: '1',
       }
+
     },
   },
-  plugins: [require("@tailwindcss/forms")],
 };

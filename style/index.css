@@ -22,168 +22,267 @@
  */
 @tailwind variants;
 * {
-  @apply tw-text-contrast tw-font-main;
+  @apply tw-box-border;
 }
 
-h1, h2, h3, h4, h5, h6,
-.tw-h1, .tw-h2, .tw-h3, .tw-h4, .tw-h5, .tw-h6 {
-  @apply tw-font-title tw-m-0;
+html, body {
+  @apply tw-text-contrast tw-font-main tw-p-0 tw-m-0 tw-box-border;
 }
 
-h1, .tw-h1 {
-  @apply tw-text-[44px];
-}
-
-h2, .tw-h2 {
-  @apply tw-text-[40px];
-}
-
-h3, .tw-h3 {
-  @apply tw-text-[36px];
-}
-
-h4, .tw-h4 {
-  @apply tw-text-[32px];
-}
-
-h5, .tw-h5 {
-  @apply tw-text-[28px];
-}
-
-h6, .tw-h6 {
-  @apply tw-text-[24px];
-}
-
-.tw-btn {
-  @apply tw-px-3 tw-py-2 tw-rounded tw-inline-block tw-text-center tw-text-base tw-text-neutral-100 tw-bg-contrast tw-font-main tw-font-regular tw-no-underline;
-}
-.tw-btn.tw-btn-primary {
-  @apply tw-bg-primary;
-}
-.tw-btn.tw-btn-secondary {
-  @apply tw-bg-secondary hover:tw-bg-secondary-600;
-}
-.tw-btn.tw-btn-contrast {
-  @apply tw-bg-contrast;
-}
-.tw-btn.tw-btn-neutral {
-  @apply tw-bg-neutral hover:tw-bg-neutral-800;
-}
-.tw-btn.tw-btn-danger {
-  @apply tw-bg-danger hover:tw-bg-danger-800;
-}
-.tw-btn.tw-btn-warning {
-  @apply tw-bg-warning hover:tw-bg-warning-600;
-}
-.tw-btn.tw-btn-success {
-  @apply tw-bg-success hover:tw-bg-success-800;
-}
-.tw-btn.tw-btn-light {
-  @apply tw-bg-neutral-100 tw-text-contrast hover:tw-bg-neutral-200;
-}
-.tw-btn.tw-btn-border {
-  @apply tw-border tw-border-solid tw-bg-transparent;
-}
-.tw-btn.tw-btn-border.tw-btn-primary {
-  @apply tw-border-primary tw-text-primary;
-}
-.tw-btn.tw-btn-border.tw-btn-secondary {
-  @apply tw-border-secondary tw-text-secondary hover:tw-bg-secondary-600/10;
-}
-.tw-btn.tw-btn-border.tw-btn-contrast {
-  @apply tw-border-contrast tw-text-contrast;
-}
-.tw-btn.tw-btn-border.tw-btn-neutral {
-  @apply tw-border-neutral tw-text-neutral hover:tw-bg-neutral-800/10;
-}
-.tw-btn.tw-btn-border.tw-btn-danger {
-  @apply tw-border-danger tw-text-danger hover:tw-bg-danger-800/10;
-}
-.tw-btn.tw-btn-border.tw-btn-warning {
-  @apply tw-border-warning tw-text-warning hover:tw-bg-warning-600/10;
-}
-.tw-btn.tw-btn-border.tw-btn-success {
-  @apply tw-border-success tw-text-success hover:tw-bg-success-800/10;
-}
-.tw-btn.tw-btn-border.tw-btn-light {
-  @apply tw-border-neutral-100 tw-text-neutral-100 hover:tw-bg-neutral-200/10;
-}
-.tw-btn.tw-btn-ghost {
-  @apply tw-border-none tw-bg-transparent;
-}
-.tw-btn.tw-btn-ghost.tw-btn-primary {
-  @apply tw-text-primary;
-}
-.tw-btn.tw-btn-ghost.tw-btn-secondary {
-  @apply tw-text-secondary hover:tw-bg-secondary-600/10;
-}
-.tw-btn.tw-btn-ghost.tw-btn-contrast {
-  @apply tw-text-contrast;
-}
-.tw-btn.tw-btn-ghost.tw-btn-neutral {
-  @apply tw-text-neutral hover:tw-bg-neutral-800/10;
-}
-.tw-btn.tw-btn-ghost.tw-btn-danger {
-  @apply tw-text-danger hover:tw-bg-danger-800/10;
-}
-.tw-btn.tw-btn-ghost.tw-btn-warning {
-  @apply tw-text-warning hover:tw-bg-warning-600/10;
-}
-.tw-btn.tw-btn-ghost.tw-btn-success {
-  @apply tw-text-success hover:tw-bg-success-800/10;
-}
-.tw-btn.tw-btn-ghost.tw-btn-light {
-  @apply tw-text-neutral-100 hover:tw-bg-neutral-200/10;
-}
-.tw-btn.tw-btn-lg {
-  @apply tw-text-lg tw-px-4 tw-py-3;
-}
-.tw-btn.tw-btn-sm {
-  @apply tw-text-sm tw-px-2 tw-py-1;
-}
-.tw-btn.tw-btn-xs {
-  @apply tw-text-xs tw-px-2 tw-py-1;
-}
-
-.tw-paragraph {
+.paragraph {
   @apply tw-text tw-font-regular;
 }
-.tw-paragraph-xxs {
+.paragraph-xxs {
   @apply tw-text-xxs;
 }
-.tw-paragraph-xs {
+.paragraph-xs {
   @apply tw-text-xs;
 }
-.tw-paragraph-sm {
+.paragraph-sm {
   @apply tw-text-sm;
 }
-.tw-paragraph-lg {
+.paragraph-lg {
   @apply tw-text-lg;
 }
-.tw-paragraph-bold {
+.paragraph-bold {
   @apply tw-font-bold;
 }
-.tw-paragraph-italic {
+.paragraph-italic {
   @apply tw-italic;
 }
 
+.bg-blur {
+  @apply tw-bg-contrast/80;
+  backdrop-filter: blur(8px);
+}
+
+.block {
+  @apply tw-shadow-lg tw-rounded-lg;
+}
+.block .h1, .block .h2, .block .h3, .block .h4, .block .h5, .block .h6 {
+  @apply -tw-mt-4;
+  text-shadow: 4px 0 #fff, -4px 0 #fff, 0 4px #fff, 0 -4px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff, 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.block p {
+  @apply paragraph-lg tw-px-6;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  @apply tw-font-title tw-m-0 tw-uppercase;
+}
+h1 .underline, h2 .underline, h3 .underline, h4 .underline, h5 .underline, h6 .underline,
+.h1 .underline, .h2 .underline, .h3 .underline, .h4 .underline, .h5 .underline, .h6 .underline {
+  position: relative;
+}
+h1 .underline:after, h2 .underline:after, h3 .underline:after, h4 .underline:after, h5 .underline:after, h6 .underline:after,
+.h1 .underline:after, .h2 .underline:after, .h3 .underline:after, .h4 .underline:after, .h5 .underline:after, .h6 .underline:after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  display: block;
+  background-image: url(src/img/underline.svg);
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+h1, .h1 {
+  @apply tw-text-[44px] tw-leading-10;
+}
+
+h2, .h2 {
+  @apply tw-text-[40px] tw-leading-10;
+}
+
+h3, .h3 {
+  @apply tw-text-[36px] tw-leading-10;
+}
+
+h4, .h4 {
+  @apply tw-text-[32px];
+}
+
+h5, .h5 {
+  @apply tw-text-[28px];
+}
+
+h6, .h6 {
+  @apply tw-text-[24px];
+}
+
+.subtitle {
+  @apply tw-text-neutral tw-text tw-text-center tw-m-0;
+}
+
+.btn {
+  @apply tw-p-3 tw-rounded tw-inline-block tw-text-center tw-text-base tw-text-neutral-100 tw-bg-contrast tw-font-main tw-font-regular tw-no-underline tw-flex tw-items-center;
+}
+.btn.btn-inline-block {
+  @apply tw-inline-block;
+}
+.btn > *:nth-child(2) {
+  @apply tw-pl-2;
+}
+.btn.btn-primary {
+  @apply tw-bg-primary;
+}
+.btn.btn-secondary {
+  @apply tw-bg-secondary hover:tw-bg-secondary-600;
+}
+.btn.btn-contrast {
+  @apply tw-bg-contrast;
+}
+.btn.btn-neutral {
+  @apply tw-bg-neutral hover:tw-bg-neutral-800;
+}
+.btn.btn-danger {
+  @apply tw-bg-danger hover:tw-bg-danger-800;
+}
+.btn.btn-warning {
+  @apply tw-bg-warning hover:tw-bg-warning-600;
+}
+.btn.btn-success {
+  @apply tw-bg-success hover:tw-bg-success-800;
+}
+.btn.btn-light {
+  @apply tw-bg-white tw-text-contrast hover:tw-bg-neutral-100;
+}
+.btn.btn-border {
+  @apply tw-border tw-border-solid tw-bg-transparent;
+}
+.btn.btn-border.btn-primary {
+  @apply tw-border-primary tw-text-primary;
+}
+.btn.btn-border.btn-secondary {
+  @apply tw-border-secondary tw-text-secondary hover:tw-bg-secondary-600/10;
+}
+.btn.btn-border.btn-contrast {
+  @apply tw-border-contrast tw-text-contrast;
+}
+.btn.btn-border.btn-neutral {
+  @apply tw-border-neutral tw-text-neutral hover:tw-bg-neutral-800/10;
+}
+.btn.btn-border.btn-danger {
+  @apply tw-border-danger tw-text-danger hover:tw-bg-danger-800/10;
+}
+.btn.btn-border.btn-warning {
+  @apply tw-border-warning tw-text-warning hover:tw-bg-warning-600/10;
+}
+.btn.btn-border.btn-success {
+  @apply tw-border-success tw-text-success hover:tw-bg-success-800/10;
+}
+.btn.btn-border.btn-light {
+  @apply tw-border-white tw-text-white hover:tw-bg-neutral-100;
+}
+.btn.btn-ghost {
+  @apply tw-border-none tw-bg-transparent;
+}
+.btn.btn-ghost.btn-primary {
+  @apply tw-text-primary;
+}
+.btn.btn-ghost.btn-secondary {
+  @apply tw-text-secondary hover:tw-bg-secondary-600/10;
+}
+.btn.btn-ghost.btn-contrast {
+  @apply tw-text-contrast;
+}
+.btn.btn-ghost.btn-neutral {
+  @apply tw-text-neutral hover:tw-bg-neutral-800/10;
+}
+.btn.btn-ghost.btn-danger {
+  @apply tw-text-danger hover:tw-bg-danger-800/10;
+}
+.btn.btn-ghost.btn-warning {
+  @apply tw-text-warning hover:tw-bg-warning-600/10;
+}
+.btn.btn-ghost.btn-success {
+  @apply tw-text-success hover:tw-bg-success-800/10;
+}
+.btn.btn-ghost.btn-light {
+  @apply tw-text-white hover:tw-bg-neutral-100;
+}
+.btn.btn-border.btn-primary .btn-label, .btn.btn-ghost.btn-primary .btn-label {
+  @apply tw-text-primary;
+}
+.btn.btn-border.btn-secondary .btn-label, .btn.btn-ghost.btn-secondary .btn-label {
+  @apply tw-text-secondary;
+}
+.btn.btn-border.btn-contrast .btn-label, .btn.btn-ghost.btn-contrast .btn-label {
+  @apply tw-text-contrast;
+}
+.btn.btn-border.btn-neutral .btn-label, .btn.btn-ghost.btn-neutral .btn-label {
+  @apply tw-text-neutral;
+}
+.btn.btn-border.btn-danger .btn-label, .btn.btn-ghost.btn-danger .btn-label {
+  @apply tw-text-danger;
+}
+.btn.btn-border.btn-warning .btn-label, .btn.btn-ghost.btn-warning .btn-label {
+  @apply tw-text-warning;
+}
+.btn.btn-border.btn-success .btn-label, .btn.btn-ghost.btn-success .btn-label {
+  @apply tw-text-success;
+}
+.btn.btn-border.btn-light .btn-label, .btn.btn-ghost.btn-light .btn-label {
+  @apply tw-text-neutral-100;
+}
+.btn.btn-lg {
+  @apply tw-text-lg tw-p-3;
+  @apply tw-text-lg tw-p-3;
+}
+.btn.btn-sm {
+  @apply tw-text-sm tw-p-2;
+}
+.btn.btn-xs {
+  @apply tw-text-xs tw-p-1;
+}
+.btn .btn-label {
+  @apply tw-self-center tw-text-white;
+}
+.btn .btn-icon, .btn .notification {
+  @apply tw-self-center;
+}
+
+.input-text {
+  @apply tw-text-contrast tw-border tw-border-neutral-400 tw-p-1.5 tw-rounded tw-text tw-font-bold;
+}
+.input-text-lg {
+  @apply tw-p-3 tw-rounded-md tw-text-lg;
+}
+.input-text-sm {
+  @apply tw-p-1 tw-rounded tw-text-sm;
+}
+
+.input-checkbox {
+  @apply tw-appearance-none tw-relative tw-top-0 tw-right-0 tw-bottom-0 tw-left-0 tw-h-5 tw-w-5 tw-bg-white tw-border tw-border-solid tw-border-neutral-400 tw-p-0 tw-text-contrast tw-inline-block tw-outline-none tw-rounded-sm
+  before:tw-transition-all before:tw-absolute  before:tw-content-[""] before:tw-bg-transparent before:tw-h-0 before:tw-w-0 before:tw-top-[10px] before:tw-left-[10px]
+  after:tw-transition-all after:tw-absolute  before:tw-content-[""] before:tw-bg-transparent before:tw-h-0 before:tw-w-0 before:tw-top-[10px] before:tw-left-[10px]
+
+  checked:before:tw-rounded-sm checked:before:tw-top-[-1px] checked:before:tw-left-[-1px] checked:tw-border-contrast checked:before:tw-bg-contrast checked:before:tw-h-5 checked:before:tw-w-5 checked:before:tw-content-[""] checked:before:tw-absolute
+
+  disabled:tw-opacity-35 disabled:tw-cursor-not-allowed;
+}
+
 .notification {
-  @apply tw-aspect-square tw-w-6 tw-h-6 tw-bg-contrast tw-rounded-full tw-paragraph-bold tw-text-center;
+  @apply tw-aspect-square tw-w-6 tw-h-6 tw-bg-contrast tw-rounded-full paragraph-bold tw-text-center tw-flex  tw-items-center;
 }
 .notification > .notification-value {
-  @apply tw-text-neutral-100 tw-block tw-pt-1;
+  @apply tw-text-neutral-100 tw-block tw-self-center tw-w-full;
 }
 .notification-lg {
-  @apply tw-aspect-square tw-w-8 tw-h-8 tw-paragraph-lg;
+  @apply tw-aspect-square tw-w-8 tw-h-8 paragraph-lg;
 }
 .notification-sm {
-  @apply tw-aspect-square tw-w-5 tw-h-5 tw-paragraph-xs;
+  @apply tw-aspect-square tw-w-5 tw-h-5 paragraph-xs;
 }
 .notification-sm > .notification-value {
   @apply tw-pt-0;
 }
 .notification-xs {
-  @apply tw-aspect-square tw-w-4 tw-h-4 tw-paragraph-xxs;
+  @apply tw-aspect-square tw-w-4 tw-h-4 paragraph-xxs;
 }
 .notification-xs > .notification-value {
   @apply tw-pt-0;
@@ -193,6 +292,12 @@ h6, .tw-h6 {
 }
 .notification-4px {
   @apply tw-aspect-square tw-w-1 tw-h-1;
+}
+.notification-primary {
+  @apply tw-bg-primary;
+}
+.notification-secondary {
+  @apply tw-bg-secondary;
 }
 .notification-danger {
   @apply tw-bg-danger;
@@ -204,38 +309,267 @@ h6, .tw-h6 {
   @apply tw-bg-warning;
 }
 .notification-light {
-  @apply tw-bg-neutral-100;
+  @apply tw-bg-white;
 }
 .notification-light > .notification-value {
   @apply tw-text-contrast;
+}
+.notification-border {
+  @apply tw-border tw-border-solid tw-bg-transparent;
+}
+.notification-border > .notification-value {
+  @apply tw-text-contrast;
+}
+.notification-border.notification-primary {
+  @apply tw-border-primary;
+}
+.notification-border.notification-primary > .notification-value {
+  @apply tw-text-primary;
+}
+.notification-border.notification-secondary {
+  @apply tw-border-secondary hover:tw-bg-secondary-600/10;
+}
+.notification-border.notification-secondary > .notification-value {
+  @apply tw-text-secondary;
+}
+.notification-border.notification-contrast {
+  @apply tw-border-contrast;
+}
+.notification-border.notification-contrast > .notification-value {
+  @apply tw-text-contrast;
+}
+.notification-border.notification-neutral {
+  @apply tw-border-neutral hover:tw-bg-neutral-800/10;
+}
+.notification-border.notification-neutral > .notification-value {
+  @apply tw-text-neutral;
+}
+.notification-border.notification-danger {
+  @apply tw-border-danger hover:tw-bg-danger-800/10;
+}
+.notification-border.notification-danger > .notification-value {
+  @apply tw-text-danger;
+}
+.notification-border.notification-warning {
+  @apply tw-border-warning hover:tw-bg-warning-600/10;
+}
+.notification-border.notification-warning > .notification-value {
+  @apply tw-text-warning;
+}
+.notification-border.notification-success {
+  @apply tw-border-success hover:tw-bg-success-800/10;
+}
+.notification-border.notification-success > .notification-value {
+  @apply tw-text-success;
+}
+.notification-border.notification-light {
+  @apply tw-border-white hover:tw-bg-neutral-200/10;
+}
+.notification-border.notification-light > .notification-value {
+  @apply tw-text-white;
+}
+
+.chip {
+  @apply tw-py-1 tw-px-2 tw-rounded tw-bg-contrast tw-text-white tw-flex tw-items-center;
+}
+.chip-lg {
+  @apply tw-text-lg;
+}
+.chip-sm {
+  @apply tw-text-sm tw-p-0 tw-px-2 tw-rounded-sm;
+}
+.chip-xs {
+  @apply tw-text-xs tw-p-0 tw-px-1 tw-rounded-sm;
+}
+.chip.chip-primary {
+  @apply tw-bg-primary;
+}
+.chip.chip-secondary {
+  @apply tw-bg-secondary hover:tw-bg-secondary-600;
+}
+.chip.chip-contrast {
+  @apply tw-bg-contrast;
+}
+.chip.chip-neutral {
+  @apply tw-bg-neutral hover:tw-bg-neutral-800;
+}
+.chip.chip-danger {
+  @apply tw-bg-danger hover:tw-bg-danger-800;
+}
+.chip.chip-warning {
+  @apply tw-bg-warning hover:tw-bg-warning-600;
+}
+.chip.chip-success {
+  @apply tw-bg-success hover:tw-bg-success-800;
+}
+.chip.chip-light {
+  @apply tw-bg-neutral-100 tw-text-contrast hover:tw-bg-neutral-200;
+}
+.chip.chip-border {
+  @apply tw-border tw-border-solid tw-bg-transparent;
+}
+.chip.chip-border.chip-primary {
+  @apply tw-border-primary;
+}
+.chip.chip-border.chip-primary > .chip-label {
+  @apply tw-text-primary;
+}
+.chip.chip-border.chip-primary > svg {
+  @apply tw-stroke-primary;
+}
+.chip.chip-border.chip-secondary {
+  @apply tw-border-secondary hover:tw-bg-secondary-600/10;
+}
+.chip.chip-border.chip-secondary > .chip-label {
+  @apply tw-text-secondary;
+}
+.chip.chip-border.chip-secondary > svg {
+  @apply tw-stroke-secondary;
+}
+.chip.chip-border.chip-contrast {
+  @apply tw-border-contrast;
+}
+.chip.chip-border.chip-contrast > .chip-label {
+  @apply tw-text-contrast;
+}
+.chip.chip-border.chip-contrast > svg {
+  @apply tw-stroke-contrast;
+}
+.chip.chip-border.chip-neutral {
+  @apply tw-border-neutral hover:tw-bg-neutral-800/10;
+}
+.chip.chip-border.chip-neutral > .chip-label {
+  @apply tw-text-neutral;
+}
+.chip.chip-border.chip-neutral > svg {
+  @apply tw-stroke-neutral;
+}
+.chip.chip-border.chip-danger {
+  @apply tw-border-danger hover:tw-bg-danger-800/10;
+}
+.chip.chip-border.chip-danger > .chip-label {
+  @apply tw-text-danger;
+}
+.chip.chip-border.chip-danger > svg {
+  @apply tw-stroke-danger;
+}
+.chip.chip-border.chip-warning {
+  @apply tw-border-warning hover:tw-bg-warning-600/10;
+}
+.chip.chip-border.chip-warning > .chip-label {
+  @apply tw-text-warning;
+}
+.chip.chip-border.chip-warning > svg {
+  @apply tw-stroke-warning;
+}
+.chip.chip-border.chip-success {
+  @apply tw-border-success hover:tw-bg-success-800/10;
+}
+.chip.chip-border.chip-success > .chip-label {
+  @apply tw-text-success;
+}
+.chip.chip-border.chip-success > svg {
+  @apply tw-stroke-success;
+}
+.chip.chip-border.chip-light {
+  @apply tw-border-neutral-100 hover:tw-bg-neutral-200/10;
+}
+.chip.chip-border.chip-light > .chip-label {
+  @apply tw-text-neutral-100;
+}
+.chip.chip-border.chip-light > svg {
+  @apply tw-stroke-neutral-100;
+}
+.chip > .chip-label {
+  @apply tw-self-center tw-text-white;
+}
+.chip > .notification {
+  @apply tw-self-center tw-mr-2;
+}
+.chip > svg {
+  @apply tw-self-center tw-mr-2 tw-w-4 tw-h-4 tw-stroke-white;
 }
 
 .avatar {
   @apply tw-w-10 tw-aspect-square tw-bg-cover tw-bg-center tw-rounded-md tw-block tw-bg-neutral-300 tw-relative;
 }
 .avatar > .avatar-name {
-  @apply tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-m-auto tw-absolute  tw-paragraph-bold tw-text-center tw-h-6;
+  @apply tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-m-auto tw-absolute  paragraph-bold tw-text-center tw-h-6;
+}
+.avatar > .notification {
+  @apply tw-absolute tw-bottom-[-8px] tw-right-[-8px] tw-text-white tw-border tw-border-4 tw-border-white;
 }
 .avatar-lg {
   @apply tw-w-12;
 }
 .avatar-lg > .avatar-name {
-  @apply tw-paragraph-lg tw-paragraph-bold tw-h-6;
+  @apply paragraph-lg paragraph-bold tw-h-6;
 }
 .avatar-sm {
   @apply tw-w-8 tw-rounded;
 }
 .avatar-sm > .avatar-name {
-  @apply tw-paragraph-sm tw-paragraph-bold tw-h-5;
+  @apply paragraph-sm paragraph-bold tw-h-5;
+}
+.avatar-sm > .notification {
+  @apply tw-bottom-[-6px] tw-right-[-6px];
 }
 .avatar-xs {
   @apply tw-w-7 tw-rounded;
 }
 .avatar-xs > .avatar-name {
-  @apply tw-paragraph-xs tw-paragraph-bold  tw-h-5;
+  @apply paragraph-xs paragraph-bold  tw-h-5;
+}
+.avatar-xs > .notification {
+  @apply tw-bottom-[-6px] tw-right-[-6px];
 }
 .avatar-circle {
   @apply tw-rounded-full;
+}
+
+.avatars {
+  @apply tw-inline-block tw-ml-[20px];
+}
+.avatars .avatar-stack {
+  @apply tw-inline-block tw-ml-[-20px] tw-border tw-border-4 tw-border-solid tw-border-white;
+}
+
+.nav-website {
+  @apply bg-blur tw-rounded-lg tw-px-7 tw-py-0 tw-flex;
+}
+.nav-website .nav-logo {
+  @apply tw-flex tw-grow tw-h-9 tw-self-center;
+}
+.nav-website .nav-menu {
+  @apply tw-flex tw-m-0;
+}
+.nav-website .nav-menu .nav-menu-item {
+  @apply tw-self-center tw-list-none;
+}
+.nav-website .nav-menu .nav-menu-item-dd:hover .nav-menu-item-dd-wrapper {
+  @apply tw-opacity-100 bg-blur tw-rounded-lg tw-px-7 tw-py-0 tw-flex;
+}
+.nav-website .nav-menu .nav-menu-item-dd .nav-menu-item-dd-wrapper {
+  @apply tw-opacity-0 tw-absolute;
+}
+.nav-website .nav-menu .nav-menu-item .nav-menu-item-link {
+  @apply tw-p-9 tw-block tw-text-white tw-no-underline hover:tw-bg-white/10;
+}
+.nav-website .nav-menu .nav-menu-item-btn {
+  @apply tw-px-2 tw-p-5 tw-list-none last:tw-pr-0;
+}
+
+.pagination {
+  @apply tw-m-0 tw-p-0;
+}
+.pagination .pagination-item {
+  @apply tw-w-3 tw-h-1 tw-mr-1 tw-inline-block tw-bg-neutral-500 tw-rounded-full tw-list-none;
+}
+.pagination .pagination-item.active {
+  @apply tw-bg-secondary;
+}
+.pagination .pagination-item.passed {
+  @apply tw-bg-secondary/25;
 }
 
 /*# sourceMappingURL=index.css.map */

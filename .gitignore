@@ -1,2 +1,5 @@
 
 .DS_Store
+.idea/vcs.xml
+.idea/modules.xml
+.idea/design-system.iml
