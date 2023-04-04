@@ -56,8 +56,7 @@ html, body {
 }
 
 .bg-blur {
-  @apply tw-bg-contrast/80;
-  backdrop-filter: blur(8px);
+  @apply tw-bg-contrast/80 tw-backdrop-blur;
 }
 
 .block {
@@ -587,17 +586,23 @@ h6, .h6 {
       .nav-menu-item {
         @apply tw-self-center tw-list-none;
         &-dd {
+          //@apply after:tw-content-[''] after:tw-h-3 after:tw-w-3 after:tw-bg-white after:tw-absolute after:tw-top-0 after:tw-bottom-0 after:tw-m-auto ;
+
+          //@apply tw-flex after:tw-content-[''] after:tw-h-3 after:tw-w-3 after:tw-bg-white after:tw-relative after:tw-block  after:tw-m-auto ;
           &:hover {
             .nav-menu-item-link {
               @apply tw-relative after:tw-content-[''] after:tw-bottom-[-16px] after:tw-left-0 after:tw-right-0 after:tw-m-auto after:tw-absolute after:tw-w-0 after:tw-h-0
               after:tw-border-solid after:tw-border-b-contrast after:tw-border-b-8 after:tw-border-x-transparent after:tw-border-x-8 after:tw-border-t-0 after:tw-opacity-80;
+              .icon {
+                @apply tw-rotate-180;
+              }
             }
             .nav-submenu {
-              @apply tw-opacity-100 tw-flex tw-absolute tw-w-full tw-left-0 tw-p-0 tw-visible tw-pt-4;
+              @apply tw-opacity-100 tw-flex tw-absolute tw-w-full tw-left-0 tw-p-4 tw-visible tw-pt-4 tw-backdrop-blur;
               .nav-submenu-wrapper {
-                @apply bg-blur tw-rounded-lg tw-py-0 tw-w-full tw-p-0 tw-flex tw-text-white;
+                @apply bg-blur tw-rounded-lg tw-w-full tw-p-4 tw-flex tw-text-white;
                 .nav-submenu-item {
-                  @apply tw-p-4 tw-list-none tw-m-0 tw-text-white tw-no-underline;
+                  @apply tw-p-4 tw-list-none tw-m-0 tw-text-white tw-no-underline tw-block tw-p-4 tw-rounded-lg hover:tw-bg-white/10;
                 }
               }
             }
