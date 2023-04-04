@@ -56,14 +56,23 @@ html, body {
 }
 
 .block {
-  @apply tw-shadow-lg tw-rounded-lg;
+  @apply tw-shadow-lg tw-rounded-lg hover:tw-shadow-sm tw-transition-all hover:tw-translate-y-1;
+}
+.block .block-image {
+  @apply tw-transition-all tw-min-h-[240px] tw-w-full tw-bg-[length:100%_auto] tw-bg-center tw-rounded;
+}
+.block:hover .h1, .block:hover .h2, .block:hover .h3, .block:hover .h4, .block:hover .h5, .block:hover .h6 {
+  @apply tw-text-secondary;
+}
+.block:hover .block-image {
+  @apply tw-bg-[length:110%_auto];
 }
 .block .h1, .block .h2, .block .h3, .block .h4, .block .h5, .block .h6 {
-  @apply -tw-mt-4;
+  @apply -tw-mt-4 tw-transition-all;
   text-shadow: 4px 0 #fff, -4px 0 #fff, 0 4px #fff, 0 -4px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff, 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 .block p {
-  @apply paragraph-lg tw-px-6;
+  @apply paragraph-lg tw-px-6 tw-text-contrast/80 hover:tw-text-contrast;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -578,16 +587,16 @@ h6, .h6 {
   @apply tw-rotate-180;
 }
 .nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu {
-  @apply tw-opacity-100 tw-flex tw-absolute tw-w-full tw-left-0 tw-p-4 tw-visible tw-pt-4 tw-backdrop-blur;
+  @apply tw-opacity-100 tw-flex tw-absolute tw-w-full tw-left-0 tw-p-0 tw-visible tw-pt-4 tw-backdrop-blur;
 }
 .nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu .nav-submenu-wrapper {
   @apply bg-blur tw-rounded-lg tw-w-full tw-p-4 tw-flex tw-text-white;
 }
 .nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu .nav-submenu-wrapper .nav-submenu-item {
-  @apply tw-p-4 tw-list-none tw-m-0 tw-text-white tw-no-underline tw-block tw-p-4 tw-rounded-lg hover:tw-bg-white/10;
+  @apply tw-p-4 tw-list-none tw-m-0 tw-text-white tw-no-underline tw-block tw-p-4 tw-transition-all tw-rounded hover:tw-bg-contrast/50;
 }
 .nav-website .nav-menu .nav-menu-item-dd .nav-submenu {
-  @apply tw-opacity-0 tw-absolute tw-invisible;
+  @apply tw-opacity-0 tw-absolute tw-invisible tw-transition-all;
 }
 .nav-website .nav-menu .nav-menu-item .nav-menu-item-link {
   @apply tw-p-9 tw-block tw-text-white tw-no-underline hover:tw-bg-white/10;
