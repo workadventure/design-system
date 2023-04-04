@@ -628,7 +628,7 @@ h6, .h6 {
           }
         }
         .nav-menu-item-link {
-          @apply tw-p-9 tw-block tw-text-white tw-no-underline hover:tw-bg-white/10;
+          @apply tw-block tw-text-white tw-no-underline hover:tw-bg-white/10 sm:tw-p-4 lg:tw-p-6 xl:tw-p-8;
         }
         &-btn {
           @apply tw-px-2 tw-p-5 tw-list-none last:tw-pr-0;
@@ -671,7 +671,7 @@ h6, .h6 {
   @apply tw-cursor-pointer tw-fixed tw-z-50 tw-left-0 tw-top-0 tw-pointer-events-none tw-will-change-transform tw-mix-blend-difference;
   @media (hover: hover) and (pointer: fine) {
     .cursor__circle {
-      @apply tw-w-8 tw-h-8 tw-mt-[-50%] tw-ml-[-50%] tw-rounded-full tw-border tw-border-[1px] tw-border-solid tw-border-neutral-300/65;
+      @apply tw-w-8 tw-h-8 tw-mt-[-50%] tw-ml-[-50%] tw-rounded-full tw-border tw-border-solid tw-border-neutral-300/65;
       transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
       background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
       border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
