@@ -69,7 +69,7 @@ html, body {
 }
 .block .h1, .block .h2, .block .h3, .block .h4, .block .h5, .block .h6 {
   @apply -tw-mt-4 tw-transition-all;
-  text-shadow: 4px 0 #fff, -4px 0 #fff, 0 4px #fff, 0 -4px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff, 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  text-shadow: 8px 8px #fff, -8px -8px #fff, 8px -8px #fff, -8px 8px #fff, 7px 7px #fff, -7px -7px #fff, 7px -7px #fff, -7px 7px #fff, 6px 6px #fff, -6px -6px #fff, 6px -6px #fff, -6px 6px #fff, 5px 5px #fff, -5px -5px #fff, 5px -5px #fff, -5px 5px #fff, 4px 4px #fff, -4px -4px #fff, 4px -4px #fff, -4px 4px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff, 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 .block p {
   @apply paragraph-lg tw-px-6 tw-text-contrast/80 hover:tw-text-contrast;
@@ -616,6 +616,52 @@ h6, .h6 {
 }
 .pagination .pagination-item.passed {
   @apply tw-bg-secondary/25;
+}
+
+.footer {
+  @apply tw-bg-neutral-200 tw-pt-8;
+}
+.footer-menu {
+  @apply tw-m-0 tw-p-0;
+}
+.footer-menu .footer-menu-element {
+  @apply tw-list-none tw-m-0 tw-p-0;
+}
+.footer-menu .footer-menu-element .footer-menu-link {
+  @apply tw-no-underline tw-text-contrast tw-p-4 tw-block paragraph;
+}
+.footer-menu .footer-menu-element.footer-menu-head {
+  @apply tw-text-neutral paragraph-xs paragraph-bold tw-p-4 tw-relative after:tw-content-[""] after:tw-absolute after:tw-left-[-34px] after:tw-top-0 after:tw-bottom-0 after:tw-w-[5px] after:tw-h-full after:tw-bg-secondary after:tw-z-10 after:tw-rounded-full;
+}
+
+.cursor {
+  @apply tw-cursor-pointer tw-fixed tw-z-50 tw-left-0 tw-top-0 tw-pointer-events-none tw-will-change-transform tw-mix-blend-difference;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor .cursor__circle {
+    @apply tw-w-8 tw-h-8 tw-mt-[-50%] tw-ml-[-50%] tw-rounded-full tw-border tw-border-[1px] tw-border-solid tw-border-neutral-300/65;
+    transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .cursor.arrow:after {
+    content: "";
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://svgshare.com/i/MzQ.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .cursor.arrow .cursor__circle {
+    @apply tw-w-16 tw-h-16 tw-bg-secondary tw-border-secondary;
+  }
+  .cursor.subtle .cursor__circle {
+    @apply tw-opacity-20;
+  }
+  .cursor.overlay .cursor__circle {
+    @apply tw-w-6 tw-h-6 tw-bg-contrast/10 tw-border-transparent;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
