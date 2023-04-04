@@ -89,6 +89,31 @@ h1 .underline:after, h2 .underline:after, h3 .underline:after, h4 .underline:aft
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+h1 .highlight, h2 .highlight, h3 .highlight, h4 .highlight, h5 .highlight, h6 .highlight,
+.h1 .highlight, .h2 .highlight, .h3 .highlight, .h4 .highlight, .h5 .highlight, .h6 .highlight {
+  position: relative;
+  z-index: 3;
+}
+h1 .highlight:after, h2 .highlight:after, h3 .highlight:after, h4 .highlight:after, h5 .highlight:after, h6 .highlight:after,
+.h1 .highlight:after, .h2 .highlight:after, .h3 .highlight:after, .h4 .highlight:after, .h5 .highlight:after, .h6 .highlight:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  margin: auto;
+  width: 110%;
+  height: 110%;
+  display: block;
+  background-image: url(src/img/hightlight.svg);
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+h1 .highlight span, h2 .highlight span, h3 .highlight span, h4 .highlight span, h5 .highlight span, h6 .highlight span,
+.h1 .highlight span, .h2 .highlight span, .h3 .highlight span, .h4 .highlight span, .h5 .highlight span, .h6 .highlight span {
+  @apply tw-relative tw-z-10;
+}
 
 h1, .h1 {
   @apply tw-text-[44px] tw-leading-10;
@@ -535,7 +560,7 @@ h6, .h6 {
 }
 
 .nav-website {
-  @apply bg-blur tw-rounded-lg tw-px-7 tw-py-0 tw-flex;
+  @apply bg-blur tw-rounded-lg tw-px-7 tw-py-0 tw-flex tw-relative;
 }
 .nav-website .nav-logo {
   @apply tw-flex tw-grow tw-h-9 tw-self-center;
@@ -546,11 +571,21 @@ h6, .h6 {
 .nav-website .nav-menu .nav-menu-item {
   @apply tw-self-center tw-list-none;
 }
-.nav-website .nav-menu .nav-menu-item-dd:hover .nav-menu-item-dd-wrapper {
-  @apply tw-opacity-100 bg-blur tw-rounded-lg tw-px-7 tw-py-0 tw-flex;
+.nav-website .nav-menu .nav-menu-item-dd:hover .nav-menu-item-link {
+  @apply tw-relative after:tw-content-[""] after:tw-bottom-[-16px] after:tw-left-0 after:tw-right-0 after:tw-m-auto after:tw-absolute after:tw-w-0 after:tw-h-0
+              after:tw-border-solid after:tw-border-b-contrast after:tw-border-b-8 after:tw-border-x-transparent after:tw-border-x-8 after:tw-border-t-0 after:tw-opacity-80;
 }
-.nav-website .nav-menu .nav-menu-item-dd .nav-menu-item-dd-wrapper {
-  @apply tw-opacity-0 tw-absolute;
+.nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu {
+  @apply tw-opacity-100 tw-flex tw-absolute tw-w-full tw-left-0 tw-p-0 tw-visible tw-pt-4;
+}
+.nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu .nav-submenu-wrapper {
+  @apply bg-blur tw-rounded-lg tw-py-0 tw-w-full tw-p-0 tw-flex tw-text-white;
+}
+.nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu .nav-submenu-wrapper .nav-submenu-item {
+  @apply tw-p-4 tw-list-none tw-m-0 tw-text-white tw-no-underline;
+}
+.nav-website .nav-menu .nav-menu-item-dd .nav-submenu {
+  @apply tw-opacity-0 tw-absolute tw-invisible;
 }
 .nav-website .nav-menu .nav-menu-item .nav-menu-item-link {
   @apply tw-p-9 tw-block tw-text-white tw-no-underline hover:tw-bg-white/10;
