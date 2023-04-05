@@ -55,14 +55,15 @@
   }
   h1 .underline, h2 .underline, h3 .underline, h4 .underline, h5 .underline, h6 .underline,
   .h1 .underline, .h2 .underline, .h3 .underline, .h4 .underline, .h5 .underline, .h6 .underline {
-    @apply tw-relative tw-text-secondary tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-bottom-1 after:tw-left-0 after:tw-m-auto after:tw-w-full after:tw-h-1 after:tw-block after:tw-bg-[url("src/img/underline.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+    @apply tw-relative tw-text-secondary tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-bottom-1 after:tw-left-0 after:tw-m-auto after:tw-w-full after:tw-h-1 after:tw-block after:tw-bg-[url("src/img/underline.svg")] after:tw-bg-center after:tw-bg-[length:100%_100%] after:tw-bg-no-repeat after:tw-z-0;
   }
   h1 .highlight, h2 .highlight, h3 .highlight, h4 .highlight, h5 .highlight, h6 .highlight,
   .h1 .highlight, .h2 .highlight, .h3 .highlight, .h4 .highlight, .h5 .highlight, .h6 .highlight {
-    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-5px] after:tw-m-auto after:tw-w-[110%] after:tw-h-[110%] after:tw-block after:tw-bg-[url("src/img/hightlight.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-5px] after:tw-m-auto after:tw-w-[110%] after:tw-h-[110%] after:tw-block after:tw-bg-[url("src/img/hightlight.svg")] after:tw-bg-center after:tw-bg-[length:100%_100%] after:tw-bg-no-repeat after:tw-z-0;
   }
-  h1 .highlight span, h2 .highlight span, h3 .highlight span, h4 .highlight span, h5 .highlight span, h6 .highlight span,
-  .h1 .highlight span, .h2 .highlight span, .h3 .highlight span, .h4 .highlight span, .h5 .highlight span, .h6 .highlight span {
+  h1 .highlight span, h1 .highlight-text, h2 .highlight span, h2 .highlight-text, h3 .highlight span, h3 .highlight-text, h4 .highlight span, h4 .highlight-text, h5 .highlight span, h5 .highlight-text, h6 .highlight span, h6 .highlight-text,
+  .h1 .highlight span,
+  .h1 .highlight-text, .h2 .highlight span, .h2 .highlight-text, .h3 .highlight span, .h3 .highlight-text, .h4 .highlight span, .h4 .highlight-text, .h5 .highlight span, .h5 .highlight-text, .h6 .highlight span, .h6 .highlight-text {
     @apply tw-relative tw-z-10;
   }
   h1 .stripe-blue, h2 .stripe-blue, h3 .stripe-blue, h4 .stripe-blue, h5 .stripe-blue, h6 .stripe-blue,
@@ -141,8 +142,14 @@
   .block-feature:nth-child(even) .block-feature-text {
     @apply tw-order-last;
   }
+  .block-feature:nth-child(even) .block-feature-image {
+    @apply tw-text-right;
+  }
   .block-feature .block-feature-text {
     @apply tw-basis-1/3 tw-p-8;
+  }
+  .block-feature .block-feature-text.half {
+    @apply tw-basis-1/2;
   }
   .block-feature .block-feature-text_title {
     @apply h3 tw-font-bold;
@@ -151,10 +158,16 @@
     @apply paragraph tw-text-neutral;
   }
   .block-feature .block-feature-image {
-    @apply tw-basis-2/3 tw-border tw-border-solid tw-border-neutral-400 tw-rounded-xl tw-overflow-hidden;
+    @apply tw-basis-2/3 tw-border tw-border-solid tw-border-neutral-400 tw-rounded-xl tw-overflow-hidden tw-text-left;
+  }
+  .block-feature .block-feature-image.half {
+    @apply tw-basis-1/2;
+  }
+  .block-feature .block-feature-image.no-border {
+    @apply tw-border-none;
   }
   .block-feature .block-feature-image video {
-    @apply tw-w-full tw-h-full;
+    @apply tw-w-full tw-h-full tw-object-cover;
   }
   .cursor {
     @apply tw-cursor-pointer tw-fixed tw-z-50 tw-left-0 tw-top-0 tw-pointer-events-none tw-will-change-transform tw-mix-blend-difference;
@@ -213,7 +226,7 @@
     @apply tw-bg-white tw-text-contrast hover:tw-bg-neutral-100;
   }
   .btn.btn-border {
-    @apply tw-border tw-border-solid tw-bg-transparent;
+    @apply tw-border tw-border-solid tw-bg-transparent tw-p-[calc(0.75rem-1px)];
   }
   .btn.btn-border.btn-primary {
     @apply tw-border-primary tw-text-primary;
@@ -291,7 +304,6 @@
     @apply tw-text-neutral-100;
   }
   .btn.btn-lg {
-    @apply tw-text-lg tw-p-3;
     @apply tw-text-lg tw-p-3;
   }
   .btn.btn-sm {
@@ -648,6 +660,27 @@
   }
   .pagination .pagination-item.passed {
     @apply tw-bg-secondary/25;
+  }
+  .clients {
+    @apply tw-m-0 tw-p-0 tw-flex tw-flex-row tw-items-center tw-text-center;
+  }
+  .clients .client {
+    @apply tw-grow tw-list-none lg:tw-basis-1/6;
+  }
+  .clients .client img {
+    @apply tw-opacity-50 hover:tw-opacity-100 sm:tw-w-full xl:tw-w-auto;
+  }
+  .possibility {
+    @apply tw-w-40 tw-mr-8 last:tw-mr-0 tw-px-8 tw-aspect-square tw-bg-white tw-border tw-border-solid tw-border-neutral-400 tw-rounded-xl tw-shadow-lg tw-text-center;
+  }
+  .possibility .possibility-icon {
+    @apply -tw-mt-4;
+  }
+  .possibility .possibility-content {
+    @apply tw-flex tw-h-16;
+  }
+  .possibility .possibility-content .possibility-text {
+    @apply paragraph-lg tw-m-auto;
   }
   .footer {
     @apply tw-bg-neutral-200 tw-pt-8;
