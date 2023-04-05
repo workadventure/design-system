@@ -55,46 +55,31 @@
   }
   h1 .underline, h2 .underline, h3 .underline, h4 .underline, h5 .underline, h6 .underline,
   .h1 .underline, .h2 .underline, .h3 .underline, .h4 .underline, .h5 .underline, .h6 .underline {
-    position: relative;
-  }
-  h1 .underline:after, h2 .underline:after, h3 .underline:after, h4 .underline:after, h5 .underline:after, h6 .underline:after,
-  .h1 .underline:after, .h2 .underline:after, .h3 .underline:after, .h4 .underline:after, .h5 .underline:after, .h6 .underline:after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    display: block;
-    background-image: url(src/img/underline.svg);
-    background-position: center top;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-bottom-1 after:tw-left-0 after:tw-m-auto after:tw-w-full after:tw-h-1 after:tw-block after:tw-bg-[url("src/img/underline.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
   }
   h1 .highlight, h2 .highlight, h3 .highlight, h4 .highlight, h5 .highlight, h6 .highlight,
   .h1 .highlight, .h2 .highlight, .h3 .highlight, .h4 .highlight, .h5 .highlight, .h6 .highlight {
-    position: relative;
-    z-index: 3;
-  }
-  h1 .highlight:after, h2 .highlight:after, h3 .highlight:after, h4 .highlight:after, h5 .highlight:after, h6 .highlight:after,
-  .h1 .highlight:after, .h2 .highlight:after, .h3 .highlight:after, .h4 .highlight:after, .h5 .highlight:after, .h6 .highlight:after {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: -5px;
-    margin: auto;
-    width: 110%;
-    height: 110%;
-    display: block;
-    background-image: url(src/img/hightlight.svg);
-    background-position: center top;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    z-index: 0;
+    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-5px] after:tw-m-auto after:tw-w-[110%] after:tw-h-[110%] after:tw-block after:tw-bg-[url("src/img/hightlight.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
   }
   h1 .highlight span, h2 .highlight span, h3 .highlight span, h4 .highlight span, h5 .highlight span, h6 .highlight span,
   .h1 .highlight span, .h2 .highlight span, .h3 .highlight span, .h4 .highlight span, .h5 .highlight span, .h6 .highlight span {
     @apply tw-relative tw-z-10;
+  }
+  h1 .stripe-blue, h2 .stripe-blue, h3 .stripe-blue, h4 .stripe-blue, h5 .stripe-blue, h6 .stripe-blue,
+  .h1 .stripe-blue, .h2 .stripe-blue, .h3 .stripe-blue, .h4 .stripe-blue, .h5 .stripe-blue, .h6 .stripe-blue {
+    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[110%] after:tw-block after:tw-bg-[url("src/img/stripe-blue.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+  }
+  h1 .stripe-blue-text, h2 .stripe-blue-text, h3 .stripe-blue-text, h4 .stripe-blue-text, h5 .stripe-blue-text, h6 .stripe-blue-text,
+  .h1 .stripe-blue-text, .h2 .stripe-blue-text, .h3 .stripe-blue-text, .h4 .stripe-blue-text, .h5 .stripe-blue-text, .h6 .stripe-blue-text {
+    @apply tw-relative tw-z-10 tw-text-white;
+  }
+  h1 .stripe-white, h2 .stripe-white, h3 .stripe-white, h4 .stripe-white, h5 .stripe-white, h6 .stripe-white,
+  .h1 .stripe-white, .h2 .stripe-white, .h3 .stripe-white, .h4 .stripe-white, .h5 .stripe-white, .h6 .stripe-white {
+    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[110%] after:tw-block after:tw-bg-[url("src/img/stripe-blue.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+  }
+  h1 .stripe-white-text, h2 .stripe-white-text, h3 .stripe-white-text, h4 .stripe-white-text, h5 .stripe-white-text, h6 .stripe-white-text,
+  .h1 .stripe-white-text, .h2 .stripe-white-text, .h3 .stripe-white-text, .h4 .stripe-white-text, .h5 .stripe-white-text, .h6 .stripe-white-text {
+    @apply tw-relative tw-z-10 tw-text-contrast;
   }
   h1, .h1 {
     @apply tw-text-[44px] tw-leading-10;
@@ -140,6 +125,27 @@
   }
   .block p {
     @apply paragraph-lg tw-px-6 tw-text-contrast/80 hover:tw-text-contrast;
+  }
+  .block-feature {
+    @apply tw-flex tw-flex-row tw-mt-32 odd:tw-text-right even:tw-text-left;
+  }
+  .block-feature:nth-child(even) .block-feature-text {
+    @apply tw-order-last;
+  }
+  .block-feature .block-feature-text {
+    @apply tw-basis-1/3 tw-p-8;
+  }
+  .block-feature .block-feature-text_title {
+    @apply h3 tw-font-bold;
+  }
+  .block-feature .block-feature-text_desc {
+    @apply paragraph tw-text-neutral;
+  }
+  .block-feature .block-feature-image {
+    @apply tw-basis-2/3 tw-border tw-border-solid tw-border-neutral-400 tw-rounded-xl tw-overflow-hidden;
+  }
+  .block-feature .block-feature-image video {
+    @apply tw-w-full tw-h-full;
   }
   .cursor {
     @apply tw-cursor-pointer tw-fixed tw-z-50 tw-left-0 tw-top-0 tw-pointer-events-none tw-will-change-transform tw-mix-blend-difference;
@@ -644,11 +650,36 @@
     @apply tw-list-none tw-m-0 tw-p-0;
   }
   .footer-menu .footer-menu-element .footer-menu-link {
-    @apply tw-no-underline tw-text-contrast tw-p-4 tw-block paragraph;
+    @apply tw-no-underline tw-text-contrast tw-p-2 tw-block paragraph;
   }
   .footer-menu .footer-menu-element.footer-menu-head {
     @apply tw-text-neutral paragraph-xs paragraph-bold tw-p-4 tw-relative after:tw-content-[""] after:tw-absolute after:tw-left-[-34px] after:tw-top-0 after:tw-bottom-0 after:tw-w-[5px] after:tw-h-full after:tw-bg-secondary after:tw-z-10 after:tw-rounded-full;
   }
 }
+/*
+a {
+  position: relative;
+  text-decoration: none;
+  color: #4156F6;
+  &:hover {
+    &:after {
+      transition: all 0.5s cubic-bezier(.17,.67,.83,.67);
+      width: 100%;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%234156F6' id='svg_line' d='m 1.986 8.91 c 55.429038 4.081 111.58111 5.822 167.11781 2.867 22.70911 -1.208 45.39828 -0.601 68.126 -0.778 28.38173 -0.223 56.76079 -1.024 85.13721 -1.33 24.17379 -0.261 48.42731 0.571 72.58115 0.571'%3E%3C/path%3E%3C/svg%3E");
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+*/
 
 /*# sourceMappingURL=index.css.map */
