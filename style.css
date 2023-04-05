@@ -1820,6 +1820,18 @@ h6, .h6 {
   margin-top: -4rem
 }
 
+.tw-mt-8 {
+  margin-top: 2rem
+}
+
+.tw-mt-24 {
+  margin-top: 6rem
+}
+
+.tw-mt-20 {
+  margin-top: 5rem
+}
+
 .tw-inline-block {
   display: inline-block
 }
@@ -3224,6 +3236,21 @@ h6, .h6 {
   top: 0px
 }
 
+.after\:tw-top-2::after {
+  content: var(--tw-content);
+  top: 0.5rem
+}
+
+.after\:tw-top-8::after {
+  content: var(--tw-content);
+  top: 2rem
+}
+
+.after\:tw-top-6::after {
+  content: var(--tw-content);
+  top: 1.5rem
+}
+
 .after\:tw-z-0::after {
   content: var(--tw-content);
   z-index: 0
@@ -3242,6 +3269,31 @@ h6, .h6 {
 .after\:tw-h-full::after {
   content: var(--tw-content);
   height: 100%
+}
+
+.after\:tw-h-\[calc\(100\%\)\]::after {
+  content: var(--tw-content);
+  height: calc(100%)
+}
+
+.after\:tw-h-\[calc\(100\%-\)\]::after {
+  content: var(--tw-content);
+  height: calc(100% - )
+}
+
+.after\:tw-h-\[calc\(100\%-1\.5rem\)\]::after {
+  content: var(--tw-content);
+  height: calc(100% - 1.5rem)
+}
+
+.after\:tw-h-\[calc\(100\%-4rem\)\]::after {
+  content: var(--tw-content);
+  height: calc(100% - 4rem)
+}
+
+.after\:tw-h-\[calc\(100\%-3rem\)\]::after {
+  content: var(--tw-content);
+  height: calc(100% - 3rem)
 }
 
 .after\:tw-w-\[1px\]::after {
