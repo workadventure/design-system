@@ -25,687 +25,694 @@
  */
 @tailwind variants;
 
-* {
-  @apply tw-box-border;
-}
 
-html, body {
-  @apply tw-text-contrast tw-font-main tw-p-0 tw-m-0 tw-box-border;
-}
+@layer base {
+  * {
+    @apply tw-box-border;
+  }
 
-.paragraph {
-  @apply tw-text tw-font-regular;
-  &-xxs {
-    @apply tw-text-xxs;
+  html, body {
+    @apply tw-text-contrast tw-font-main tw-p-0 tw-m-0 tw-box-border;
   }
-  &-xs {
-    @apply tw-text-xs;
-  }
-  &-sm {
-    @apply tw-text-sm;
-  }
-  &-lg {
-    @apply tw-text-lg;
-  }
-  &-bold {
-    @apply tw-font-bold;
-  }
-  &-italic {
-    @apply tw-italic;
-  }
-}
 
-.bg-blur {
-  @apply tw-bg-contrast/80 tw-backdrop-blur;
-}
-
-.block {
-  @apply tw-shadow-lg tw-rounded-lg hover:tw-shadow-sm tw-transition-all hover:tw-translate-y-1;
-  .block-image {
-    @apply tw-transition-all tw-min-h-[240px] tw-w-full tw-bg-[length:100%_auto] tw-bg-center tw-rounded;
-  }
-  &:hover {
-    .h1, .h2, .h3, .h4, .h5, .h6 {
-      @apply tw-text-secondary;
+  .paragraph {
+    @apply tw-text tw-font-regular;
+    &-xxs {
+      @apply tw-text-xxs;
     }
-    .block-image {
-      @apply tw-bg-[length:110%_auto];
+    &-xs {
+      @apply tw-text-xs;
+    }
+    &-sm {
+      @apply tw-text-sm;
+    }
+    &-lg {
+      @apply tw-text-lg;
+    }
+    &-bold {
+      @apply tw-font-bold;
+    }
+    &-italic {
+      @apply tw-italic;
     }
   }
+
+  h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
-    @apply -tw-mt-4 tw-transition-all;
-    text-shadow:
-    8px 8px #fff, -8px -8px #fff, 8px -8px #fff, -8px 8px #fff,
-    7px 7px #fff, -7px -7px #fff, 7px -7px #fff, -7px 7px #fff,
-    6px 6px #fff, -6px -6px #fff, 6px -6px #fff, -6px 6px #fff,
-    5px 5px #fff, -5px -5px #fff, 5px -5px #fff, -5px 5px #fff,
-    4px 4px #fff, -4px -4px #fff, 4px -4px #fff, -4px 4px #fff,
-    3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff,
-    2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff,
-    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-  }
-  p {
-    @apply paragraph-lg tw-px-6 tw-text-contrast/80 hover:tw-text-contrast;
-  }
-}
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  @apply tw-font-title tw-m-0 tw-uppercase;
-  .underline {
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 2px;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      display: block;
-      background-image: url(src/img/underline.svg);
-      background-position: center top;
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-    }
-  }
-  .highlight {
-    position: relative;
-    z-index: 3;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: -5px;
-      margin: auto;
-      width: 110%;
-      height: 110%;
-      display: block;
-      background-image: url(src/img/hightlight.svg);
-      background-position: center top;
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      z-index: 0;
-    }
-    span {
-      @apply tw-relative tw-z-10;
-    }
-  }
-
-}
-h1, .h1 {
-  @apply tw-text-[44px] tw-leading-10;
-}
-h2, .h2 {
-  @apply tw-text-[40px] tw-leading-10;
-}
-h3, .h3 {
-  @apply tw-text-[36px] tw-leading-10;
-}
-h4, .h4 {
-  @apply tw-text-[32px];
-}
-h5, .h5 {
-  @apply tw-text-[28px];
-}
-h6, .h6 {
-  @apply tw-text-[24px];
-}
-.subtitle {
-  @apply tw-text-neutral tw-text tw-text-center tw-m-0;
-}
-
-
-
-.btn {
-  @apply tw-p-3 tw-rounded tw-inline-block tw-text-center tw-text-base tw-text-neutral-100 tw-bg-contrast tw-font-main tw-font-regular tw-no-underline tw-flex tw-items-center;
-  &.btn-inline-block {
-    @apply tw-inline-block;
-  }
-  & > *:nth-child(2) {
-    @apply tw-pl-2;
-  }
-  &.btn-primary {
-    @apply tw-bg-primary;
-  }
-  &.btn-secondary {
-    @apply tw-bg-secondary hover:tw-bg-secondary-600;
-  }
-  &.btn-contrast {
-    @apply tw-bg-contrast;
-  }
-  &.btn-neutral {
-    @apply tw-bg-neutral hover:tw-bg-neutral-800;
-  }
-  &.btn-danger {
-    @apply tw-bg-danger hover:tw-bg-danger-800;
-  }
-  &.btn-warning {
-    @apply tw-bg-warning hover:tw-bg-warning-600;
-  }
-  &.btn-success {
-    @apply tw-bg-success hover:tw-bg-success-800;
-  }
-  &.btn-light {
-    @apply tw-bg-white tw-text-contrast hover:tw-bg-neutral-100;
-  }
-
-  &.btn-border {
-    @apply tw-border tw-border-solid tw-bg-transparent;
-    &.btn-primary {
-      @apply  tw-border-primary tw-text-primary;
-    }
-    &.btn-secondary {
-      @apply tw-border-secondary tw-text-secondary hover:tw-bg-secondary-600/10;
-    }
-    &.btn-contrast {
-      @apply tw-border-contrast tw-text-contrast;
-    }
-    &.btn-neutral {
-      @apply tw-border-neutral tw-text-neutral hover:tw-bg-neutral-800/10;
-    }
-    &.btn-danger {
-      @apply tw-border-danger tw-text-danger hover:tw-bg-danger-800/10;
-    }
-    &.btn-warning {
-      @apply tw-border-warning tw-text-warning hover:tw-bg-warning-600/10;
-    }
-    &.btn-success {
-      @apply tw-border-success tw-text-success hover:tw-bg-success-800/10;
-    }
-    &.btn-light {
-      @apply tw-border-white tw-text-white hover:tw-bg-neutral-100;
-    }
-  }
-
-  &.btn-ghost {
-    @apply tw-border-none tw-bg-transparent;
-    &.btn-primary {
-      @apply  tw-text-primary;
-    }
-    &.btn-secondary {
-      @apply tw-text-secondary hover:tw-bg-secondary-600/10;
-    }
-    &.btn-contrast {
-      @apply tw-text-contrast;
-    }
-    &.btn-neutral {
-      @apply tw-text-neutral hover:tw-bg-neutral-800/10;
-    }
-    &.btn-danger {
-      @apply tw-text-danger hover:tw-bg-danger-800/10;
-    }
-    &.btn-warning {
-      @apply tw-text-warning hover:tw-bg-warning-600/10;
-    }
-    &.btn-success {
-      @apply tw-text-success hover:tw-bg-success-800/10;
-    }
-    &.btn-light {
-      @apply tw-text-white hover:tw-bg-neutral-100;
-    }
-  }
-
-  &.btn-border, &.btn-ghost {
-    &.btn-primary .btn-label {
-      @apply  tw-text-primary;
-    }
-    &.btn-secondary .btn-label {
-      @apply tw-text-secondary;
-    }
-    &.btn-contrast .btn-label {
-      @apply tw-text-contrast;
-    }
-    &.btn-neutral .btn-label {
-      @apply tw-text-neutral;
-    }
-    &.btn-danger .btn-label {
-      @apply tw-text-danger;
-    }
-    &.btn-warning .btn-label {
-      @apply tw-text-warning;
-    }
-    &.btn-success .btn-label {
-      @apply tw-text-success;
-    }
-    &.btn-light .btn-label {
-      @apply tw-text-neutral-100;
-    }
-  }
-
-  &.btn-lg {
-    @apply tw-text-lg tw-p-3;
-    @apply tw-text-lg tw-p-3;
-  }
-  &.btn-sm {
-    @apply tw-text-sm tw-p-2;
-  }
-  &.btn-xs {
-    @apply tw-text-xs tw-p-1;
-  }
-
-  .btn-label {
-    @apply tw-self-center tw-text-white;
-  }
-
-  .btn-icon, .notification {
-    @apply tw-self-center;
-  }
-}
-
-.input-text {
-  @apply tw-text-contrast tw-border tw-border-neutral-400 tw-p-1.5 tw-rounded tw-text tw-font-bold;
-  &-lg {
-    @apply tw-p-3 tw-rounded-md tw-text-lg ;
-  }
-  &-sm {
-    @apply tw-p-1 tw-rounded tw-text-sm;
-  }
-}
-
-.input-checkbox {
-  @apply tw-appearance-none tw-relative tw-top-0 tw-right-0 tw-bottom-0 tw-left-0 tw-h-5 tw-w-5 tw-bg-white tw-border tw-border-solid tw-border-neutral-400 tw-p-0 tw-text-contrast tw-inline-block tw-outline-none tw-rounded-sm
-  before:tw-transition-all before:tw-absolute  before:tw-content-[''] before:tw-bg-transparent before:tw-h-0 before:tw-w-0 before:tw-top-[10px] before:tw-left-[10px]
-  after:tw-transition-all after:tw-absolute  before:tw-content-[''] before:tw-bg-transparent before:tw-h-0 before:tw-w-0 before:tw-top-[10px] before:tw-left-[10px]
-
-  checked:before:tw-rounded-sm checked:before:tw-top-[-1px] checked:before:tw-left-[-1px] checked:tw-border-contrast checked:before:tw-bg-contrast checked:before:tw-h-5 checked:before:tw-w-5 checked:before:tw-content-[''] checked:before:tw-absolute
-
-  disabled:tw-opacity-35 disabled:tw-cursor-not-allowed;
-}
-
-.label-checkbox {
-  //@apply tw-ml-2 tw-text-sm tw-font tw-text-gray-900;
-  a {
-    //@apply tw-text-blue-600 hover:tw-underline;
-  }
-}
-
-.notification {
-  @apply tw-aspect-square tw-w-6 tw-h-6 tw-bg-contrast tw-rounded-full paragraph-bold tw-text-center tw-flex  tw-items-center;
-  & > .notification-value {
-    @apply tw-text-neutral-100 tw-block tw-self-center tw-w-full;
-  }
-  &-lg {
-    @apply tw-aspect-square tw-w-8 tw-h-8 paragraph-lg;
-  }
-  &-sm {
-    @apply tw-aspect-square tw-w-5 tw-h-5 paragraph-xs;
-    & > .notification-value {
-      @apply tw-pt-0;
-    }
-  }
-  &-xs {
-    @apply tw-aspect-square tw-w-4 tw-h-4 paragraph-xxs;
-    & > .notification-value {
-      @apply tw-pt-0;
-    }
-  }
-  &-xxs {
-    @apply tw-aspect-square tw-w-2 tw-h-2;
-  }
-  &-4px {
-    @apply tw-aspect-square tw-w-1 tw-h-1;
-  }
-  &-primary {
-    @apply tw-bg-primary;
-  }
-  &-secondary {
-    @apply tw-bg-secondary;
-  }
-  &-danger {
-    @apply tw-bg-danger;
-  }
-  &-success {
-    @apply tw-bg-success;
-  }
-  &-warning {
-    @apply tw-bg-warning;
-  }
-  &-light {
-    @apply tw-bg-white ;
-    & > .notification-value {
-      @apply tw-text-contrast;
-    }
-  }
-
-  &-border {
-    @apply tw-border tw-border-solid tw-bg-transparent;
-    & > .notification-value {
-      @apply tw-text-contrast;
-    }
-    &.notification-primary {
-      @apply  tw-border-primary;
-      & > .notification-value {
-        @apply tw-text-primary;
+    @apply tw-font-title tw-m-0 tw-uppercase;
+    .underline {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        display: block;
+        background-image: url(src/img/underline.svg);
+        background-position: center top;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
       }
     }
-    &.notification-secondary {
-      @apply tw-border-secondary hover:tw-bg-secondary-600/10;
-      & > .notification-value {
+    .highlight {
+      position: relative;
+      z-index: 3;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -5px;
+        margin: auto;
+        width: 110%;
+        height: 110%;
+        display: block;
+        background-image: url(src/img/hightlight.svg);
+        background-position: center top;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        z-index: 0;
+      }
+      span {
+        @apply tw-relative tw-z-10;
+      }
+    }
+
+  }
+  h1, .h1 {
+    @apply tw-text-[44px] tw-leading-10;
+  }
+  h2, .h2 {
+    @apply tw-text-[40px] tw-leading-10;
+  }
+  h3, .h3 {
+    @apply tw-text-[36px] tw-leading-10;
+  }
+  h4, .h4 {
+    @apply tw-text-[32px];
+  }
+  h5, .h5 {
+    @apply tw-text-[28px];
+  }
+  h6, .h6 {
+    @apply tw-text-[24px];
+  }
+  .subtitle {
+    @apply tw-text-neutral tw-text tw-text-center tw-m-0;
+  }
+}
+
+@layer utilities {
+  .bg-blur {
+    @apply tw-bg-contrast/80 tw-backdrop-blur;
+  }
+
+  .block {
+    @apply tw-shadow-lg tw-rounded-lg hover:tw-shadow-sm tw-transition-all hover:tw-translate-y-1;
+    .block-image {
+      @apply tw-transition-all tw-min-h-[240px] tw-w-full tw-bg-[length:100%_auto] tw-bg-center tw-rounded;
+    }
+    &:hover {
+      .h1, .h2, .h3, .h4, .h5, .h6 {
         @apply tw-text-secondary;
       }
-    }
-    &.notification-contrast {
-      @apply tw-border-contrast;
-      & > .notification-value {
-        @apply tw-text-contrast;
+      .block-image {
+        @apply tw-bg-[length:110%_auto];
       }
     }
-    &.notification-neutral {
-      @apply tw-border-neutral hover:tw-bg-neutral-800/10;
-      & > .notification-value {
-        @apply tw-text-neutral;
-      }
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      @apply -tw-mt-4 tw-transition-all;
+      text-shadow:
+              8px 8px #fff, -8px -8px #fff, 8px -8px #fff, -8px 8px #fff,
+              7px 7px #fff, -7px -7px #fff, 7px -7px #fff, -7px 7px #fff,
+              6px 6px #fff, -6px -6px #fff, 6px -6px #fff, -6px 6px #fff,
+              5px 5px #fff, -5px -5px #fff, 5px -5px #fff, -5px 5px #fff,
+              4px 4px #fff, -4px -4px #fff, 4px -4px #fff, -4px 4px #fff,
+              3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff,
+              2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff,
+              1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     }
-    &.notification-danger {
-      @apply tw-border-danger hover:tw-bg-danger-800/10;
-      & > .notification-value {
-        @apply tw-text-danger;
-      }
+    p {
+      @apply paragraph-lg tw-px-6 tw-text-contrast/80 hover:tw-text-contrast;
     }
-    &.notification-warning {
-      @apply tw-border-warning hover:tw-bg-warning-600/10;
-      & > .notification-value {
-        @apply tw-text-warning;
+  }
+
+  .cursor {
+    @apply tw-cursor-pointer tw-fixed tw-z-50 tw-left-0 tw-top-0 tw-pointer-events-none tw-will-change-transform tw-mix-blend-difference;
+    @media (hover: hover) and (pointer: fine) {
+      .cursor__circle {
+        @apply tw-w-8 tw-h-8 tw-mt-[-50%] tw-ml-[-50%] tw-rounded-full tw-border tw-border-solid tw-border-neutral-300/65;
+        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
       }
-    }
-    &.notification-success {
-      @apply tw-border-success hover:tw-bg-success-800/10;
-      & > .notification-value {
-        @apply tw-text-success;
+
+      &.arrow {
+        @apply after:tw-content-[''] after:tw-absolute after:tw-left-[-50%] after:tw-top-[-50%] after:tw-w-full after:tw-h-full after:tw-bg-[url('https://svgshare.com/i/MzQ.svg')] after:tw-bg-no-repeat after:tw-bg-center;
+        .cursor__circle{
+          @apply tw-w-16 tw-h-16 tw-rounded-xl tw-border-secondary tw-cursor-pointer;
+        }
       }
-    }
-    &.notification-light {
-      @apply tw-border-white hover:tw-bg-neutral-200/10;
-      & > .notification-value {
-        @apply tw-text-white;
+
+      &.subtle {
+        .cursor__circle{
+          @apply tw-opacity-20;
+        }
+      }
+
+      &.overlay {
+        .cursor__circle{
+          @apply tw-w-6 tw-h-6 tw-bg-contrast/10 tw-border-transparent;
+        }
       }
     }
   }
 }
 
-.chip {
-  @apply tw-py-1 tw-px-2 tw-rounded tw-bg-contrast tw-text-white tw-flex tw-items-center;
-  &-lg {
-    @apply tw-text-lg;
-  }
-  &-sm {
-    @apply tw-text-sm tw-p-0 tw-px-2 tw-rounded-sm;
-  }
-  &-xs {
-    @apply tw-text-xs tw-p-0 tw-px-1 tw-rounded-sm;
-  }
+@layer components {
+  .btn {
+    @apply tw-p-3 tw-rounded tw-inline-block tw-text-center tw-text-base tw-text-neutral-100 tw-bg-contrast tw-font-main tw-font-regular tw-no-underline tw-flex tw-items-center;
+    &.btn-inline-block {
+      @apply tw-inline-block;
+    }
+    & > *:nth-child(2) {
+      @apply tw-pl-2;
+    }
+    &.btn-primary {
+      @apply tw-bg-primary;
+    }
+    &.btn-secondary {
+      @apply tw-bg-secondary hover:tw-bg-secondary-600;
+    }
+    &.btn-contrast {
+      @apply tw-bg-contrast;
+    }
+    &.btn-neutral {
+      @apply tw-bg-neutral hover:tw-bg-neutral-800;
+    }
+    &.btn-danger {
+      @apply tw-bg-danger hover:tw-bg-danger-800;
+    }
+    &.btn-warning {
+      @apply tw-bg-warning hover:tw-bg-warning-600;
+    }
+    &.btn-success {
+      @apply tw-bg-success hover:tw-bg-success-800;
+    }
+    &.btn-light {
+      @apply tw-bg-white tw-text-contrast hover:tw-bg-neutral-100;
+    }
 
-  &.chip-primary {
-    @apply tw-bg-primary;
-  }
-  &.chip-secondary {
-    @apply tw-bg-secondary hover:tw-bg-secondary-600;
-  }
-  &.chip-contrast {
-    @apply tw-bg-contrast ;
-  }
-  &.chip-neutral {
-    @apply tw-bg-neutral hover:tw-bg-neutral-800;
-  }
-  &.chip-danger {
-    @apply tw-bg-danger hover:tw-bg-danger-800;
-  }
-  &.chip-warning {
-    @apply tw-bg-warning hover:tw-bg-warning-600;
-  }
-  &.chip-success {
-    @apply tw-bg-success hover:tw-bg-success-800;
-  }
-  &.chip-light {
-    @apply tw-bg-neutral-100 tw-text-contrast hover:tw-bg-neutral-200;
-  }
-
-  &.chip-border {
-    @apply tw-border tw-border-solid tw-bg-transparent;
-    &.chip-primary {
-      @apply  tw-border-primary;
-      & > .chip-label {
-        @apply tw-text-primary;
+    &.btn-border {
+      @apply tw-border tw-border-solid tw-bg-transparent;
+      &.btn-primary {
+        @apply  tw-border-primary tw-text-primary;
       }
-      & > svg {
-        @apply tw-stroke-primary;
+      &.btn-secondary {
+        @apply tw-border-secondary tw-text-secondary hover:tw-bg-secondary-600/10;
+      }
+      &.btn-contrast {
+        @apply tw-border-contrast tw-text-contrast;
+      }
+      &.btn-neutral {
+        @apply tw-border-neutral tw-text-neutral hover:tw-bg-neutral-800/10;
+      }
+      &.btn-danger {
+        @apply tw-border-danger tw-text-danger hover:tw-bg-danger-800/10;
+      }
+      &.btn-warning {
+        @apply tw-border-warning tw-text-warning hover:tw-bg-warning-600/10;
+      }
+      &.btn-success {
+        @apply tw-border-success tw-text-success hover:tw-bg-success-800/10;
+      }
+      &.btn-light {
+        @apply tw-border-white tw-text-white hover:tw-bg-neutral-100;
       }
     }
-    &.chip-secondary {
-      @apply tw-border-secondary hover:tw-bg-secondary-600/10;
-      & > .chip-label {
-        @apply tw-text-secondary;
+
+    &.btn-ghost {
+      @apply tw-border-none tw-bg-transparent;
+      &.btn-primary {
+        @apply  tw-text-primary;
       }
-      & > svg {
-        @apply tw-stroke-secondary;
+      &.btn-secondary {
+        @apply tw-text-secondary hover:tw-bg-secondary-600/10;
       }
-    }
-    &.chip-contrast {
-      @apply tw-border-contrast;
-      & > .chip-label {
+      &.btn-contrast {
         @apply tw-text-contrast;
       }
-      & > svg {
-        @apply tw-stroke-contrast;
+      &.btn-neutral {
+        @apply tw-text-neutral hover:tw-bg-neutral-800/10;
+      }
+      &.btn-danger {
+        @apply tw-text-danger hover:tw-bg-danger-800/10;
+      }
+      &.btn-warning {
+        @apply tw-text-warning hover:tw-bg-warning-600/10;
+      }
+      &.btn-success {
+        @apply tw-text-success hover:tw-bg-success-800/10;
+      }
+      &.btn-light {
+        @apply tw-text-white hover:tw-bg-neutral-100;
       }
     }
-    &.chip-neutral {
-      @apply tw-border-neutral hover:tw-bg-neutral-800/10;
-      & > .chip-label {
+
+    &.btn-border, &.btn-ghost {
+      &.btn-primary .btn-label {
+        @apply  tw-text-primary;
+      }
+      &.btn-secondary .btn-label {
+        @apply tw-text-secondary;
+      }
+      &.btn-contrast .btn-label {
+        @apply tw-text-contrast;
+      }
+      &.btn-neutral .btn-label {
         @apply tw-text-neutral;
       }
-      & > svg {
-        @apply tw-stroke-neutral;
-      }
-    }
-    &.chip-danger {
-      @apply tw-border-danger hover:tw-bg-danger-800/10;
-      & > .chip-label {
+      &.btn-danger .btn-label {
         @apply tw-text-danger;
       }
-      & > svg {
-        @apply tw-stroke-danger;
-      }
-    }
-    &.chip-warning {
-      @apply tw-border-warning hover:tw-bg-warning-600/10;
-      & > .chip-label {
+      &.btn-warning .btn-label {
         @apply tw-text-warning;
       }
-      & > svg {
-        @apply tw-stroke-warning;
-      }
-    }
-    &.chip-success {
-      @apply tw-border-success hover:tw-bg-success-800/10;
-      & > .chip-label {
+      &.btn-success .btn-label {
         @apply tw-text-success;
       }
-      & > svg {
-        @apply tw-stroke-success;
-      }
-    }
-    &.chip-light {
-      @apply tw-border-neutral-100 hover:tw-bg-neutral-200/10;
-      & > .chip-label {
+      &.btn-light .btn-label {
         @apply tw-text-neutral-100;
       }
-      & > svg {
-        @apply tw-stroke-neutral-100;
+    }
+
+    &.btn-lg {
+      @apply tw-text-lg tw-p-3;
+      @apply tw-text-lg tw-p-3;
+    }
+    &.btn-sm {
+      @apply tw-text-sm tw-p-2;
+    }
+    &.btn-xs {
+      @apply tw-text-xs tw-p-1;
+    }
+
+    .btn-label {
+      @apply tw-self-center tw-text-white;
+    }
+
+    .btn-icon, .notification {
+      @apply tw-self-center;
+    }
+  }
+
+  .input-text {
+    @apply tw-text-contrast tw-border tw-border-neutral-400 tw-p-1.5 tw-rounded tw-text tw-font-bold;
+    &-lg {
+      @apply tw-p-3 tw-rounded-md tw-text-lg ;
+    }
+    &-sm {
+      @apply tw-p-1 tw-rounded tw-text-sm;
+    }
+  }
+
+  .input-checkbox {
+    @apply tw-appearance-none tw-relative tw-top-0 tw-right-0 tw-bottom-0 tw-left-0 tw-h-5 tw-w-5 tw-bg-white tw-border tw-border-solid tw-border-neutral-400 tw-p-0 tw-text-contrast tw-inline-block tw-outline-none tw-rounded-sm
+    before:tw-transition-all before:tw-absolute  before:tw-content-[''] before:tw-bg-transparent before:tw-h-0 before:tw-w-0 before:tw-top-[10px] before:tw-left-[10px]
+    after:tw-transition-all after:tw-absolute  before:tw-content-[''] before:tw-bg-transparent before:tw-h-0 before:tw-w-0 before:tw-top-[10px] before:tw-left-[10px]
+
+    checked:before:tw-rounded-sm checked:before:tw-top-[-1px] checked:before:tw-left-[-1px] checked:tw-border-contrast checked:before:tw-bg-contrast checked:before:tw-h-5 checked:before:tw-w-5 checked:before:tw-content-[''] checked:before:tw-absolute
+
+    disabled:tw-opacity-35 disabled:tw-cursor-not-allowed;
+  }
+
+  .label-checkbox {
+    //@apply tw-ml-2 tw-text-sm tw-font tw-text-gray-900;
+    a {
+      //@apply tw-text-blue-600 hover:tw-underline;
+    }
+  }
+
+  .notification {
+    @apply tw-aspect-square tw-w-6 tw-h-6 tw-bg-contrast tw-rounded-full paragraph-bold tw-text-center tw-flex  tw-items-center;
+    & > .notification-value {
+      @apply tw-text-neutral-100 tw-block tw-self-center tw-w-full;
+    }
+    &-lg {
+      @apply tw-aspect-square tw-w-8 tw-h-8 paragraph-lg;
+    }
+    &-sm {
+      @apply tw-aspect-square tw-w-5 tw-h-5 paragraph-xs;
+      & > .notification-value {
+        @apply tw-pt-0;
+      }
+    }
+    &-xs {
+      @apply tw-aspect-square tw-w-4 tw-h-4 paragraph-xxs;
+      & > .notification-value {
+        @apply tw-pt-0;
+      }
+    }
+    &-xxs {
+      @apply tw-aspect-square tw-w-2 tw-h-2;
+    }
+    &-4px {
+      @apply tw-aspect-square tw-w-1 tw-h-1;
+    }
+    &-primary {
+      @apply tw-bg-primary;
+    }
+    &-secondary {
+      @apply tw-bg-secondary;
+    }
+    &-danger {
+      @apply tw-bg-danger;
+    }
+    &-success {
+      @apply tw-bg-success;
+    }
+    &-warning {
+      @apply tw-bg-warning;
+    }
+    &-light {
+      @apply tw-bg-white ;
+      & > .notification-value {
+        @apply tw-text-contrast;
+      }
+    }
+
+    &-border {
+      @apply tw-border tw-border-solid tw-bg-transparent;
+      & > .notification-value {
+        @apply tw-text-contrast;
+      }
+      &.notification-primary {
+        @apply  tw-border-primary;
+        & > .notification-value {
+          @apply tw-text-primary;
+        }
+      }
+      &.notification-secondary {
+        @apply tw-border-secondary hover:tw-bg-secondary-600/10;
+        & > .notification-value {
+          @apply tw-text-secondary;
+        }
+      }
+      &.notification-contrast {
+        @apply tw-border-contrast;
+        & > .notification-value {
+          @apply tw-text-contrast;
+        }
+      }
+      &.notification-neutral {
+        @apply tw-border-neutral hover:tw-bg-neutral-800/10;
+        & > .notification-value {
+          @apply tw-text-neutral;
+        }
+      }
+      &.notification-danger {
+        @apply tw-border-danger hover:tw-bg-danger-800/10;
+        & > .notification-value {
+          @apply tw-text-danger;
+        }
+      }
+      &.notification-warning {
+        @apply tw-border-warning hover:tw-bg-warning-600/10;
+        & > .notification-value {
+          @apply tw-text-warning;
+        }
+      }
+      &.notification-success {
+        @apply tw-border-success hover:tw-bg-success-800/10;
+        & > .notification-value {
+          @apply tw-text-success;
+        }
+      }
+      &.notification-light {
+        @apply tw-border-white hover:tw-bg-neutral-200/10;
+        & > .notification-value {
+          @apply tw-text-white;
+        }
       }
     }
   }
 
-  & > .chip-label {
-    @apply tw-self-center tw-text-white;
-  }
-  & > .notification {
-    @apply tw-self-center tw-mr-2;
-  }
-  & > svg {
-      @apply tw-self-center tw-mr-2 tw-w-4 tw-h-4 tw-stroke-white;
-  }
-}
-
-.avatar {
-  @apply tw-w-10 tw-aspect-square tw-bg-cover tw-bg-center tw-rounded-md tw-block tw-bg-neutral-300 tw-relative;
-  & > .avatar-name {
-    @apply tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-m-auto tw-absolute  paragraph-bold tw-text-center tw-h-6;
-  }
-  & > .notification {
-    @apply tw-absolute tw-bottom-[-8px] tw-right-[-8px] tw-text-white tw-border tw-border-4 tw-border-white;
-  }
-  &-lg {
-    @apply tw-w-12;
-    & > .avatar-name {
-      @apply paragraph-lg paragraph-bold tw-h-6;
+  .chip {
+    @apply tw-py-1 tw-px-2 tw-rounded tw-bg-contrast tw-text-white tw-flex tw-items-center;
+    &-lg {
+      @apply tw-text-lg;
     }
-  }
-  &-sm {
-    @apply tw-w-8 tw-rounded;
-    & > .avatar-name {
-      @apply paragraph-sm paragraph-bold tw-h-5;
+    &-sm {
+      @apply tw-text-sm tw-p-0 tw-px-2 tw-rounded-sm;
+    }
+    &-xs {
+      @apply tw-text-xs tw-p-0 tw-px-1 tw-rounded-sm;
+    }
+
+    &.chip-primary {
+      @apply tw-bg-primary;
+    }
+    &.chip-secondary {
+      @apply tw-bg-secondary hover:tw-bg-secondary-600;
+    }
+    &.chip-contrast {
+      @apply tw-bg-contrast ;
+    }
+    &.chip-neutral {
+      @apply tw-bg-neutral hover:tw-bg-neutral-800;
+    }
+    &.chip-danger {
+      @apply tw-bg-danger hover:tw-bg-danger-800;
+    }
+    &.chip-warning {
+      @apply tw-bg-warning hover:tw-bg-warning-600;
+    }
+    &.chip-success {
+      @apply tw-bg-success hover:tw-bg-success-800;
+    }
+    &.chip-light {
+      @apply tw-bg-neutral-100 tw-text-contrast hover:tw-bg-neutral-200;
+    }
+
+    &.chip-border {
+      @apply tw-border tw-border-solid tw-bg-transparent;
+      &.chip-primary {
+        @apply  tw-border-primary;
+        & > .chip-label {
+          @apply tw-text-primary;
+        }
+        & > svg {
+          @apply tw-stroke-primary;
+        }
+      }
+      &.chip-secondary {
+        @apply tw-border-secondary hover:tw-bg-secondary-600/10;
+        & > .chip-label {
+          @apply tw-text-secondary;
+        }
+        & > svg {
+          @apply tw-stroke-secondary;
+        }
+      }
+      &.chip-contrast {
+        @apply tw-border-contrast;
+        & > .chip-label {
+          @apply tw-text-contrast;
+        }
+        & > svg {
+          @apply tw-stroke-contrast;
+        }
+      }
+      &.chip-neutral {
+        @apply tw-border-neutral hover:tw-bg-neutral-800/10;
+        & > .chip-label {
+          @apply tw-text-neutral;
+        }
+        & > svg {
+          @apply tw-stroke-neutral;
+        }
+      }
+      &.chip-danger {
+        @apply tw-border-danger hover:tw-bg-danger-800/10;
+        & > .chip-label {
+          @apply tw-text-danger;
+        }
+        & > svg {
+          @apply tw-stroke-danger;
+        }
+      }
+      &.chip-warning {
+        @apply tw-border-warning hover:tw-bg-warning-600/10;
+        & > .chip-label {
+          @apply tw-text-warning;
+        }
+        & > svg {
+          @apply tw-stroke-warning;
+        }
+      }
+      &.chip-success {
+        @apply tw-border-success hover:tw-bg-success-800/10;
+        & > .chip-label {
+          @apply tw-text-success;
+        }
+        & > svg {
+          @apply tw-stroke-success;
+        }
+      }
+      &.chip-light {
+        @apply tw-border-neutral-100 hover:tw-bg-neutral-200/10;
+        & > .chip-label {
+          @apply tw-text-neutral-100;
+        }
+        & > svg {
+          @apply tw-stroke-neutral-100;
+        }
+      }
+    }
+
+    & > .chip-label {
+      @apply tw-self-center tw-text-white;
     }
     & > .notification {
-      @apply tw-bottom-[-6px] tw-right-[-6px]
+      @apply tw-self-center tw-mr-2;
+    }
+    & > svg {
+        @apply tw-self-center tw-mr-2 tw-w-4 tw-h-4 tw-stroke-white;
     }
   }
-  &-xs {
-    @apply tw-w-7 tw-rounded;
+
+  .avatar {
+    @apply tw-w-10 tw-aspect-square tw-bg-cover tw-bg-center tw-rounded-md tw-block tw-bg-neutral-300 tw-relative;
     & > .avatar-name {
-      @apply paragraph-xs paragraph-bold  tw-h-5;
+      @apply tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 tw-m-auto tw-absolute  paragraph-bold tw-text-center tw-h-6;
     }
     & > .notification {
-      @apply tw-bottom-[-6px] tw-right-[-6px]
+      @apply tw-absolute tw-bottom-[-8px] tw-right-[-8px] tw-text-white tw-border tw-border-4 tw-border-white;
+    }
+    &-lg {
+      @apply tw-w-12;
+      & > .avatar-name {
+        @apply paragraph-lg paragraph-bold tw-h-6;
+      }
+    }
+    &-sm {
+      @apply tw-w-8 tw-rounded;
+      & > .avatar-name {
+        @apply paragraph-sm paragraph-bold tw-h-5;
+      }
+      & > .notification {
+        @apply tw-bottom-[-6px] tw-right-[-6px]
+      }
+    }
+    &-xs {
+      @apply tw-w-7 tw-rounded;
+      & > .avatar-name {
+        @apply paragraph-xs paragraph-bold  tw-h-5;
+      }
+      & > .notification {
+        @apply tw-bottom-[-6px] tw-right-[-6px]
+      }
+    }
+    &-circle {
+      @apply tw-rounded-full;
     }
   }
-  &-circle {
-    @apply tw-rounded-full;
-  }
-}
 
-.avatars {
-  @apply tw-inline-block tw-ml-[20px];
-  .avatar-stack {
-    @apply tw-inline-block tw-ml-[-20px] tw-border tw-border-4 tw-border-solid tw-border-white;
-  }
-}
-
-.nav {
-  &-website {
-    @apply bg-blur tw-rounded-lg tw-px-7 tw-py-0 tw-flex tw-relative;
-    .nav-logo {
-      @apply tw-flex tw-grow tw-h-9 tw-self-center;
+  .avatars {
+    @apply tw-inline-block tw-ml-[20px];
+    .avatar-stack {
+      @apply tw-inline-block tw-ml-[-20px] tw-border tw-border-4 tw-border-solid tw-border-white;
     }
-    .nav-menu {
-      @apply tw-flex tw-m-0;
-      .nav-menu-item {
-        @apply tw-self-center tw-list-none;
-        &-dd {
-          //@apply after:tw-content-[''] after:tw-h-3 after:tw-w-3 after:tw-bg-white after:tw-absolute after:tw-top-0 after:tw-bottom-0 after:tw-m-auto ;
+  }
 
-          //@apply tw-flex after:tw-content-[''] after:tw-h-3 after:tw-w-3 after:tw-bg-white after:tw-relative after:tw-block  after:tw-m-auto ;
-          &:hover {
-            .nav-menu-item-link {
-              @apply tw-relative after:tw-content-[''] after:tw-bottom-[-16px] after:tw-left-0 after:tw-right-0 after:tw-m-auto after:tw-absolute after:tw-w-0 after:tw-h-0
-              after:tw-border-solid after:tw-border-b-contrast after:tw-border-b-8 after:tw-border-x-transparent after:tw-border-x-8 after:tw-border-t-0 after:tw-opacity-80;
-              .icon {
-                @apply tw-rotate-180;
+  .nav {
+    &-website {
+      @apply bg-blur tw-rounded-lg tw-px-7 tw-py-0 tw-flex tw-relative;
+      .nav-logo {
+        @apply tw-flex tw-grow tw-h-9 tw-self-center;
+      }
+      .nav-menu {
+        @apply tw-flex tw-m-0;
+        .nav-menu-item {
+          @apply tw-self-center tw-list-none;
+          &-dd {
+            //@apply after:tw-content-[''] after:tw-h-3 after:tw-w-3 after:tw-bg-white after:tw-absolute after:tw-top-0 after:tw-bottom-0 after:tw-m-auto ;
+
+            //@apply tw-flex after:tw-content-[''] after:tw-h-3 after:tw-w-3 after:tw-bg-white after:tw-relative after:tw-block  after:tw-m-auto ;
+            &:hover {
+              .nav-menu-item-link {
+                @apply tw-relative after:tw-content-[''] after:tw-bottom-[-16px] after:tw-left-0 after:tw-right-0 after:tw-m-auto after:tw-absolute after:tw-w-0 after:tw-h-0
+                after:tw-border-solid after:tw-border-b-contrast after:tw-border-b-8 after:tw-border-x-transparent after:tw-border-x-8 after:tw-border-t-0 after:tw-opacity-80;
+                .icon {
+                  @apply tw-rotate-180;
+                }
               }
-            }
-            .nav-submenu {
-              @apply tw-opacity-100 tw-flex tw-absolute tw-w-full tw-left-0 tw-p-0 tw-visible tw-pt-4 tw-backdrop-blur;
-              .nav-submenu-wrapper {
-                @apply bg-blur tw-rounded-lg tw-w-full tw-p-4 tw-flex tw-text-white;
-                .nav-submenu-item {
-                  @apply tw-p-4 tw-list-none tw-m-0 tw-text-white tw-no-underline tw-block tw-p-4 tw-transition-all tw-rounded hover:tw-bg-contrast/50;
+              .nav-submenu {
+                @apply tw-opacity-100 tw-flex tw-absolute tw-w-full tw-left-0 tw-p-0 tw-visible tw-pt-4 tw-backdrop-blur;
+                .nav-submenu-wrapper {
+                  @apply bg-blur tw-rounded-lg tw-w-full tw-p-4 tw-flex tw-text-white;
+                  .nav-submenu-item {
+                    @apply tw-p-4 tw-list-none tw-m-0 tw-text-white tw-no-underline tw-block tw-p-4 tw-transition-all tw-rounded hover:tw-bg-contrast/50;
+                  }
                 }
               }
             }
+            .nav-submenu {
+              @apply tw-opacity-0 tw-absolute tw-invisible tw-transition-all;
+            }
           }
-          .nav-submenu {
-            @apply tw-opacity-0 tw-absolute tw-invisible tw-transition-all;
+          &-burger {
+            @apply 2xl:tw-hidden xl:tw-hidden sm:tw-p-6;
+            .burger {
+              @apply tw-relative tw-h-4 tw-w-6;
+              &-line {
+                @apply
+                  tw-h-[1px] tw-bg-white tw-absolute tw-right-0
+                  first:tw-w-4 first:tw-top-0
+                  even:tw-w-5 even:tw-top-[50%]
+                  last:tw-w-3 last:tw-bottom-0;
+              }
+            }
           }
-        }
-        .nav-menu-item-link {
-          @apply tw-block tw-text-white tw-no-underline hover:tw-bg-white/10 sm:tw-p-4 lg:tw-p-6 xl:tw-p-8;
-        }
-        &-btn {
-          @apply tw-px-2 tw-p-5 tw-list-none last:tw-pr-0;
+          &-link {
+            @apply tw-block tw-text-white tw-no-underline hover:tw-bg-white/10 sm:tw-p-1 lg:tw-p-4 xl:tw-p-6 2xl:tw-p-8;
+          }
+          &-btn {
+            @apply tw-px-2 tw-p-5 tw-list-none last:tw-pr-0;
+          }
         }
       }
     }
   }
-}
 
-.pagination {
-  @apply tw-m-0 tw-p-0;
-  .pagination-item {
-    @apply tw-w-3 tw-h-1 tw-mr-1 tw-inline-block tw-bg-neutral-500 tw-rounded-full tw-list-none;
-    &.active {
-      @apply tw-bg-secondary;
-    }
-    &.passed {
-      @apply tw-bg-secondary/25;
-    }
-  }
-}
-
-.footer {
-  @apply tw-bg-neutral-200 tw-pt-8;
-  &-menu {
+  .pagination {
     @apply tw-m-0 tw-p-0;
-    .footer-menu-element {
-      @apply tw-list-none tw-m-0 tw-p-0;
-      .footer-menu-link {
-        @apply tw-no-underline tw-text-contrast tw-p-4 tw-block paragraph;
+    .pagination-item {
+      @apply tw-w-3 tw-h-1 tw-mr-1 tw-inline-block tw-bg-neutral-500 tw-rounded-full tw-list-none;
+      &.active {
+        @apply tw-bg-secondary;
       }
-      &.footer-menu-head {
-        @apply tw-text-neutral paragraph-xs paragraph-bold tw-p-4 tw-relative after:tw-content-[''] after:tw-absolute after:tw-left-[-34px] after:tw-top-0 after:tw-bottom-0 after:tw-w-[5px] after:tw-h-full after:tw-bg-secondary after:tw-z-10 after:tw-rounded-full;
+      &.passed {
+        @apply tw-bg-secondary/25;
       }
     }
   }
-}
 
-.cursor {
-  @apply tw-cursor-pointer tw-fixed tw-z-50 tw-left-0 tw-top-0 tw-pointer-events-none tw-will-change-transform tw-mix-blend-difference;
-  @media (hover: hover) and (pointer: fine) {
-    .cursor__circle {
-      @apply tw-w-8 tw-h-8 tw-mt-[-50%] tw-ml-[-50%] tw-rounded-full tw-border tw-border-solid tw-border-neutral-300/65;
-      transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    &.arrow {
-      &:after{
-        content: '';
-        position: absolute;
-        left: -50%;
-        top: -50%;
-        width: 100%;
-        height: 100%;
-        background-image: url('https://svgshare.com/i/MzQ.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-
-      .cursor__circle{
-        @apply tw-w-16 tw-h-16 tw-bg-secondary tw-border-secondary;
-      }
-    }
-
-    &.subtle {
-      .cursor__circle{
-        @apply tw-opacity-20;
-      }
-    }
-
-    &.overlay {
-      .cursor__circle{
-        @apply tw-w-6 tw-h-6 tw-bg-contrast/10 tw-border-transparent;
+  .footer {
+    @apply tw-bg-neutral-200 tw-pt-8;
+    &-menu {
+      @apply tw-m-0 tw-p-0;
+      .footer-menu-element {
+        @apply tw-list-none tw-m-0 tw-p-0;
+        .footer-menu-link {
+          @apply tw-no-underline tw-text-contrast tw-p-4 tw-block paragraph;
+        }
+        &.footer-menu-head {
+          @apply tw-text-neutral paragraph-xs paragraph-bold tw-p-4 tw-relative after:tw-content-[''] after:tw-absolute after:tw-left-[-34px] after:tw-top-0 after:tw-bottom-0 after:tw-w-[5px] after:tw-h-full after:tw-bg-secondary after:tw-z-10 after:tw-rounded-full;
+        }
       }
     }
   }
