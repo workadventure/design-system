@@ -204,26 +204,50 @@
   .btn.btn-primary {
     @apply tw-bg-primary;
   }
+  .btn.btn-primary .btn-label {
+    @apply tw-text-white;
+  }
   .btn.btn-secondary {
     @apply tw-bg-secondary hover:tw-bg-secondary-600;
+  }
+  .btn.btn-secondary .btn-label {
+    @apply tw-text-white;
   }
   .btn.btn-contrast {
     @apply tw-bg-contrast;
   }
+  .btn.btn-contrast .btn-label {
+    @apply tw-text-white;
+  }
   .btn.btn-neutral {
     @apply tw-bg-neutral hover:tw-bg-neutral-800;
+  }
+  .btn.btn-neutral .btn-label {
+    @apply tw-text-white;
   }
   .btn.btn-danger {
     @apply tw-bg-danger hover:tw-bg-danger-800;
   }
+  .btn.btn-danger .btn-label {
+    @apply tw-text-white;
+  }
   .btn.btn-warning {
     @apply tw-bg-warning hover:tw-bg-warning-600;
+  }
+  .btn.btn-warning .btn-label {
+    @apply tw-text-white;
   }
   .btn.btn-success {
     @apply tw-bg-success hover:tw-bg-success-800;
   }
+  .btn.btn-success .btn-label {
+    @apply tw-text-white;
+  }
   .btn.btn-light {
     @apply tw-bg-white tw-text-contrast hover:tw-bg-neutral-100;
+  }
+  .btn.btn-light .btn-label {
+    @apply tw-text-contrast;
   }
   .btn.btn-border {
     @apply tw-border tw-border-solid tw-bg-transparent tw-p-[calc(0.75rem-1px)];
@@ -681,6 +705,18 @@
   }
   .possibility .possibility-content .possibility-text {
     @apply paragraph-lg tw-m-auto;
+  }
+  .card {
+    @apply tw-bg-white tw-border tw-border-solid tw-border-neutral-400 tw-rounded-lg tw-p-2;
+  }
+  .card .card-img {
+    @apply tw-rounded tw-h-64 tw-bg-cover tw-w-full;
+  }
+  .card .card-content {
+    @apply tw-text-center tw-pt-4 tw-pb-12 tw-px-8;
+  }
+  .card .card-actions {
+    @apply tw-flex;
   }
   .footer {
     @apply tw-bg-neutral-200 tw-pt-8;

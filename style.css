@@ -354,6 +354,11 @@ h6, .h6 {
   background-color: rgb(134 41 252 / var(--tw-bg-opacity))
 }
 
+.btn.btn-primary .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
 .btn.btn-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(65 86 246 / var(--tw-bg-opacity))
@@ -364,9 +369,19 @@ h6, .h6 {
   background-color: rgb(95 113 245 / var(--tw-bg-opacity))
 }
 
+.btn.btn-secondary .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
 .btn.btn-contrast {
   --tw-bg-opacity: 1;
   background-color: rgb(27 42 65 / var(--tw-bg-opacity))
+}
+
+.btn.btn-contrast .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .btn.btn-neutral {
@@ -379,6 +394,11 @@ h6, .h6 {
   background-color: rgb(107 113 128 / var(--tw-bg-opacity))
 }
 
+.btn.btn-neutral .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
 .btn.btn-danger {
   --tw-bg-opacity: 1;
   background-color: rgb(233 109 81 / var(--tw-bg-opacity))
@@ -387,6 +407,11 @@ h6, .h6 {
 .btn.btn-danger:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 90 90 / var(--tw-bg-opacity))
+}
+
+.btn.btn-danger .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .btn.btn-warning {
@@ -399,6 +424,11 @@ h6, .h6 {
   background-color: rgb(234 206 105 / var(--tw-bg-opacity))
 }
 
+.btn.btn-warning .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
 .btn.btn-success {
   --tw-bg-opacity: 1;
   background-color: rgb(102 233 121 / var(--tw-bg-opacity))
@@ -407,6 +437,11 @@ h6, .h6 {
 .btn.btn-success:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(83 220 103 / var(--tw-bg-opacity))
+}
+
+.btn.btn-success .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .btn.btn-light {
@@ -419,6 +454,11 @@ h6, .h6 {
 .btn.btn-light:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(250 251 252 / var(--tw-bg-opacity))
+}
+
+.btn.btn-light .btn-label {
+  --tw-text-opacity: 1;
+  color: rgb(27 42 65 / var(--tw-text-opacity))
 }
 
 .btn.btn-border {
@@ -1640,6 +1680,36 @@ h6, .h6 {
   margin: auto
 }
 
+.card {
+  border-radius: 16px;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(214 216 224 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 0.5rem
+}
+
+.card .card-img {
+  height: 16rem;
+  width: 100%;
+  border-radius: 8px;
+  background-size: cover
+}
+
+.card .card-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  text-align: center
+}
+
+.card .card-actions {
+  display: flex
+}
+
 .footer {
   --tw-bg-opacity: 1;
   background-color: rgb(239 240 242 / var(--tw-bg-opacity));
@@ -1767,6 +1837,11 @@ h6, .h6 {
   margin-right: auto
 }
 
+.tw-my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px
+}
+
 .tw-my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem
@@ -1800,12 +1875,20 @@ h6, .h6 {
   margin-right: 1rem
 }
 
+.tw-mt-10 {
+  margin-top: 2.5rem
+}
+
 .tw-mt-16 {
   margin-top: 4rem
 }
 
 .tw-mt-2 {
   margin-top: 0.5rem
+}
+
+.tw-mt-20 {
+  margin-top: 5rem
 }
 
 .tw-mt-32 {
@@ -1816,20 +1899,16 @@ h6, .h6 {
   margin-top: 1rem
 }
 
-.tw-mt-\[-4rem\] {
-  margin-top: -4rem
-}
-
 .tw-mt-8 {
   margin-top: 2rem
 }
 
-.tw-mt-24 {
-  margin-top: 6rem
+.tw-mt-\[-4rem\] {
+  margin-top: -4rem
 }
 
-.tw-mt-20 {
-  margin-top: 5rem
+.tw-block {
+  display: block
 }
 
 .tw-inline-block {
@@ -2631,10 +2710,6 @@ h6, .h6 {
   padding-bottom: 2rem
 }
 
-.tw-pb-16 {
-  padding-bottom: 4rem
-}
-
 .tw-pb-4 {
   padding-bottom: 1rem
 }
@@ -2645,6 +2720,10 @@ h6, .h6 {
 
 .tw-pl-0 {
   padding-left: 0px
+}
+
+.tw-pl-3 {
+  padding-left: 0.75rem
 }
 
 .tw-pl-4 {
@@ -2661,6 +2740,10 @@ h6, .h6 {
 
 .tw-pr-0 {
   padding-right: 0px
+}
+
+.tw-pr-3 {
+  padding-right: 0.75rem
 }
 
 .tw-pr-32 {
@@ -3236,16 +3319,6 @@ h6, .h6 {
   top: 0px
 }
 
-.after\:tw-top-2::after {
-  content: var(--tw-content);
-  top: 0.5rem
-}
-
-.after\:tw-top-8::after {
-  content: var(--tw-content);
-  top: 2rem
-}
-
 .after\:tw-top-6::after {
   content: var(--tw-content);
   top: 1.5rem
@@ -3266,34 +3339,14 @@ h6, .h6 {
   height: 50%
 }
 
-.after\:tw-h-full::after {
-  content: var(--tw-content);
-  height: 100%
-}
-
-.after\:tw-h-\[calc\(100\%\)\]::after {
-  content: var(--tw-content);
-  height: calc(100%)
-}
-
-.after\:tw-h-\[calc\(100\%-\)\]::after {
-  content: var(--tw-content);
-  height: calc(100% - )
-}
-
-.after\:tw-h-\[calc\(100\%-1\.5rem\)\]::after {
-  content: var(--tw-content);
-  height: calc(100% - 1.5rem)
-}
-
-.after\:tw-h-\[calc\(100\%-4rem\)\]::after {
-  content: var(--tw-content);
-  height: calc(100% - 4rem)
-}
-
 .after\:tw-h-\[calc\(100\%-3rem\)\]::after {
   content: var(--tw-content);
   height: calc(100% - 3rem)
+}
+
+.after\:tw-h-full::after {
+  content: var(--tw-content);
+  height: 100%
 }
 
 .after\:tw-w-\[1px\]::after {
@@ -3357,6 +3410,22 @@ h6, .h6 {
 .after\:tw-content-\[\'\'\]::after {
   --tw-content: '';
   content: var(--tw-content)
+}
+
+.first\:tw-pl-0:first-child {
+  padding-left: 0px
+}
+
+.first\:tw-pr-6:first-child {
+  padding-right: 1.5rem
+}
+
+.last\:tw-pl-6:last-child {
+  padding-left: 1.5rem
+}
+
+.last\:tw-pr-0:last-child {
+  padding-right: 0px
 }
 
 .after\:last\:tw-opacity-0:last-child::after {
