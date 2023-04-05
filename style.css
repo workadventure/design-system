@@ -60,7 +60,9 @@ h1, h2, h3, h4, h5, h6,
 h1 .underline, h2 .underline, h3 .underline, h4 .underline, h5 .underline, h6 .underline,
   .h1 .underline, .h2 .underline, .h3 .underline, .h4 .underline, .h5 .underline, .h6 .underline {
   position: relative;
-  z-index: 10
+  z-index: 10;
+  --tw-text-opacity: 1;
+  color: rgb(65 86 246 / var(--tw-text-opacity))
 }
 
 h1 .underline::after, h2 .underline::after, h3 .underline::after, h4 .underline::after, h5 .underline::after, h6 .underline::after,
@@ -114,7 +116,8 @@ h1 .highlight span, h2 .highlight span, h3 .highlight span, h4 .highlight span, 
 h1 .stripe-blue, h2 .stripe-blue, h3 .stripe-blue, h4 .stripe-blue, h5 .stripe-blue, h6 .stripe-blue,
   .h1 .stripe-blue, .h2 .stripe-blue, .h3 .stripe-blue, .h4 .stripe-blue, .h5 .stripe-blue, .h6 .stripe-blue {
   position: relative;
-  z-index: 10
+  z-index: 20;
+  line-height: 4rem
 }
 
 h1 .stripe-blue::after, h2 .stripe-blue::after, h3 .stripe-blue::after, h4 .stripe-blue::after, h5 .stripe-blue::after, h6 .stripe-blue::after,
@@ -122,10 +125,10 @@ h1 .stripe-blue::after, h2 .stripe-blue::after, h3 .stripe-blue::after, h4 .stri
   position: absolute;
   top: 0px;
   left: -44px;
-  z-index: 0;
+  z-index: 10;
   margin: auto;
   display: block;
-  height: 110%;
+  height: 100%;
   width: 150%;
   background-image: url("src/img/stripe-blue.svg");
   background-size: 100% auto;
@@ -138,7 +141,7 @@ h1 .stripe-blue::after, h2 .stripe-blue::after, h3 .stripe-blue::after, h4 .stri
 h1 .stripe-blue-text, h2 .stripe-blue-text, h3 .stripe-blue-text, h4 .stripe-blue-text, h5 .stripe-blue-text, h6 .stripe-blue-text,
   .h1 .stripe-blue-text, .h2 .stripe-blue-text, .h3 .stripe-blue-text, .h4 .stripe-blue-text, .h5 .stripe-blue-text, .h6 .stripe-blue-text {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity))
 }
@@ -146,20 +149,21 @@ h1 .stripe-blue-text, h2 .stripe-blue-text, h3 .stripe-blue-text, h4 .stripe-blu
 h1 .stripe-white, h2 .stripe-white, h3 .stripe-white, h4 .stripe-white, h5 .stripe-white, h6 .stripe-white,
   .h1 .stripe-white, .h2 .stripe-white, .h3 .stripe-white, .h4 .stripe-white, .h5 .stripe-white, .h6 .stripe-white {
   position: relative;
-  z-index: 10
+  z-index: 10;
+  margin-top: 0.5rem
 }
 
 h1 .stripe-white::after, h2 .stripe-white::after, h3 .stripe-white::after, h4 .stripe-white::after, h5 .stripe-white::after, h6 .stripe-white::after,
   .h1 .stripe-white::after, .h2 .stripe-white::after, .h3 .stripe-white::after, .h4 .stripe-white::after, .h5 .stripe-white::after, .h6 .stripe-white::after {
   position: absolute;
   top: 0px;
-  left: -44px;
+  left: -32px;
   z-index: 0;
   margin: auto;
   display: block;
-  height: 110%;
-  width: 150%;
-  background-image: url("src/img/stripe-blue.svg");
+  height: 100%;
+  width: 120%;
+  background-image: url("src/img/stripe-white.svg");
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -170,7 +174,7 @@ h1 .stripe-white::after, h2 .stripe-white::after, h3 .stripe-white::after, h4 .s
 h1 .stripe-white-text, h2 .stripe-white-text, h3 .stripe-white-text, h4 .stripe-white-text, h5 .stripe-white-text, h6 .stripe-white-text,
   .h1 .stripe-white-text, .h2 .stripe-white-text, .h3 .stripe-white-text, .h4 .stripe-white-text, .h5 .stripe-white-text, .h6 .stripe-white-text {
   position: relative;
-  z-index: 10;
+  z-index: 30;
   --tw-text-opacity: 1;
   color: rgb(27 42 65 / var(--tw-text-opacity))
 }
@@ -200,6 +204,10 @@ h5, .h5 {
 
 h6, .h6 {
   font-size: 24px
+}
+
+.light {
+  font-weight: 300
 }
 
 .subtitle {
@@ -1719,6 +1727,10 @@ h6, .h6 {
   margin-top: 1rem
 }
 
+.tw-mt-\[-4rem\] {
+  margin-top: -4rem
+}
+
 .tw-inline-block {
   display: inline-block
 }
@@ -2517,6 +2529,10 @@ h6, .h6 {
   padding-bottom: 2rem
 }
 
+.tw-pb-4 {
+  padding-bottom: 1rem
+}
+
 .tw-pb-8 {
   padding-bottom: 2rem
 }
@@ -2531,6 +2547,10 @@ h6, .h6 {
 
 .tw-pl-6 {
   padding-left: 1.5rem
+}
+
+.tw-pl-8 {
+  padding-left: 2rem
 }
 
 .tw-pr-0 {
@@ -2853,7 +2873,9 @@ h6, .h6 {
 
 .block-feature .block-feature-text_title .underline {
   position: relative;
-  z-index: 10
+  z-index: 10;
+  --tw-text-opacity: 1;
+  color: rgb(65 86 246 / var(--tw-text-opacity))
 }
 
 .block-feature .block-feature-text_title .underline::after {
@@ -2902,17 +2924,18 @@ h6, .h6 {
 
 .block-feature .block-feature-text_title .stripe-blue {
   position: relative;
-  z-index: 10
+  z-index: 20;
+  line-height: 4rem
 }
 
 .block-feature .block-feature-text_title .stripe-blue::after {
   position: absolute;
   top: 0px;
   left: -44px;
-  z-index: 0;
+  z-index: 10;
   margin: auto;
   display: block;
-  height: 110%;
+  height: 100%;
   width: 150%;
   background-image: url("src/img/stripe-blue.svg");
   background-size: 100% auto;
@@ -2924,26 +2947,27 @@ h6, .h6 {
 
 .block-feature .block-feature-text_title .stripe-blue-text {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .block-feature .block-feature-text_title .stripe-white {
   position: relative;
-  z-index: 10
+  z-index: 10;
+  margin-top: 0.5rem
 }
 
 .block-feature .block-feature-text_title .stripe-white::after {
   position: absolute;
   top: 0px;
-  left: -44px;
+  left: -32px;
   z-index: 0;
   margin: auto;
   display: block;
-  height: 110%;
-  width: 150%;
-  background-image: url("src/img/stripe-blue.svg");
+  height: 100%;
+  width: 120%;
+  background-image: url("src/img/stripe-white.svg");
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -2953,7 +2977,7 @@ h6, .h6 {
 
 .block-feature .block-feature-text_title .stripe-white-text {
   position: relative;
-  z-index: 10;
+  z-index: 30;
   --tw-text-opacity: 1;
   color: rgb(27 42 65 / var(--tw-text-opacity))
 }

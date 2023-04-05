@@ -55,7 +55,7 @@
   }
   h1 .underline, h2 .underline, h3 .underline, h4 .underline, h5 .underline, h6 .underline,
   .h1 .underline, .h2 .underline, .h3 .underline, .h4 .underline, .h5 .underline, .h6 .underline {
-    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-bottom-1 after:tw-left-0 after:tw-m-auto after:tw-w-full after:tw-h-1 after:tw-block after:tw-bg-[url("src/img/underline.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+    @apply tw-relative tw-text-secondary tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-bottom-1 after:tw-left-0 after:tw-m-auto after:tw-w-full after:tw-h-1 after:tw-block after:tw-bg-[url("src/img/underline.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
   }
   h1 .highlight, h2 .highlight, h3 .highlight, h4 .highlight, h5 .highlight, h6 .highlight,
   .h1 .highlight, .h2 .highlight, .h3 .highlight, .h4 .highlight, .h5 .highlight, .h6 .highlight {
@@ -67,19 +67,19 @@
   }
   h1 .stripe-blue, h2 .stripe-blue, h3 .stripe-blue, h4 .stripe-blue, h5 .stripe-blue, h6 .stripe-blue,
   .h1 .stripe-blue, .h2 .stripe-blue, .h3 .stripe-blue, .h4 .stripe-blue, .h5 .stripe-blue, .h6 .stripe-blue {
-    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[110%] after:tw-block after:tw-bg-[url("src/img/stripe-blue.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+    @apply tw-relative tw-z-20 tw-leading-[4rem] after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[100%] after:tw-block after:tw-bg-[url("src/img/stripe-blue.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-10;
   }
   h1 .stripe-blue-text, h2 .stripe-blue-text, h3 .stripe-blue-text, h4 .stripe-blue-text, h5 .stripe-blue-text, h6 .stripe-blue-text,
   .h1 .stripe-blue-text, .h2 .stripe-blue-text, .h3 .stripe-blue-text, .h4 .stripe-blue-text, .h5 .stripe-blue-text, .h6 .stripe-blue-text {
-    @apply tw-relative tw-z-10 tw-text-white;
+    @apply tw-relative tw-z-20 tw-text-white;
   }
   h1 .stripe-white, h2 .stripe-white, h3 .stripe-white, h4 .stripe-white, h5 .stripe-white, h6 .stripe-white,
   .h1 .stripe-white, .h2 .stripe-white, .h3 .stripe-white, .h4 .stripe-white, .h5 .stripe-white, .h6 .stripe-white {
-    @apply tw-relative tw-z-10 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[110%] after:tw-block after:tw-bg-[url("src/img/stripe-blue.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+    @apply tw-relative tw-z-10 tw-mt-2 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-32px] after:tw-m-auto after:tw-w-[120%] after:tw-h-[100%] after:tw-block after:tw-bg-[url("src/img/stripe-white.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
   }
   h1 .stripe-white-text, h2 .stripe-white-text, h3 .stripe-white-text, h4 .stripe-white-text, h5 .stripe-white-text, h6 .stripe-white-text,
   .h1 .stripe-white-text, .h2 .stripe-white-text, .h3 .stripe-white-text, .h4 .stripe-white-text, .h5 .stripe-white-text, .h6 .stripe-white-text {
-    @apply tw-relative tw-z-10 tw-text-contrast;
+    @apply tw-relative tw-z-30 tw-text-contrast;
   }
   h1, .h1 {
     @apply tw-text-[44px] tw-leading-10;
@@ -98,6 +98,15 @@
   }
   h6, .h6 {
     @apply tw-text-[24px];
+  }
+  .light {
+    @apply tw-font-light;
+  }
+  .bold {
+    @apply tw-font-bold;
+  }
+  .regular {
+    @apply tw-font-regular;
   }
   .subtitle {
     @apply tw-text-neutral tw-text tw-text-center tw-m-0;

@@ -61,7 +61,7 @@
   .h1, .h2, .h3, .h4, .h5, .h6 {
     @apply tw-font-title tw-m-0 tw-uppercase;
     .underline {
-      @apply tw-relative tw-z-10 after:tw-content-[''] after:tw-absolute after:tw-bottom-1 after:tw-left-0 after:tw-m-auto after:tw-w-full after:tw-h-1 after:tw-block after:tw-bg-[url('src/img/underline.svg')] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+      @apply tw-relative tw-text-secondary tw-z-10 after:tw-content-[''] after:tw-absolute after:tw-bottom-1 after:tw-left-0 after:tw-m-auto after:tw-w-full after:tw-h-1 after:tw-block after:tw-bg-[url('src/img/underline.svg')] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
     }
     .highlight {
       @apply tw-relative tw-z-10 after:tw-content-[''] after:tw-absolute after:tw-top-0 after:tw-left-[-5px] after:tw-m-auto after:tw-w-[110%] after:tw-h-[110%] after:tw-block after:tw-bg-[url('src/img/hightlight.svg')] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
@@ -70,15 +70,15 @@
       }
     }
     .stripe-blue {
-      @apply tw-relative tw-z-10 after:tw-content-[''] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[110%] after:tw-block after:tw-bg-[url('src/img/stripe-blue.svg')] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+      @apply tw-relative tw-z-20 tw-leading-[4rem] after:tw-content-[''] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[100%] after:tw-block after:tw-bg-[url('src/img/stripe-blue.svg')] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-10;
       &-text {
-        @apply tw-relative tw-z-10 tw-text-white;
+        @apply tw-relative tw-z-20 tw-text-white;
       }
     }
     .stripe-white {
-      @apply tw-relative tw-z-10 after:tw-content-[''] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[110%] after:tw-block after:tw-bg-[url('src/img/stripe-blue.svg')] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+      @apply tw-relative tw-z-10 tw-mt-2 after:tw-content-[''] after:tw-absolute after:tw-top-0 after:tw-left-[-32px] after:tw-m-auto after:tw-w-[120%] after:tw-h-[100%] after:tw-block after:tw-bg-[url('src/img/stripe-white.svg')] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
       &-text {
-        @apply tw-relative tw-z-10 tw-text-contrast;
+        @apply tw-relative tw-z-30 tw-text-contrast;
       }
     }
   }
@@ -99,6 +99,15 @@
   }
   h6, .h6 {
     @apply tw-text-[24px];
+  }
+  .light {
+    @apply tw-font-light;
+  }
+  .bold {
+    @apply tw-font-bold;
+  }
+  .regular {
+    @apply tw-font-regular;
   }
   .subtitle {
     @apply tw-text-neutral tw-text tw-text-center tw-m-0;
