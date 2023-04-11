@@ -118,7 +118,7 @@
                 <div class="tw-bg-white tw-h-8 tw-w-8 tw-absolute tw-bottom-8 tw-right-0 tw-z-0"></div>
             </div>
         </div>
-        <div class="tw-container-xl tw-max-w-screen-2xl tw-mx-auto tw-p-8 2xl:tw-p-0">
+        <div class="container">
             <div class="tw-flex tw-flex-row tw-pt-32 tw-items-center">
                 <div class="tw-basis-1/2 tw-p-2 tw-min-h-full tw-relative">
                     <div class="tw-m-auto">
@@ -130,14 +130,24 @@
                         </ul>
                         <h1 class="tw-pt-8">
                             <div class="tw-text-secondary">Experience</div>
-                            <div>new ways of interacting</div>
+                            <div class="tw-flex">
+                                <div>new ways of</div>
+                                <div class="tw-relative tw-ml-2 tw-w-1/2">
+                                    <span class="splited-text" id="splitedIntro0">interacting</span>
+                                    <span class="splited-text" id="splitedIntro1">working</span>
+                                    <span class="splited-text" id="splitedIntro2">hosting events</span>
+                                    <span class="splited-text" id="splitedIntro3">learning</span>
+                                </div>
+                            </div>
                         </h1>
                         <p class="paragraph-lg tw-pb-8 tw-text-neutral-800 tw-pr-32">
                             <strong>Create virtual environments</strong> <a href="">for your remote workforce</a> to enhance human connection.
                         </p>
                         <div class="tw-pb-8">
-                            <a href="" class="btn btn-border btn-contrast btn-inline-block tw-mr-4">Register</a>
-                            <a href="" class="btn btn-contrast btn-inline-block">Try it for free</a>
+                            <div class="btn-wrapper">
+                                <a href="" class="btn btn-border btn-contrast btn-inline-block tw-mr-4">Register</a>
+                                <a href="" class="btn btn-contrast btn-inline-block">Try it for free</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -156,7 +166,7 @@
         </div>
     </section>
     <section class="tw-relative after:tw-content-[''] after:tw-absolute after:tw-w-full after:tw-h-[50%] after:tw-left-0 after:tw-bottom-0 after:tw-z-0 after:tw-bg-[url('src/img/pattern.png')] after:tw-bg-repeat after:tw-opacity-50 after:tw-outline after:tw-outline-1 after:tw-outline-neutral-200 after:tw-bg-neutral-100 tw-p-8 2xl:tw-p-0">
-        <div class="tw-container-xl tw-max-w-screen-2xl tw-mx-auto tw-pt-16 tw-z-10 tw-relative">
+        <div class="container tw-pt-16 tw-z-10">
             <h3 class="tw-text-center">
                 <div class="tw-text-secondary"><span class="light">A tailored</span> virtual workplace</div>
                 <div><span class="light">for</span> remote and hybrid teams</div>
@@ -232,7 +242,7 @@
             </div>
         </div>
 
-        <div class="tw-container-xl tw-max-w-screen-2xl tw-mx-auto tw-p-8 tw-z-10 tw-relative">
+        <div class="container tw-z-10">
             <ul class="clients">
                 <li class="client">
                     <img src="img/kpmg.svg" />
@@ -256,7 +266,7 @@
         </div>
     </section>
     <section>
-        <div class="tw-container-xl tw-max-w-screen-2xl tw-mx-auto tw-p-8 2xl:tw-p-0">
+        <div class="container">
             <div class="block-feature">
                 <div class="block-feature-text">
                     <span class="block-feature-text_title">
@@ -303,7 +313,7 @@
     </section>
 
     <section>
-        <div class="tw-container-xl tw-max-w-screen-2xl tw-mx-auto">
+        <div class="container">
             <div class="tw-flex tw-flex-row tw-mt-32">
                 <div class="tw-basis-1/4 tw-text-center tw-p-8 tw-relative after:tw-content-[''] after:tw-absolute after:tw-right-0 after:tw-h-[50%] after:tw-w-[1px] after:tw-m-auto after:tw-bg-neutral-300 after:tw-top-0 after:tw-bottom-0 after:last:tw-opacity-0">
                     <div class="h1 tw-text-secondary tw-font-bold">1 748</div>
@@ -340,7 +350,7 @@
                 <div class="tw-bg-neutral-200 tw-h-8 tw-w-8 tw-absolute tw-bottom-8 tw-right-0 tw-z-0"></div>
             </div>
         </div>
-        <div class="tw-container-xl tw-max-w-screen-2xl tw-mx-auto tw-relative tw-z-10">
+        <div class="container tw-z-10">
             <div class="tw-flex tw-flex-row tw-items-center">
                 <div class="tw-basis-1/2 tw-p-2 tw-min-h-full tw-relative tw-text-right tw-px-8 2xl:tw-pr-32">
                     <div class="tw-m-auto">
@@ -368,7 +378,7 @@
     </section>
 
     <footer class="footer">
-        <div class="tw-container-xl tw-max-w-screen-2xl tw-mx-auto">
+        <div class="container">
             <div class="tw-flex tw-flex-row tw-mt-32">
                 <div class="tw-basis-1/4">
                     <img src="img/logo-dark.svg" />
@@ -430,7 +440,8 @@
     <div class="cursor">
         <div class="cursor__circle"></div>
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/split-type"></script>
     <script src="index.js"></script>
 </body>
 </html>

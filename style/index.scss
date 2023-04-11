@@ -216,9 +216,21 @@
       }
     }
   }
+  .container {
+    @apply tw-max-w-screen-2xl tw-mx-auto tw-relative tw-h-full tw-px-8 2xl:tw-px-8;
+  }
 }
 
 @layer components {
+  .btn-wrapper {
+    @apply tw-flex;
+    .btn {
+      @apply tw-block first:tw-mr-0 tw-mr-2;
+      &.btn-primary, &.btn-secondary, &.btn-contrast, &.btn-neutral, &.btn-danger, &.btn-warning, &.btn-success, &.btn-light {
+        @apply tw-block first:tw-ml-0 tw-ml-2;
+      }
+    }
+  }
   .btn {
     @apply tw-p-3 tw-rounded tw-inline-block tw-text-center tw-text-base tw-text-neutral-100 tw-bg-contrast tw-font-main tw-font-regular tw-no-underline tw-flex tw-items-center;
     &.btn-inline-block {
@@ -802,6 +814,17 @@
       }
     }
   }
+}
+
+.splited-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  display: inline-block;
+  @apply tw-absolute tw-left-0 tw-w-full;
+}
+
+.splited-text .char {
+  transform: translateY(115px);
+  transition: transform .5s;
 }
 
 /*

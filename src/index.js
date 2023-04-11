@@ -67,3 +67,58 @@ cursorModifiers.forEach(curosrModifier => {
         cursor.classList.remove(className);
     });
 });
+
+
+/*
+new SplitType('.splited-text');
+var tl = gsap.timeline({repeat: 2, repeatDelay: 1});
+tl.to("#splitedIntro1 .char", {
+    y: 0,
+    stagger: 0.05,
+    delay: 1,
+    duration: .25
+})
+tl.to("#splitedIntro2 .char", {
+    y: 0,
+    stagger: 0.05,
+    delay: 1,
+    duration: .25
+})
+tl.to("#splitedIntro3 .char", {
+    y: 0,
+    stagger: 0.05,
+    delay: 1,
+    duration: .25
+})
+tl.to("#splitedIntro4 .char", {
+    y: 0,
+    stagger: 0.05,
+    delay: 1,
+    duration: .25
+})
+*/
+
+
+let targets = gsap.utils.toArray(".splited-text");
+gsap.set(targets, {autoAlpha:1 });
+let dur = 0.5;
+let hold = 4;
+
+targets.forEach((obj, i) => {
+    let tl = gsap.timeline({
+        delay: dur * i + hold * i,
+        repeat: -1,
+        repeatDelay: (targets.length - 1) * (dur + hold) - dur,
+        defaults: {
+            ease: "none",
+            duration: dur
+        }
+    });
+    tl.from(obj, { yPercent: -60, opacity: 0 });
+    tl.to(obj, { yPercent: 60, opacity: 0 , onComplete:function(){
+            console.log(this); //appears to be TweenLite object
+        }}, "+=" + hold);
+});
+
+
+
