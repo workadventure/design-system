@@ -819,11 +819,10 @@
 .splited-text {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   display: inline-block;
-  @apply tw-absolute tw-left-0 tw-w-full;
+  @apply tw-absolute tw-left-0 tw-w-full tw-top-0;
 }
 
 .splited-text .char {
-  transform: translateY(115px);
   transition: transform .5s;
 }
 

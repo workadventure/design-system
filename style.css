@@ -3511,11 +3511,11 @@ h6, .h6 {
   display: inline-block;
   position: absolute;
   left: 0px;
+  top: 0px;
   width: 100%;
 }
 
 .splited-text .char {
-  transform: translateY(115px);
   transition: transform 0.5s;
 }
 

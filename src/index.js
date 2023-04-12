@@ -68,37 +68,6 @@ cursorModifiers.forEach(curosrModifier => {
     });
 });
 
-
-/*
-new SplitType('.splited-text');
-var tl = gsap.timeline({repeat: 2, repeatDelay: 1});
-tl.to("#splitedIntro1 .char", {
-    y: 0,
-    stagger: 0.05,
-    delay: 1,
-    duration: .25
-})
-tl.to("#splitedIntro2 .char", {
-    y: 0,
-    stagger: 0.05,
-    delay: 1,
-    duration: .25
-})
-tl.to("#splitedIntro3 .char", {
-    y: 0,
-    stagger: 0.05,
-    delay: 1,
-    duration: .25
-})
-tl.to("#splitedIntro4 .char", {
-    y: 0,
-    stagger: 0.05,
-    delay: 1,
-    duration: .25
-})
-*/
-
-
 let targets = gsap.utils.toArray(".splited-text");
 gsap.set(targets, {autoAlpha:1 });
 let dur = 0.5;
@@ -121,4 +90,42 @@ targets.forEach((obj, i) => {
 });
 
 
+/*
+let targets = gsap.utils.toArray(".splited-text");
+gsap.set(targets, {autoAlpha:1 });
+let dur = 0.5;
+let hold = 4;
+new SplitType('.splited-text');
+
+targets.forEach((obj, i) => {
+    let tl = gsap.timeline({
+        delay: dur * i + hold * i,
+        repeat: -1,
+        repeatDelay: (targets.length - 1) * (dur + hold) - dur,
+        defaults: {
+            ease: "none",
+            duration: dur
+        }
+    });
+
+    //"#splitedIntro"+i+" .char"
+    tl.from("#splitedIntro"+i+" .char", { y: "115px", opacity: 0 })
+    .to("#splitedIntro"+i+" .char", {
+        y: "0",
+        stagger: 1/obj.getElementsByClassName("char").length,
+        opacity: 1,
+        onComplete:function(){
+            console.log(this); //appears to be TweenLite object
+            console.log(0.05*obj.getElementsByClassName("char").length); //appears to be TweenLite object
+        }
+        }, "+=" + hold + 1/obj.getElementsByClassName("char").length)
+    .to("#splitedIntro"+i+" .char", {
+        y: "115px",
+        stagger: 0.05,
+        opacity: 0,
+        }, "+=" + hold);
+    //tl.to("#splitedIntro"+(i-1)+" .char", { y: "115px", opacity: 0 });
+});
+
+*/
 
