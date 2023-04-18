@@ -64,22 +64,24 @@
   h1 .highlight span, h1 .highlight-text, h2 .highlight span, h2 .highlight-text, h3 .highlight span, h3 .highlight-text, h4 .highlight span, h4 .highlight-text, h5 .highlight span, h5 .highlight-text, h6 .highlight span, h6 .highlight-text,
   .h1 .highlight span,
   .h1 .highlight-text, .h2 .highlight span, .h2 .highlight-text, .h3 .highlight span, .h3 .highlight-text, .h4 .highlight span, .h4 .highlight-text, .h5 .highlight span, .h5 .highlight-text, .h6 .highlight span, .h6 .highlight-text {
-    @apply tw-relative tw-z-10;
+    @apply tw-relative tw-z-10 tw-text-white;
   }
-  h1 .stripe-blue, h2 .stripe-blue, h3 .stripe-blue, h4 .stripe-blue, h5 .stripe-blue, h6 .stripe-blue,
-  .h1 .stripe-blue, .h2 .stripe-blue, .h3 .stripe-blue, .h4 .stripe-blue, .h5 .stripe-blue, .h6 .stripe-blue {
-    @apply tw-relative tw-z-20 tw-leading-[4rem] after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-44px] after:tw-m-auto after:tw-w-[150%] after:tw-h-[100%] after:tw-block after:tw-bg-[url("src/img/stripe-blue.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-10;
+  h1 .stripe.stripe-blue, h2 .stripe.stripe-blue, h3 .stripe.stripe-blue, h4 .stripe.stripe-blue, h5 .stripe.stripe-blue, h6 .stripe.stripe-blue,
+  .h1 .stripe.stripe-blue, .h2 .stripe.stripe-blue, .h3 .stripe.stripe-blue, .h4 .stripe.stripe-blue, .h5 .stripe.stripe-blue, .h6 .stripe.stripe-blue {
+    @apply tw-relative tw-z-20 tw-leading-[4rem] after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-15px] after:tw-m-auto after:tw-w-[125%] after:tw-h-[100%] after:tw-block after:tw-bg-[url("src/img/stripe-blue.svg")] after:tw-bg-center after:tw-bg-[length:100%_100%] after:tw-bg-no-repeat after:tw-z-10;
   }
-  h1 .stripe-blue-text, h2 .stripe-blue-text, h3 .stripe-blue-text, h4 .stripe-blue-text, h5 .stripe-blue-text, h6 .stripe-blue-text,
-  .h1 .stripe-blue-text, .h2 .stripe-blue-text, .h3 .stripe-blue-text, .h4 .stripe-blue-text, .h5 .stripe-blue-text, .h6 .stripe-blue-text {
+  h1 .stripe.stripe-blue .stripe-blue-text, h1 .stripe.stripe-blue span, h2 .stripe.stripe-blue .stripe-blue-text, h2 .stripe.stripe-blue span, h3 .stripe.stripe-blue .stripe-blue-text, h3 .stripe.stripe-blue span, h4 .stripe.stripe-blue .stripe-blue-text, h4 .stripe.stripe-blue span, h5 .stripe.stripe-blue .stripe-blue-text, h5 .stripe.stripe-blue span, h6 .stripe.stripe-blue .stripe-blue-text, h6 .stripe.stripe-blue span,
+  .h1 .stripe.stripe-blue .stripe-blue-text,
+  .h1 .stripe.stripe-blue span, .h2 .stripe.stripe-blue .stripe-blue-text, .h2 .stripe.stripe-blue span, .h3 .stripe.stripe-blue .stripe-blue-text, .h3 .stripe.stripe-blue span, .h4 .stripe.stripe-blue .stripe-blue-text, .h4 .stripe.stripe-blue span, .h5 .stripe.stripe-blue .stripe-blue-text, .h5 .stripe.stripe-blue span, .h6 .stripe.stripe-blue .stripe-blue-text, .h6 .stripe.stripe-blue span {
     @apply tw-relative tw-z-20 tw-text-white;
   }
-  h1 .stripe-white, h2 .stripe-white, h3 .stripe-white, h4 .stripe-white, h5 .stripe-white, h6 .stripe-white,
-  .h1 .stripe-white, .h2 .stripe-white, .h3 .stripe-white, .h4 .stripe-white, .h5 .stripe-white, .h6 .stripe-white {
-    @apply tw-relative tw-z-10 tw-mt-2 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-32px] after:tw-m-auto after:tw-w-[120%] after:tw-h-[100%] after:tw-block after:tw-bg-[url("src/img/stripe-white.svg")] after:tw-bg-center after:tw-bg-[length:100%_auto] after:tw-bg-no-repeat after:tw-z-0;
+  h1 .stripe.stripe-white, h2 .stripe.stripe-white, h3 .stripe.stripe-white, h4 .stripe.stripe-white, h5 .stripe.stripe-white, h6 .stripe.stripe-white,
+  .h1 .stripe.stripe-white, .h2 .stripe.stripe-white, .h3 .stripe.stripe-white, .h4 .stripe.stripe-white, .h5 .stripe.stripe-white, .h6 .stripe.stripe-white {
+    @apply tw-relative tw-z-10 tw-mt-2 after:tw-content-[""] after:tw-absolute after:tw-top-0 after:tw-left-[-32px] after:tw-m-auto after:tw-w-[120%] after:tw-h-[100%] after:tw-block after:tw-bg-[url("src/img/stripe-white.svg")] after:tw-bg-center after:tw-bg-[length:100%_100%] after:tw-bg-no-repeat after:tw-z-0;
   }
-  h1 .stripe-white-text, h2 .stripe-white-text, h3 .stripe-white-text, h4 .stripe-white-text, h5 .stripe-white-text, h6 .stripe-white-text,
-  .h1 .stripe-white-text, .h2 .stripe-white-text, .h3 .stripe-white-text, .h4 .stripe-white-text, .h5 .stripe-white-text, .h6 .stripe-white-text {
+  h1 .stripe.stripe-white .stripe-white-text, h1 .stripe.stripe-white span, h2 .stripe.stripe-white .stripe-white-text, h2 .stripe.stripe-white span, h3 .stripe.stripe-white .stripe-white-text, h3 .stripe.stripe-white span, h4 .stripe.stripe-white .stripe-white-text, h4 .stripe.stripe-white span, h5 .stripe.stripe-white .stripe-white-text, h5 .stripe.stripe-white span, h6 .stripe.stripe-white .stripe-white-text, h6 .stripe.stripe-white span,
+  .h1 .stripe.stripe-white .stripe-white-text,
+  .h1 .stripe.stripe-white span, .h2 .stripe.stripe-white .stripe-white-text, .h2 .stripe.stripe-white span, .h3 .stripe.stripe-white .stripe-white-text, .h3 .stripe.stripe-white span, .h4 .stripe.stripe-white .stripe-white-text, .h4 .stripe.stripe-white span, .h5 .stripe.stripe-white .stripe-white-text, .h5 .stripe.stripe-white span, .h6 .stripe.stripe-white .stripe-white-text, .h6 .stripe.stripe-white span {
     @apply tw-relative tw-z-30 tw-text-contrast;
   }
   h1, .h1 {
@@ -137,19 +139,19 @@
     @apply paragraph-lg tw-px-6 tw-text-contrast/80 hover:tw-text-contrast;
   }
   .block-feature {
-    @apply tw-flex tw-flex-row tw-mt-32 odd:tw-text-right even:tw-text-left;
+    @apply tw-flex lg:tw-flex-row tw-flex-col tw-flex-row tw-mt-32 lg:odd:tw-text-right lg:even:tw-text-left odd:tw-text-center even:tw-text-center;
   }
   .block-feature:nth-child(even) .block-feature-text {
-    @apply tw-order-last;
+    @apply tw-order-last tw-text-center lg:tw-text-left;
   }
   .block-feature:nth-child(even) .block-feature-image {
-    @apply tw-text-right;
+    @apply tw-text-center lg:tw-text-left;
   }
   .block-feature .block-feature-text {
-    @apply tw-basis-1/3 tw-p-8;
+    @apply lg:tw-basis-1/3 lg:tw-text-right tw-text-center tw-p-8 tw-basis-full;
   }
   .block-feature .block-feature-text.half {
-    @apply tw-basis-1/2;
+    @apply lg:tw-basis-1/2 tw-basis-full;
   }
   .block-feature .block-feature-text_title {
     @apply h3 tw-font-bold;
@@ -158,10 +160,10 @@
     @apply paragraph tw-text-neutral;
   }
   .block-feature .block-feature-image {
-    @apply tw-basis-2/3 tw-border tw-border-solid tw-border-neutral-400 tw-rounded-xl tw-overflow-hidden tw-text-left;
+    @apply lg:tw-basis-2/3 tw-border tw-border-solid tw-border-neutral-400 tw-rounded-xl tw-overflow-hidden tw-text-left tw-basis-full;
   }
   .block-feature .block-feature-image.half {
-    @apply tw-basis-1/2;
+    @apply lg:tw-basis-1/2 tw-basis-full;
   }
   .block-feature .block-feature-image.no-border {
     @apply tw-border-none;
@@ -191,7 +193,7 @@
     }
   }
   .container {
-    @apply tw-max-w-screen-2xl tw-mx-auto tw-relative tw-h-full tw-px-8 2xl:tw-px-8;
+    @apply tw-max-w-screen-2xl tw-mx-auto tw-relative tw-h-full lg:tw-px-8 tw-px-0;
   }
 }
 @layer components {
@@ -701,7 +703,7 @@
     @apply tw-m-0 tw-p-0 tw-flex tw-flex-row tw-items-center tw-text-center;
   }
   .clients .client {
-    @apply tw-grow tw-list-none lg:tw-basis-1/6;
+    @apply tw-grow tw-list-none lg:tw-basis-1/6 tw-p-4 lg:tw-basis-1/4;
   }
   .clients .client img {
     @apply tw-opacity-50 hover:tw-opacity-100 sm:tw-w-full xl:tw-w-auto;
@@ -729,6 +731,24 @@
   }
   .card .card-actions {
     @apply tw-flex;
+  }
+  .pricing {
+    @apply tw-p-0 tw-border tw-border-neutral-400 tw-border-solid tw-text-center tw-rounded-xl tw-my-16;
+  }
+  .pricing .pricing-title {
+    @apply h1 -tw-mt-8;
+  }
+  .pricing .pricing-sub {
+    @apply paragraph-lg tw-my-8;
+  }
+  .pricing .pricing-content {
+    @apply tw-mb-12;
+  }
+  .pricing .pricing-content p {
+    @apply paragraph-lg tw-text-neutral;
+  }
+  .pricing .pricing-pricing {
+    @apply tw-py-6 tw-bg-neutral-200 h4 tw-rounded-b-xl tw-font-bold;
   }
   .footer {
     @apply tw-bg-neutral-200 tw-pt-8;
