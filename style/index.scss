@@ -755,6 +755,30 @@
     }
   }
 
+  .testimonial {
+    .testimonial-content {
+      @apply font-light text-[22px] text mb-3 mt-2;
+    }
+    .testimonial-wrapper {
+      @apply flex;
+      .testimonial-image {
+        @apply self-center;
+        img {
+          @apply h-12 aspect-square rounded-lg;
+        }
+      }
+      .testimonial-from {
+        @apply self-center ml-2;
+        .testimonial-from-name {
+
+        }
+        .testimonial-from-job {
+          @apply font-bold;
+        }
+      }
+    }
+  }
+
   .pagination {
     @apply m-0 p-0;
     .pagination-item {

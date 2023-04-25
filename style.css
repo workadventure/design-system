@@ -1637,6 +1637,37 @@ h6, .h6 {
   padding-right: 0px;
 }
 
+.testimonial .testimonial-content {
+  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+  font-size: 16px;
+  line-height: 1.75rem;
+  font-weight: 300;
+}
+
+.testimonial .testimonial-wrapper {
+  display: flex;
+}
+
+.testimonial .testimonial-wrapper .testimonial-image {
+  align-self: center;
+}
+
+.testimonial .testimonial-wrapper .testimonial-image img {
+  aspect-ratio: 1 / 1;
+  height: 3rem;
+  border-radius: 16px;
+}
+
+.testimonial .testimonial-wrapper .testimonial-from {
+  margin-left: 0.5rem;
+  align-self: center;
+}
+
+.testimonial .testimonial-wrapper .testimonial-from .testimonial-from-job {
+  font-weight: 700;
+}
+
 .pagination {
   margin: 0px;
   padding: 0px;
@@ -2235,10 +2266,6 @@ h6, .h6 {
   margin-bottom: 0.5rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -2301,10 +2328,6 @@ h6, .h6 {
 
 .h-10 {
   height: 2.5rem;
-}
-
-.h-12 {
-  height: 3rem;
 }
 
 .h-4 {
@@ -3164,10 +3187,6 @@ h6, .h6 {
 .text {
   font-size: 16px;
   line-height: 1.75rem;
-}
-
-.text-\[22px\] {
-  font-size: 22px;
 }
 
 .text-\[36px\] {
