@@ -153,17 +153,17 @@
       @apply paragraph-lg px-6 text-contrast/80 hover:text-contrast;
     }
     &-feature {
-      @apply flex lg:flex-row flex-col flex-row mt-32 lg:odd:text-right lg:even:text-left odd:text-center even:text-center;
+      @apply flex lg:flex-row flex-col flex-row mt-32;
       &:nth-child(even) {
         .brick-feature-text {
-          @apply order-last text-center lg:text-left;
+          @apply order-last text-center;
         }
         .brick-feature-image {
-          @apply text-center lg:text-left;
+          @apply text-center;
         }
       }
       .brick-feature-text {
-        @apply lg:basis-1/3 lg:text-right text-center p-8 basis-full;
+        @apply lg:basis-1/3 text-center p-8 basis-full;
         &.half {
           @apply lg:basis-1/2 basis-full;
         }

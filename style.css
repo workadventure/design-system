@@ -3436,25 +3436,9 @@ h6, .h6 {
   flex-direction: column;
 }
 
-.brick-feature:nth-child(odd) {
-  text-align: center;
-}
-
-.brick-feature:nth-child(even) {
-  text-align: center;
-}
-
 @media (min-width: 1024px) {
   .brick-feature {
     flex-direction: row;
-  }
-
-  .brick-feature:nth-child(odd) {
-    text-align: right;
-  }
-
-  .brick-feature:nth-child(even) {
-    text-align: left;
   }
 }
 
@@ -3463,20 +3447,8 @@ h6, .h6 {
   text-align: center;
 }
 
-@media (min-width: 1024px) {
-  .brick-feature:nth-child(even) .brick-feature-text {
-    text-align: left;
-  }
-}
-
 .brick-feature:nth-child(even) .brick-feature-image {
   text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .brick-feature:nth-child(even) .brick-feature-image {
-    text-align: left;
-  }
 }
 
 .brick-feature .brick-feature-text {
@@ -3488,7 +3460,6 @@ h6, .h6 {
 @media (min-width: 1024px) {
   .brick-feature .brick-feature-text {
     flex-basis: 33.333333%;
-    text-align: right;
   }
 }
 
