@@ -120,6 +120,8 @@ h1 .stripe.stripe-blue, h2 .stripe.stripe-blue, h3 .stripe.stripe-blue, h4 .stri
   .h1 .stripe.stripe-blue, .h2 .stripe.stripe-blue, .h3 .stripe.stripe-blue, .h4 .stripe.stripe-blue, .h5 .stripe.stripe-blue, .h6 .stripe.stripe-blue {
   position: relative;
   z-index: 20;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
   line-height: 4rem;
 }
 
@@ -182,6 +184,17 @@ h1 .stripe.stripe-white .stripe-white-text, h1 .stripe.stripe-white span, h2 .st
   z-index: 30;
   --tw-text-opacity: 1;
   color: rgb(27 42 65 / var(--tw-text-opacity));
+}
+
+h1 .stripe.stripe-inline.stripe-blue, h1 .stripe.stripe-inline.stripe-white, h2 .stripe.stripe-inline.stripe-blue, h2 .stripe.stripe-inline.stripe-white, h3 .stripe.stripe-inline.stripe-blue, h3 .stripe.stripe-inline.stripe-white, h4 .stripe.stripe-inline.stripe-blue, h4 .stripe.stripe-inline.stripe-white, h5 .stripe.stripe-inline.stripe-blue, h5 .stripe.stripe-inline.stripe-white, h6 .stripe.stripe-inline.stripe-blue, h6 .stripe.stripe-inline.stripe-white,
+  .h1 .stripe.stripe-inline.stripe-blue,
+  .h1 .stripe.stripe-inline.stripe-white, .h2 .stripe.stripe-inline.stripe-blue, .h2 .stripe.stripe-inline.stripe-white, .h3 .stripe.stripe-inline.stripe-blue, .h3 .stripe.stripe-inline.stripe-white, .h4 .stripe.stripe-inline.stripe-blue, .h4 .stripe.stripe-inline.stripe-white, .h5 .stripe.stripe-inline.stripe-blue, .h5 .stripe.stripe-inline.stripe-white, .h6 .stripe.stripe-inline.stripe-blue, .h6 .stripe.stripe-inline.stripe-white {
+  display: inline-block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transform: translate(-10px, 20px);
 }
 
 h1, .h1 {
@@ -1876,6 +1889,8 @@ h6, .h6 {
 .pricing .pricing-title .stripe.stripe-blue {
   position: relative;
   z-index: 20;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
   line-height: 4rem;
 }
 
@@ -1931,6 +1946,15 @@ h6, .h6 {
   z-index: 30;
   --tw-text-opacity: 1;
   color: rgb(27 42 65 / var(--tw-text-opacity));
+}
+
+.pricing .pricing-title .stripe.stripe-inline.stripe-blue,.pricing .pricing-title .stripe.stripe-inline.stripe-white {
+  display: inline-block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transform: translate(-10px, 20px);
 }
 
 .pricing .pricing-title {
@@ -2032,6 +2056,8 @@ h6, .h6 {
 .pricing .pricing-pricing .stripe.stripe-blue {
   position: relative;
   z-index: 20;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
   line-height: 4rem;
 }
 
@@ -2087,6 +2113,15 @@ h6, .h6 {
   z-index: 30;
   --tw-text-opacity: 1;
   color: rgb(27 42 65 / var(--tw-text-opacity));
+}
+
+.pricing .pricing-pricing .stripe.stripe-inline.stripe-blue,.pricing .pricing-pricing .stripe.stripe-inline.stripe-white {
+  display: inline-block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transform: translate(-10px, 20px);
 }
 
 .pricing .pricing-pricing {
@@ -2164,6 +2199,20 @@ h6, .h6 {
   background-color: rgb(65 86 246 / var(--tw-bg-opacity));
   --tw-content: "";
   content: var(--tw-content);
+}
+
+.loading-wrapper {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 42 65 / var(--tw-bg-opacity));
+}
+
+.loading-wrapper .loading {
+  display: grid;
+  height: 100vh;
+  place-items: center;
 }
 
 /**
@@ -2256,6 +2305,10 @@ h6, .h6 {
 
 .mb-0 {
   margin-bottom: 0px;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .mb-16 {
@@ -3535,6 +3588,8 @@ h6, .h6 {
 .brick-feature .brick-feature-text_title .stripe.stripe-blue {
   position: relative;
   z-index: 20;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
   line-height: 4rem;
 }
 
@@ -3590,6 +3645,15 @@ h6, .h6 {
   z-index: 30;
   --tw-text-opacity: 1;
   color: rgb(27 42 65 / var(--tw-text-opacity));
+}
+
+.brick-feature .brick-feature-text_title .stripe.stripe-inline.stripe-blue,.brick-feature .brick-feature-text_title .stripe.stripe-inline.stripe-white {
+  display: inline-block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transform: translate(-10px, 20px);
 }
 
 .brick-feature .brick-feature-text_title {
@@ -3898,6 +3962,10 @@ h6, .h6 {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:basis-1\/2 {
+    flex-basis: 50%;
   }
 }
 
