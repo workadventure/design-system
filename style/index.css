@@ -774,6 +774,15 @@
   .pricing .pricing-pricing {
     @apply py-6 bg-neutral-200 h4 rounded-b-xl font-bold;
   }
+  .getintouch {
+    @apply flex flex-row items-center p-16;
+  }
+  .getintouch .getintouch-image {
+    @apply basis-1/2 text-right p-8;
+  }
+  .getintouch .getintouch-content {
+    @apply basis-1/2 p-8;
+  }
   .footer {
     @apply bg-neutral-200 pt-8;
   }

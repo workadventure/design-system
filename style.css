@@ -2148,6 +2148,24 @@ h6, .h6 {
   text-shadow: 8px 8px #fff, -8px -8px #fff, 8px -8px #fff, -8px 8px #fff, 7px 7px #fff, -7px -7px #fff, 7px -7px #fff, -7px 7px #fff, 6px 6px #fff, -6px -6px #fff, 6px -6px #fff, -6px 6px #fff, 5px 5px #fff, -5px -5px #fff, 5px -5px #fff, -5px 5px #fff, 4px 4px #fff, -4px -4px #fff, 4px -4px #fff, -4px 4px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff, 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
+.getintouch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4rem;
+}
+
+.getintouch .getintouch-image {
+  flex-basis: 50%;
+  padding: 2rem;
+  text-align: right;
+}
+
+.getintouch .getintouch-content {
+  flex-basis: 50%;
+  padding: 2rem;
+}
+
 .footer {
   --tw-bg-opacity: 1;
   background-color: rgb(239 240 242 / var(--tw-bg-opacity));
@@ -2511,6 +2529,14 @@ h6, .h6 {
   max-width: 1536px;
 }
 
+.flex-none {
+  flex: none;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
 .basis-1\/12 {
   flex-basis: 8.333333%;
 }
@@ -2557,6 +2583,10 @@ h6, .h6 {
 
 .basis-40 {
   flex-basis: 10rem;
+}
+
+.basis-8\/12 {
+  flex-basis: 66.666667%;
 }
 
 .basis-full {
@@ -3283,6 +3313,10 @@ h6, .h6 {
 
 .italic {
   font-style: italic;
+}
+
+.leading-3 {
+  line-height: .75rem;
 }
 
 .tracking-\[20px\] {

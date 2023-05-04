@@ -851,6 +851,16 @@
     }
   }
 
+  .getintouch {
+    @apply flex flex-row items-center p-16;
+    .getintouch-image {
+      @apply basis-1/2 text-right p-8;
+    }
+    .getintouch-content {
+      @apply basis-1/2 p-8;
+    }
+  }
+
   .footer {
     @apply bg-neutral-200 pt-8;
     &-menu {
