@@ -774,6 +774,21 @@
   .pricing .pricing-pricing {
     @apply py-6 bg-neutral-200 h4 rounded-b-xl font-bold;
   }
+  .feature-title-wrapper {
+    @apply flex flex-row;
+  }
+  .feature-title-wrapper .feature-title {
+    @apply paragraph-lg paragraph-bold;
+  }
+  .features {
+    @apply flex flex-row items-center;
+  }
+  .features .feature-content {
+    @apply basis-8/12;
+  }
+  .features .feature-content .feature-content-wrapper {
+    @apply flex;
+  }
   .getintouch {
     @apply flex flex-row items-center p-16;
   }

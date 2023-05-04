@@ -851,6 +851,31 @@
     }
   }
 
+  .feature-title-wrapper {
+    @apply flex flex-row;
+    .feature-title {
+      @apply paragraph-lg paragraph-bold;
+    }
+  }
+  .features {
+    @apply flex flex-row items-center;
+    .feature-content {
+      @apply basis-8/12;
+      .feature-content-wrapper {
+        @apply flex;
+        .feature-content-icon {
+
+        }
+        .feature-content-title {
+
+        }
+        .feature-content-desc {
+
+        }
+      }
+    }
+  }
+
   .getintouch {
     @apply flex flex-row items-center p-16;
     .getintouch-image {

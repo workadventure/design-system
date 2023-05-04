@@ -2148,6 +2148,31 @@ h6, .h6 {
   text-shadow: 8px 8px #fff, -8px -8px #fff, 8px -8px #fff, -8px 8px #fff, 7px 7px #fff, -7px -7px #fff, 7px -7px #fff, -7px 7px #fff, 6px 6px #fff, -6px -6px #fff, 6px -6px #fff, -6px 6px #fff, 5px 5px #fff, -5px -5px #fff, 5px -5px #fff, -5px 5px #fff, 4px 4px #fff, -4px -4px #fff, 4px -4px #fff, -4px 4px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff, 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
+.feature-title-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.feature-title-wrapper .feature-title {
+  font-size: 18px;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.features {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.features .feature-content {
+  flex-basis: 66.666667%;
+}
+
+.features .feature-content .feature-content-wrapper {
+  display: flex;
+}
+
 .getintouch {
   display: flex;
   flex-direction: row;
@@ -2393,6 +2418,10 @@ h6, .h6 {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .aspect-square {
   aspect-ratio: 1 / 1;
 }
@@ -2527,14 +2556,6 @@ h6, .h6 {
 
 .max-w-screen-2xl {
   max-width: 1536px;
-}
-
-.flex-none {
-  flex: none;
-}
-
-.grow {
-  flex-grow: 1;
 }
 
 .basis-1\/12 {
