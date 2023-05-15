@@ -656,21 +656,25 @@
   .nav-website .nav-menu .nav-menu-item {
     @apply self-center list-none;
   }
+  .nav-website .nav-menu .nav-menu-item-dd:hover {
+    /*
+    .nav-submenu {
+      @apply opacity-100 flex absolute w-full left-0 p-0 visible pt-4 backdrop-blur;
+      .nav-submenu-wrapper {
+        @apply bg-blur rounded-lg w-full p-4 flex text-white;
+        .nav-submenu-item {
+          @apply p-4 list-none m-0 text-white no-underline block p-4 transition-all rounded hover:bg-contrast/50;
+        }
+      }
+    }
+    */
+  }
   .nav-website .nav-menu .nav-menu-item-dd:hover .nav-menu-item-link {
     @apply relative after:content-[""] after:bottom-[-16px] after:left-0 after:right-0 after:m-auto after:absolute after:w-0 after:h-0
                 after:border-solid after:border-b-contrast after:border-b-8 after:border-x-transparent after:border-x-8 after:border-t-0 after:opacity-80;
   }
   .nav-website .nav-menu .nav-menu-item-dd:hover .nav-menu-item-link .icon {
     @apply rotate-180;
-  }
-  .nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu {
-    @apply opacity-100 flex absolute w-full left-0 p-0 visible pt-4 backdrop-blur;
-  }
-  .nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu .nav-submenu-wrapper {
-    @apply bg-blur rounded-lg w-full p-4 flex text-white;
-  }
-  .nav-website .nav-menu .nav-menu-item-dd:hover .nav-submenu .nav-submenu-wrapper .nav-submenu-item {
-    @apply p-4 list-none m-0 text-white no-underline block p-4 transition-all rounded hover:bg-contrast/50;
   }
   .nav-website .nav-menu .nav-menu-item-dd .nav-submenu {
     @apply opacity-0 absolute invisible transition-all;

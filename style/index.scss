@@ -721,6 +721,7 @@
                   @apply rotate-180;
                 }
               }
+              /*
               .nav-submenu {
                 @apply opacity-100 flex absolute w-full left-0 p-0 visible pt-4 backdrop-blur;
                 .nav-submenu-wrapper {
@@ -730,6 +731,7 @@
                   }
                 }
               }
+              */
             }
             .nav-submenu {
               @apply opacity-0 absolute invisible transition-all;
