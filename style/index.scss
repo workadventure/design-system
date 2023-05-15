@@ -713,28 +713,26 @@
             //@apply after:content-[''] after:h-3 after:w-3 after:bg-white after:absolute after:top-0 after:bottom-0 after:m-auto ;
 
             //@apply flex after:content-[''] after:h-3 after:w-3 after:bg-white after:relative after:block  after:m-auto ;
-            &:hover {
-              .nav-menu-item-link {
-                @apply relative after:content-[''] after:bottom-[-16px] after:left-0 after:right-0 after:m-auto after:absolute after:w-0 after:h-0
-                after:border-solid after:border-b-contrast after:border-b-8 after:border-x-transparent after:border-x-8 after:border-t-0 after:opacity-80;
-                .icon {
-                  @apply rotate-180;
-                }
-              }
-              /*
-              .nav-submenu {
-                @apply opacity-100 flex absolute w-full left-0 p-0 visible pt-4 backdrop-blur;
-                .nav-submenu-wrapper {
-                  @apply bg-blur rounded-lg w-full p-4 flex text-white;
-                  .nav-submenu-item {
-                    @apply p-4 list-none m-0 text-white no-underline block p-4 transition-all rounded hover:bg-contrast/50;
-                  }
-                }
-              }
-              */
-            }
             .nav-submenu {
               @apply opacity-0 absolute invisible transition-all;
+            }
+          }
+          &.active {
+            .nav-submenu {
+              @apply opacity-100 flex absolute w-full left-0 p-0 visible pt-4 backdrop-blur;
+              .nav-submenu-wrapper {
+                @apply bg-blur rounded-lg w-full p-4 flex text-white;
+                .nav-submenu-item {
+                  @apply p-4 list-none m-0 text-white no-underline block p-4 transition-all rounded hover:bg-contrast/50;
+                }
+              }
+            }
+            .nav-menu-item-link {
+              @apply relative after:content-[''] after:bottom-[-16px] after:left-0 after:right-0 after:m-auto after:absolute after:w-0 after:h-0
+              after:border-solid after:border-b-contrast after:border-b-8 after:border-x-transparent after:border-x-8 after:border-t-0 after:opacity-80;
+              .icon {
+                @apply rotate-180;
+              }
             }
           }
           &-burger {
