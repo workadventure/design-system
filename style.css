@@ -1479,21 +1479,21 @@ h6, .h6 {
   transition-duration: 150ms;
 }
 
-.nav-website .nav-menu .nav-menu-item.active .nav-submenu {
-  visibility: visible;
+.nav-website .nav-menu .nav-menu-item .nav-submenu {
   position: absolute;
   left: 0px;
   display: flex;
+  display: none;
   width: 100%;
   padding: 0px;
   padding-top: 1rem;
-  opacity: 1;
+  opacity: 0;
   --tw-backdrop-blur: blur(8px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.nav-website .nav-menu .nav-menu-item.active .nav-submenu .nav-submenu-wrapper {
+.nav-website .nav-menu .nav-menu-item .nav-submenu .nav-submenu-wrapper {
   display: flex;
   width: 100%;
   border-radius: 16px;
@@ -1506,7 +1506,7 @@ h6, .h6 {
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.nav-website .nav-menu .nav-menu-item.active .nav-submenu .nav-submenu-wrapper .nav-submenu-item {
+.nav-website .nav-menu .nav-menu-item .nav-submenu .nav-submenu-wrapper .nav-submenu-item {
   margin: 0px;
   display: block;
   list-style-type: none;
@@ -1520,8 +1520,13 @@ h6, .h6 {
   transition-duration: 150ms;
 }
 
-.nav-website .nav-menu .nav-menu-item.active .nav-submenu .nav-submenu-wrapper .nav-submenu-item:hover {
+.nav-website .nav-menu .nav-menu-item .nav-submenu .nav-submenu-wrapper .nav-submenu-item:hover {
   background-color: rgb(27 42 65 / 0.5);
+}
+
+.nav-website .nav-menu .nav-menu-item.active .nav-submenu {
+  visibility: visible;
+  opacity: 1;
 }
 
 .nav-website .nav-menu .nav-menu-item.active .nav-menu-item-link {

@@ -659,14 +659,17 @@
   .nav-website .nav-menu .nav-menu-item-dd .nav-submenu {
     @apply opacity-0 absolute invisible transition-all;
   }
-  .nav-website .nav-menu .nav-menu-item.active .nav-submenu {
-    @apply opacity-100 flex absolute w-full left-0 p-0 visible pt-4 backdrop-blur;
+  .nav-website .nav-menu .nav-menu-item .nav-submenu {
+    @apply opacity-0 flex absolute w-full left-0 p-0 hidden pt-4 backdrop-blur;
   }
-  .nav-website .nav-menu .nav-menu-item.active .nav-submenu .nav-submenu-wrapper {
+  .nav-website .nav-menu .nav-menu-item .nav-submenu .nav-submenu-wrapper {
     @apply bg-blur rounded-lg w-full p-4 flex text-white;
   }
-  .nav-website .nav-menu .nav-menu-item.active .nav-submenu .nav-submenu-wrapper .nav-submenu-item {
+  .nav-website .nav-menu .nav-menu-item .nav-submenu .nav-submenu-wrapper .nav-submenu-item {
     @apply p-4 list-none m-0 text-white no-underline block p-4 transition-all rounded hover:bg-contrast/50;
+  }
+  .nav-website .nav-menu .nav-menu-item.active .nav-submenu {
+    @apply opacity-100 visible;
   }
   .nav-website .nav-menu .nav-menu-item.active .nav-menu-item-link {
     @apply relative after:content-[""] after:bottom-[-16px] after:left-0 after:right-0 after:m-auto after:absolute after:w-0 after:h-0
