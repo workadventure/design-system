@@ -71,7 +71,7 @@
     }
     .stripe {
       &.stripe-blue {
-        @apply relative z-20 leading-[4rem] pl-6 pr-4 after:content-[''] after:absolute after:top-0 after:left-[-15px] after:m-auto after:w-[125%] after:h-[100%] after:block after:bg-[url('src/img/stripe-blue.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-10;
+        @apply relative z-20 leading-[4rem] pl-6 pr-4 after:content-[''] after:absolute after:top-0 after:left-[-15px] after:m-auto after:w-[115%] after:h-[100%] after:block after:bg-[url('src/img/stripe-blue.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-10;
         .stripe-blue-text, span {
           @apply relative z-20 text-white;
         }
@@ -875,6 +875,33 @@
             @apply paragraph-lg paragraph-italic leading-3;
           }
         }
+      }
+    }
+  }
+
+  .usecase {
+    @apply basis-1/3 p-4 no-underline hover:scale-105 transition-all;
+    &:hover {
+      .usecase-wrapper {
+        @apply border-neutral-500;
+      }
+    }
+    .usecase-wrapper {
+      @apply border border-neutral-300 border-solid text-center rounded-lg;
+      .usecase-img {
+        @apply relative p-4;
+        & > img {
+          @apply rounded-lg w-full;
+        }
+        .usecase-img-title {
+          @apply absolute top-auto left-0 right-0 bottom-[-10px];
+        }
+      }
+      .usecase-logo {
+        @apply p-4;
+      }
+      .usecase-desc {
+        @apply px-8 pb-8 paragraph-italic paragraph-lg m-0 text-neutral;
       }
     }
   }
