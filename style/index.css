@@ -294,7 +294,7 @@
     @apply border-success text-success hover:bg-success-800/10;
   }
   .btn.btn-border.btn-light {
-    @apply border-white text-white hover:bg-neutral-100;
+    @apply border-white text-white hover:bg-white/10;
   }
   .btn.btn-ghost {
     @apply border-none bg-transparent;
@@ -321,7 +321,7 @@
     @apply text-success hover:bg-success-800/10;
   }
   .btn.btn-ghost.btn-light {
-    @apply text-white hover:bg-neutral-100;
+    @apply text-white hover:bg-white/10;
   }
   .btn.btn-border.btn-primary .btn-label, .btn.btn-ghost.btn-primary .btn-label {
     @apply text-primary;

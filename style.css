@@ -618,8 +618,7 @@ h6, .h6 {
 }
 
 .btn.btn-border.btn-light:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 251 252 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / 0.1);
 }
 
 .btn.btn-ghost {
@@ -688,8 +687,7 @@ h6, .h6 {
 }
 
 .btn.btn-ghost.btn-light:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 251 252 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / 0.1);
 }
 
 .btn.btn-border.btn-primary .btn-label, .btn.btn-ghost.btn-primary .btn-label {
