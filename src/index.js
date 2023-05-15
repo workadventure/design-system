@@ -74,7 +74,6 @@ let dur = 0.5;
 let hold = 4;
 
 targets.forEach((obj, i) => {
-    console.log("SLIDE INTRO NUMBER" + i);
     let tl = gsap.timeline({
         delay: dur * i + hold * i,
         repeat: -1,

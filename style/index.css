@@ -694,7 +694,7 @@
     @apply px-2 p-5 list-none last:pr-0;
   }
   .testimonial .testimonial-content {
-    @apply font-light text-[22px] text mb-3 mt-2;
+    @apply font-light text-[22px] text-xl mb-6 pt-4;
   }
   .testimonial .testimonial-wrapper {
     @apply flex;
