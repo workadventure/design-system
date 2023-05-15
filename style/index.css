@@ -855,6 +855,12 @@
   .loading-wrapper .loading {
     @apply grid h-screen place-items-center;
   }
+  .carrousel-testimonial .owl-item {
+    @apply blur transition-all;
+  }
+  .carrousel-testimonial .owl-item.active {
+    @apply blur-none;
+  }
 }
 .splited-text {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

@@ -938,6 +938,14 @@
       @apply grid h-screen place-items-center;
     }
   }
+  .carrousel-testimonial {
+    .owl-item {
+      @apply blur transition-all;
+      &.active {
+        @apply blur-none;
+      }
+    }
+  }
 }
 
 .splited-text {

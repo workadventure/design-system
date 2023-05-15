@@ -2493,6 +2493,11 @@ h6, .h6 {
   place-items: center;
 }
 
+.carrousel-testimonial .owl-item.active {
+  --tw-blur: blur(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 /**
  * This injects Tailwind's utility classes and any utility classes registered
  * by plugins.
