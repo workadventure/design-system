@@ -2347,6 +2347,8 @@ h6, .h6 {
 
 .usecase {
   flex-basis: 33.333333%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 1rem;
   text-decoration-line: none;
   transition-property: all;
