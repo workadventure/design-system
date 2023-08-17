@@ -4113,8 +4113,20 @@ table tbody tr td {
   margin-top: -6rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -4545,6 +4557,11 @@ table tbody tr td {
 
 .border-white\/20 {
   border-color: rgb(255 255 255 / 0.2);
+}
+
+.border-secondary {
+  --tw-border-opacity: 1;
+  border-color: rgb(65 86 246 / var(--tw-border-opacity));
 }
 
 .bg-contrast {
@@ -4998,6 +5015,14 @@ table tbody tr td {
   background-color: rgb(27 42 65 / 0.2);
 }
 
+.bg-contrast\/80 {
+  background-color: rgb(27 42 65 / 0.8);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-\[url\(\'https\:\/\/images\.unsplash\.com\/photo-1438761681033-6461ffad8d80\?ixlib\=rb-4\.0\.3\&ixid\=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\&auto\=format\&fit\=crop\&w\=1740\&q\=80\'\)\] {
   background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
 }
@@ -5268,6 +5293,28 @@ table tbody tr td {
   line-height: 1.25rem;
 }
 
+.text-sm {
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+
+.text-\[22px\] {
+  font-size: 22px;
+}
+
+.text-\[32px\] {
+  font-size: 32px;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-\[44px\] {
+  font-size: 44px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -5280,8 +5327,16 @@ table tbody tr td {
   font-weight: 400;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .italic {
   font-style: italic;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
 }
 
 .tracking-\[20px\] {
@@ -6071,6 +6126,19 @@ table tbody tr td {
 
 .even\:bg-white\/10:nth-child(even) {
   background-color: rgb(255 255 255 / 0.1);
+}
+
+.hover\:bg-white\/10:hover {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.hover\:bg-secondary-600\/10:hover {
+  background-color: rgb(95 113 245 / 0.1);
+}
+
+.hover\:bg-secondary-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 113 245 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 640px) {
