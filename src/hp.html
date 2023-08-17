@@ -40,8 +40,9 @@
                                 <polyline points="6 9 12 15 18 9" />
                             </svg>
                         </a>
+                        <!--
                         <div class="nav-submenu">
-                            <div class="nav-submenu-wrapper">
+                            <div class="nav-submenu-wrapper hidden">
                                 <a href="" class="basis-1/3 nav-submenu-item">
                                     <div class="flex content-center">
                                         <div class="basis-1/4 w-[100px] aspect-square rounded bg-[url('src/img/wa-kpmg.jpg')]"></div>
@@ -83,6 +84,7 @@
                                 </a>
                             </div>
                         </div>
+                        -->
                     </li>
                     <li class="nav-menu-item sm:hidden md:hidden lg:block">
                         <a href="#" class="nav-menu-item-link">Use cases</a>
@@ -120,22 +122,22 @@
     </header>
     <section>
         <div class="flex flex-row relative">
-            <div class="basis-1/2 p-2 bg-neutral-200 h-[720px] grid content-center absolute w-1/2">
+            <div class="basis-full xl:basis-1/2 p-2 bg-neutral-200 xl:h-[720px] h-[calc(720px-110px)] grid content-center absolute w-full xl:w-1/2">
                 <div class="bg-white h-8 w-8 absolute bottom-0 right-8 z-0"></div>
                 <div class="bg-white h-8 w-8 absolute bottom-8 right-0 z-0"></div>
             </div>
         </div>
         <div class="container">
-            <div class="flex flex-row pt-32 items-center">
-                <div class="basis-1/2 p-2 min-h-full relative">
+            <div class="hpblock">
+                <div class="hpblock-left">
                     <div class="m-auto">
-                        <ul class="pagination">
+                        <ul class="hpblock-left-pagination pagination">
                             <li class="pagination-item pagination-item-0"></li>
                             <li class="pagination-item pagination-item-1"></li>
                             <li class="pagination-item pagination-item-2"></li>
-                            <li class="pagination-item pagination-item-3"></li>
+                            <li class="pagination-item pagination-item-3 active"></li>
                         </ul>
-                        <h1 class="pt-8">
+                        <h1 class="hpblock-left-dyntext">
                             <div class="text-neutral-500 tracking-[3px]">Experience</div>
                             <div class="flex">
                                 <div>new ways of</div>
@@ -147,10 +149,10 @@
                                 </div>
                             </div>
                         </h1>
-                        <p class="paragraph-lg pb-8 text-neutral-800 pr-32">
+                        <p class="hpblock-left-desc">
                             <strong>Create virtual environments</strong> for your remote workforce to enhance human connection.
                         </p>
-                        <div class="pb-8">
+                        <div class="hpblock-left-btn">
                             <div class="btn-wrapper">
                                 <a href="" class="btn btn-border btn-contrast btn-inline-block mr-4">Register</a>
                                 <a href="" class="btn btn-contrast btn-inline-block">Try it for free</a>
@@ -159,14 +161,14 @@
                     </div>
                 </div>
 
-                <div class="basis-1/2 p-0 h-[calc(720px-110px)] pt-8 ">
-                    <div class="relative float-right">
-                        <img src="img/HP1.jpg" class="relative z-10 rounded-lg w-[440px]" />
-                        <img src="img/HP1.jpg" class="blur-3xl absolute z-0 left-0 w-[440px] translate-y-8 opacity-60" />
+                <div class="hpblock-right">
+                    <div class="hpblock-right-image-1">
+                        <img src="img/HP1.jpg" class="hpblock-right-image-elt" />
+                        <img src="img/HP1.jpg" class="hpblock-right-image-blurry" />
                     </div>
-                    <div class="relative -translate-x-16 -translate-y-24">
-                        <img src="img/HP2.jpg" class="relative z-10 rounded-lg w-[440px]" />
-                        <img src="img/HP1.jpg" class="blur-3xl absolute z-0 left-0 w-[440px] translate-y-8 opacity-60" />
+                    <div class="hpblock-right-image-2">
+                        <img src="img/HP2.jpg" class="hpblock-right-image-elt" />
+                        <img src="img/HP1.jpg" class="hpblock-right-image-blurry" />
                     </div>
                 </div>
             </div>
@@ -372,16 +374,16 @@
         </div>
     </section>
 
-    <section class="relative after:content-[''] after:h-[50%] after:absolute after:left-0 after:bg-neutral-200 after:bottom-0 after:w-full after:z-0">
-        <div class="flex flex-row relative mt-32 z-10">
-            <div class="basis-1/2 p-2 bg-contrast h-[340px] grid content-center absolute w-1/2">
-                <div class="bg-neutral-200 h-8 w-8 absolute bottom-0 right-8 z-0"></div>
-                <div class="bg-neutral-200 h-8 w-8 absolute bottom-8 right-0 z-0"></div>
+    <section class="rgpd">
+        <div class="rgpd-bg">
+            <div class="rgpd-bg-wrapper">
+                <div class="rgpd-bg-pixel-1"></div>
+                <div class="rgpd-bg-pixel-2"></div>
             </div>
         </div>
-        <div class="container z-10">
-            <div class="flex flex-row items-center">
-                <div class="basis-1/2 p-2 min-h-full relative text-right px-8 2xl:pr-32">
+        <div class="rgpd-content">
+            <div class="rgpd-content-flex">
+                <div class="rgpd-content-col">
                     <div class="m-auto">
                         <h1 class="pt-8">
                             <span class="text-white highlight">
@@ -399,7 +401,7 @@
                     </div>
                 </div>
 
-                <div class="basis-1/2 p-2 h-[340px] pt-8 text-center">
+                <div class="rgpd-content-image">
                     <img src="img/rgpd.png" />
                 </div>
             </div>

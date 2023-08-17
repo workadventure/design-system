@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>New ways of interacting - Workadventu.re</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link
+            href="assets/favicon-light.png"
+            rel="icon"
+            media="(prefers-color-scheme: light)"
+    />
+    <link
+            href="assets/favicon-dark.png"
+            rel="icon"
+            media="(prefers-color-scheme: dark)"
+    />
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 2px;
+            height: 6px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 3px;
+        }
+
+        /* Handle on hover */
+    </style>
+
+</head>
+<body>
+    <div class="h-screen w-screen">
+        <div  class="bg-[url('src/img/map-interior.png')] bg-cover bg-center absolute top-0 left-0 w-full h-full z-0"></div>
+        <div class="flex items-center justify-center h-screen container">
+            <div class="bg-blur rounded-none sm:rounded-lg max-h-screen overflow-y-auto">
+                <div class="text-center p-4">
+                    <span class="block h3 text-white pt-4">Achievement</span>
+                    <p class="text-white/50 paragraph m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                    <div class="flex items-center text-white bg-contrast px-4 sm:px-2 py-2">
+                        <div class="hidden sm:block ml-2">
+                            <svg width="100%" height="100%" viewBox="0 0 40 40" class="w-12 h-12">
+                                <circle class="fill-contrast" cx="20" cy="20" r="15.91549430918954" ></circle>
+                                <circle class="stroke-white/10" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+                                <circle class="stroke-success" stroke="#FF6200" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="20 80" stroke-dashoffset="25" stroke-linecap="round" stroke-linejoin="round"></circle>
+                                <!--
+                                stroke-dasharray="40 60" is 40% filled
+                                stroke-dasharray="80 20" is 80% filled
+                                -->
+                            </svg>
+                        </div>
+                        <div class="pr-4 pl-2 hidden sm:block text-success paragraph-sm paragraph-bold">
+                            1250
+                            <span class="opacity-50 paragraph-bold font-regular">XP</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="h6">
+                                LOREM IPSUM
+                                <span class="opacity-50">QUEST</span>
+                            </div>
+                            <div class="text-white/50 paragraph-sm">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-border btn-light block mx-2">Leader board</a>
+                        <a href="#" class="hidden sm:block btn btn-ghost btn-light">
+                            <img src="img/icons/ico-arrow-left.svg" />
+                        </a>
+                        <a href="#" class="hidden sm:block btn btn-ghost btn-light">
+                            <img src="img/icons/ico-arrow-right.svg" />
+                        </a>
+                    </div>
+                    <div class="flex snap-mandatory snap-x w-full h-[230px] overflow-auto touch-pan-x mb-4">
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-success"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M8.625 12.4998L11.2083 15.0832L16.375 9.9165" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-success"></div>
+                            </div>
+                            <img src="img/badge-marathoner.png" />
+                            <p class="text-secondary-400 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-success"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M8.625 12.4998L11.2083 15.0832L16.375 9.9165" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-success"></div>
+                            </div>
+                            <img src="img/badge-marathoner.png" />
+                            <p class="text-secondary-400 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-success"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M8.625 12.4998L11.2083 15.0832L16.375 9.9165" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <img src="img/badge-marathoner.png" />
+                            <p class="text-secondary-400 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-white/20 stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <img src="img/badge-marathoner2.png" class="opacity-50" />
+                            <p class="text-secondary-400 opacity-50 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-white/20 stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <img src="img/badge-marathoner2.png" class="opacity-50" />
+                            <p class="text-secondary-400 opacity-50 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-white/20 stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <img src="img/badge-marathoner2.png" class="opacity-50" />
+                            <p class="text-secondary-400 opaciy-50 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center text-white bg-contrast px-4 sm:px-2 py-2">
+                        <div class="hidden sm:block ml-2">
+                            <svg width="100%" height="100%" viewBox="0 0 40 40" class="w-12 h-12">
+                                <circle class="fill-contrast" cx="20" cy="20" r="15.91549430918954" ></circle>
+                                <circle class="stroke-white/10" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+                                <circle class="stroke-success" stroke="#FF6200" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="75 25" stroke-dashoffset="25" stroke-linecap="round" stroke-linejoin="round"></circle>
+                                <!--
+                                stroke-dasharray="40 60" is 40% filled <br />
+                                stroke-dasharray="80 20" is 80% filled
+                                -->
+                            </svg>
+                        </div>
+                        <div class="pr-4 hidden sm:block pl-2 text-success paragraph-sm paragraph-bold">
+                            432
+                            <span class="opacity-50 paragraph-bold font-regular">XP</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="h6">
+                                LOREM IPSUM
+                                <span class="opacity-50">QUEST</span>
+                            </div>
+                            <div class="text-white/50 paragraph-sm">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-border btn-light block mx-2">Leader board</a>
+                        <a href="#" class="hidden sm:block btn btn-ghost btn-light">
+                            <img src="img/icons/ico-arrow-left.svg" />
+                        </a>
+                        <a href="#" class="hidden sm:block btn btn-ghost btn-light">
+                            <img src="img/icons/ico-arrow-right.svg" />
+                        </a>
+                    </div>
+                    <div class="flex snap-mandatory snap-x w-full h-[200px] overflow-auto touch-pan-x mb-4">
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-success"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M8.625 12.4998L11.2083 15.0832L16.375 9.9165" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-success"></div>
+                            </div>
+                            <div class="h1 text-white">
+                                100
+                                <span class="text-secondary">XP</span>
+                            </div>
+                            <p class="text-secondary-400 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-success"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M8.625 12.4998L11.2083 15.0832L16.375 9.9165" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-success"></div>
+                            </div>
+                            <div class="h1 text-white">
+                                200
+                                <span class="text-secondary">XP</span>
+                            </div>
+                            <p class="text-secondary-400 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-success"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M8.625 12.4998L11.2083 15.0832L16.375 9.9165" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-success"></div>
+                            </div>
+                            <div class="h1 text-white">
+                                300
+                                <span class="text-secondary">XP</span>
+                            </div>
+                            <p class="text-secondary-400 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4 snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-success"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M8.625 12.4998L11.2083 15.0832L16.375 9.9165" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="fill-none stroke-success stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <div class="h1 text-white">
+                                400
+                                <span class="text-secondary">XP</span>
+                            </div>
+                            <p class="text-secondary-400 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-white/20 stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <div class="h1 text-white opacity-50">
+                                500
+                                <span class="text-secondary">XP</span>
+                            </div>
+                            <p class="text-secondary-400 opacity-50 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-white/20 stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <div class="h1 text-white opacity-50">
+                                600
+                                <span class="text-secondary">XP</span>
+                            </div>
+                            <p class="text-secondary-400 opacity-50 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                        <div class="flex-none text-center w-full md:w-1/2 lg:w-1/4  snap-center">
+                            <div class="flex items-center my-4">
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                                <svg class="flex-none" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill-none stroke-white/20 stroke-[1.5]" d="M12.5 1C21.7 1 24 3.3 24 12.5C24 21.7 21.7 24 12.5 24C3.3 24 1 21.7 1 12.5C1 3.3 3.3 1 12.5 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="h-[1px] w-full bg-white/20"></div>
+                            </div>
+                            <div class="h1 text-white opacity-50">
+                                700
+                                <span class="text-secondary">XP</span>
+                            </div>
+                            <p class="text-secondary-400 opacity-50 px-8 sm:px-0">
+                                Voluptatum similique maxime iste et quo sapiente voluptas omnis possimus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-contrast">
+                    <a href="#" class="block btn btn-secondary">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

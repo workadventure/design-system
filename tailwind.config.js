@@ -7,18 +7,7 @@ module.exports = {
   },
   prefix: "",
   theme: {
-
     extend: {
-      container: {
-        // default breakpoints but with 40px removed
-        screens: {
-          sm: '640px',
-          md: '768px',
-          lg: '1024px',
-          xl: '1280px',
-          '2xl': '1536px',
-        },
-      },
       colors: ({ colors }) => ({
       'neutral': {
         100: '#FAFBFC',
