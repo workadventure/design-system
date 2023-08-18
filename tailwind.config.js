@@ -9,16 +9,6 @@ module.exports = {
   theme: {
 
     extend: {
-      container: {
-        // default breakpoints but with 40px removed
-        screens: {
-          sm: '640px',
-          md: '768px',
-          lg: '1024px',
-          xl: '1280px',
-          '2xl': '1536px',
-        },
-      },
       colors: ({ colors }) => ({
       'neutral': {
         100: '#FAFBFC',
@@ -189,6 +179,7 @@ module.exports = {
         ]
       },
       fontSize: {
+        // Question: why px instead of REM for the font size?
         xxs: ['11px', { lineHeight: '1rem' }],
         xs: ['13px', { lineHeight: '1.25rem' }],
         sm: ['14px', { lineHeight: '1.5rem' }],
@@ -201,21 +192,6 @@ module.exports = {
         regular: '400',
         bold: '700'
       },
-      opacity: {
-        0: '0',
-        5: '0.05',
-        10: '0.1',
-        20: '0.2',
-        25: '0.25',
-        35: '0.35',
-        50: '0.5',
-        65: '0.65',
-        75: '0.75',
-        80: '0.8',
-        90: '0.9',
-        95: '0.95',
-        100: '1',
-      }
 
     },
   },

@@ -1,0 +1,64 @@
+
+
+.nav {
+    &-website {
+        @apply bg-blur rounded-lg px-7 py-0 flex relative;
+        .nav-logo {
+            @apply flex grow h-9 self-center;
+        }
+        .nav-menu {
+            @apply flex m-0;
+            .nav-menu-item {
+                @apply self-center list-none;
+                &-dd {
+                /*@apply after:content-[''] after:h-3 after:w-3 after:bg-white after:absolute after:top-0 after:bottom-0 after:m-auto ;*/
+
+                /*@apply flex after:content-[''] after:h-3 after:w-3 after:bg-white after:relative after:block  after:m-auto ;*/
+                    .nav-submenu {
+                        @apply opacity-0 absolute invisible transition-all;
+                    }
+                }
+                .nav-submenu {
+                    @apply opacity-0 flex absolute w-full left-0 p-0 hidden pt-4 backdrop-blur;
+                    .nav-submenu-wrapper {
+                        @apply bg-blur rounded-lg w-full p-4 flex text-white;
+                        .nav-submenu-item {
+                            @apply p-4 list-none m-0 text-white no-underline block p-4 transition-all rounded hover:bg-contrast/50;
+                        }
+                    }
+                }
+                &.active {
+                    .nav-submenu {
+                        @apply opacity-100 visible;
+                    }
+                    .nav-menu-item-link {
+                        @apply relative after:content-[''] after:bottom-[-16px] after:left-0 after:right-0 after:m-auto after:absolute after:w-0 after:h-0
+                        after:border-solid after:border-b-contrast after:border-b-8 after:border-x-transparent after:border-x-8 after:border-t-0 after:opacity-80;
+                        .icon {
+                            @apply rotate-180;
+                        }
+                    }
+                }
+                &-burger {
+                    @apply 2xl:hidden xl:hidden sm:p-6;
+                    .burger {
+                        @apply relative h-4 w-6;
+                        &-line {
+                            @apply
+                            h-[1px] bg-white absolute right-0
+                            first:w-4 first:top-0
+                            even:w-5 even:top-[50%]
+                            last:w-3 last:bottom-0;
+                        }
+                    }
+                }
+                &-link {
+                    @apply block text-white no-underline hover:bg-white/10 sm:p-1 lg:p-4 xl:p-6 2xl:p-8;
+                }
+                &-btn {
+                    @apply px-2 p-5 list-none last:pr-0;
+                }
+            }
+        }
+    }
+}

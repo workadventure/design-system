@@ -1,0 +1,28 @@
+
+.feature-title-wrapper {
+    @apply flex flex-row;
+    .feature-title {
+        @apply paragraph-lg paragraph-bold;
+    }
+}
+.features {
+    @apply flex flex-row items-center rounded hover:bg-neutral-100;
+    .feature-content {
+        @apply basis-8/12;
+        .feature-content-wrapper {
+            @apply flex;
+            .feature-content-icon {
+                @apply p-4 mt-2 ml-6;
+            }
+            .feature-content-content {
+                @apply p-4;
+                .feature-content-title {
+                    @apply h6 font-bold text-secondary;
+                }
+                .feature-content-desc {
+                    @apply paragraph-lg paragraph-italic leading-3;
+                }
+            }
+        }
+    }
+}

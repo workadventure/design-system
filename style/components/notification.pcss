@@ -1,0 +1,103 @@
+.notification {
+    @apply aspect-square w-6 h-6 bg-contrast rounded-full paragraph-bold text-center flex  items-center;
+    & > .notification-value {
+        @apply text-neutral-100 block self-center w-full;
+    }
+    &-lg {
+        @apply aspect-square w-8 h-8 paragraph-lg;
+    }
+    &-sm {
+        @apply aspect-square w-5 h-5 paragraph-xs;
+        & > .notification-value {
+            @apply pt-0;
+        }
+    }
+    &-xs {
+        @apply aspect-square w-4 h-4 paragraph-xxs;
+        & > .notification-value {
+            @apply pt-0;
+        }
+    }
+    &-xxs {
+        @apply aspect-square w-2 h-2;
+    }
+    &-4px {
+@apply aspect-square w-1 h-1;
+}
+&-primary {
+@apply bg-primary;
+}
+&-secondary {
+@apply bg-secondary;
+}
+&-danger {
+@apply bg-danger;
+}
+&-success {
+@apply bg-success;
+}
+&-warning {
+@apply bg-warning;
+}
+&-light {
+@apply bg-white ;
+& > .notification-value {
+@apply text-contrast;
+}
+}
+
+&-border {
+@apply border border-solid bg-transparent;
+& > .notification-value {
+@apply text-contrast;
+}
+&.notification-primary {
+@apply  border-primary;
+& > .notification-value {
+@apply text-primary;
+}
+}
+&.notification-secondary {
+@apply border-secondary hover:bg-secondary-600/10;
+& > .notification-value {
+@apply text-secondary;
+}
+}
+&.notification-contrast {
+@apply border-contrast;
+& > .notification-value {
+@apply text-contrast;
+}
+}
+&.notification-neutral {
+@apply border-neutral hover:bg-neutral-800/10;
+& > .notification-value {
+@apply text-neutral;
+}
+}
+&.notification-danger {
+@apply border-danger hover:bg-danger-800/10;
+& > .notification-value {
+@apply text-danger;
+}
+}
+&.notification-warning {
+@apply border-warning hover:bg-warning-600/10;
+& > .notification-value {
+@apply text-warning;
+}
+}
+&.notification-success {
+@apply border-success hover:bg-success-800/10;
+& > .notification-value {
+@apply text-success;
+}
+}
+&.notification-light {
+@apply border-white hover:bg-neutral-200/10;
+& > .notification-value {
+@apply text-white;
+}
+}
+}
+}

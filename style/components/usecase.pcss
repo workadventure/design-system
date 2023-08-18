@@ -1,0 +1,28 @@
+
+
+.usecase {
+    @apply basis-1/3 p-4 no-underline hover:scale-105 transition-all bg-white;
+    &:hover {
+        .usecase-wrapper {
+            @apply border-neutral-500;
+        }
+    }
+    .usecase-wrapper {
+        @apply border border-neutral-300 border-solid text-center rounded-lg;
+        .usecase-img {
+            @apply relative p-4;
+            & > img {
+                @apply rounded-lg w-full;
+            }
+            .usecase-img-title {
+                @apply absolute top-auto left-0 right-0 bottom-[-10px];
+            }
+        }
+        .usecase-logo {
+            @apply p-4;
+        }
+        .usecase-desc {
+            @apply px-8 pb-8 paragraph-italic paragraph-lg m-0 text-neutral;
+        }
+    }
+}
