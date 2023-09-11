@@ -1,0 +1,309 @@
+.notification {
+
+    font-weight: 700;
+
+    display: flex;
+
+    aspect-ratio: 1 / 1;
+
+    height: 1.5rem;
+
+    width: 1.5rem;
+
+    align-items: center;
+
+    border-radius: 9999px;
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--contrast) / var(--tw-bg-opacity));
+
+    text-align: center
+}
+
+.notification > .notification-value {
+
+    display: block;
+
+    width: 100%;
+
+    align-self: center;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--neutral-100) / var(--tw-text-opacity))
+}
+
+.notification-lg {
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem;
+
+    aspect-ratio: 1 / 1;
+
+    height: 2rem;
+
+    width: 2rem
+}
+
+.notification-sm {
+
+    font-size: 0.75rem;
+
+    line-height: 1rem;
+
+    aspect-ratio: 1 / 1;
+
+    height: 1.25rem;
+
+    width: 1.25rem
+}
+
+.notification-sm > .notification-value {
+
+    padding-top: 0px
+}
+
+.notification-xs {
+
+    font-size: 11px;
+
+    line-height: 1rem;
+
+    aspect-ratio: 1 / 1;
+
+    height: 1rem;
+
+    width: 1rem
+}
+
+.notification-xs > .notification-value {
+
+    padding-top: 0px
+}
+
+.notification-xxs {
+
+    aspect-ratio: 1 / 1;
+
+    height: 0.5rem;
+
+    width: 0.5rem
+}
+
+.notification-xxxs {
+
+    aspect-ratio: 1 / 1;
+
+    height: 0.25rem;
+
+    width: 0.25rem
+}
+
+.notification-primary {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--primary) / var(--tw-bg-opacity))
+}
+
+.notification-secondary {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--secondary) / var(--tw-bg-opacity))
+}
+
+.notification-danger {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--danger) / var(--tw-bg-opacity))
+}
+
+.notification-success {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--success) / var(--tw-bg-opacity))
+}
+
+.notification-warning {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--warning) / var(--tw-bg-opacity))
+}
+
+.notification-light {
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.notification-light > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.notification-border {
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    background-color: transparent
+}
+
+.notification-border > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-primary {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--primary) / var(--tw-border-opacity))
+}
+
+.notification-border.notification-primary > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--primary) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-secondary {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--secondary) / var(--tw-border-opacity))
+}
+
+.notification-border.notification-secondary:hover {
+
+    background-color: hsl(var(--secondary-600) / 0.1)
+}
+
+.notification-border.notification-secondary > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--secondary) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-contrast {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--contrast) / var(--tw-border-opacity))
+}
+
+.notification-border.notification-contrast > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-neutral {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral) / var(--tw-border-opacity))
+}
+
+.notification-border.notification-neutral:hover {
+
+    background-color: hsl(var(--neutral-800) / 0.1)
+}
+
+.notification-border.notification-neutral > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--neutral) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-danger {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--danger) / var(--tw-border-opacity))
+}
+
+.notification-border.notification-danger:hover {
+
+    background-color: hsl(var(--danger-800) / 0.1)
+}
+
+.notification-border.notification-danger > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--danger) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-warning {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--warning) / var(--tw-border-opacity))
+}
+
+.notification-border.notification-warning:hover {
+
+    background-color: hsl(var(--warning-600) / 0.1)
+}
+
+.notification-border.notification-warning > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--warning) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-success {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--success) / var(--tw-border-opacity))
+}
+
+.notification-border.notification-success:hover {
+
+    background-color: hsl(var(--success-800) / 0.1)
+}
+
+.notification-border.notification-success > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--success) / var(--tw-text-opacity))
+}
+
+.notification-border.notification-light {
+
+    --tw-border-opacity: 1;
+
+    border-color: rgb(255 255 255 / var(--tw-border-opacity))
+}
+
+.notification-border.notification-light:hover {
+
+    background-color: hsl(var(--neutral-200) / 0.1)
+}
+
+.notification-border.notification-light > .notification-value {
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}

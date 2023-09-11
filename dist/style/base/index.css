@@ -1,0 +1,222 @@
+* {
+  @apply box-border;
+}
+
+html,
+body {
+  @apply text-contrast font-main p-0 m-0 box-border;
+}
+
+.paragraph {
+  @apply font-normal;
+}
+
+.paragraph-xxs {
+  @apply text-xxs;
+}
+
+.paragraph-xs {
+  @apply text-xs;
+}
+
+.paragraph-sm {
+  @apply text-sm;
+}
+
+.paragraph-lg {
+  @apply text-lg;
+}
+
+.paragraph-bold {
+  @apply font-bold;
+}
+
+.paragraph-italic {
+  @apply italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @apply font-title m-0 uppercase;
+}
+
+h1 .underline, h2 .underline, h3 .underline, h4 .underline, h5 .underline, h6 .underline, .h1 .underline, .h2 .underline, .h3 .underline, .h4 .underline, .h5 .underline, .h6 .underline {
+  @apply relative no-underline text-secondary z-10 after:content-[""] after:absolute after:bottom-0 after:left-0 after:m-auto after:w-full after:h-[6px] after:block after:bg-[url("../img/underline.svg")] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+}
+
+h1 .highlight, h2 .highlight, h3 .highlight, h4 .highlight, h5 .highlight, h6 .highlight, .h1 .highlight, .h2 .highlight, .h3 .highlight, .h4 .highlight, .h5 .highlight, .h6 .highlight {
+  @apply relative z-10 after:content-[""] after:absolute after:top-0 after:left-[-5px] after:m-auto after:w-[110%] after:h-[110%] after:block after:bg-[url("../img/hightlight.svg")] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+}
+
+h1 .highlight span,
+h1 .highlight-text,
+h2 .highlight span,
+h2 .highlight-text,
+h3 .highlight span,
+h3 .highlight-text,
+h4 .highlight span,
+h4 .highlight-text,
+h5 .highlight span,
+h5 .highlight-text,
+h6 .highlight span,
+h6 .highlight-text,
+.h1 .highlight span,
+.h1 .highlight-text,
+.h2 .highlight span,
+.h2 .highlight-text,
+.h3 .highlight span,
+.h3 .highlight-text,
+.h4 .highlight span,
+.h4 .highlight-text,
+.h5 .highlight span,
+.h5 .highlight-text,
+.h6 .highlight span,
+.h6 .highlight-text {
+  @apply relative z-10 text-white;
+}
+
+h1 .stripe.stripe-blue, h2 .stripe.stripe-blue, h3 .stripe.stripe-blue, h4 .stripe.stripe-blue, h5 .stripe.stripe-blue, h6 .stripe.stripe-blue, .h1 .stripe.stripe-blue, .h2 .stripe.stripe-blue, .h3 .stripe.stripe-blue, .h4 .stripe.stripe-blue, .h5 .stripe.stripe-blue, .h6 .stripe.stripe-blue {
+  @apply relative z-20 leading-[4rem] pl-6 pr-4 after:content-[""] after:absolute after:top-0 after:left-[-15px] after:m-auto after:w-[115%] after:h-[100%] after:block after:bg-[url("../img/stripe-blue.svg")] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-10;
+}
+
+h1 .stripe.stripe-blue .stripe-blue-text,
+h1 .stripe.stripe-blue span,
+h2 .stripe.stripe-blue .stripe-blue-text,
+h2 .stripe.stripe-blue span,
+h3 .stripe.stripe-blue .stripe-blue-text,
+h3 .stripe.stripe-blue span,
+h4 .stripe.stripe-blue .stripe-blue-text,
+h4 .stripe.stripe-blue span,
+h5 .stripe.stripe-blue .stripe-blue-text,
+h5 .stripe.stripe-blue span,
+h6 .stripe.stripe-blue .stripe-blue-text,
+h6 .stripe.stripe-blue span,
+.h1 .stripe.stripe-blue .stripe-blue-text,
+.h1 .stripe.stripe-blue span,
+.h2 .stripe.stripe-blue .stripe-blue-text,
+.h2 .stripe.stripe-blue span,
+.h3 .stripe.stripe-blue .stripe-blue-text,
+.h3 .stripe.stripe-blue span,
+.h4 .stripe.stripe-blue .stripe-blue-text,
+.h4 .stripe.stripe-blue span,
+.h5 .stripe.stripe-blue .stripe-blue-text,
+.h5 .stripe.stripe-blue span,
+.h6 .stripe.stripe-blue .stripe-blue-text,
+.h6 .stripe.stripe-blue span {
+  @apply relative z-20 text-white;
+}
+
+h1 .stripe.stripe-white, h2 .stripe.stripe-white, h3 .stripe.stripe-white, h4 .stripe.stripe-white, h5 .stripe.stripe-white, h6 .stripe.stripe-white, .h1 .stripe.stripe-white, .h2 .stripe.stripe-white, .h3 .stripe.stripe-white, .h4 .stripe.stripe-white, .h5 .stripe.stripe-white, .h6 .stripe.stripe-white {
+  @apply relative z-10 mt-2 after:content-[""] after:absolute after:top-0 after:left-[-32px] after:m-auto after:min-w-[250px] after:w-[120%] after:h-[100%] after:block after:bg-[url("../img/stripe-white.svg")] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+}
+
+h1 .stripe.stripe-white .stripe-white-text,
+h1 .stripe.stripe-white span,
+h2 .stripe.stripe-white .stripe-white-text,
+h2 .stripe.stripe-white span,
+h3 .stripe.stripe-white .stripe-white-text,
+h3 .stripe.stripe-white span,
+h4 .stripe.stripe-white .stripe-white-text,
+h4 .stripe.stripe-white span,
+h5 .stripe.stripe-white .stripe-white-text,
+h5 .stripe.stripe-white span,
+h6 .stripe.stripe-white .stripe-white-text,
+h6 .stripe.stripe-white span,
+.h1 .stripe.stripe-white .stripe-white-text,
+.h1 .stripe.stripe-white span,
+.h2 .stripe.stripe-white .stripe-white-text,
+.h2 .stripe.stripe-white span,
+.h3 .stripe.stripe-white .stripe-white-text,
+.h3 .stripe.stripe-white span,
+.h4 .stripe.stripe-white .stripe-white-text,
+.h4 .stripe.stripe-white span,
+.h5 .stripe.stripe-white .stripe-white-text,
+.h5 .stripe.stripe-white span,
+.h6 .stripe.stripe-white .stripe-white-text,
+.h6 .stripe.stripe-white span {
+  @apply relative z-30 text-contrast;
+}
+
+h1 .stripe.stripe-inline.stripe-blue,
+h1 .stripe.stripe-inline.stripe-white,
+h2 .stripe.stripe-inline.stripe-blue,
+h2 .stripe.stripe-inline.stripe-white,
+h3 .stripe.stripe-inline.stripe-blue,
+h3 .stripe.stripe-inline.stripe-white,
+h4 .stripe.stripe-inline.stripe-blue,
+h4 .stripe.stripe-inline.stripe-white,
+h5 .stripe.stripe-inline.stripe-blue,
+h5 .stripe.stripe-inline.stripe-white,
+h6 .stripe.stripe-inline.stripe-blue,
+h6 .stripe.stripe-inline.stripe-white,
+.h1 .stripe.stripe-inline.stripe-blue,
+.h1 .stripe.stripe-inline.stripe-white,
+.h2 .stripe.stripe-inline.stripe-blue,
+.h2 .stripe.stripe-inline.stripe-white,
+.h3 .stripe.stripe-inline.stripe-blue,
+.h3 .stripe.stripe-inline.stripe-white,
+.h4 .stripe.stripe-inline.stripe-blue,
+.h4 .stripe.stripe-inline.stripe-white,
+.h5 .stripe.stripe-inline.stripe-blue,
+.h5 .stripe.stripe-inline.stripe-white,
+.h6 .stripe.stripe-inline.stripe-blue,
+.h6 .stripe.stripe-inline.stripe-white {
+  @apply inline-block py-3 px-6;
+  transform: translate(-10px, 20px);
+}
+
+h1,
+.h1 {
+  @apply text-[44px] leading-10;
+}
+
+h2,
+.h2 {
+  @apply text-[40px] leading-10;
+}
+
+h3,
+.h3 {
+  @apply text-[36px] leading-10;
+}
+
+h4,
+.h4 {
+  @apply text-[32px];
+}
+
+h5,
+.h5 {
+  @apply text-[26px];
+}
+
+h6,
+.h6 {
+  @apply text-[22px];
+}
+
+.light {
+  @apply font-light;
+}
+
+.bold {
+  @apply font-bold;
+}
+
+.regular {
+  @apply font-normal;
+}
+
+.subtitle {
+  @apply text-neutral text-center m-0;
+}
