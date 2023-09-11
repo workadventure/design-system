@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Override Tailwind's default color palette
+:root {
+    --neutral-100: 0 89% 21%;
+}
+*/

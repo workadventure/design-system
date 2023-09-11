@@ -1,0 +1,30 @@
+.testimonial {
+    @apply pb-2 lg:pb-6 px-8 xl:px-0 pt-2 lg:pt-6;
+
+    .testimonial-content {
+        @apply font-light text-[22px] text-xl mb-6 pt-4 text-center lg:text-left lg:pr-32;
+    }
+
+    .testimonial-wrapper {
+        @apply flex flex-col lg:flex-row;
+
+        .testimonial-image {
+            @apply self-center;
+
+            img {
+                @apply h-12 aspect-square rounded-lg;
+            }
+        }
+
+        .testimonial-from {
+            @apply self-center ml-2 text-center lg:text-left;
+
+            .testimonial-from-name {
+            }
+
+            .testimonial-from-job {
+                @apply font-bold;
+            }
+        }
+    }
+}

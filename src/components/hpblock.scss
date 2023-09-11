@@ -1,0 +1,133 @@
+.hpblock {
+    @apply flex flex-col xl:flex-row pt-32 items-center;
+
+    .hpblock-left {
+        @apply basis-full xl:basis-1/2 p-2 min-h-full relative xl:p-0 p-8 lg:p-16;
+
+        .hpblock-left-pagination {
+        }
+
+        .hpblock-left-dyntext {
+            @apply pt-8;
+
+            .title-home {
+                @apply flex-row lg:flex-col;
+
+                .title-home-dyn {
+                    @apply w-full pb-[85px] lg:pb-[35px];
+
+                    .splited-text {
+                        @apply w-full -left-[9px];
+                    }
+                }
+            }
+        }
+
+        .hpblock-left-desc {
+            @apply paragraph-lg pb-0 lg:pb-8 text-contrast lg:pr-32 p-0;
+        }
+
+        .hpblock-left-btn {
+            @apply pb-8;
+        }
+    }
+
+    .hpblock-right {
+        @apply basis-full xl:basis-1/2 p-0 h-[calc(720px-110px)] pt-8 w-full xl:w-auto hidden xl:block;
+
+        .hpblock-right-image-1 {
+            @apply relative float-right hidden;
+
+            animation-name: floating2;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+
+            @keyframes floating2 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(0, 1rem);
+                }
+
+                100% {
+                    transform: translate(0, 0);
+                }
+            }
+
+            .hpblock-right-image-elt {
+                @apply relative z-10 w-1/2 lg:w-[440px];
+            }
+
+            .hpblock-right-image-blurry {
+                @apply blur-3xl absolute z-0 left-0 w-1/2 xl:w-[440px] translate-y-8 opacity-60;
+            }
+        }
+
+        .hpblock-right-image-2 {
+            @apply relative translate-x-0 lg:-translate-x-16 translate-y-0 z-10 rounded-lg;
+
+            animation-name: floating;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+
+            &.play {
+                animation-play-state: paused;
+
+                &:hover {
+                    .btn-play {
+                        @apply block opacity-50;
+
+                        svg {
+                            &.pause {
+                                @apply block;
+                            }
+
+                            &.play {
+                                @apply hidden;
+                            }
+                        }
+                    }
+                }
+
+                .btn-play {
+                    @apply hidden;
+
+                    svg {
+                        &.play {
+                        }
+                    }
+                }
+            }
+
+            @keyframes floating {
+                0% {
+                    transform: translate(-4rem, 0);
+                }
+
+                50% {
+                    transform: translate(-5rem, 1rem);
+                }
+
+                100% {
+                    transform: translate(-4rem, 0);
+                }
+            }
+
+            .hpblock-right-image-elt {
+                @apply relative z-10 rounded-lg w-1/2 lg:w-full;
+            }
+
+            .hpblock-right-image-blurry {
+                @apply blur-3xl absolute z-0 left-0 w-1/2 lg:w-full translate-y-8 opacity-60;
+            }
+
+            video {
+                @apply rounded-lg z-10 relative;
+            }
+        }
+    }
+}
