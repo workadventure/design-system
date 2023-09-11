@@ -1,0 +1,153 @@
+.bg-blur {
+    @apply bg-contrast/80 backdrop-blur;
+}
+
+.brick {
+    @apply shadow-lg rounded-lg hover:shadow-sm transition-all hover:translate-y-1 h-full;
+
+    .brick-image {
+        @apply transition-all min-h-[240px] w-full bg-[length:100%_auto] bg-center rounded;
+    }
+
+    &:hover {
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6 {
+            @apply text-secondary;
+
+            svg {
+                .svgText {
+                    @apply fill-secondary stroke-[25px];
+                }
+            }
+        }
+
+        .brick-image {
+            @apply bg-[length:110%_auto];
+        }
+    }
+
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        @apply -mt-8 transition-all;
+
+        svg {
+            @apply text-center w-full;
+
+            .svgText {
+                @apply fill-contrast stroke-white stroke-[15px] w-full font-bold transition-all;
+
+                stroke-linejoin: round;
+                paint-order: stroke;
+            }
+        }
+    }
+
+    p {
+        @apply paragraph-lg px-6 text-contrast/80 hover:text-contrast;
+    }
+
+    &-feature {
+        @apply flex lg:flex-row flex-col flex-row mt-32 p-0 lg:px-8 xl:px-0;
+
+        &.revert {
+            @apply flex lg:flex-row-reverse flex-col flex-row;
+
+            .brick-feature-text {
+                @apply text-center lg:text-left;
+            }
+
+            .brick-feature-image {
+                @apply text-center lg:text-left;
+            }
+        }
+
+        .brick-feature-text {
+            @apply lg:basis-1/3 lg:text-right p-8 basis-full m-auto  text-center;
+
+            &.half {
+                @apply lg:basis-1/2 basis-full;
+            }
+
+            &_title {
+                @apply h3 font-bold leading-[3rem];
+            }
+
+            &_desc {
+                @apply paragraph text-contrast self-center;
+            }
+        }
+
+        .brick-feature-image {
+            @apply lg:basis-2/3 border border-solid border-neutral-300 rounded-xl overflow-hidden text-left basis-full;
+
+            &.half {
+                @apply lg:basis-1/2 basis-full;
+            }
+
+            &.no-border {
+                @apply border-none;
+            }
+
+            video {
+                @apply w-full h-full object-cover;
+            }
+
+            & > .img-brick {
+                @apply xl:w-[1024px] hidden sm:block h-auto xl:h-[280px];
+            }
+
+            & > .img-brick-mobile {
+                @apply block sm:hidden;
+            }
+        }
+    }
+}
+
+.cursor {
+    @apply cursor-pointer fixed z-50 left-0 top-0 pointer-events-none will-change-transform mix-blend-difference;
+
+    @media (hover: hover) and (pointer: fine) {
+        .cursor__circle {
+            @apply w-8 h-8 mt-[-50%] ml-[-50%] rounded-full border border-solid border-neutral-300/65;
+
+            transition:
+                opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        &.arrow {
+            @apply after:content-[''] after:absolute after:left-[-50%] after:top-[-50%] after:w-full after:h-full after:bg-[url('https://svgshare.com/i/MzQ.svg')] after:bg-no-repeat after:bg-center;
+
+            .cursor__circle {
+                @apply w-16 h-16 rounded-xl border-secondary cursor-pointer;
+            }
+        }
+
+        &.subtle {
+            .cursor__circle {
+                @apply opacity-20;
+            }
+        }
+
+        &.overlay {
+            .cursor__circle {
+                @apply w-6 h-6 bg-contrast/10 border-transparent;
+            }
+        }
+    }
+}
+
+.container {
+    @apply max-w-screen-2xl mx-auto relative h-full lg:px-8 px-0;
+}

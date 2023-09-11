@@ -1,26 +1,66 @@
 {
-  "name": "@workadventure/tailwind",
+  "name": "@workadventure/design-system",
   "version": "1.0.0",
   "description": "Tailwind Theme for WorkAdventure",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:base": "postcss --config src/base src/base/*.scss --base src --dir dist/style --ext .css",
+    "concat:base": "cat dist/style/base/*.css > dist/style/base.css",
+    "jss:base": "prejss-cli dist/style/base.css --format es6",
+    "build:base": "npm run compile:base && npm run concat:base && npm run jss:base",
+    "compile:utilities": "postcss --config src/utilities src/utilities/*.scss --base src --dir dist/style --ext .css",
+    "concat:utilities": "cat dist/style/utilities/*.css > dist/style/utilities.css",
+    "jss:utilities": "prejss-cli dist/style/utilities.css --format es6",
+    "build:utilities": "npm run compile:utilities && npm run concat:utilities && npm run jss:utilities",
+    "compile:components": "postcss --config src/components src/components/*.scss --base src --dir dist/style --ext .css",
+    "concat:components": "cat dist/style/components/*.css > dist/style/components.css",
+    "jss:components": "prejss-cli dist/style/components.css --format es6",
+    "build:components": "npm run compile:components && npm run concat:components && npm run jss:components",
+    "build:style": "npm run build:base && npm run build:utilities && npm run build:components",
+    "build:ts": "tsc",
+    "build": "npm run build:style && npm run build:ts",
+    "watch": "ts-node-esm src/watcher.ts",
+    "dev": "npm run build:style && npm run watch & cd example && npm run dev",
+    "precommit": "lint-staged",
+    "prepare": "husky install"
   },
   "author": "WorkAdventure",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/workadventure/design-system"
+  },
+  "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
-    "tailwindcss": "^3.2.7"
+    "@csstools/postcss-sass": "^5.0.1",
+    "@types/node": "^20.5.9",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "autoprefixer": "^10.4.15",
+    "colord": "^2.9.3",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "postcss": "^8.4.29",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "prejss-cli": "^0.3.3",
+    "prettier": "^3.0.3",
+    "release-please": "^15.13.0",
+    "sass": "^1.66.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@fontsource/press-start-2p": "^4.3.0",
-    "@fontsource/roboto": "^4.5.8",
-    "@fontsource/roboto-condensed": "^4.5.9",
-    "@tailwindcss/forms": "^0.5.0",
-    "postcss": "^8.4.14"
+    "tailwindcss": "^3.3.3"
   },
   "files": [
-    "src",
-    "style"
-  ]
+    "dist/**/*"
+  ],
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
 }

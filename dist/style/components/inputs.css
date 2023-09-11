@@ -1,0 +1,160 @@
+.input-text {
+
+    border-radius: 0.25rem;
+
+    border-width: 1px;
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-400) / var(--tw-border-opacity));
+
+    padding: 0.375rem;
+
+    font-weight: 700;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.input-text-lg {
+
+    border-radius: 0.375rem;
+
+    padding: 0.75rem;
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem
+}
+
+.input-text-sm {
+
+    border-radius: 0.25rem;
+
+    padding: 0.25rem;
+
+    font-size: 0.875rem;
+
+    line-height: 1.25rem
+}
+
+.input-checkbox {
+
+    position: relative;
+
+    top: 0px;
+
+    right: 0px;
+
+    bottom: 0px;
+
+    left: 0px;
+
+    display: inline-block;
+
+    height: 1.25rem;
+
+    width: 1.25rem;
+
+    appearance: none;
+
+    border-radius: 0.125rem;
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-400) / var(--tw-border-opacity));
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+
+    padding: 0px;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity));
+
+    outline: 2px solid transparent;
+
+    outline-offset: 2px
+}
+
+.input-checkbox::before {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 10px;
+
+    height: 0px;
+
+    width: 0px;
+
+    background-color: transparent;
+
+    transition-property: all;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-duration: 150ms;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.input-checkbox::after {
+
+    position: absolute;
+
+    content: var(--tw-content);
+
+    transition-property: all;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-duration: 150ms
+}
+
+.input-checkbox:checked {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--contrast) / var(--tw-border-opacity))
+}
+
+.input-checkbox:checked::before {
+
+    position: absolute;
+
+    top: -1px;
+
+    left: -1px;
+
+    height: 1.25rem;
+
+    width: 1.25rem;
+
+    border-radius: 0.125rem;
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--contrast) / var(--tw-bg-opacity));
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.input-checkbox:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.35
+}

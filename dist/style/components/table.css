@@ -1,0 +1,50 @@
+table {
+
+    margin-top: 1rem;
+
+    margin-bottom: 2rem;
+
+    border-radius: 0.5rem;
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-400) / var(--tw-border-opacity))
+}
+
+table tbody tr th {
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem;
+
+    font-weight: 700;
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--neutral-200) / var(--tw-bg-opacity));
+
+    padding-top: 1rem;
+
+    padding-bottom: 1rem;
+
+    padding-left: 2rem;
+
+    padding-right: 2rem;
+
+    text-align: left
+}
+
+table tbody tr td {
+
+    padding-top: 1rem;
+
+    padding-bottom: 1rem;
+
+    padding-left: 2rem;
+
+    padding-right: 2rem
+}

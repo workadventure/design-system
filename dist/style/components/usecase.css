@@ -1,0 +1,121 @@
+.usecase {
+
+    flex-basis: 100%;
+
+    padding: 1rem;
+
+    text-decoration-line: none;
+
+    transition-property: all;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-duration: 150ms
+}
+
+.usecase:hover {
+
+    --tw-scale-x: 1.05;
+
+    --tw-scale-y: 1.05;
+
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+@media (min-width: 1024px) {
+
+    .usecase {
+
+        flex-basis: 33.333333%
+    }
+}
+
+.usecase:hover .usecase-wrapper {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-500) / var(--tw-border-opacity))
+}
+
+.usecase .usecase-wrapper {
+
+    border-radius: 0.5rem;
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-300) / var(--tw-border-opacity));
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+
+    text-align: center
+}
+
+.usecase .usecase-wrapper .usecase-img {
+
+    position: relative;
+
+    padding: 1rem
+}
+
+.usecase .usecase-wrapper .usecase-img .usecase-img-wrapper {
+
+    height: 200px;
+
+    width: 100%;
+
+    border-radius: 0.5rem;
+
+    background-size: cover
+}
+
+.usecase .usecase-wrapper .usecase-img .usecase-img-title {
+
+    position: absolute;
+
+    top: auto;
+
+    left: 0px;
+
+    right: 0px;
+
+    bottom: -10px
+}
+
+.usecase .usecase-wrapper .usecase-logo {
+
+    padding: 1rem
+}
+
+.usecase .usecase-wrapper .usecase-logo > img {
+
+    max-height: 100px;
+
+    max-width: 250px
+}
+
+.usecase .usecase-wrapper .usecase-desc {
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem;
+
+    font-style: italic;
+
+    margin: 0px;
+
+    padding-left: 2rem;
+
+    padding-right: 2rem;
+
+    padding-bottom: 2rem;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--neutral) / var(--tw-text-opacity))
+}

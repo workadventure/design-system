@@ -1,0 +1,193 @@
+.possibilities-bg {
+
+    position: relative
+}
+
+.possibilities-bg::after {
+
+    position: absolute;
+
+    left: 0px;
+
+    top: 1.5rem;
+
+    z-index: 0;
+
+    height: calc(100% - 3rem);
+
+    width: 100%;
+
+    background-image: url("../img/pattern.png");
+
+    background-repeat: repeat;
+
+    opacity: 0.5;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.possibilities-wrapper {
+
+    width: 100%
+}
+
+@media (min-width: 640px) {
+
+    .possibilities-wrapper {
+
+        max-width: 640px
+    }
+}
+
+@media (min-width: 768px) {
+
+    .possibilities-wrapper {
+
+        max-width: 768px
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .possibilities-wrapper {
+
+        max-width: 1024px
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .possibilities-wrapper {
+
+        max-width: 1280px
+    }
+}
+
+@media (min-width: 1536px) {
+
+    .possibilities-wrapper {
+
+        max-width: 1536px
+    }
+}
+
+.possibilities-wrapper {
+
+    z-index: 10
+}
+
+@media (min-width: 1024px) {
+
+    .possibilities-wrapper {
+
+        padding-left: 2rem;
+
+        padding-right: 2rem
+    }
+}
+
+.possibilities-wrapper {
+
+    position: relative;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    height: 100%;
+
+    max-width: 1536px;
+
+    padding-left: 0px;
+
+    padding-right: 0px
+}
+
+.possibilities-wrapper .possibilities-title {
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center
+}
+
+.possibilities-wrapper .possibilities {
+
+    margin-top: 5rem;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-bottom: 2rem
+}
+
+.possibilities-wrapper .possibilities .possibility {
+
+    margin-right: 2rem;
+
+    aspect-ratio: 1 / 1;
+
+    width: 10rem;
+
+    border-radius: 0.75rem;
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-400) / var(--tw-border-opacity));
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+
+    padding-left: 2rem;
+
+    padding-right: 2rem;
+
+    text-align: center;
+
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.possibilities-wrapper .possibilities .possibility:last-child {
+
+    margin-right: 0px
+}
+
+.possibilities-wrapper .possibilities .possibility .possibility-icon {
+
+    margin-top: -1rem
+}
+
+.possibilities-wrapper .possibilities .possibility .possibility-content {
+
+    display: flex;
+
+    height: 4rem
+}
+
+.possibilities-wrapper .possibilities .possibility .possibility-content .possibility-text {
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem;
+
+    margin: auto
+}
