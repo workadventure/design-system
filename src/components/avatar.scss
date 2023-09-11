@@ -1,0 +1,55 @@
+.avatar {
+    @apply w-10 aspect-square bg-cover bg-center rounded-md block bg-neutral-300 relative;
+
+    & > .avatar-name {
+        @apply top-0 bottom-0 left-0 right-0 m-auto absolute  paragraph-bold text-center h-6;
+    }
+
+    & > .notification {
+        @apply absolute bottom-[-8px] right-[-8px] text-white border border-4 border-white;
+    }
+
+    &-lg {
+        @apply w-12;
+
+        & > .avatar-name {
+            @apply paragraph-lg paragraph-bold h-6;
+        }
+    }
+
+    &-sm {
+        @apply w-8 rounded;
+
+        & > .avatar-name {
+            @apply paragraph-sm paragraph-bold h-5;
+        }
+
+        & > .notification {
+            @apply bottom-[-6px] right-[-6px];
+        }
+    }
+
+    &-xs {
+        @apply w-7 rounded;
+
+        & > .avatar-name {
+            @apply paragraph-xs paragraph-bold  h-5;
+        }
+
+        & > .notification {
+            @apply bottom-[-6px] right-[-6px];
+        }
+    }
+
+    &-circle {
+        @apply rounded-full;
+    }
+}
+
+.avatars {
+    @apply inline-block ml-[20px];
+
+    .avatar-stack {
+        @apply inline-block ml-[-20px] border border-4 border-solid border-white;
+    }
+}

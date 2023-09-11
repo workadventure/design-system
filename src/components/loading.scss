@@ -1,0 +1,7 @@
+.loading-wrapper {
+    @apply h-full w-full fixed bg-blur top-0;
+
+    .loading {
+        @apply grid h-screen place-items-center;
+    }
+}

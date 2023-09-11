@@ -1,0 +1,159 @@
+.chip {
+    @apply py-1 px-2 rounded bg-contrast text-white flex items-center;
+
+    &-lg {
+        @apply text-lg;
+    }
+
+    &-sm {
+        @apply text-sm p-0 px-2 rounded-sm;
+    }
+
+    &-xs {
+        @apply text-xs p-0 px-1 rounded-sm;
+    }
+
+    &.chip-primary {
+        @apply bg-primary;
+    }
+
+    &.chip-secondary {
+        @apply bg-secondary hover:bg-secondary-600;
+    }
+
+    &.chip-contrast {
+        @apply bg-contrast;
+    }
+
+    &.chip-neutral {
+        @apply bg-neutral hover:bg-neutral-800;
+    }
+
+    &.chip-danger {
+        @apply bg-danger hover:bg-danger-800;
+    }
+
+    &.chip-warning {
+        @apply bg-warning hover:bg-warning-600;
+    }
+
+    &.chip-success {
+        @apply bg-success hover:bg-success-800;
+    }
+
+    &.chip-light {
+        @apply bg-neutral-100 text-contrast hover:bg-neutral-200;
+    }
+
+    &.chip-border {
+        @apply border border-solid bg-transparent;
+
+        &.chip-primary {
+            @apply border-primary;
+
+            & > .chip-label {
+                @apply text-primary;
+            }
+
+            & > svg {
+                @apply stroke-primary;
+            }
+        }
+
+        &.chip-secondary {
+            @apply border-secondary hover:bg-secondary-600/10;
+
+            & > .chip-label {
+                @apply text-secondary;
+            }
+
+            & > svg {
+                @apply stroke-secondary;
+            }
+        }
+
+        &.chip-contrast {
+            @apply border-contrast;
+
+            & > .chip-label {
+                @apply text-contrast;
+            }
+
+            & > svg {
+                @apply stroke-contrast;
+            }
+        }
+
+        &.chip-neutral {
+            @apply border-neutral hover:bg-neutral-800/10;
+
+            & > .chip-label {
+                @apply text-neutral;
+            }
+
+            & > svg {
+                @apply stroke-neutral;
+            }
+        }
+
+        &.chip-danger {
+            @apply border-danger hover:bg-danger-800/10;
+
+            & > .chip-label {
+                @apply text-danger;
+            }
+
+            & > svg {
+                @apply stroke-danger;
+            }
+        }
+
+        &.chip-warning {
+            @apply border-warning hover:bg-warning-600/10;
+
+            & > .chip-label {
+                @apply text-warning;
+            }
+
+            & > svg {
+                @apply stroke-warning;
+            }
+        }
+
+        &.chip-success {
+            @apply border-success hover:bg-success-800/10;
+
+            & > .chip-label {
+                @apply text-success;
+            }
+
+            & > svg {
+                @apply stroke-success;
+            }
+        }
+
+        &.chip-light {
+            @apply border-neutral-100 hover:bg-neutral-200/10;
+
+            & > .chip-label {
+                @apply text-neutral-100;
+            }
+
+            & > svg {
+                @apply stroke-neutral-100;
+            }
+        }
+    }
+
+    & > .chip-label {
+        @apply self-center text-white;
+    }
+
+    & > .notification {
+        @apply self-center mr-2;
+    }
+
+    & > svg {
+        @apply self-center mr-2 w-4 h-4 stroke-white;
+    }
+}
