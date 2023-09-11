@@ -1,0 +1,15 @@
+.getintouch {
+    @apply flex flex-col sm:flex-col md:flex-row items-center p-16;
+
+    .getintouch-image {
+        @apply basis-full sm:basis-full md:basis-1/2 text-right p-0 md:p-8;
+    }
+
+    .getintouch-content {
+        @apply basis-full sm:basis-full md:basis-1/2 p-0 md:p-8 text-center md:text-left;
+
+        .btn-wrapper {
+            @apply justify-center md:justify-normal;
+        }
+    }
+}

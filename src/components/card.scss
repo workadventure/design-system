@@ -1,0 +1,15 @@
+.card {
+    @apply bg-white border border-solid border-neutral-400 rounded-lg p-2;
+
+    .card-img {
+        @apply rounded h-64 bg-cover w-full;
+    }
+
+    .card-content {
+        @apply text-center pt-4 pb-12 px-8;
+    }
+
+    .card-actions {
+        @apply flex;
+    }
+}

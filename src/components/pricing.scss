@@ -1,0 +1,23 @@
+.pricing {
+    @apply p-0 border border-neutral-400 border-solid text-center rounded-xl my-16;
+
+    .pricing-title {
+        @apply h1 -mt-8;
+    }
+
+    .pricing-sub {
+        @apply paragraph-lg my-8;
+    }
+
+    .pricing-content {
+        @apply mb-12;
+
+        p {
+            @apply paragraph-lg text-neutral;
+        }
+    }
+
+    .pricing-pricing {
+        @apply py-6 bg-neutral-200 h4 rounded-b-xl font-bold;
+    }
+}
