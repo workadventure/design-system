@@ -36,7 +36,6 @@
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "autoprefixer": "^10.4.15",
-    "colord": "^2.9.3",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
@@ -52,6 +51,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "colord": "^2.9.3",
     "tailwindcss": "^3.3.3"
   },
   "files": [
