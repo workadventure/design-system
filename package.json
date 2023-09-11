@@ -1,6 +1,6 @@
 {
   "name": "@workadventure/design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailwind Theme for WorkAdventure",
   "main": "dist/index.js",
   "scripts": {
