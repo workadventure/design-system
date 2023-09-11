@@ -1,0 +1,139 @@
+* {
+    @apply box-border;
+}
+
+html,
+body {
+    @apply text-contrast font-main p-0 m-0 box-border;
+}
+
+.paragraph {
+    @apply font-normal;
+
+    &-xxs {
+        @apply text-xxs;
+    }
+
+    &-xs {
+        @apply text-xs;
+    }
+
+    &-sm {
+        @apply text-sm;
+    }
+
+    &-lg {
+        @apply text-lg;
+    }
+
+    &-bold {
+        @apply font-bold;
+    }
+
+    &-italic {
+        @apply italic;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    @apply font-title m-0 uppercase;
+
+    .underline {
+        @apply relative no-underline text-secondary z-10 after:content-[''] after:absolute after:bottom-0 after:left-0 after:m-auto after:w-full after:h-[6px] after:block after:bg-[url('../img/underline.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+    }
+
+    .highlight {
+        @apply relative z-10 after:content-[''] after:absolute after:top-0 after:left-[-5px] after:m-auto after:w-[110%] after:h-[110%] after:block after:bg-[url('../img/hightlight.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+
+        span,
+        &-text {
+            @apply relative z-10 text-white;
+        }
+    }
+
+    .stripe {
+        &.stripe-blue {
+            @apply relative z-20 leading-[4rem] pl-6 pr-4 after:content-[''] after:absolute after:top-0 after:left-[-15px] after:m-auto after:w-[115%] after:h-[100%] after:block after:bg-[url('../img/stripe-blue.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-10;
+
+            .stripe-blue-text,
+            span {
+                @apply relative z-20 text-white;
+            }
+        }
+
+        &.stripe-white {
+            @apply relative z-10 mt-2 after:content-[''] after:absolute after:top-0 after:left-[-32px] after:m-auto after:min-w-[250px] after:w-[120%] after:h-[100%] after:block after:bg-[url('../img/stripe-white.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+
+            .stripe-white-text,
+            span {
+                @apply relative z-30 text-contrast;
+            }
+        }
+
+        &.stripe-inline {
+            &.stripe-blue,
+            &.stripe-white {
+                @apply inline-block py-3 px-6;
+
+                transform: translate(-10px, 20px);
+            }
+        }
+    }
+}
+
+h1,
+.h1 {
+    @apply text-[44px] leading-10;
+}
+
+h2,
+.h2 {
+    @apply text-[40px] leading-10;
+}
+
+h3,
+.h3 {
+    @apply text-[36px] leading-10;
+}
+
+h4,
+.h4 {
+    @apply text-[32px];
+}
+
+h5,
+.h5 {
+    @apply text-[26px];
+}
+
+h6,
+.h6 {
+    @apply text-[22px];
+}
+
+.light {
+    @apply font-light;
+}
+
+.bold {
+    @apply font-bold;
+}
+
+.regular {
+    @apply font-normal;
+}
+
+.subtitle {
+    @apply text-neutral text-center m-0;
+}

@@ -1,0 +1,11 @@
+.clients {
+    @apply m-0 p-0 flex flex-row items-center text-center;
+
+    .client {
+        @apply grow list-none lg:basis-1/6 p-4 lg:basis-1/4;
+
+        img {
+            @apply opacity-50 hover:opacity-100 sm:w-full xl:w-auto;
+        }
+    }
+}
