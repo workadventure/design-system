@@ -1,0 +1,37 @@
+.pagination {
+
+    margin: 0px;
+
+    padding: 0px
+}
+
+.pagination .pagination-item {
+
+    margin-right: 0.25rem;
+
+    display: inline-block;
+
+    height: 0.25rem;
+
+    width: 0.75rem;
+
+    list-style-type: none;
+
+    border-radius: 9999px;
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--neutral-500) / var(--tw-bg-opacity))
+}
+
+.pagination .pagination-item.active {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--secondary) / var(--tw-bg-opacity))
+}
+
+.pagination .pagination-item.passed {
+
+    background-color: hsl(var(--secondary) / 0.25)
+}

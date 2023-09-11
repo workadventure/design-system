@@ -1,0 +1,383 @@
+.chip {
+
+    display: flex;
+
+    align-items: center;
+
+    border-radius: 0.25rem;
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--contrast) / var(--tw-bg-opacity));
+
+    padding-top: 0.25rem;
+
+    padding-bottom: 0.25rem;
+
+    padding-left: 0.5rem;
+
+    padding-right: 0.5rem;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.chip-lg {
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem
+}
+
+.chip-sm {
+
+    border-radius: 0.125rem;
+
+    padding: 0px;
+
+    padding-left: 0.5rem;
+
+    padding-right: 0.5rem;
+
+    font-size: 0.875rem;
+
+    line-height: 1.25rem
+}
+
+.chip-xs {
+
+    border-radius: 0.125rem;
+
+    padding: 0px;
+
+    padding-left: 0.25rem;
+
+    padding-right: 0.25rem;
+
+    font-size: 0.75rem;
+
+    line-height: 1rem
+}
+
+.chip.chip-primary {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--primary) / var(--tw-bg-opacity))
+}
+
+.chip.chip-secondary {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--secondary) / var(--tw-bg-opacity))
+}
+
+.chip.chip-secondary:hover {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--secondary-600) / var(--tw-bg-opacity))
+}
+
+.chip.chip-contrast {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--contrast) / var(--tw-bg-opacity))
+}
+
+.chip.chip-neutral {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--neutral) / var(--tw-bg-opacity))
+}
+
+.chip.chip-neutral:hover {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--neutral-800) / var(--tw-bg-opacity))
+}
+
+.chip.chip-danger {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--danger) / var(--tw-bg-opacity))
+}
+
+.chip.chip-danger:hover {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--danger-800) / var(--tw-bg-opacity))
+}
+
+.chip.chip-warning {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--warning) / var(--tw-bg-opacity))
+}
+
+.chip.chip-warning:hover {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--warning-600) / var(--tw-bg-opacity))
+}
+
+.chip.chip-success {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--success) / var(--tw-bg-opacity))
+}
+
+.chip.chip-success:hover {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--success-800) / var(--tw-bg-opacity))
+}
+
+.chip.chip-light {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--neutral-100) / var(--tw-bg-opacity));
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.chip.chip-light:hover {
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--neutral-200) / var(--tw-bg-opacity))
+}
+
+.chip.chip-border {
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    background-color: transparent
+}
+
+.chip.chip-border.chip-primary {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--primary) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-primary > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--primary) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-primary > svg {
+
+    stroke: hsl(var(--primary) / 1)
+}
+
+.chip.chip-border.chip-secondary {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--secondary) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-secondary:hover {
+
+    background-color: hsl(var(--secondary-600) / 0.1)
+}
+
+.chip.chip-border.chip-secondary > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--secondary) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-secondary > svg {
+
+    stroke: hsl(var(--secondary) / 1)
+}
+
+.chip.chip-border.chip-contrast {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--contrast) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-contrast > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-contrast > svg {
+
+    stroke: hsl(var(--contrast) / 1)
+}
+
+.chip.chip-border.chip-neutral {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-neutral:hover {
+
+    background-color: hsl(var(--neutral-800) / 0.1)
+}
+
+.chip.chip-border.chip-neutral > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--neutral) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-neutral > svg {
+
+    stroke: hsl(var(--neutral) / 1)
+}
+
+.chip.chip-border.chip-danger {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--danger) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-danger:hover {
+
+    background-color: hsl(var(--danger-800) / 0.1)
+}
+
+.chip.chip-border.chip-danger > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--danger) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-danger > svg {
+
+    stroke: hsl(var(--danger) / 1)
+}
+
+.chip.chip-border.chip-warning {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--warning) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-warning:hover {
+
+    background-color: hsl(var(--warning-600) / 0.1)
+}
+
+.chip.chip-border.chip-warning > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--warning) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-warning > svg {
+
+    stroke: hsl(var(--warning) / 1)
+}
+
+.chip.chip-border.chip-success {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--success) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-success:hover {
+
+    background-color: hsl(var(--success-800) / 0.1)
+}
+
+.chip.chip-border.chip-success > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--success) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-success > svg {
+
+    stroke: hsl(var(--success) / 1)
+}
+
+.chip.chip-border.chip-light {
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-100) / var(--tw-border-opacity))
+}
+
+.chip.chip-border.chip-light:hover {
+
+    background-color: hsl(var(--neutral-200) / 0.1)
+}
+
+.chip.chip-border.chip-light > .chip-label {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--neutral-100) / var(--tw-text-opacity))
+}
+
+.chip.chip-border.chip-light > svg {
+
+    stroke: hsl(var(--neutral-100) / 1)
+}
+
+.chip > .chip-label {
+
+    align-self: center;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.chip > .notification {
+
+    margin-right: 0.5rem;
+
+    align-self: center
+}
+
+.chip > svg {
+
+    margin-right: 0.5rem;
+
+    height: 1rem;
+
+    width: 1rem;
+
+    align-self: center;
+
+    stroke: #fff
+}

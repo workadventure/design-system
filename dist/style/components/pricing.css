@@ -1,0 +1,637 @@
+.pricing {
+
+    margin-top: 4rem;
+
+    margin-bottom: 4rem;
+
+    border-radius: 0.75rem;
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-400) / var(--tw-border-opacity));
+
+    padding: 0px;
+
+    text-align: center
+}
+
+.pricing .pricing-title {
+
+    margin: 0px;
+
+    font-family: Oswald, Arial;
+
+    text-transform: uppercase
+}
+
+.pricing .pricing-title .underline {
+
+    position: relative;
+
+    z-index: 10;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--secondary) / var(--tw-text-opacity));
+
+    text-decoration-line: none
+}
+
+.pricing .pricing-title .underline::after {
+
+    position: absolute;
+
+    bottom: 0px;
+
+    left: 0px;
+
+    z-index: 0;
+
+    margin: auto;
+
+    display: block;
+
+    height: 6px;
+
+    width: 100%;
+
+    background-image: url("../img/underline.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-title .highlight {
+
+    position: relative;
+
+    z-index: 10
+}
+
+.pricing .pricing-title .highlight::after {
+
+    position: absolute;
+
+    top: 0px;
+
+    left: -5px;
+
+    z-index: 0;
+
+    margin: auto;
+
+    display: block;
+
+    height: 110%;
+
+    width: 110%;
+
+    background-image: url("../img/hightlight.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-title .highlight span,.pricing .pricing-title .highlight-text {
+
+    position: relative;
+
+    z-index: 10;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.pricing .pricing-title .stripe.stripe-blue {
+
+    position: relative;
+
+    z-index: 20;
+
+    padding-left: 1.5rem;
+
+    padding-right: 1rem;
+
+    line-height: 4rem
+}
+
+.pricing .pricing-title .stripe.stripe-blue::after {
+
+    position: absolute;
+
+    top: 0px;
+
+    left: -15px;
+
+    z-index: 10;
+
+    margin: auto;
+
+    display: block;
+
+    height: 100%;
+
+    width: 115%;
+
+    background-image: url("../img/stripe-blue.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-title .stripe.stripe-blue .stripe-blue-text,.pricing .pricing-title .stripe.stripe-blue span {
+
+    position: relative;
+
+    z-index: 20;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.pricing .pricing-title .stripe.stripe-white {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: 0.5rem
+}
+
+.pricing .pricing-title .stripe.stripe-white::after {
+
+    position: absolute;
+
+    top: 0px;
+
+    left: -32px;
+
+    z-index: 0;
+
+    margin: auto;
+
+    display: block;
+
+    height: 100%;
+
+    width: 120%;
+
+    min-width: 250px;
+
+    background-image: url("../img/stripe-white.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-title .stripe.stripe-white .stripe-white-text,.pricing .pricing-title .stripe.stripe-white span {
+
+    position: relative;
+
+    z-index: 30;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.pricing .pricing-title .stripe.stripe-inline.stripe-blue,.pricing .pricing-title .stripe.stripe-inline.stripe-white {
+
+    transform: translate(-10px, 20px);
+
+    display: inline-block;
+
+    padding-top: 0.75rem;
+
+    padding-bottom: 0.75rem;
+
+    padding-left: 1.5rem;
+
+    padding-right: 1.5rem
+}
+
+.pricing .pricing-title {
+
+    font-size: 44px;
+
+    line-height: 2.5rem;
+
+    margin-top: -2rem
+}
+
+.brick:hover .pricing .pricing-title {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--secondary) / var(--tw-text-opacity))
+}
+
+.brick:hover .pricing .pricing-title svg .svgText {
+
+    fill: hsl(var(--secondary) / 1);
+
+    stroke-width: 25px
+}
+
+.brick .pricing .pricing-title {
+
+    margin-top: -2rem;
+
+    transition-property: all;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-duration: 150ms
+}
+
+.brick .pricing .pricing-title svg {
+
+    width: 100%;
+
+    text-align: center
+}
+
+.brick .pricing .pricing-title svg .svgText {
+
+    width: 100%;
+
+    fill: hsl(var(--contrast) / 1);
+
+    stroke: #fff;
+
+    stroke-width: 15px;
+
+    font-weight: 700;
+
+    transition-property: all;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-duration: 150ms;
+
+    stroke-linejoin: round;
+
+    paint-order: stroke
+}
+
+.pricing .pricing-sub {
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem;
+
+    margin-top: 2rem;
+
+    margin-bottom: 2rem
+}
+
+.pricing .pricing-content {
+
+    margin-bottom: 3rem
+}
+
+.pricing .pricing-content p {
+
+    font-size: 1.125rem;
+
+    line-height: 1.75rem;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--neutral) / var(--tw-text-opacity))
+}
+
+.pricing .pricing-pricing {
+
+    margin: 0px;
+
+    font-family: Oswald, Arial;
+
+    text-transform: uppercase
+}
+
+.pricing .pricing-pricing .underline {
+
+    position: relative;
+
+    z-index: 10;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--secondary) / var(--tw-text-opacity));
+
+    text-decoration-line: none
+}
+
+.pricing .pricing-pricing .underline::after {
+
+    position: absolute;
+
+    bottom: 0px;
+
+    left: 0px;
+
+    z-index: 0;
+
+    margin: auto;
+
+    display: block;
+
+    height: 6px;
+
+    width: 100%;
+
+    background-image: url("../img/underline.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-pricing .highlight {
+
+    position: relative;
+
+    z-index: 10
+}
+
+.pricing .pricing-pricing .highlight::after {
+
+    position: absolute;
+
+    top: 0px;
+
+    left: -5px;
+
+    z-index: 0;
+
+    margin: auto;
+
+    display: block;
+
+    height: 110%;
+
+    width: 110%;
+
+    background-image: url("../img/hightlight.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-pricing .highlight span,.pricing .pricing-pricing .highlight-text {
+
+    position: relative;
+
+    z-index: 10;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.pricing .pricing-pricing .stripe.stripe-blue {
+
+    position: relative;
+
+    z-index: 20;
+
+    padding-left: 1.5rem;
+
+    padding-right: 1rem;
+
+    line-height: 4rem
+}
+
+.pricing .pricing-pricing .stripe.stripe-blue::after {
+
+    position: absolute;
+
+    top: 0px;
+
+    left: -15px;
+
+    z-index: 10;
+
+    margin: auto;
+
+    display: block;
+
+    height: 100%;
+
+    width: 115%;
+
+    background-image: url("../img/stripe-blue.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-pricing .stripe.stripe-blue .stripe-blue-text,.pricing .pricing-pricing .stripe.stripe-blue span {
+
+    position: relative;
+
+    z-index: 20;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.pricing .pricing-pricing .stripe.stripe-white {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: 0.5rem
+}
+
+.pricing .pricing-pricing .stripe.stripe-white::after {
+
+    position: absolute;
+
+    top: 0px;
+
+    left: -32px;
+
+    z-index: 0;
+
+    margin: auto;
+
+    display: block;
+
+    height: 100%;
+
+    width: 120%;
+
+    min-width: 250px;
+
+    background-image: url("../img/stripe-white.svg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    --tw-content: "";
+
+    content: var(--tw-content)
+}
+
+.pricing .pricing-pricing .stripe.stripe-white .stripe-white-text,.pricing .pricing-pricing .stripe.stripe-white span {
+
+    position: relative;
+
+    z-index: 30;
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--contrast) / var(--tw-text-opacity))
+}
+
+.pricing .pricing-pricing .stripe.stripe-inline.stripe-blue,.pricing .pricing-pricing .stripe.stripe-inline.stripe-white {
+
+    transform: translate(-10px, 20px);
+
+    display: inline-block;
+
+    padding-top: 0.75rem;
+
+    padding-bottom: 0.75rem;
+
+    padding-left: 1.5rem;
+
+    padding-right: 1.5rem
+}
+
+.pricing .pricing-pricing {
+
+    font-size: 32px;
+
+    border-bottom-right-radius: 0.75rem;
+
+    border-bottom-left-radius: 0.75rem;
+
+    --tw-bg-opacity: 1;
+
+    background-color: hsl(var(--neutral-200) / var(--tw-bg-opacity));
+
+    padding-top: 1.5rem;
+
+    padding-bottom: 1.5rem;
+
+    font-weight: 700
+}
+
+
+.brick:hover .pricing .pricing-pricing {
+
+    --tw-text-opacity: 1;
+
+    color: hsl(var(--secondary) / var(--tw-text-opacity))
+}
+
+ .brick:hover .pricing .pricing-pricing svg .svgText {
+
+    fill: hsl(var(--secondary) / 1);
+
+    stroke-width: 25px
+}
+
+
+.brick .pricing .pricing-pricing {
+
+    margin-top: -2rem;
+
+    transition-property: all;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-duration: 150ms
+}
+
+ .brick .pricing .pricing-pricing svg {
+
+    width: 100%;
+
+    text-align: center
+}
+
+ .brick .pricing .pricing-pricing svg .svgText {
+
+    width: 100%;
+
+    fill: hsl(var(--contrast) / 1);
+
+    stroke: #fff;
+
+    stroke-width: 15px;
+
+    font-weight: 700;
+
+    transition-property: all;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-duration: 150ms;
+
+    stroke-linejoin: round;
+
+    paint-order: stroke
+}

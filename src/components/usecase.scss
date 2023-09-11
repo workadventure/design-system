@@ -1,0 +1,37 @@
+.usecase {
+    @apply basis-full lg:basis-1/3 p-4 no-underline hover:scale-105 transition-all;
+
+    &:hover {
+        .usecase-wrapper {
+            @apply border-neutral-500;
+        }
+    }
+
+    .usecase-wrapper {
+        @apply border border-neutral-300 border-solid text-center rounded-lg bg-white;
+
+        .usecase-img {
+            @apply relative p-4;
+
+            .usecase-img-wrapper {
+                @apply rounded-lg w-full h-[200px] bg-cover;
+            }
+
+            .usecase-img-title {
+                @apply absolute top-auto left-0 right-0 bottom-[-10px];
+            }
+        }
+
+        .usecase-logo {
+            @apply p-4;
+
+            & > img {
+                @apply max-w-[250px] max-h-[100px];
+            }
+        }
+
+        .usecase-desc {
+            @apply px-8 pb-8 paragraph-italic paragraph-lg m-0 text-neutral;
+        }
+    }
+}
