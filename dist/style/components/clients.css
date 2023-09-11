@@ -1,0 +1,57 @@
+.clients {
+
+    margin: 0px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    padding: 0px;
+
+    text-align: center
+}
+
+.clients .client {
+
+    flex-grow: 1;
+
+    list-style-type: none;
+
+    padding: 1rem
+}
+
+@media (min-width: 1024px) {
+
+    .clients .client {
+
+        flex-basis: 25%
+    }
+}
+
+.clients .client img {
+
+    opacity: 0.5
+}
+
+.clients .client img:hover {
+
+    opacity: 1
+}
+
+@media (min-width: 640px) {
+
+    .clients .client img {
+
+        width: 100%
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .clients .client img {
+
+        width: auto
+    }
+}

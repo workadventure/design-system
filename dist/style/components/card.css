@@ -1,0 +1,47 @@
+.card {
+
+    border-radius: 0.5rem;
+
+    border-width: 1px;
+
+    border-style: solid;
+
+    --tw-border-opacity: 1;
+
+    border-color: hsl(var(--neutral-400) / var(--tw-border-opacity));
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+
+    padding: 0.5rem
+}
+
+.card .card-img {
+
+    height: 16rem;
+
+    width: 100%;
+
+    border-radius: 0.25rem;
+
+    background-size: cover
+}
+
+.card .card-content {
+
+    padding-left: 2rem;
+
+    padding-right: 2rem;
+
+    padding-top: 1rem;
+
+    padding-bottom: 3rem;
+
+    text-align: center
+}
+
+.card .card-actions {
+
+    display: flex
+}

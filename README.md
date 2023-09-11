@@ -1,7 +1,56 @@
-# Run both cmd :
 
-> npx tailwindcss -i ./style/index.css -o ./style.css --watch
+# @workadventure/design-system
 
-> sass --watch style/index.scss style/index.css
+[WorkAdventure](https://workadventu.re)'s Tailwind themes.
+
+
+## Requirements
+- Node < v18
+- TailwindCSS < v3.3
+## Installation
+
+Add the dependency:
+
+```bash
+  npm install @workadventure/design-system
+```
+Add the plugin to the Tailwind configuration:
+```js
+// tailwind.config.js
+
+import workadventureUi from "@workadventure/design-system";
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: ["./index.html", "./src/**/*.{js,ts}"],
+    theme: {
+        extend: {},
+    },
+    plugins: [workadventureUi],
+};
+```
+
+## Contribute
+
+How to run the example:
+
+```bash
+    npm install
+    cd example
+    npm install
+    cd ..
+    npm run dev
+```
+
+After that, you can open the example in your browser.
+
+To build the package:
+
+```bash
+    npm run build
+```
+
+## Example sheet
 
 ![Design System](https://github.com/workadventure/design-system/blob/main/DesignSystem.jpg?raw=true)
+
