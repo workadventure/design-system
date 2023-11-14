@@ -13,7 +13,7 @@ Add the dependency:
 
 ```bash
   npm install @workadventure/design-system
-```
+```ncnp
 Add the plugin to the Tailwind configuration:
 ```js
 // tailwind.config.js
