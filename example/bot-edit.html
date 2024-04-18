@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WorkAdventure UI Kit</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body style="background: #FFF url(http://placekitten.com/920/660) no-repeat; background-size: cover">
+
+        <div class="flex items-center justify-center h-screen">
+            <div class="bg-contrast/80 backdrop-blur text-white overflow-hidden rounded-lg relative pb-32">
+                <div class="px-6 py-4 border border-solid border-white/20 border-x-0 border-t-0">
+                    <div class="flex items-center space-x-4">
+                        <div class="grow">
+                            <div class="flex space-x-4">
+                                <div class="h5">
+                                    EDIT BOT <span class="font-bold">TARS</span>
+                                </div>
+                                <div class="chip chip-contrast border border-solid border-danger/20">
+                                    <div class="notification notification-xxs notification-danger"></div>
+                                    <div class="chip-labe text-danger">Offline</div>
+                                </div>
+                            </div>
+                            <div class="text-lg opacity-50 text-white">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                        </div>
+
+                        <button class="btn btn-sm btn-border btn-light inline-block h-auto !px-3">
+                            <div class="btn-label">Logs</div>
+                        </button>
+                        <button class="btn btn-sm btn-success btn-border !px-3 justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="12" height="12" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor" />
+                            </svg>
+                            <div class="btn-label">Start</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="font-title uppercase py-2 px-6 opacity-50">
+                        ROBOT PROFIL
+                    </div>
+                    <div class="flex items-center px-6 border border-solid border-white/20 border-x-0 border-t-0 pb-4">
+                        <div class="flex pr-6">
+                            <div class="bg-white/10 rounded-xl aspect-square flex flex-col items-center justify-center space-y-4 h-40 w-40">
+                                <div class="aspect-square p-2 bg-contrast rounded-lg overflow-hidden group-hover:bg-success transition-all" style="background:#E9C74C;">
+                                    <img src="https://i.ibb.co/PT5YXk5/Mask-group.png" height="64" class="transition-all group-hover:scale-150 group-hover:translate-y-3" style="image-rendering: pixelated" />
+                                </div>
+                                <a href="" class="btn btn-xs btn-light !px-3 justify-center">
+                                    <div class="btn-label">Change skin</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grow flex flex-col space-y-4">
+                            <div class="flex grow space-x-6">
+                                <div class="flex flex-col grow">
+                                    <label for="name" class="block pb-2 px-4 text-lg">
+                                        Name
+                                    </label>
+                                    <input type="text" class="block bg-contrast outline-contrast-400 border border-solid border-contrast-400 font-bold px-4 py-2.5 rounded-lg text-lg placeholder:font-normal placeholder:italic placeholder:text-sm h-[52px]" id="name" value="TARS" placeholder="Type here bot name..." />
+                                </div>
+                                <div class="flex flex-col grow">
+                                    <label for="tags" class="block pb-2 px-4 text-lg">
+                                        Tags
+                                    </label>
+                                    <tags id="tags" class="flex bg-contrast outline-contrast-400 border border-solid border-contrast-400 font-bold px-2.5 py-2.5 rounded-lg text-lg placeholder:font-normal placeholder:italic placeholder:text-sm space-x-2 h-[52px]">
+                                        <tag class="chip chip-neutral flex">
+                                            <div class="chip-label pr-2">Member</div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x !mr-0" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                                            </svg>
+                                        </tag>
+                                        <tag class="chip chip-neutral flex">
+                                            <div class="chip-label pr-2">Member</div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x !mr-0" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                                            </svg>
+                                        </tag>
+                                    </tags>
+                                </div>
+                            </div>
+
+                            <div class="flex grow space-x-6">
+                                <div class="flex flex-col grow">
+                                    <label for="name" class="block pb-2 px-4 text-lg">
+                                        Name
+                                    </label>
+                                    <textarea class="resize-y block bg-contrast outline-contrast-400 border border-solid border-contrast-400 font-bold px-4 py-2.5 rounded-lg text-lg placeholder:font-normal placeholder:italic placeholder:text-sm font-main" id="name" placeholder="Describe here your bot informations..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="font-title uppercase py-2 px-6 opacity-50">
+                        AI SETTINGS
+                    </div>
+                    <div class="flex flex-col px-6">
+                        <div class="flex space-x-4">
+                            <div>
+                                <input type="radio" id="openai" name="ai" value="openai" class="hidden peer" required checked />
+                                <label for="openai" class="inline-flex items-center justify-between w-full p-5 text-white bg-transparent border border-solid border-white rounded-lg cursor-pointer opacity-50 peer-checked:bg-white/10 peer-checked:opacity-100 hover:bg-white/10 bg-[url('/public/icon-radio.svg')] peer-checked:bg-[url('/public/icon-radio-checked.svg')] bg-no-repeat bg-[center_left_1rem] pl-14 min-w-[170px]">
+                                    <div class="flex flex-col">
+                                        <div class="w-full text-lg font-semibold">Open AI</div>
+                                        <div>
+                                            <div class="chip chip-sm chip-secondary inline-block">
+                                                <div class="chip-label">Active</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="TockAI" name="ai" value="TockAI" class="hidden peer" required />
+                                <label for="TockAI" class="inline-flex items-center justify-between w-full p-5 text-white bg-transparent border border-solid border-white rounded-lg cursor-pointer opacity-50 peer-checked:bg-white/10 peer-checked:opacity-100 hover:bg-white/10 bg-[url('/public/icon-radio.svg')] peer-checked:bg-[url('/public/icon-radio-checked.svg')] bg-no-repeat bg-[center_left_1rem] pl-14 min-w-[170px]">
+                                    <div class="block">
+                                        <div class="w-full text-lg font-semibold">Tock AI</div>
+                                        <div>
+                                            <div class="chip chip-sm chip-light inline-block">
+                                                <div class="chip-label !text-contrast">Inactive</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="custom" name="ai" value="custom" class="hidden peer" required />
+                                <label for="custom" class="inline-flex items-center justify-between w-full p-5 text-white bg-transparent border border-solid border-white rounded-lg cursor-pointer opacity-50 peer-checked:bg-white/10 peer-checked:opacity-100 hover:bg-white/10 bg-[url('/public/icon-radio.svg')] peer-checked:bg-[url('/public/icon-radio-checked.svg')] bg-no-repeat bg-[center_left_1rem] pl-14 min-w-[170px]">
+                                    <div class="block">
+                                        <div class="w-full text-lg font-semibold">Custom AI</div>
+                                        <div>
+                                            <div class="chip chip-sm chip-light inline-block">
+                                                <div class="chip-label !text-contrast">Inactive</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-6 w-2/3">
+                            <div class="flex flex-col grow">
+                                <label for="room" class="block pb-2 px-4 text-lg">
+                                    Room
+                                </label>
+                                <select type="text" class="appearance-none block bg-contrast outline-contrast-400 border border-solid border-contrast-400 font-bold px-4 py-2.5 rounded-lg text-lg placeholder:font-normal placeholder:italic placeholder:text-sm h-[52px] bg-[url('/public/icon-dropdown.svg')] bg-no-repeat bg-[center_right_1rem]" id="room">
+                                    <option selected>Public room</option>
+                                    <option>Private room</option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col grow">
+                                <label for="start" class="block pb-2 px-4 text-lg">
+                                    Start
+                                </label>
+                                <select type="text" class="appearance-none block bg-contrast outline-contrast-400 border border-solid border-contrast-400 font-bold px-4 py-2.5 rounded-lg text-lg placeholder:font-normal placeholder:italic placeholder:text-sm h-[52px] bg-[url('/public/icon-dropdown.svg')] bg-no-repeat bg-[center_right_1rem] focus:bg-[url('/public/icon-dropdown-focus.svg')]" id="start">
+                                    <option selected>Default start area</option>
+                                    <option>Private room</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label class="inline-flex items-center cursor-pointer mt-4">
+                            <input type="checkbox" value="" class="sr-only peer">
+                            <div class="relative w-11 h-6 bg-gray-200 border border-solid border-contrast-400 peer-focus:outline-none peer-focus:ring-1 peer-focus:ring-white/10 dark:peer-focus:ring-white/20 rounded-full peer dark:bg-contrast peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:start-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
+                            <span class="ms-3 text-lg">Show advanced settings </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 w-full bg-contrast p-4 flex space-x-4">
+                    <button class="appearance-none border-none btn-lg btn btn-ghost btn-light grow justify-center rounded">
+                        <div class="btn-label">Cancel</div>
+                    </button>
+                    <button class="appearance-none border-none btn-lg btn btn-secondary grow justify-center rounded">
+                        <div class="btn-label">Save</div>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>
