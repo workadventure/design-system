@@ -7,4 +7,7 @@ export default {
         extend: {},
     },
     plugins: [workadventureUi],
+    workadventureUi: {
+        oswaldFontUrl: "./Oswald-VariableFont_wght.ttf",
+    },
 };
