@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.2](https://github.com/workadventure/design-system/compare/v1.0.1...v1.0.2) (2024-05-02)
+
+
+### Bug Fixes
+
+* Include bot html ([d2719f4](https://github.com/workadventure/design-system/commit/d2719f4c04aaa9e4c4c92dd21db08a1bc897b023))
+
+
+### Miscellaneous Chores
+
+* release 1.0.2 ([f42069a](https://github.com/workadventure/design-system/commit/f42069ac409b4e52cb58641805712a90a66e90f5))
+
 ## [1.0.1](https://github.com/workadventure/design-system/compare/v1.0.0...v1.0.1) (2023-09-11)
 
 
