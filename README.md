@@ -27,8 +27,13 @@ export default {
         extend: {},
     },
     plugins: [workadventureUi],
+    workadventureUi: {
+        oswaldFontUrl: './path/to/font.ttf',
+    },
 };
 ```
+> [!IMPORTANT]
+> Replace './path/to/font.ttf' by the path to your font file in ttf format
 
 ## Contribute
 
