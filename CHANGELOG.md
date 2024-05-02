@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/workadventure/design-system/compare/v1.0.2...v1.0.3) (2024-05-02)
+
+
+### Bug Fixes
+
+* Include Oswald font ([#15](https://github.com/workadventure/design-system/issues/15)) ([13e6d50](https://github.com/workadventure/design-system/commit/13e6d50c7f282234210e870245d221a69cdb1fa4))
+
 ## [1.0.2](https://github.com/workadventure/design-system/compare/v1.0.1...v1.0.2) (2024-05-02)
 
 
