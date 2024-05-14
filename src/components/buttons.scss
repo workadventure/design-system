@@ -18,14 +18,14 @@
 }
 
 .btn {
-    @apply antialiased px-4 py-3 rounded-[8px] inline-block text-center text-base text-neutral-100 bg-contrast font-main font-normal no-underline flex items-center;
+    @apply antialiased px-4 py-3 rounded-[8px] inline-block text-center text-base text-neutral-100 bg-contrast font-main font-normal no-underline flex items-center space-x-3 transition-all;
 
     &.btn-inline-block {
         @apply inline-block;
     }
 
-    & > *:nth-child(2) {
-        @apply pl-2;
+    &.btn-square {
+        @apply aspect-square p-3;
     }
 
     &.btn-primary {
@@ -45,7 +45,7 @@
     }
 
     &.btn-contrast {
-        @apply bg-contrast hover:bg-contrast-500;
+        @apply bg-contrast hover:bg-contrast-600;
 
         .btn-label {
             @apply text-white;
@@ -140,7 +140,7 @@
         }
 
         &.btn-contrast {
-            @apply text-contrast;
+            @apply text-contrast hover:bg-contrast/10;
         }
 
         &.btn-neutral {
@@ -201,14 +201,23 @@
 
     &.btn-lg {
         @apply text-lg px-5 tracking-wide;
+        &.btn-square {
+            @apply p-3;
+        }
     }
 
     &.btn-sm {
-        @apply text-sm px-3 py-2;
+        @apply text-sm px-3 py-2 space-x-2;
+        &.btn-square {
+            @apply p-2;
+        }
     }
 
     &.btn-xs {
-        @apply text-xs p-2 tracking-tight;
+        @apply text-xs p-2 tracking-tight space-x-1;
+        &.btn-square {
+            @apply p-2;
+        }
     }
 
     .btn-label {
