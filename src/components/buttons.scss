@@ -18,7 +18,7 @@
 }
 
 .btn {
-    @apply px-3 py-2 rounded inline-block text-center text-base text-neutral-100 bg-contrast font-main font-normal no-underline flex items-center;
+    @apply antialiased px-4 py-3 rounded-[8px] inline-block text-center text-base text-neutral-100 bg-contrast font-main font-normal no-underline flex items-center;
 
     &.btn-inline-block {
         @apply inline-block;
@@ -200,15 +200,15 @@
     }
 
     &.btn-lg {
-        @apply text-lg p-3;
+        @apply text-lg px-5 tracking-wide;
     }
 
     &.btn-sm {
-        @apply text-sm p-2;
+        @apply text-sm px-3 py-2;
     }
 
     &.btn-xs {
-        @apply text-xs p-1;
+        @apply text-xs p-2 tracking-tight;
     }
 
     .btn-label {

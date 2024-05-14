@@ -1,5 +1,5 @@
 * {
-    @apply box-border;
+    @apply box-border antialiased;
 }
 
 html,
@@ -24,6 +24,10 @@ body {
 
     &-lg {
         @apply text-lg;
+    }
+
+    &-xl {
+        @apply text-xl;
     }
 
     &-bold {
@@ -94,32 +98,32 @@ h6,
 
 h1,
 .h1 {
-    @apply text-[44px] leading-10;
+    @apply text-4xl leading-10;
 }
 
 h2,
 .h2 {
-    @apply text-[40px] leading-10;
+    @apply text-3xl leading-10;
 }
 
 h3,
 .h3 {
-    @apply text-[36px] leading-10;
+    @apply text-2xl leading-10;
 }
 
 h4,
 .h4 {
-    @apply text-[32px];
+    @apply text-xl;
 }
 
 h5,
 .h5 {
-    @apply text-[26px];
+    @apply text-lg;
 }
 
 h6,
 .h6 {
-    @apply text-[22px];
+    @apply text-lg;
 }
 
 .light {

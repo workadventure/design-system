@@ -1,4 +1,5 @@
 export default {
     main: ["Roboto Condensed", "Arial"],
-    title: ["Oswald", "Arial"],
+    title: ["Bebas Neue", "Arial"],
+    content: ["Roboto", "Arial"],
 };
