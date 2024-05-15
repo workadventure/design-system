@@ -10,6 +10,9 @@ export default {
     theme: {
         extend: {
             colors,
+            height: {
+                "13": "3.25rem",
+            },
             backdropBlur: {
                 none: "0",
                 sm: "4px",
