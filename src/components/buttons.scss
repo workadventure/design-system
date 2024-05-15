@@ -18,8 +18,7 @@
 }
 
 .btn {
-    @apply antialiased px-4 py-3 rounded-[8px] inline-block text-center text-base text-neutral-100 bg-contrast font-main font-normal no-underline flex items-center space-x-3 transition-all;
-
+    @apply antialiased px-4 py-3 rounded-[8px] inline-block text-center text-base text-neutral-100 bg-contrast font-main font-normal no-underline flex items-center space-x-3 transition-all border-none appearance-none cursor-pointer outline-none stroke-white fill-white;
     &.btn-inline-block {
         @apply inline-block;
     }
@@ -34,6 +33,11 @@
         .btn-label {
             @apply text-white;
         }
+        .notification-light {
+            & > .notification-value {
+                @apply text-primary;
+            }
+        }
     }
 
     &.btn-secondary {
@@ -42,6 +46,11 @@
         .btn-label {
             @apply text-white;
         }
+        .notification-light {
+            & > .notification-value {
+                @apply text-secondary;
+            }
+        }
     }
 
     &.btn-contrast {
@@ -49,6 +58,11 @@
 
         .btn-label {
             @apply text-white;
+        }
+        .notification-light {
+            & > .notification-value {
+                @apply text-contrast;
+            }
         }
     }
 
@@ -65,6 +79,11 @@
 
         .btn-label {
             @apply text-white;
+        }
+        .notification-light {
+            & > .notification-value {
+                @apply text-danger;
+            }
         }
     }
 
@@ -96,35 +115,35 @@
         @apply border border-solid bg-transparent p-[calc(0.75rem-1px)];
 
         &.btn-primary {
-            @apply border-primary text-primary;
+            @apply border-primary text-primary stroke-primary fill-primary;
         }
 
         &.btn-secondary {
-            @apply border-secondary text-secondary hover:bg-secondary-600/10;
+            @apply border-secondary text-secondary hover:bg-secondary-600/10 stroke-secondary fill-secondary;
         }
 
         &.btn-contrast {
-            @apply border-contrast text-contrast hover:bg-contrast/10;
+            @apply border-contrast text-contrast hover:bg-contrast/10 stroke-contrast fill-contrast;
         }
 
         &.btn-neutral {
-            @apply border-neutral text-neutral hover:bg-neutral-800/10;
+            @apply border-neutral text-neutral hover:bg-neutral-800/10 stroke-neutral fill-neutral;
         }
 
         &.btn-danger {
-            @apply border-danger text-danger hover:bg-danger-800/10;
+            @apply border-danger text-danger hover:bg-danger-800/10 stroke-danger fill-danger;
         }
 
         &.btn-warning {
-            @apply border-warning text-warning hover:bg-warning-600/10;
+            @apply border-warning text-warning hover:bg-warning-600/10 stroke-warning fill-warning;
         }
 
         &.btn-success {
-            @apply border-success text-success hover:bg-success-800/10;
+            @apply border-success text-success hover:bg-success-800/10 stroke-success fill-success;
         }
 
         &.btn-light {
-            @apply border-white text-white hover:bg-white/10;
+            @apply border-white text-white hover:bg-white/10 stroke-white fill-white;
         }
     }
 
@@ -132,35 +151,35 @@
         @apply border-none bg-transparent;
 
         &.btn-primary {
-            @apply text-primary;
+            @apply text-primary stroke-primary fill-primary;
         }
 
         &.btn-secondary {
-            @apply text-secondary hover:bg-secondary-600/10;
+            @apply text-secondary hover:bg-secondary-600/10 stroke-secondary fill-secondary;
         }
 
         &.btn-contrast {
-            @apply text-contrast hover:bg-contrast/10;
+            @apply text-contrast hover:bg-contrast/10 stroke-contrast fill-contrast text-danger;
         }
 
         &.btn-neutral {
-            @apply text-neutral hover:bg-neutral-800/10;
+            @apply text-neutral hover:bg-neutral-800/10 stroke-neutral fill-neutral;
         }
 
         &.btn-danger {
-            @apply text-danger hover:bg-danger-800/10;
+            @apply text-danger hover:bg-danger-800/10 stroke-danger fill-danger;
         }
 
         &.btn-warning {
-            @apply text-warning hover:bg-warning-600/10;
+            @apply text-warning hover:bg-warning-600/10 stroke-warning fill-warning;
         }
 
         &.btn-success {
-            @apply text-success hover:bg-success-800/10;
+            @apply text-success hover:bg-success-800/10 stroke-success fill-success;
         }
 
         &.btn-light {
-            @apply text-white hover:bg-white/10;
+            @apply text-white hover:bg-white/10 stroke-white fill-white;
         }
     }
 
