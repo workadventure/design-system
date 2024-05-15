@@ -104,7 +104,7 @@
     }
 
     &.btn-light {
-        @apply bg-white text-contrast hover:bg-neutral-100;
+        @apply bg-white text-contrast hover:bg-neutral-100 stroke-contrast fill-contrast;
 
         .btn-label {
             @apply text-contrast;
