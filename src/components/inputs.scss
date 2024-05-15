@@ -1,12 +1,14 @@
 .input-text {
-    @apply text-contrast border border-neutral-400 p-1.5 rounded font-bold;
+    @apply outline-none h-[52px] bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all ;
 
-    &-lg {
-        @apply p-3 rounded-md text-lg;
+    &.input-text-lg {
+        @apply h-13 text-lg;
     }
-
-    &-sm {
-        @apply p-1 rounded text-sm;
+    &.input-text-sm {
+        @apply h-10 text-sm;
+    }
+    &.input-text-xs {
+        @apply h-8 text-sm;
     }
 }
 
