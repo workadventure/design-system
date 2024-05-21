@@ -30,7 +30,7 @@
         }
         &.input-icon-right {
             @apply pr-10;
-        }
+        } 
     }
     &.input-text-light {
         @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 invalid:border-danger invalid:text-danger-1000 invalid:bg-danger-100 invalid:hover:bg-danger-200  invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
