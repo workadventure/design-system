@@ -1,5 +1,5 @@
 .input-text {
-    @apply outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 invalid:border-danger invalid:hover:border-danger-500 invalid:focus:border-danger-900 invalid:text-danger;
+    @apply outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 invalid:border-danger invalid:hover:border-danger-500 invalid:focus:border-danger-900 invalid:text-danger;
 
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;

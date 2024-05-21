@@ -24,7 +24,7 @@
     }
 
     &.btn-square {
-        @apply aspect-square p-3;
+        @apply aspect-square p-3 justify-center items-center;
     }
 
     &.btn-primary {
