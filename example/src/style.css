@@ -8,3 +8,28 @@ Override Tailwind's default color palette
     --neutral-100: 0 89% 21%;
 }
 */
+.chip,
+.btn:not(.btn-border) {
+    --squircle-smooth: 1;
+    --squircle-radius: 8px;
+    mask-image: paint(squircle);
+}
+.btn.btn-border {
+    border: none !important;
+    position: relative;
+}
+.btn.btn-border:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index:0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    --squircle-smooth: 1;
+    --squircle-radius: 8px;
+    mask-image: paint(squircle);
+    --squircle-outline: 1.05px;
+    background: #4156F6;
+}

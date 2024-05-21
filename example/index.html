@@ -13,111 +13,105 @@
         />
         <script src="tailwind.config.js"></script>
         <script>
+            // https://github.com/PavelLaptev/css-houdini-squircle
             if ("paintWorklet" in CSS) {
                 CSS.paintWorklet.addModule(
                     "https://www.unpkg.com/css-houdini-squircle/squircle.min.js"
                 );
             }
         </script>
-        <style>
-            .btn:not(.btn-border) {
-                --squircle-smooth: 1;
-                --squircle-radius: 8px;
-                mask-image: paint(squircle);
-            }
-        </style>
     </head>
     <body style="background: white;" class="relative">
         <div class="fixed bottom-0 left-0">
             <nav>
                 <ul>
                     <li>
-                        <a href="">Foundation</a>
+                        <a href="#Foundation">Foundation</a>
                         <ul>
                             <li>
-                                <a href="">Logo</a>
+                                <a href="#Logo">Logo</a>
                             </li>
                             <li>
-                                <a href="">Typography</a>
+                                <a href="#Typography">Typography</a>
                             </li>
                             <li>
-                                <a href="">Color</a>
+                                <a href="#Color">Color</a>
                             </li>
                             <li>
-                                <a href="">Spacing</a>
+                                <a href="#Spacing">Spacing</a>
                             </li>
                             <li>
-                                <a href="">Grid</a>
+                                <a href="#Grid">Grid</a>
                             </li>
                             <li>
-                                <a href="">Container</a>
+                                <a href="#Container">Container</a>
                             </li>
                             <li>
-                                <a href="">Border radius</a>
+                                <a href="#BorderRadius">Border radius</a>
                             </li>
                             <li>
-                                <a href="">Backdrop filter</a>
+                                <a href="#BackdropFilter">Backdrop filter</a>
                             </li>
                             <li>
-                                <a href="">Shadow</a>
+                                <a href="#Shadow">Shadow</a>
                             </li>
                             <li>
-                                <a href="">Iconography</a>
+                                <a href="#Shadow">Iconography</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">Compononents</a>
+                        <a href="#Compononents">Compononents</a>
                         <ul>
                             <li>
-                                <a href="">Text</a>
+                                <a href="#Text">Text</a>
                             </li>
                             <li>
-                                <a href="">Button</a>
+                                <a href="#Button">Button</a>
                             </li>
                             <li>
-                                <a href="">Input</a>
+                                <a href="#Input">Input</a>
                             </li>
                             <li>
-                                <a href="">Checkbox</a>
+                                <a href="#Checkbox">Checkbox</a>
                             </li>
                             <li>
-                                <a href="">Navigation</a>
+                                <a href="#Navigation">Navigation</a>
                             </li>
                             <li>
-                                <a href="">Tooltip</a>
+                                <a href="#Tooltip">Tooltip</a>
                             </li>
                             <li>
-                                <a href="">Chat</a>
+                                <a href="#Chat">Chat</a>
                             </li>
                             <li>
-                                <a href="">Notifications</a>
+                                <a href="#Notifications">Notifications</a>
                             </li>
                             <li>
-                                <a href="">Chip & Tag</a>
+                                <a href="#ChipTag">Chip & Tag</a>
                             </li>
                             <li>
-                                <a href="">Table</a>
+                                <a href="#Table">Table</a>
                             </li>
                             <li>
-                                <a href="">Breadcrumb</a>
+                                <a href="#Breadcrumb">Breadcrumb</a>
                             </li>
                             <li>
-                                <a href="">Toast</a>
+                                <a href="#Toast">Toast</a>
                             </li>
                             <li>
-                                <a href="">Avatard</a>
+                                <a href="#Avatar">Avatar</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="">Prebuild elements</a>
+                        <a href="#PrebuildElements">Prebuild elements</a>
                         <ul>
                             <li>
-                                <a href="">Header</a>
+                                <a href="#Header">Header</a>
                             </li>
                             <li>
-                                <a href="">Navigation</a>
+                                <a href="#Navigation">Navigation</a>
                             </li>
                         </ul>
                     </li>
@@ -6560,7 +6554,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="" placeholder="This is the placeholder..." id="inputLG" />
+                                <input type="text" class="grow input-text input-text-lg" value="" placeholder="This is the placeholder..." id="inputLG" />
                             </div>
                         </div>
                     </div>
@@ -6573,7 +6567,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-12 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="" placeholder="This is the placeholder..." id="input" />
+                                <input type="text" class="grow input-text" value="" placeholder="This is the placeholder..." id="input" />
                             </div>
                         </div>
                     </div>
@@ -6586,7 +6580,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-10 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="" placeholder="This is the placeholder..." id="inputSM" />
+                                <input type="text" class="grow input-text input-text-sm" value="" placeholder="This is the placeholder..." id="inputSM" />
                             </div>
                         </div>
                     </div>
@@ -6599,7 +6593,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-8 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-2 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="" placeholder="This is the placeholder..." />
+                                <input type="text" class="grow input-text input-text-xs" value="" placeholder="This is the placeholder..." />
                             </div>
                         </div>
                     </div>
@@ -6615,7 +6609,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                                <input type="text" class="grow input-text input-text-lg" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
                             </div>
                         </div>
                     </div>
@@ -6628,7 +6622,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-12 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="input" />
+                                <input type="text" class="grow input-text" value="Input value" placeholder="This is the placeholder..." id="input" />
                             </div>
                         </div>
                     </div>
@@ -6641,7 +6635,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-10 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                                <input type="text" class="grow input-text input-text-sm" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
                             </div>
                         </div>
                     </div>
@@ -6654,7 +6648,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-8 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-2 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value XS" placeholder="This is the placeholder..." />
+                                <input type="text" class="grow input-text input-text-xs" value="Input value XS" placeholder="This is the placeholder..." />
                             </div>
                         </div>
                     </div>
@@ -6675,7 +6669,7 @@
                                 </div>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                                <input type="text" class="grow input-text input-text-lg" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
                             </div>
                         </div>
                     </div>
@@ -6691,7 +6685,7 @@
                                 </div>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-12 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="input" />
+                                <input type="text" class="grow input-text" value="Input value" placeholder="This is the placeholder..." id="input" />
                             </div>
                         </div>
                     </div>
@@ -6707,7 +6701,7 @@
                                 </div>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-10 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                                <input type="text" class="grow input-text input-text-sm" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
                             </div>
                         </div>
                     </div>
@@ -6723,7 +6717,7 @@
                                 </div>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-8 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-2 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value XS" placeholder="This is the placeholder...">
+                                <input type="text" class="grow input-text input-text-xs" value="Input value XS" placeholder="This is the placeholder...">
                             </div>
                         </div>
                     </div>
@@ -6745,7 +6739,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                                <input type="text" class="grow input-text input-text-lg" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
                             </div>
                         </div>
                     </div>
@@ -6762,7 +6756,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-12 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="input" />
+                                <input type="text" class="grow input-text" value="Input value" placeholder="This is the placeholder..." id="input" />
                             </div>
                         </div>
                     </div>
@@ -6779,7 +6773,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-10 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                                <input type="text" class="grow input-text input-text-sm" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
                             </div>
                         </div>
                     </div>
@@ -6796,7 +6790,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-8 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-2 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value XS" placeholder="This is the placeholder...">
+                                <input type="text" class="grow input-text input-text-xs" value="Input value XS" placeholder="This is the placeholder...">
                             </div>
                         </div>
                     </div>
@@ -6814,7 +6808,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                                <input type="text" class="grow input-text input-text-lg" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
                             </div>
                             <div class="flex items-center px-3 space-x-1.5 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -6838,7 +6832,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-12 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="input" />
+                                <input type="text" class="grow input-text" value="Input value" placeholder="This is the placeholder..." id="input" />
                             </div>
                             <div class="flex items-center px-3 space-x-1.5 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -6862,7 +6856,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-10 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                                <input type="text" class="grow input-text input-text-sm" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
                             </div>
                             <div class="flex items-center px-3 space-x-1.5 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -6886,7 +6880,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-8 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-2 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value XS" placeholder="This is the placeholder...">
+                                <input type="text" class="grow input-text input-text-xs" value="Input value XS" placeholder="This is the placeholder...">
                             </div>
                             <div class="flex items-center px-2 space-x-1 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -6922,7 +6916,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                                <input type="text" class="grow input-text input-text-lg" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
                             </div>
                             <div class="flex items-center px-3 space-x-1.5 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -6953,7 +6947,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-12 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value" placeholder="This is the placeholder..." id="input" />
+                                <input type="text" class="grow input-text" value="Input value" placeholder="This is the placeholder..." id="input" />
                             </div>
                             <div class="flex items-center px-3 space-x-1.5 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -6984,7 +6978,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-10 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                                <input type="text" class="grow input-text input-text-sm" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
                             </div>
                             <div class="flex items-center px-3 space-x-1.5 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -7015,7 +7009,7 @@
                                 </svg>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-8 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-2 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="Input value XS" placeholder="This is the placeholder...">
+                                <input type="text" class="grow input-text input-text-xs" value="Input value XS" placeholder="This is the placeholder...">
                             </div>
                             <div class="flex items-center px-2 space-x-1 opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -7033,7 +7027,75 @@
                 </div>
             </div>
 
-            <div class="">
+            <div class="px-6">
+                <div class="flex space-x-3 items-end">
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="inputLG">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-lg input-text-light" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="input">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-light" value="Input value" placeholder="This is the placeholder..." id="input" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-3 space-x-1">
+                                <label class="relative text-contrast grow" for="inputSM">
+                                    Input label SM
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-sm input-text-light" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-2 space-x-1">
+                                <label class="relative text-contrast text-sm grow" for="inputXS">
+                                    Input label XS
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-xs input-text-light" value="Input value XS" placeholder="This is the placeholder...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <div class="flex space-x-3 items-end">
                     <div class="w-1/4">
                         <div class="flex flex-col">
@@ -7043,7 +7105,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow input-text input-text-lg" value="HELLO" placeholder="This is the placeholder..." id="inputLG" />
+                                <input type="text" class="grow input-text input-text-lg input-text-light" value="" placeholder="This is the placeholder..." id="inputLG" />
                             </div>
                         </div>
                     </div>
@@ -7056,7 +7118,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-12 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="" placeholder="This is the placeholder..." id="input" />
+                                <input type="text" class="grow input-text input-text-light" value="" placeholder="This is the placeholder..." id="input" />
                             </div>
                         </div>
                     </div>
@@ -7069,7 +7131,7 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-10 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="" placeholder="This is the placeholder..." id="inputSM" />
+                                <input type="text" class="grow input-text input-text-sm input-text-light" value="" placeholder="This is the placeholder..." id="inputSM" />
                             </div>
                         </div>
                     </div>
@@ -7082,36 +7144,515 @@
                                 </label>
                             </div>
                             <div class="relative flex grow">
-                                <input type="text" class="grow outline-none h-8 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-2 rounded text-sm placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all" value="" placeholder="This is the placeholder..." />
+                                <input type="text" class="grow input-text input-text-xs input-text-light" value="Input value XS" placeholder="This is the placeholder...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-3 items-end">
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="inputLG">
+                                    Input label
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-lg input-text-light" value="Input value LG" placeholder="This is the placeholder..." id="inputLG" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="input">
+                                    Input label
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-light" value="Input value" placeholder="This is the placeholder..." id="input" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-3 space-x-1">
+                                <label class="relative text-contrast grow" for="inputSM">
+                                    Input label SM
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-sm input-text-light" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-2 space-x-1">
+                                <label class="relative text-contrast text-sm grow" for="inputXS">
+                                    Input label XS
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-xs input-text-light" value="Input value XS" placeholder="This is the placeholder...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-3 items-end">
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="inputLG">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-lg input-text-light" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="input">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-light" value="Input value" placeholder="This is the placeholder..." id="input" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-3 space-x-1">
+                                <label class="relative text-contrast grow" for="inputSM">
+                                    Input label SM
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-sm input-text-light" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-2 space-x-1">
+                                <label class="relative text-contrast text-sm grow" for="inputXS">
+                                    Input label XS
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" id="inputXS" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-xs input-text-light" value="Input value XS" placeholder="This is the placeholder...">
+                            </div>
+                            <div class="flex items-center px-2 space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            </div>
 
-            <div class="flex flex-row">
-                <div class="self-center p-2">
-                    <label class=""> Label </label>
-                    <input
-                            type="text"
-                            class="input-text input-text-lg"
-                            placeholder="This is a placeholder"
-                            value="Input value"
-                    />
+                <div class="flex space-x-3 items-end">
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="inputLG">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-lg input-text-light" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="input">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-light" value="Input value" placeholder="This is the placeholder..." id="input" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-3 space-x-1">
+                                <label class="relative text-contrast grow" for="inputSM">
+                                    Input label SM
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-sm input-text-light" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-2 space-x-1">
+                                <label class="relative text-contrast text-sm grow" for="inputXS">
+                                    Input label XS
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" id="inputXS" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-xs input-text-light" value="Input value XS" placeholder="This is the placeholder...">
+                            </div>
+                            <div class="flex items-center px-2 space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="self-center p-2">
-                    <label class=""> Label </label>
-                    <input type="text" class="input-text" placeholder="This is a placeholder" value="Input value" />
+                <div class="flex space-x-3 items-end">
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="inputLG">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-lg input-text-light" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-contrast grow" for="input">
+                                    Input label
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-light" value="Input value" placeholder="This is the placeholder..." id="input" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-3 space-x-1">
+                                <label class="relative text-contrast grow" for="inputSM">
+                                    Input label SM
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-sm input-text-light" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                            </div>
+                            <div class="flex items-center px-3 space-x-1.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-2 space-x-1">
+                                <label class="relative text-contrast text-sm grow" for="inputXS">
+                                    Input label XS
+                                </label>
+                                <div class="text-xs text-contrast/50">
+                                    Optional
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square-rounded-filled fill-contrast-200 stroke-contrast-200" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 2l.642 .005l.616 .017l.299 .013l.579 .034l.553 .046c4.687 .455 6.65 2.333 7.166 6.906l.03 .29l.046 .553l.041 .727l.006 .15l.017 .617l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.455 4.687 -2.333 6.65 -6.906 7.166l-.29 .03l-.553 .046l-.727 .041l-.15 .006l-.617 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.687 -.455 -6.65 -2.333 -7.166 -6.906l-.03 -.29l-.046 -.553l-.041 -.727l-.006 -.15l-.017 -.617l-.004 -.318v-.648l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.455 -4.687 2.333 -6.65 6.906 -7.166l.29 -.03l.553 -.046l.727 -.041l.15 -.006l.617 -.017c.21 -.003 .424 -.005 .642 -.005zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" id="inputXS" />
+                                </svg>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-text input-text-xs input-text-light" value="Input value XS" placeholder="This is the placeholder...">
+                            </div>
+                            <div class="flex items-center px-2 space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message stroke-contrast-200" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 9h8" />
+                                    <path d="M8 13h6" />
+                                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                </svg>
+                                <div class="text-sm text-contrast grow">
+                                    Helper text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="self-center p-2">
-                    <label class=""> Label </label>
-                    <input
-                            type="text"
-                            class="input-text input-text-sm"
-                            placeholder="This is a placeholder"
-                            value="Input value"
-                    />
+            </div>
+            <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="flex space-x-3 items-end">
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-white grow" for="inputLG">
+                                    Input search
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-search input-search-lg peer" value="Input value" placeholder="This is the placeholder..." id="inputLG" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search stroke-contrast-400 absolute top-0 bottom-0 right-5 m-auto peer-focus:stroke-secondary peer-hover:stroke-secondary-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                    <path d="M21 21l-6 -6" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1.5 px-3 pt-3 space-x-1.5">
+                                <label class="relative text-white grow" for="input">
+                                    Input label
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-search peer" value="Input value" placeholder="This is the placeholder..." id="input" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search stroke-contrast-400 absolute top-0 bottom-0 right-5 m-auto peer-focus:stroke-secondary peer-hover:stroke-secondary-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                    <path d="M21 21l-6 -6" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-3 space-x-1">
+                                <label class="relative text-white grow" for="inputSM">
+                                    Input label SM
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-search input-search-sm peer" value="Input value SM" placeholder="This is the placeholder..." id="inputSM" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search stroke-contrast-400 absolute top-0 bottom-0 right-3 m-auto peer-focus:stroke-secondary peer-hover:stroke-secondary-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                    <path d="M21 21l-6 -6" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/4">
+                        <div class="flex flex-col">
+                            <div class="flex items-center pb-1 px-2 pt-2 space-x-1">
+                                <label class="relative text-white text-sm grow" for="inputXS">
+                                    Input label XS
+                                </label>
+                            </div>
+                            <div class="relative flex grow">
+                                <input type="text" class="grow input-search input-search-xs peer" value="Input value XS" placeholder="This is the placeholder...">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search stroke-contrast-400 absolute top-0 bottom-0 right-3 m-auto peer-focus:stroke-secondary peer-hover:stroke-secondary-500" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                    <path d="M21 21l-6 -6" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

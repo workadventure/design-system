@@ -1,5 +1,5 @@
 .input-text {
-    @apply outline-none h-[52px] bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all ;
+    @apply outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-50 disabled:bg-contrast-200;
 
     &.input-text-lg {
         @apply h-13 text-lg;
@@ -8,7 +8,26 @@
         @apply h-10 text-sm;
     }
     &.input-text-xs {
-        @apply h-8 text-sm;
+        @apply h-8 text-sm rounded;
+    }
+    &.input-text-light {
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200;
+    }
+}
+
+.input-search {
+    @apply outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-6 rounded-full text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all;
+    &.input-search-lg {
+        @apply h-13 text-lg;
+    }
+    &.input-search-sm {
+        @apply h-10 text-sm px-3;
+    }
+    &.input-search-xs {
+        @apply h-8 text-sm rounded px-3;
+    }
+    &.input-search-light {
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100;
     }
 }
 

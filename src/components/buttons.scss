@@ -116,34 +116,58 @@
 
         &.btn-primary {
             @apply border-primary text-primary stroke-primary fill-primary;
+            &:after {
+                @apply bg-primary;
+            }
         }
 
         &.btn-secondary {
             @apply border-secondary text-secondary hover:bg-secondary-600/10 stroke-secondary fill-secondary;
+            &:after {
+                @apply bg-secondary;
+            }
         }
 
         &.btn-contrast {
             @apply border-contrast text-contrast hover:bg-contrast/10 stroke-contrast fill-contrast;
+            &:after {
+                @apply bg-contrast;
+            }
         }
 
         &.btn-neutral {
             @apply border-neutral text-neutral hover:bg-neutral-800/10 stroke-neutral fill-neutral;
+            &:after {
+                @apply bg-neutral;
+            }
         }
 
         &.btn-danger {
             @apply border-danger text-danger hover:bg-danger-800/10 stroke-danger fill-danger;
+            &:after {
+                @apply bg-danger;
+            }
         }
 
         &.btn-warning {
             @apply border-warning text-warning hover:bg-warning-600/10 stroke-warning fill-warning;
+            &:after {
+                @apply bg-warning;
+            }
         }
 
         &.btn-success {
             @apply border-success text-success hover:bg-success-800/10 stroke-success fill-success;
+            &:after {
+                @apply bg-success;
+            }
         }
 
         &.btn-light {
             @apply border-white text-white hover:bg-white/10 stroke-white fill-white;
+            &:after {
+                @apply bg-white;
+            }
         }
     }
 
