@@ -1,22 +1,53 @@
 .input-text {
-    @apply outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-50 disabled:bg-contrast-200;
+    @apply outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 invalid:border-danger invalid:hover:border-danger-500 invalid:focus:border-danger-900 invalid:text-danger;
+
+    &.success {
+        @apply border-success text-success hover:border-success-500 focus:border-success-900;
+    }
 
     &.input-text-lg {
         @apply h-13 text-lg;
+        &.input-icon-left {
+            @apply pl-12;
+        }
+        &.input-icon-right {
+            @apply pr-12;
+        }
     }
     &.input-text-sm {
         @apply h-10 text-sm;
+        &.input-icon-left {
+            @apply pl-10;
+        }
+        &.input-icon-right {
+            @apply pr-10;
+        }
     }
     &.input-text-xs {
         @apply h-8 text-sm rounded;
+        &.input-icon-left {
+            @apply pl-10;
+        }
+        &.input-icon-right {
+            @apply pr-10;
+        }
     }
     &.input-text-light {
-        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200;
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 invalid:border-danger invalid:text-danger-1000 invalid:bg-danger-100 invalid:hover:bg-danger-200  invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        &.success {
+            @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        }
+    }
+    &.input-icon-left {
+        @apply pl-11;
+    }
+    &.input-icon-right {
+        @apply pr-11;
     }
 }
 
 .input-search {
-    @apply outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-6 rounded-full text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all;
+    @apply outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-6 rounded-full text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all invalid:border-danger invalid:hover:border-danger-500 invalid:focus:border-danger-900 invalid:text-danger;
     &.input-search-lg {
         @apply h-13 text-lg;
     }
@@ -27,7 +58,7 @@
         @apply h-8 text-sm rounded px-3;
     }
     &.input-search-light {
-        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100;
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 invalid:border-danger invalid:text-danger-1000 invalid:bg-danger-100 invalid:hover:bg-danger-200  invalid:focus:bg-danger-100;
     }
 }
 
