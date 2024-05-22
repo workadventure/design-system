@@ -8,6 +8,14 @@ Override Tailwind's default color palette
     --neutral-100: 0 89% 21%;
 }
 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.squircle,
 .chip,
 .btn:not(.btn-border) {
     --squircle-smooth: 1;
@@ -18,7 +26,9 @@ Override Tailwind's default color palette
     border: none !important;
     position: relative;
 }
-.btn.btn-border:after {
+.squircle-border,
+.btn.btn-border:after,
+.chip-border:after {
     content: "";
     display: block;
     position: absolute;
@@ -30,6 +40,19 @@ Override Tailwind's default color palette
     --squircle-smooth: 1;
     --squircle-radius: 8px;
     mask-image: paint(squircle);
-    --squircle-outline: 1.05px;
+    --squircle-outline: 1.25px;
     background: #4156F6;
+}
+
+.squircle.squircle-sm {
+    --squircle-radius: 4px;
+}
+.squircle.squircle-md {
+    --squircle-radius: 12px;
+}
+.squircle.squircle-lg {
+    --squircle-radius: 16px;
+}
+.squircle.squircle-xl {
+    --squircle-radius: 24px;
 }

@@ -1,16 +1,35 @@
 .chip {
-    @apply py-1 px-2 rounded bg-contrast text-white flex items-center;
+    @apply relative py-1 px-2 rounded bg-contrast text-white flex items-center space-x-2;
+
+
+    & > .chip-label {
+        @apply self-center text-white font-normal;
+    }
+
+    & > .notification {
+        @apply self-center mx-1;
+    }
+
+    & > svg {
+        @apply self-center w-4 h-4 stroke-white;
+    }
 
     &-lg {
         @apply text-lg;
     }
 
     &-sm {
-        @apply text-sm p-0 px-2 rounded-sm;
+        @apply text-sm p-0 px-1.5 rounded-sm;
+        & > .notification {
+            @apply mx-0;
+        }
     }
 
     &-xs {
         @apply text-xs p-0 px-1 rounded-sm;
+        & > .notification {
+            @apply mx-0;
+        }
     }
 
     &.chip-primary {
@@ -26,11 +45,18 @@
     }
 
     &.chip-neutral {
-        @apply bg-neutral hover:bg-neutral-800;
+        @apply bg-neutral-400 hover:bg-neutral-300;
+        & > .chip-label {
+            @apply self-center text-contrast;
+        }
     }
 
     &.chip-danger {
         @apply bg-danger hover:bg-danger-800;
+    }
+
+    &.chip-contrast-400 {
+        @apply bg-contrast-400 hover:bg-contrast-500;
     }
 
     &.chip-warning {
@@ -61,7 +87,7 @@
         }
 
         &.chip-secondary {
-            @apply border-secondary hover:bg-secondary-600/10;
+            @apply border-secondary hover:bg-secondary-600/10 after:bg-secondary;
 
             & > .chip-label {
                 @apply text-secondary;
@@ -85,14 +111,26 @@
         }
 
         &.chip-neutral {
-            @apply border-neutral hover:bg-neutral-800/10;
+            @apply border-neutral-400 hover:bg-neutral/10 after:bg-neutral-400;
 
             & > .chip-label {
-                @apply text-neutral;
+                @apply text-contrast;
             }
 
             & > svg {
                 @apply stroke-neutral;
+            }
+        }
+
+        &.chip-contrast-400 {
+            @apply border-contrast-400 hover:bg-white/10 after:bg-contrast-400;
+
+            & > .chip-label {
+                @apply text-white;
+            }
+
+            & > svg {
+                @apply stroke-white;
             }
         }
 
@@ -143,17 +181,5 @@
                 @apply stroke-neutral-100;
             }
         }
-    }
-
-    & > .chip-label {
-        @apply self-center text-white;
-    }
-
-    & > .notification {
-        @apply self-center mr-2;
-    }
-
-    & > svg {
-        @apply self-center mr-2 w-4 h-4 stroke-white;
     }
 }
