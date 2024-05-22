@@ -5541,7 +5541,7 @@
                     </div>
                 </div>
 
-                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
                     <div class="flex space-x-3">
                         <div class="flex">
                             <div class="self-center space-y-3">
@@ -6549,7 +6549,7 @@
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">Input</div>
             <div class="flex flex-col space-y-6">
                 <div class="font-normal font-main mb-0 px-6">Input text</div>
-                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
                     <div class="flex space-x-3 items-end">
                         <div class="w-1/4">
                             <div class="flex flex-col">
@@ -8443,7 +8443,7 @@
                     </div>
                 </div>
                 <div class="font-normal font-main mb-0 px-6">Input search</div>
-                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
                     <div class="flex space-x-3 items-end">
                         <div class="w-1/4">
                             <div class="flex flex-col">
@@ -8594,7 +8594,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
                     <div class="flex space-x-3 items-end">
                         <div class="w-2/12">
                             <div class="flex flex-col">
@@ -9087,7 +9087,7 @@
                     </div>
                 </div>
 
-                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
                     <div class="flex space-x-3 items-end">
                         <div class="w-1/4">
                             <div class="flex flex-col">
@@ -9230,7 +9230,7 @@
                     </div>
                 </div>
 
-                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
                     <div class="flex space-x-3 items-end">
                         <div class="w-1/4">
                             <div class="flex flex-col">
@@ -10013,19 +10013,101 @@
                 </div>
 
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">File upload</div>
-
-            <div class="flex items-center justify-center w-full">
-                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full border-2 border-secondary-300 border-dashed rounded-lg cursor-pointer bg-neutral-100 hover:bg-secondary-100 transition-all">
-                    <div class="flex flex-col items-center justify-center py-6">
-                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                        </svg>
-                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+            <div class="px-6">
+                <div class="flex space-x-3 items-center">
+                    <div class="w-1/4">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="dropzone-file" class="group/fileupload flex flex-col items-center justify-center w-full border-2 border-secondary-300 border-dashed rounded-lg cursor-pointer bg-neutral-100 hover:bg-secondary-100 hover:border-secondary hover:border-1 transition-all stroke-contrast-200">
+                                <div class="flex flex-col items-center justify-center py-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-upload group-hover/fileupload:animate-bouncegroup-hover/fileupload:stroke-secondary" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1" />
+                                        <path d="M9 15l3 -3l3 3" />
+                                        <path d="M12 12l0 9" />
+                                    </svg>
+                                    <div class="text-sm text-contrast-400"><span class="font-semibold">Click to upload</span> or drag and drop</div>
+                                    <div class="text-xs text-contrast-200">SVG, PNG, JPG or GIF (MAX. 800x400px)</div>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div>
                     </div>
-                    <input id="dropzone-file" type="file" class="hidden" />
-                </label>
+                    <div class="w-1/4">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="dropzone-file" class="group/fileupload flex flex-col items-center justify-center w-full border-2 border-secondary-300 border-dashed rounded-lg cursor-pointer bg-neutral-100 hover:bg-secondary-100 hover:border-secondary hover:border-1 transition-all stroke-contrast-200 group-hover/fileupload:stroke-secondary">
+                                <div class="flex flex-col items-center justify-center py-6">
+                                    <div class="text-sm text-contrast-400"><span class="font-semibold">Click to upload</span> or drag and drop</div>
+                                    <div class="text-xs text-contrast-200">SVG, PNG, JPG or GIF (MAX. 800x400px)</div>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="w-1/4">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="dropzone-file" class="group/fileupload flex flex-col items-center justify-center w-full border-2 border-secondary-300 border-dashed rounded-lg cursor-pointer bg-neutral-100 hover:bg-secondary-100 hover:border-secondary hover:border-1 transition-all stroke-contrast-200">
+                                <div class="flex flex-col items-center justify-center py-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-upload group-hover/fileupload:animate-bounce group-hover/fileupload:stroke-secondary" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>Ò
+                                        <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1" />
+                                        <path d="M9 15l3 -3l3 3" />
+                                        <path d="M12 12l0 9" />
+                                    </svg>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
+                <div class="flex space-x-3 items-center">
+                    <div class="w-1/4">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="dropzone-file" class="group/fileupload flex flex-col items-center justify-center w-full border-2 border-white/50 border-dashed rounded-lg cursor-pointer bg-white/10 hover:bg-white/20 hover:border-white hover:border-1 transition-all stroke-contrast-200 ">
+                                <div class="flex flex-col items-center justify-center py-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-upload group-hover/fileupload:animate-bounce group-hover/fileupload:stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1" />
+                                        <path d="M9 15l3 -3l3 3" />
+                                        <path d="M12 12l0 9" />
+                                    </svg>
+                                    <div class="text-sm text-white"><span class="font-semibold">Click to upload</span> or drag and drop</div>
+                                    <div class="text-xs text-white/50">SVG, PNG, JPG or GIF (MAX. 800x400px)</div>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="w-1/4">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="dropzone-file" class="group/fileupload flex flex-col items-center justify-center w-full border-2 border-white/50 border-dashed rounded-lg cursor-pointer bg-white/10 hover:bg-white/20 hover:border-white hover:border-1 transition-all stroke-contrast-200">
+                                <div class="flex flex-col items-center justify-center py-6">
+                                    <div class="text-sm text-white"><span class="font-semibold">Click to upload</span> or drag and drop</div>
+                                    <div class="text-xs text-white/50">SVG, PNG, JPG or GIF (MAX. 800x400px)</div>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="w-1/4">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="dropzone-file" class="group/fileupload flex flex-col items-center justify-center w-full border-2 border-white/50 border-dashed rounded-lg cursor-pointer bg-white/10 hover:bg-white/20 hover:border-white hover:border-1 transition-all stroke-contrast-200 ">
+                                <div class="flex flex-col items-center justify-center py-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-upload group-hover/fileupload:animate-bounce group-hover/fileupload:stroke-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1" />
+                                        <path d="M9 15l3 -3l3 3" />
+                                        <path d="M12 12l0 9" />
+                                    </svg>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
                 <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">Checkbox</div>
             <div class="flex flex-row">
@@ -10095,7 +10177,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5">
+                <div class="bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 squircle squircle-xl">
                     <div class="flex space-x-3">
                         <div class="w-1/4">
                             <div class="input-range input-range-secondary">

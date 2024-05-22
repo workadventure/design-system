@@ -49,6 +49,9 @@
         & > .chip-label {
             @apply self-center text-contrast;
         }
+        & > svg {
+            @apply stroke-contrast;
+        }
     }
 
     &.chip-danger {
