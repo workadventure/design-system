@@ -44,6 +44,9 @@ How to run the example:
     cd example
     npm install
     cd ..
+    cd svelte
+    npm install
+    cd ..
     npm run dev
 ```
 

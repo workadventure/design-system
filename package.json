@@ -20,7 +20,7 @@
     "build:ts": "tsc",
     "build": "npm run build:style && npm run build:ts",
     "watch": "ts-node-esm src/watcher.ts",
-    "dev": "npm run build:style && npm run watch & cd example && npm run dev",
+    "dev": "npm run build:style && npm run watch & cd example && npm run dev & cd svelte && npm run dev",
     "precommit": "lint-staged",
     "prepare": "husky install"
   },
@@ -40,7 +40,7 @@
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.38",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "prejss-cli": "^0.3.3",
