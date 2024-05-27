@@ -16,7 +16,7 @@ input::-webkit-inner-spin-button {
 }
 
 .squircle,
-.chip,
+.chip:not(.chip-border),
 .btn:not(.btn-border) {
     --squircle-smooth: 1;
     --squircle-radius: 8px;
@@ -26,9 +26,14 @@ input::-webkit-inner-spin-button {
     border: none !important;
     position: relative;
 }
+.chip.chip-border {
+    border: none !important;
+    position: relative;
+}
 .squircle-border,
-.btn.btn-border:after,
-.chip-border:after {
+.chip-border:before,
+.btn.btn-border:after
+ {
     content: "";
     display: block;
     position: absolute;
@@ -41,7 +46,12 @@ input::-webkit-inner-spin-button {
     --squircle-radius: 8px;
     mask-image: paint(squircle);
     --squircle-outline: 1.25px;
-    background: #4156F6;
+    background-color: #4156F6;
+}
+
+.chip.chip-border.chip-contrast:before,
+.btn.btn-border.chip-contrast:after {
+    bakground-color: --contrast;
 }
 
 .squircle.squircle-sm {

@@ -1,32 +1,32 @@
 .chip {
-    @apply relative py-1 px-2 rounded bg-contrast text-white flex items-center space-x-2;
+    @apply relative py-1 h-8 px-2 bg-contrast text-white flex items-center space-x-2 whitespace-nowrap;
 
 
     & > .chip-label {
-        @apply self-center text-white font-normal;
+        @apply text-white font-normal;
     }
 
     & > .notification {
-        @apply self-center mx-1;
+        @apply mx-1;
     }
 
     & > svg {
-        @apply self-center w-4 h-4 stroke-white;
+        @apply w-4 h-4 stroke-white;
     }
 
     &-lg {
-        @apply text-lg;
+        @apply text-lg h-9;
     }
 
     &-sm {
-        @apply text-sm p-0 px-1.5 rounded-sm;
+        @apply text-sm p-0 h-8 px-1.5;
         & > .notification {
             @apply mx-0;
         }
     }
 
     &-xs {
-        @apply text-xs p-0 px-1 rounded-sm;
+        @apply text-xs h-7 p-0 px-1.5;
         & > .notification {
             @apply mx-0;
         }
@@ -56,6 +56,9 @@
 
     &.chip-danger {
         @apply bg-danger hover:bg-danger-800;
+        &:not(.chip-border, .chip-ghost) > .notification {
+            @apply bg-white;
+        }
     }
 
     &.chip-contrast-400 {
@@ -75,11 +78,10 @@
     }
 
     &.chip-border {
-        @apply border border-solid bg-transparent;
+        @apply bg-transparent after:bg-transparent;
 
         &.chip-primary {
-            @apply border-primary;
-
+            @apply after:bg-primary;
             & > .chip-label {
                 @apply text-primary;
             }
@@ -90,7 +92,7 @@
         }
 
         &.chip-secondary {
-            @apply border-secondary hover:bg-secondary-600/10 after:bg-secondary;
+            @apply after:bg-secondary hover:bg-secondary-600/10;
 
             & > .chip-label {
                 @apply text-secondary;
@@ -102,8 +104,6 @@
         }
 
         &.chip-contrast {
-            @apply border-contrast;
-
             & > .chip-label {
                 @apply text-contrast;
             }
@@ -114,7 +114,7 @@
         }
 
         &.chip-neutral {
-            @apply border-neutral-400 hover:bg-neutral/10 after:bg-neutral-400;
+            @apply after:bg-neutral hover:bg-neutral/10 after:bg-neutral-400;
 
             & > .chip-label {
                 @apply text-contrast;
@@ -126,7 +126,7 @@
         }
 
         &.chip-contrast-400 {
-            @apply border-contrast-400 hover:bg-white/10 after:bg-contrast-400;
+            @apply after:bg-contrast-400 hover:bg-white/10 after:bg-contrast-400;
 
             & > .chip-label {
                 @apply text-white;
@@ -138,7 +138,7 @@
         }
 
         &.chip-danger {
-            @apply border-danger hover:bg-danger-800/10;
+            @apply after:bg-danger hover:bg-danger-800/10;
 
             & > .chip-label {
                 @apply text-danger;
@@ -150,7 +150,7 @@
         }
 
         &.chip-warning {
-            @apply border-warning hover:bg-warning-600/10;
+            @apply after:bg-warning hover:bg-warning-600/10;
 
             & > .chip-label {
                 @apply text-warning;
@@ -162,7 +162,7 @@
         }
 
         &.chip-success {
-            @apply border-success hover:bg-success-800/10;
+            @apply after:bg-success hover:bg-success-800/10;
 
             & > .chip-label {
                 @apply text-success;
@@ -174,8 +174,117 @@
         }
 
         &.chip-light {
-            @apply border-neutral-100 hover:bg-neutral-200/10;
+            @apply after:bg-neutral-100 hover:bg-neutral-200/10;
 
+            & > .chip-label {
+                @apply text-neutral-100;
+            }
+
+            & > svg {
+                @apply stroke-neutral-100;
+            }
+        }
+    }
+
+    &.chip-ghost {
+        @apply bg-transparent after:bg-transparent;
+
+        &.chip-primary {
+            @apply after:bg-primary;
+            & > .chip-label {
+                @apply text-primary;
+            }
+
+            & > svg {
+                @apply stroke-primary;
+            }
+        }
+
+        &.chip-secondary {
+            @apply hover:bg-secondary-600/10;
+
+            & > .chip-label {
+                @apply text-secondary;
+            }
+
+            & > svg {
+                @apply stroke-secondary;
+            }
+        }
+
+        &.chip-contrast {
+            @apply after:bg-contrast hover:bg-contrast/10;
+            & > .chip-label {
+                @apply text-contrast;
+            }
+
+            & > svg {
+                @apply stroke-contrast;
+            }
+        }
+
+        &.chip-neutral {
+            @apply hover:bg-neutral/10 after:bg-neutral-400;
+
+            & > .chip-label {
+                @apply text-contrast;
+            }
+
+            & > svg {
+                @apply stroke-neutral;
+            }
+        }
+
+        &.chip-contrast-400 {
+            @apply hover:bg-white/10 after:bg-contrast-400;
+
+            & > .chip-label {
+                @apply text-white;
+            }
+
+            & > svg {
+                @apply stroke-white;
+            }
+        }
+
+        &.chip-danger {
+            @apply hover:bg-danger-800/10;
+
+            & > .chip-label {
+                @apply text-danger;
+            }
+
+            & > svg {
+                @apply stroke-danger;
+            }
+        }
+
+        &.chip-warning {
+            @apply hover:bg-warning-600/10;
+
+            & > .chip-label {
+                @apply text-warning;
+            }
+
+            & > svg {
+                @apply stroke-warning;
+            }
+        }
+
+        &.chip-success {
+            @apply hover:bg-success-800/10;
+
+            & > .chip-label {
+                @apply text-success;
+            }
+
+            & > svg {
+                @apply stroke-success;
+            }
+        }
+
+        &.chip-light {
+            @apply hover:bg-neutral-200/10;
             & > .chip-label {
                 @apply text-neutral-100;
             }
