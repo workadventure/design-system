@@ -18,7 +18,7 @@
 }
 
 .btn {
-    @apply antialiased px-4 py-3 rounded-[8px] flex items-center justify-center text-center text-base text-neutral-100 bg-contrast no-underline space-x-3 transition-all border-none appearance-none cursor-pointer outline-none stroke-white fill-white;
+    @apply antialiased px-4 py-3 rounded-[8px] flex items-center justify-center text-center text-base text-neutral-100 bg-contrast no-underline font-main space-x-3 transition-all border-none appearance-none cursor-pointer outline-none stroke-white fill-white;
     &.btn-inline-block {
         @apply inline-block;
     }

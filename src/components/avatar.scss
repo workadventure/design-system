@@ -6,7 +6,10 @@
     }
 
     & > .notification {
-        @apply absolute -bottom-0.5 -right-0.5 ring-offset-0 ring-4 ring-white;
+        @apply absolute -bottom-0.5 -right-0.5 ring-offset-0 ring-4 ring-contrast;
+        &.notification-border-light{
+            @apply ring-white;
+        }
     }
 
     &-lg {
@@ -58,10 +61,13 @@
 }
 
 .avatars {
-    @apply flex -ml-5;
+    @apply flex -ml-5 pl-10;
 
     .avatar-stack {
-        @apply flex items-center justify-center -ml-5 border border-4 border-solid border-white;
+        @apply flex items-center justify-center -ml-5 border border-4 border-solid border-contrast;
+        &.avatar-border-light {
+            @apply border-white;
+        }
         & > span {
             @apply block text-center;
         }
