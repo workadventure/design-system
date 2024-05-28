@@ -49,11 +49,6 @@ input::-webkit-inner-spin-button {
     background-color: #4156F6;
 }
 
-.chip.chip-border.chip-contrast:before,
-.btn.btn-border.chip-contrast:after {
-    bakground-color: --contrast;
-}
-
 .squircle.squircle-sm {
     --squircle-radius: 4px;
 }

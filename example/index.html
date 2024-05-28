@@ -20,18 +20,110 @@
             );
         }
     </script>
+
+    <link rel="icon" type="image/svg" href="logos/light/Logo-small.svg" media="(prefers-color-scheme:dark)" />
+    <link rel="icon" type="image/svg" href="logos/dark/Logo-small.svg" media="(prefers-color-scheme:light)" />
 </head>
 <body class="relative" style="background: white;">
 
 <!--------------------Navigation----------------------->
 <div class="fixed bottom-0 left-0">
     <button onclick="toogleTheme()">Toogle theme</button>
+    <input type="color" value="#ff0000" onchange="contrastColorChange(this)" />
     <script>
         function toogleTheme() {
             document.querySelectorAll('[data-theme="light"]').forEach((element) => {
                 element.style.display = 'none';
             });
         }
+
+        function contrastColorChange(color) {
+            console.log(color.value);
+            myFunction_get('--contrast',  color.value);
+        }
+
+        function hexToHSL(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
+            let r = parseInt(result[1], 16);
+            let g = parseInt(result[2], 16);
+            let b = parseInt(result[3], 16);
+
+            r /= 255, g /= 255, b /= 255;
+            let max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+
+            if (max == min){
+                h = s = 0; // achromatic
+            } else {
+                var d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch(max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+
+                h /= 6;
+            }
+
+            h = Math.round(h*360);
+            s = Math.round(s*100);
+            l = Math.round(l*100);
+
+            return { h, s, l };
+        }
+
+        // Get the root element
+        var r = document.querySelector(':root');
+
+        // Create a function for getting a variable value
+        function myFunction_get(variableName, value) {
+            // Get the styles (properties and values) for the root
+            var rs = getComputedStyle(r);
+            console.log(rs);
+            // Alert the value of the --blue variable
+            console.log("The value of --contrast is: " + rs.getPropertyValue('--contrast'));
+            document.setProperty('--contrast', value);
+        }
+
+        // Create a function for setting a variable value
+        function myFunction_set() {
+            // Set the value of variable --blue to another value (in this case "lightblue")
+            r.style.setProperty('--contrast', 'lightblue');
+        }
+
+        var p = document.querySelector('#ContainerQuery');
+
+        p.addEventListener('click', function init() {
+            p.removeEventListener('click', init, false);
+            p.className = p.className + ' resizable';
+            var resizer = document.createElement('div');
+            resizer.className = 'resizer';
+            p.appendChild(resizer);
+            resizer.addEventListener('mousedown', initDrag, false);
+        }, false);
+
+        var startX, startY, startWidth, startHeight;
+
+        function initDrag(e) {
+            startX = e.clientX;
+            startY = e.clientY;
+            startWidth = parseInt(document.defaultView.getComputedStyle(p).width, 10);
+            startHeight = parseInt(document.defaultView.getComputedStyle(p).height, 10);
+            document.documentElement.addEventListener('mousemove', doDrag, false);
+            document.documentElement.addEventListener('mouseup', stopDrag, false);
+        }
+
+        function doDrag(e) {
+            p.style.width = (startWidth + e.clientX - startX) + 'px';
+            p.style.height = (startHeight + e.clientY - startY) + 'px';
+        }
+
+        function stopDrag(e) {
+            document.documentElement.removeEventListener('mousemove', doDrag, false);    document.documentElement.removeEventListener('mouseup', stopDrag, false);
+        }
+
     </script>
     <nav>
         <ul>
@@ -198,13 +290,13 @@
                     </div>
                 </div>
                 <div data-theme="dark" class="flex flex-col space-y-6">
-                    <div class="relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
+                    <div class="flex items-center space-x-3 relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
                         <img class="w-[350px]" src="logos/workadventure.gif"/>
                     </div>
-                    <div class="relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
+                    <div class="flex items-center space-x-3 relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
                         <img src="logos/light/Logo-and-typo.svg"/>
                     </div>
-                    <div class="relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
+                    <div class="flex items-center space-x-3 relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
                         <div class="flex items-center">
                             <img src="logos/light/Typo.svg"/>
                         </div>
@@ -212,7 +304,7 @@
                             <img src="logos/light/Typo-small.svg"/>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
+                    <div class="flex items-center space-x-3 relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
                         <div class="flex items-center">
                             <img src="logos/light/Logo-big.svg"/>
                         </div>
@@ -369,59 +461,57 @@
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Title
             </div>
-            <div class="flex flex-row">
-                <div class="self-center p-2">
-                    <div class="font-normal font-main mb-0 px-3">H1 Title</div>
-                    <div class="flex items-center space-x-6">
+            <div class="flex flex-row space-x-6">
+                <div class="flex flex-col space-y-6 py-6">
+                    <div>
+                        <div class="font-normal font-main mb-0">H1 Title</div>
                         <h1><span class="font-normal">This is an</span> h1 <span class="font-normal">title</span></h1>
-                        <div class="bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
-                            <h1><span class="font-normal">This is an</span> h1 <span class="font-normal">title</span>
-                            </h1>
-                        </div>
                     </div>
-                    <div class="font-normal font-main mb-0 px-3">H2 Title</div>
-                    <div class="flex items-center space-x-6">
+                    <div>
+                        <div class="font-normal font-main mb-0">H2 Title</div>
                         <h2><span class="font-normal">This is an</span> h2 <span class="font-normal">title</span></h2>
-                        <div class="bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
-                            <h2><span class="font-normal">This is an</span> h2 <span class="font-normal">title</span>
-                            </h2>
-                        </div>
                     </div>
-
-                    <div class="font-normal font-main mb-0 px-3">H3 Title</div>
-                    <div class="flex items-center space-x-6">
+                    <div>
+                        <div class="font-normal font-main mb-0">H3 Title</div>
                         <h3><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
-                        <div class="bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
-                            <h3><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span>
-                            </h3>
-                        </div>
                     </div>
-
-                    <div class="font-normal font-main mb-0 px-3">H4 Title</div>
-                    <div class="flex items-center space-x-6">
+                    <div>
+                        <div class="font-normal font-main mb-0">H4 Title</div>
                         <h3><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
-                        <div class="bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
-                            <h4><span class="font-normal">This is an</span> H4 <span class="font-normal">title</span>
-                            </h4>
-                        </div>
                     </div>
-
-                    <div class="font-normal font-main mb-0 px-3">H5 Title</div>
-                    <div class="flex items-center space-x-6">
+                    <div>
+                        <div class="font-normal font-main mb-0">H5 Title</div>
                         <h5>This is an H5 <span class="font-normal">title</span></h5>
-                        <div class="bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
-                            <h5><span class="font-normal">This is an</span> H5 <span class="font-normal">title</span>
-                            </h5>
-                        </div>
                     </div>
-
-                    <div class="font-normal font-main mb-0 px-3">H6 Title</div>
-                    <div class="flex items-center space-x-6">
+                    <div>
+                        <div class="font-normal font-main mb-0">H6 Title</div>
                         <h6><span class="font-normal">This is an</span> H6 <span class="font-normal">title</span></h6>
-                        <div class="bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
-                            <h6><span class="font-normal">This is an</span> H6 <span class="font-normal">title</span>
-                            </h6>
-                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-6 relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
+                    <div>
+                        <div class="font-normal font-main mb-0 text-white">H1 Title</div>
+                        <h1 class="text-white"><span class="font-normal">This is an</span> h1 <span class="font-normal">title</span></h1>
+                    </div>
+                    <div>
+                        <div class="font-normal font-main mb-0 text-white">H2 Title</div>
+                        <h2 class="text-white"><span class="font-normal">This is an</span> h2 <span class="font-normal">title</span></h2>
+                    </div>
+                    <div>
+                        <div class="font-normal font-main mb-0 text-white">H3 Title</div>
+                        <h3 class="text-white"><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
+                    </div>
+                    <div>
+                        <div class="font-normal font-main mb-0 text-white">H4 Title</div>
+                        <h3 class="text-white"><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
+                    </div>
+                    <div>
+                        <div class="font-normal font-main mb-0 text-white">H5 Title</div>
+                        <h5 class="text-white">This is an H5 <span class="font-normal">title</span></h5>
+                    </div>
+                    <div>
+                        <div class="font-normal font-main mb-0 text-white">H6 Title</div>
+                        <h6 class="text-white"><span class="font-normal">This is an</span> H6 <span class="font-normal">title</span></h6>
                     </div>
                 </div>
             </div>
@@ -1644,7 +1734,7 @@
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Container Queries
             </div>
-            <div class="flex flex-col space-y-6 py-6">
+            <div id="ContainerQuery" class="flex flex-col space-y-6 py-6">
                 <div class="flex flex-row space-x-6">
                     <div class="w-1/12 h-10">
                         <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
@@ -11492,450 +11582,336 @@
         <div class="flex flex-col space-y-6">
 
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
-                Navigation
-            </div>
-            <div class="flex flex-row">
-                <div class="self-center p-2"></div>
-            </div>
-
-            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
-                Tooltip
-            </div>
-            <div class="flex flex-row">
-                <div class="self-center p-2"></div>
-            </div>
-
-            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
-                Chat
-            </div>
-            <div class="flex flex-row">
-                <div class="self-center p-2"></div>
-            </div>
-
-            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Notifications
             </div>
-            <div class="flex flex-row">
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-lg">
-                        <span class="notification-value">12</span>
+            <div class="flex items-center space-x-12 px-6">
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-secondary notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-xs"></div>
+                        <div class="notification notification-secondary notification-xxs"></div>
+                        <div class="notification notification-secondary notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-secondary notification-border notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-border">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-border notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-border notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-xs"></div>
+                        <div class="notification notification-xxs"></div>
+                        <div class="notification notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-border notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-danger notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger notification-xs"></div>
+                        <div class="notification notification-danger notification-xxs"></div>
+                        <div class="notification notification-danger notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-danger notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-border notification-danger notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-danger">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-danger notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-danger notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-danger">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-success notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success notification-xs"></div>
+                        <div class="notification notification-success notification-xxs"></div>
+                        <div class="notification notification-success notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-danger notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-danger notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-danger notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-danger notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-danger notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-success notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-border notification-success notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-success">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-success notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-success notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-success">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-warning notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning notification-xs"></div>
+                        <div class="notification notification-warning notification-xxs"></div>
+                        <div class="notification notification-warning notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-success notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-success notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-success notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-success notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-success notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-warning notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-border notification-warning notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-warning">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-warning notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-warning notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-warning">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-warning notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-warning notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-warning notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-warning notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-warning notification-4px"></div>
-                </div>
-
-                <div class="self-center p-2 contrast p-4 bg-contrast">
-                    <div class="notification notification-light notification-lg">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-light">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-light notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-light notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-light notification-xs"></div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-light notification-xxs"></div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-light notification-4px"></div>
                 </div>
             </div>
 
-            <div class="flex flex-row">
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-border notification-lg">
-                        <span class="notification-value">12</span>
+            <div class="flex items-center space-x-12 relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80 space-y-6">
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-secondary notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-secondary notification-xs"></div>
+                        <div class="notification notification-secondary notification-xxs"></div>
+                        <div class="notification notification-secondary notification-xxxs"></div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-border">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-light notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-light">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-light notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-light notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-light notification-xs"></div>
+                        <div class="notification notification-light notification-xxs"></div>
+                        <div class="notification notification-light notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-border notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-border notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-border notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-border notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-primary notification-border notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-border notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-light notification-border notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-light notification-border">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-light notification-border notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-light notification-border notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-border">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-danger notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-danger notification-xs"></div>
+                        <div class="notification notification-danger notification-xxs"></div>
+                        <div class="notification notification-danger notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-border notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-border notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-border notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-border notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-secondary notification-border notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-border notification-danger notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-danger">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-danger notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-danger notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-success notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-success notification-xs"></div>
+                        <div class="notification notification-success notification-xxs"></div>
+                        <div class="notification notification-success notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-danger notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-border notification-success notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-success">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-success notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-success notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
                 </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-danger">
-                        <span class="notification-value">12</span>
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-warning notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-warning notification-xs"></div>
+                        <div class="notification notification-warning notification-xxs"></div>
+                        <div class="notification notification-warning notification-xxxs"></div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-danger notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-danger notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-danger notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-danger notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-danger notification-4px"></div>
-                </div>
 
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-success notification-lg">
-                        <span class="notification-value">12</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="notification notification-border notification-warning notification-lg">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-warning">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-warning notification-sm">
+                            <span class="notification-value">12</span>
+                        </div>
+                        <div class="notification notification-border notification-warning notification-xs">
+                            <span class="notification-value">12</span>
+                        </div>
                     </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-success">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-success notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-success notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-success notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-success notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-success notification-4px"></div>
-                </div>
-
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-warning notification-lg">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-warning">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-warning notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-warning notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-warning notification-xs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-warning notification-xxs"></div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="notification notification-border notification-warning notification-4px"></div>
-                </div>
-
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-border notification-light notification-lg">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-border notification-light">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-border notification-light notification-sm">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-border notification-light notification-xs">
-                        <span class="notification-value">12</span>
-                    </div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-border notification-light notification-xs"></div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-border notification-light notification-xxs"></div>
-                </div>
-                <div class="self-center p-2 bg-contrast">
-                    <div class="notification notification-border notification-light notification-4px"></div>
                 </div>
             </div>
 
@@ -12744,8 +12720,201 @@
                 </div>
             </div>
 
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Avatar
+            </div>
 
+            <div class="flex items-center space-x-3">
+                <a class="avatar avatar-lg bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar avatar-sm bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar avatar-xs bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar avatar-lg avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar avatar-sm avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar avatar-xs bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                <a class="avatar avatar-lg bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xs notification-danger">
+                        <span class="notification-value">12</span>
+                    </div>
+                </a>
+                <a class="avatar bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-sm bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-xs bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xxxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-lg avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xs notification-danger">
+                        <span class="notification-value">12</span>
+                    </div>
+                </a>
+                <a class="avatar avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-sm avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-xs avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#">
+                    <div class="notification notification-xxxs notification-danger"></div>
+                </a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a class="avatar avatar-lg" href="#">
+                    <span class="avatar-name">LG</span>
+                </a>
+                <a class="avatar" href="#">
+                    <span class="avatar-name">BS</span>
+                </a>
+                <a class="avatar avatar-sm" href="#">
+                    <span class="avatar-name">SM</span>
+                </a>
+                <a class="avatar avatar-xs" href="#">
+                    <span class="avatar-name">XS</span>
+                </a>
+                <a class="avatar avatar-lg avatar-circle" href="#">
+                    <span class="avatar-name">LG</span>
+                </a>
+                <a class="avatar avatar-circle" href="#">
+                    <span class="avatar-name">BS</span>
+                </a>
+                <a class="avatar avatar-sm avatar-circle" href="#">
+                    <span class="avatar-name">SM</span>
+                </a>
+                <a class="avatar avatar-xs avatar-circle" href="#">
+                    <span class="avatar-name">XS</span>
+                </a>
+                <a class="avatar avatar-lg" href="#">
+                    <span class="avatar-name">LG</span>
+                    <div class="notification notification-xs notification-danger">
+                        <span class="notification-value">12</span>
+                    </div>
+                </a>
+                <a class="avatar" href="#">
+                    <span class="avatar-name">BS</span>
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-sm" href="#">
+                    <span class="avatar-name">SM</span>
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-xs" href="#">
+                    <span class="avatar-name">XS</span>
+                    <div class="notification notification-xxxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-lg avatar-circle" href="#">
+                    <span class="avatar-name">LG</span>
+                    <div class="notification notification-xs notification-danger">
+                        <span class="notification-value">12</span>
+                    </div>
+                </a>
+                <a class="avatar avatar-circle" href="#">
+                    <span class="avatar-name">BS</span>
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-sm avatar-circle" href="#">
+                    <span class="avatar-name">SM</span>
+                    <div class="notification notification-xxs notification-danger"></div>
+                </a>
+                <a class="avatar avatar-xs" href="#">
+                    <span class="avatar-name">XS</span>
+                    <div class="notification notification-xxxs notification-danger"></div>
+                </a>
+            </div>
+            <div class="flex flex-row">
+                <div class="self-center p-2">
+                    <div class="avatars">
+                        <a class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar-lg avatar-stack" href="#">
+                            <span class="avatar-name">+4</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="self-center p-2">
+                    <div class="avatars">
+                        <a class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]" href="#"></a>
+                        <a class="avatar avatar avatar-stack" href="#">
+                            <span class="avatar-name">+4</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="self-center p-2">
+                    <div class="avatars">
+                        <a
+                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a
+                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a
+                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a
+                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a class="avatar avatar-lg avatar-stack avatar-circle" href="#">
+                            <span class="avatar-name">+4</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="self-center p-2">
+                    <div class="avatars">
+                        <a
+                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a
+                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a
+                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a
+                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
+                                href="#"
+                        ></a>
+                        <a class="avatar avatar avatar-stack avatar-circle" href="#">
+                            <span class="avatar-name">+4</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Navigation
+            </div>
+            <div class="flex flex-row">
+                <div class="self-center p-2"></div>
+            </div>
+
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Tooltip
+            </div>
+            <div class="flex flex-row">
+                <div class="self-center p-2"></div>
+            </div>
+
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Chat
+            </div>
+            <div class="flex flex-row">
+                <div class="self-center p-2"></div>
+            </div>
 
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Table
@@ -12886,316 +13055,6 @@
             </div>
             <div class="flex flex-row">
                 <div class="self-center p-2"></div>
-            </div>
-
-            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
-                avatar
-            </div>
-
-            <div class="flex flex-row">
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-lg bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-sm bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    ></a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-xs bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    ></a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-lg avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-sm avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    ></a>
-                </div>
-                <div class="self-center avatar-circle p-2">
-                    <a
-                            class="avatar avatar-xs bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    ></a>
-                </div>
-
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-lg bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-xs notification-danger notification-border">
-                            <span class="notification-value">12</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-xxs notification-danger notification-border"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-sm bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-xxs notification-danger notification-border"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-xs bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-4px notification-danger notification-border"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-lg avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-xs notification-danger notification-border"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-xxs notification-danger notification-border"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-sm avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-xxs notification-danger notification-border"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a
-                            class="avatar avatar-xs avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                            href="#"
-                    >
-                        <div class="notification notification-4px notification-danger notification-border"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="flex flex-row">
-                <div class="self-center p-2">
-                    <a class="avatar avatar-lg" href="#">
-                        <span class="avatar-name">LG</span>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar" href="#">
-                        <span class="avatar-name">BS</span>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-sm" href="#">
-                        <span class="avatar-name">SM</span>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-xs" href="#">
-                        <span class="avatar-name">XS</span>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-lg avatar-circle" href="#">
-                        <span class="avatar-name">LG</span>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-circle" href="#">
-                        <span class="avatar-name">BS</span>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-sm avatar-circle" href="#">
-                        <span class="avatar-name">SM</span>
-                    </a>
-                </div>
-                <div class="self-center avatar-circle p-2">
-                    <a class="avatar avatar-xs" href="#">
-                        <span class="avatar-name">XS</span>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-lg" href="#">
-                        <span class="avatar-name">LG</span>
-                        <div class="notification notification-xs notification-danger">12</div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar" href="#">
-                        <span class="avatar-name">BS</span>
-                        <div class="notification notification-xxs notification-danger"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-sm" href="#">
-                        <span class="avatar-name">SM</span>
-                        <div class="notification notification-xxs notification-danger"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-xs" href="#">
-                        <span class="avatar-name">XS</span>
-                        <div class="notification notification-4px notification-danger"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-lg avatar-circle" href="#">
-                        <span class="avatar-name">LG</span>
-                        <div class="notification notification-xs notification-danger">12</div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-circle" href="#">
-                        <span class="avatar-name">BS</span>
-                        <div class="notification notification-xxs notification-danger"></div>
-                    </a>
-                </div>
-                <div class="self-center p-2">
-                    <a class="avatar avatar-sm avatar-circle" href="#">
-                        <span class="avatar-name">SM</span>
-                        <div class="notification notification-xxs notification-danger"></div>
-                    </a>
-                </div>
-                <div class="self-center avatar-circle p-2">
-                    <a class="avatar avatar-xs" href="#">
-                        <span class="avatar-name">XS</span>
-                        <div class="notification notification-4px notification-danger"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="flex flex-row">
-                <div class="self-center p-2">
-                    <div class="avatars">
-                        <a
-                                class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar-lg avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a class="avatar avatar-lg avatar-stack" href="#">
-                            <span class="avatar-name">+4</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="avatars">
-                        <a
-                                class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar avatar-stack bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a class="avatar avatar avatar-stack" href="#">
-                            <span class="avatar-name">+4</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="avatars">
-                        <a
-                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar-lg avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a class="avatar avatar-lg avatar-stack avatar-circle" href="#">
-                            <span class="avatar-name">+4</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="self-center p-2">
-                    <div class="avatars">
-                        <a
-                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a
-                                class="avatar avatar avatar-stack avatar-circle bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]"
-                                href="#"
-                        ></a>
-                        <a class="avatar avatar avatar-stack avatar-circle" href="#">
-                            <span class="avatar-name">+4</span>
-                        </a>
-                    </div>
-                </div>
             </div>
     </section>
 

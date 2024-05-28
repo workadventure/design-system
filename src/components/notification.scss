@@ -2,18 +2,18 @@
     @apply aspect-square w-6 h-6 bg-contrast rounded-full paragraph-bold text-center flex  items-center;
 
     & > .notification-value {
-        @apply text-neutral-100 block self-center w-full tracking-tighter -ml-[1px] mt-[1px];
+        @apply text-neutral-100 block self-center w-full tracking-tighter;
     }
 
     &-lg {
-        @apply aspect-square w-8 h-8 paragraph-lg;
+        @apply w-8 h-8 paragraph-lg;
         & > .notification-value {
             @apply tracking-tighter mt-0;
         }
     }
 
     &-sm {
-        @apply aspect-square w-5 h-5 paragraph-xs;
+        @apply w-5 h-5 paragraph-xs;
 
         & > .notification-value {
             @apply pt-0;
@@ -21,19 +21,19 @@
     }
 
     &-xs {
-        @apply aspect-square w-4 h-4 paragraph-xxs;
+        @apply w-4 h-4 paragraph-xxs;
 
         & > .notification-value {
-            @apply pt-0;
+            @apply pt-0 mt-[1px];
         }
     }
 
     &-xxs {
-        @apply aspect-square w-2 h-2;
+        @apply w-2 h-2;
     }
 
     &-xxxs {
-        @apply aspect-square w-1 h-1;
+        @apply w-1 h-1;
     }
 
     &-primary {
@@ -50,10 +50,19 @@
 
     &-success {
         @apply bg-success;
+        & > .notification-value {
+            @apply text-contrast;
+            &.white {
+                @apply text-white;
+            }
+        }
     }
 
     &-warning {
         @apply bg-warning;
+        & > .notification-value {
+            @apply text-contrast;
+        }
     }
 
     &-light {

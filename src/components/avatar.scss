@@ -1,48 +1,59 @@
 .avatar {
-    @apply w-10 aspect-square bg-cover bg-center rounded-md block bg-neutral-300 relative;
+    @apply w-10 h-10 aspect-square bg-cover bg-center rounded-md flex items-center justify-center bg-neutral-300 relative no-underline;
 
     & > .avatar-name {
-        @apply top-0 bottom-0 left-0 right-0 m-auto absolute  paragraph-bold text-center h-6;
+        @apply  paragraph-bold text-center no-underline;
     }
 
     & > .notification {
-        @apply absolute bottom-[-8px] right-[-8px] text-white border border-4 border-white;
+        @apply absolute -bottom-0.5 -right-0.5 ring-offset-0 ring-4 ring-white;
     }
 
     &-lg {
-        @apply w-12;
+        @apply w-12 h-12;
 
         & > .avatar-name {
-            @apply paragraph-lg paragraph-bold h-6;
+            @apply paragraph-lg;
+        }
+        & > .notification {
+            @apply -bottom-2 -right-2;
+        }
+        &-circle {
+            & > .notification {
+                @apply -bottom-1 -right-1;
+            }
         }
     }
 
     &-sm {
-        @apply w-8 rounded;
+        @apply w-8 h-8 rounded;
 
         & > .avatar-name {
-            @apply paragraph-sm paragraph-bold h-5;
+            @apply paragraph-sm;
         }
 
         & > .notification {
-            @apply bottom-[-6px] right-[-6px];
+            @apply -bottom-0.5 -right-0.5;
         }
     }
 
     &-xs {
-        @apply w-7 rounded;
+        @apply w-7 h-7 rounded;
 
         & > .avatar-name {
-            @apply paragraph-xs paragraph-bold  h-5;
+            @apply paragraph-xs;
         }
 
         & > .notification {
-            @apply bottom-[-6px] right-[-6px];
+            @apply -bottom-0.5 -right-0.5;
         }
     }
 
     &-circle {
         @apply rounded-full;
+        & > .notification {
+            @apply bottom-0 right-0;
+        }
     }
 }
 
