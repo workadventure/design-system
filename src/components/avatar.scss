@@ -58,9 +58,12 @@
 }
 
 .avatars {
-    @apply inline-block ml-[20px];
+    @apply flex -ml-5;
 
     .avatar-stack {
-        @apply inline-block ml-[-20px] border border-4 border-solid border-white;
+        @apply flex items-center justify-center -ml-5 border border-4 border-solid border-white;
+        & > span {
+            @apply block text-center;
+        }
     }
 }

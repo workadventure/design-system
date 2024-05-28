@@ -17,7 +17,7 @@ input::-webkit-inner-spin-button {
 
 .squircle,
 .chip:not(.chip-border),
-.btn:not(.btn-border) {
+.btn:not(.btn-border, a) {
     --squircle-smooth: 1;
     --squircle-radius: 8px;
     mask-image: paint(squircle);
