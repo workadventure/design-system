@@ -25,195 +25,168 @@
     <link rel="icon" type="image/svg" href="logos/dark/Logo-small.svg" media="(prefers-color-scheme:light)" />
 </head>
 <body class="relative" style="background: white;">
+<!--<button onclick="toogleTheme()">Toogle theme</button>
+    <input type="color" value="#ff0000" onchange="contrastColorChange(this)" />-->
+<script>
+    function toogleTheme() {
+        document.querySelectorAll('[data-theme="light"]').forEach((element) => {
+            element.style.display = 'none';
+        });
+    }
 
-<!--------------------Navigation----------------------->
-<div class="fixed bottom-0 left-0">
-    <button onclick="toogleTheme()">Toogle theme</button>
-    <input type="color" value="#ff0000" onchange="contrastColorChange(this)" />
-    <script>
-        function toogleTheme() {
-            document.querySelectorAll('[data-theme="light"]').forEach((element) => {
-                element.style.display = 'none';
-            });
-        }
+    function contrastColorChange(color) {
+        console.log(color.value);
+        myFunction_get('--contrast',  color.value);
+    }
 
-        function contrastColorChange(color) {
-            console.log(color.value);
-            myFunction_get('--contrast',  color.value);
-        }
+    function hexToHSL(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
-        function hexToHSL(hex) {
-            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        let r = parseInt(result[1], 16);
+        let g = parseInt(result[2], 16);
+        let b = parseInt(result[3], 16);
 
-            let r = parseInt(result[1], 16);
-            let g = parseInt(result[2], 16);
-            let b = parseInt(result[3], 16);
+        r /= 255, g /= 255, b /= 255;
+        let max = Math.max(r, g, b), min = Math.min(r, g, b);
+        let h, s, l = (max + min) / 2;
 
-            r /= 255, g /= 255, b /= 255;
-            let max = Math.max(r, g, b), min = Math.min(r, g, b);
-            let h, s, l = (max + min) / 2;
-
-            if (max == min){
-                h = s = 0; // achromatic
-            } else {
-                var d = max - min;
-                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-                switch(max) {
-                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-                    case g: h = (b - r) / d + 2; break;
-                    case b: h = (r - g) / d + 4; break;
-                }
-
-                h /= 6;
+        if (max == min){
+            h = s = 0; // achromatic
+        } else {
+            var d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch(max) {
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2; break;
+                case b: h = (r - g) / d + 4; break;
             }
 
-            h = Math.round(h*360);
-            s = Math.round(s*100);
-            l = Math.round(l*100);
-
-            return { h, s, l };
+            h /= 6;
         }
 
-        // Get the root element
-        var r = document.querySelector(':root');
+        h = Math.round(h*360);
+        s = Math.round(s*100);
+        l = Math.round(l*100);
 
-        // Create a function for getting a variable value
-        function myFunction_get(variableName, value) {
-            // Get the styles (properties and values) for the root
-            var rs = getComputedStyle(r);
-            console.log(rs);
-            // Alert the value of the --blue variable
-            console.log("The value of --contrast is: " + rs.getPropertyValue('--contrast'));
-            document.setProperty('--contrast', value);
-        }
+        return { h, s, l };
+    }
 
-        // Create a function for setting a variable value
-        function myFunction_set() {
-            // Set the value of variable --blue to another value (in this case "lightblue")
-            r.style.setProperty('--contrast', 'lightblue');
-        }
+    // Get the root element
+    var r = document.querySelector(':root');
 
-        var p = document.querySelector('#ContainerQuery');
+    // Create a function for getting a variable value
+    function myFunction_get(variableName, value) {
+        // Get the styles (properties and values) for the root
+        var rs = getComputedStyle(r);
+        console.log(rs);
+        // Alert the value of the --blue variable
+        console.log("The value of --contrast is: " + rs.getPropertyValue('--contrast'));
+        document.setProperty('--contrast', value);
+    }
 
-        p.addEventListener('click', function init() {
-            p.removeEventListener('click', init, false);
-            p.className = p.className + ' resizable';
-            var resizer = document.createElement('div');
-            resizer.className = 'resizer';
-            p.appendChild(resizer);
-            resizer.addEventListener('mousedown', initDrag, false);
-        }, false);
+    // Create a function for setting a variable value
+    function myFunction_set() {
+        // Set the value of variable --blue to another value (in this case "lightblue")
+        r.style.setProperty('--contrast', 'lightblue');
+    }
 
-        var startX, startY, startWidth, startHeight;
-
-        function initDrag(e) {
-            startX = e.clientX;
-            startY = e.clientY;
-            startWidth = parseInt(document.defaultView.getComputedStyle(p).width, 10);
-            startHeight = parseInt(document.defaultView.getComputedStyle(p).height, 10);
-            document.documentElement.addEventListener('mousemove', doDrag, false);
-            document.documentElement.addEventListener('mouseup', stopDrag, false);
-        }
-
-        function doDrag(e) {
-            p.style.width = (startWidth + e.clientX - startX) + 'px';
-            p.style.height = (startHeight + e.clientY - startY) + 'px';
-        }
-
-        function stopDrag(e) {
-            document.documentElement.removeEventListener('mousemove', doDrag, false);    document.documentElement.removeEventListener('mouseup', stopDrag, false);
-        }
-
-    </script>
+</script>
+<!--------------------Navigation----------------------->
+<div class="fixed bottom-0 left-0 h-screen bg-contrast w-[200px]">
     <nav>
-        <ul>
+        <ul class="list-none m-0 p-0 pt-12">
             <li>
-                <a href="#Foundation">Foundation</a>
-                <ul>
+                <input id="checkFoundation" class="peer/checkFoundation opacity-0 hidden" type="checkbox" checked />
+                <label for="checkFoundation" class="bold no-underline text-white py-3 px-3 text-base transition-all flex items-center">
+                    <div class="grow">Foundation</div>
+                </label>
+                <ul class="list-none m-0 p-0 peer-checked/checkFoundation:hidden">
                     <li>
-                        <a href="#Logo">Logo</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Logo">Logo</a>
                     </li>
                     <li>
-                        <a href="#Typography">Typography</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#QRCode">QRCode</a>
                     </li>
                     <li>
-                        <a href="#Color">Color</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Typography">Typography</a>
                     </li>
                     <li>
-                        <a href="#Spacing">Spacing</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Title">Title</a>
                     </li>
                     <li>
-                        <a href="#Grid">Grid</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Paragraphs">Paragraphs</a>
                     </li>
                     <li>
-                        <a href="#Container">Container</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Color">Color</a>
                     </li>
                     <li>
-                        <a href="#BorderRadius">Border radius</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Spacing">Spacing</a>
                     </li>
                     <li>
-                        <a href="#BackdropFilter">Backdrop filter</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Grid">Grid</a>
                     </li>
                     <li>
-                        <a href="#Shadow">Shadow</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Container">Container</a>
                     </li>
                     <li>
-                        <a href="#Shadow">Iconography</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#ContainerQueries">Container Queries</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#BorderRadius">Border radius</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#BackdropFilter">Backdrop filter</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Shadow">Shadow</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Iconography">Iconography</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#Compononents">Compononents</a>
-                <ul>
+                <input id="checkComponents" class="peer/checkComponents opacity-0 hidden" type="checkbox" />
+                <label for="checkComponents" class="bold no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all">Compononents</label>
+                <ul class="list-none m-0 p-0 peer-checked/checkComponents:hidden">
                     <li>
-                        <a href="#Text">Text</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Button">Button</a>
                     </li>
                     <li>
-                        <a href="#Button">Button</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#InputSearch">Input Search</a>
                     </li>
                     <li>
-                        <a href="#Input">Input</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#InputNumber">Input Number</a>
                     </li>
                     <li>
-                        <a href="#Checkbox">Checkbox</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Select">Select</a>
                     </li>
                     <li>
-                        <a href="#Navigation">Navigation</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#InputTag">Input Text</a>
                     </li>
                     <li>
-                        <a href="#Tooltip">Tooltip</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Upload">File Upload</a>
                     </li>
                     <li>
-                        <a href="#Chat">Chat</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Switch">Switch</a>
                     </li>
                     <li>
-                        <a href="#Notifications">Notifications</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Checkbox">Checkbox</a>
                     </li>
                     <li>
-                        <a href="#ChipTag">Chip & Tag</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Radio">Radio</a>
                     </li>
                     <li>
-                        <a href="#Table">Table</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Slider">Range Slider</a>
                     </li>
                     <li>
-                        <a href="#Breadcrumb">Breadcrumb</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Notifications">Notifications</a>
                     </li>
                     <li>
-                        <a href="#Toast">Toast</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Chips">Chip & Tag</a>
                     </li>
                     <li>
-                        <a href="#Avatar">Avatar</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#PrebuildElements">Prebuild elements</a>
-                <ul>
-                    <li>
-                        <a href="#Header">Header</a>
-                    </li>
-                    <li>
-                        <a href="#Navigation">Navigation</a>
+                        <a class="no-underline text-white py-1 px-6 block text-base hover:bg-white/10 hover:translate-x-1 transition-all" href="#Avatar">Avatar</a>
                     </li>
                 </ul>
             </li>
@@ -251,8 +224,8 @@
     <!--------------------Foundation----------------------->
     <!----------------------------------------------------->
     <section class="flex flex-col space-y-6" id="Foundation" class="flex flex-col space-y-12">
-        <div class="font-title text-[48px] py-4 px-6 rounded-lg text-secondary text-right sticky top-0 z-[41]">
-            <span class="bg-neutral-100 h-16">Foundations</span>
+        <div class="font-title text-[48px] rounded-lg text-secondary text-right sticky top-0 z-[41] flex items-center justify-end">
+            <span class="h-16 bg-secondary p-3 text-white">Foundations</span>
         </div>
 
         <!----------------------------------------------------->
@@ -328,7 +301,7 @@
 
         <!----------------------------------------------------->
         <!---QR Code --->
-        <section class="flex flex-col space-y-6" id="QRCode ">
+        <section class="flex flex-col space-y-6" id="QRCode">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 QR Code
             </div>
@@ -495,53 +468,53 @@
             <div class="flex flex-row px-6 space-x-6">
                 <div class="flex flex-col space-y-6 py-6">
                     <div>
-                        <div class="font-normal font-main mb-0">H1 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50">H1 Title</div>
                         <h1><span class="font-normal">This is an</span> h1 <span class="font-normal">title</span></h1>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0">H2 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50">H2 Title</div>
                         <h2><span class="font-normal">This is an</span> h2 <span class="font-normal">title</span></h2>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0">H3 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50">H3 Title</div>
                         <h3><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0">H4 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50">H4 Title</div>
                         <h3><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0">H5 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50">H5 Title</div>
                         <h5>This is an H5 <span class="font-normal">title</span></h5>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0">H6 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50">H6 Title</div>
                         <h6><span class="font-normal">This is an</span> H6 <span class="font-normal">title</span></h6>
                     </div>
                 </div>
                 <div class="flex flex-col space-y-6 relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80">
                     <div>
-                        <div class="font-normal font-main mb-0 text-white">H1 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50 text-white">H1 Title</div>
                         <h1 class="text-white"><span class="font-normal">This is an</span> h1 <span class="font-normal">title</span></h1>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0 text-white">H2 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50 text-white">H2 Title</div>
                         <h2 class="text-white"><span class="font-normal">This is an</span> h2 <span class="font-normal">title</span></h2>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0 text-white">H3 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50 text-white">H3 Title</div>
                         <h3 class="text-white"><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0 text-white">H4 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50 text-white">H4 Title</div>
                         <h3 class="text-white"><span class="font-normal">This is an</span> H3 <span class="font-normal">title</span></h3>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0 text-white">H5 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50 text-white">H5 Title</div>
                         <h5 class="text-white">This is an H5 <span class="font-normal">title</span></h5>
                     </div>
                     <div>
-                        <div class="font-normal font-main mb-0 text-white">H6 Title</div>
+                        <div class="font-normal font-main mb-0 opacity-50 text-white">H6 Title</div>
                         <h6 class="text-white"><span class="font-normal">This is an</span> H6 <span class="font-normal">title</span></h6>
                     </div>
                 </div>
@@ -557,7 +530,7 @@
             <div class="flex flex-col space-y-6 py-6">
                 <div class="flex flex-row space-x-6 px-6">
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph XL</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XL</div>
                         <p class="paragraph-xl">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -565,7 +538,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph LG</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph LG</div>
                         <p class="paragraph-lg">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -573,7 +546,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph</div>
                         <p class="paragraph">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -581,7 +554,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph SM</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph SM</div>
                         <p class="paragraph-sm">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -589,7 +562,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph XS</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XS</div>
                         <p class="paragraph-xs">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -597,7 +570,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph XXS</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XXS</div>
                         <p class="paragraph-xxs">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -607,7 +580,7 @@
                 </div>
                 <div class="flex flex-row space-x-6 bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph XL</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XL</div>
                         <p class="paragraph-xl">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -615,7 +588,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph LG</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph LG</div>
                         <p class="paragraph-lg">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -623,7 +596,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph</div>
                         <p class="paragraph">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -631,7 +604,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph SM</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph SM</div>
                         <p class="paragraph-sm">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -639,7 +612,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph XS</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XS</div>
                         <p class="paragraph-xs">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -647,7 +620,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main mb-0">Paragraph XXS</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XXS</div>
                         <p class="paragraph-xxs">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -657,7 +630,7 @@
                 </div>
                 <div class="flex flex-row px-6">
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XL Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XL Italic</div>
                         <p class="paragraph-xl paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -665,7 +638,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph LG Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph LG Italic</div>
                         <p class="paragraph-lg paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -673,7 +646,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph Italic</div>
                         <p class="paragraph paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -681,7 +654,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph SM Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph SM Italic</div>
                         <p class="paragraph-sm paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -689,7 +662,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XS Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XS Italic</div>
                         <p class="paragraph-xs paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -697,7 +670,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XXS Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XXS Italic</div>
                         <p class="paragraph-xxs paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -707,7 +680,7 @@
                 </div>
                 <div class="flex flex-row space-x-6 bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XL Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XL Italic</div>
                         <p class="paragraph-xl paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -715,7 +688,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph LG Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph LG Italic</div>
                         <p class="paragraph-lg paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -723,7 +696,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph Italic</div>
                         <p class="paragraph paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -731,7 +704,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph SM Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph SM Italic</div>
                         <p class="paragraph-sm paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -739,7 +712,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XS Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XS Italic</div>
                         <p class="paragraph-xs paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -747,7 +720,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XXS Italic</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XXS Italic</div>
                         <p class="paragraph-xxs paragraph-italic">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -757,7 +730,7 @@
                 </div>
                 <div class="flex flex-row space-x-6 px-6">
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XL Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XL Bold</div>
                         <p class="paragraph-xl paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -765,7 +738,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph LG Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph LG Bold</div>
                         <p class="paragraph-lg paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -773,7 +746,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph Bold</div>
                         <p class="paragraph paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -781,7 +754,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph SM Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph SM Bold</div>
                         <p class="paragraph-sm paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -789,7 +762,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XS Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XS Bold</div>
                         <p class="paragraph-xs paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -797,7 +770,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XXS Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XXS Bold</div>
                         <p class="paragraph-xxs paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -807,7 +780,7 @@
                 </div>
                 <div class="flex flex-row space-x-6 bg-cover bg-[url('bg-example.jpg')] bg-blur rounded-lg px-6 py-5 text-white squircle squircle-xl">
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XL Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XL Bold</div>
                         <p class="paragraph-xl paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -815,7 +788,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph LG Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph LG Bold</div>
                         <p class="paragraph-lg paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -823,7 +796,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph Bold</div>
                         <p class="paragraph paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -831,7 +804,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph SM Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph SM Bold</div>
                         <p class="paragraph-sm paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -839,7 +812,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XS Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XS Bold</div>
                         <p class="paragraph-xs paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -847,7 +820,7 @@
                         </p>
                     </div>
                     <div class="">
-                        <div class="font-normal font-main text-lg mb-0">Paragraph XXS Bold</div>
+                        <div class="font-normal font-main mb-0 opacity-50">Paragraph XXS Bold</div>
                         <p class="paragraph-xxs paragraph-bold">
                             Ducimus velit aspernatur deserunt. Et deleniti delectus pariatur culpa. Libero quis
                             repudiandae eum
@@ -865,7 +838,7 @@
                 Color
             </div>
             <div class="flex flex-col py-6 px-6">
-                <div class="font-normal font-main mb-0 px-3 sticky top-12 z-50">Neutral</div>
+                <div class="font-normal font-main mb-0 opacity-50 px-3 sticky top-12 z-50">Neutral</div>
                 <div class="flex flex-row">
                     <div class="w-28 px-3 rounded-lg pt-3">
                         <div class="text-center rounded aspect-square py-8 px-3 squircle squircle-lg border-neutral-300 bg-neutral-100"></div>
@@ -961,7 +934,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="font-normal font-main mb-0 px-3">Contrast</div>
+                <div class="font-normal font-main mb-0 opacity-50 px-3">Contrast</div>
                 <div class="flex flex-row">
                     <div class="w-28 px-3 rounded-lg pt-3">
                         <div class="text-center rounded aspect-square py-8 px-3 squircle squircle-lg border-neutral-300 bg-contrast-100"></div>
@@ -1049,7 +1022,7 @@
                     <div class="w-28 px-3 rounded-lg pt-3"></div>
                     <div class="w-28 px-3 rounded-lg pt-3"></div>
                 </div>
-                <div class="font-normal font-main mb-0 px-3">Secondary</div>
+                <div class="font-normal font-main mb-0 opacity-50 px-3">Secondary</div>
                 <div class="flex flex-row">
                     <div class="w-28 px-3 rounded-lg pt-3">
                         <div
@@ -1153,7 +1126,7 @@
                     <div class="w-28 px-3 rounded-lg pt-3"></div>
                     <div class="w-28 px-3 rounded-lg pt-3"></div>
                 </div>
-                <div class="font-normal font-main mb-0 px-3">Danger</div>
+                <div class="font-normal font-main mb-0 opacity-50 px-3">Danger</div>
                 <div class="flex flex-row">
                     <div class="w-28 px-3 rounded-lg pt-3">
                         <div class="text-center rounded aspect-square py-8 px-3 squircle squircle-lg border-neutral-300 bg-danger-100"></div>
@@ -1243,7 +1216,7 @@
                     </div>
                     <div class="w-28 px-3 rounded-lg pt-3"></div>
                 </div>
-                <div class="font-normal font-main mb-0 px-3">Success</div>
+                <div class="font-normal font-main mb-0 opacity-50 px-3">Success</div>
                 <div class="flex flex-row">
                     <div class="w-28 px-3 rounded-lg pt-3">
                         <div class="text-center rounded aspect-square py-8 px-3 squircle squircle-lg border-neutral-300 bg-success-100"></div>
@@ -1333,7 +1306,7 @@
                     </div>
                     <div class="w-28 px-3 rounded-lg pt-3"></div>
                 </div>
-                <div class="font-normal font-main mb-0 px-3">Warning</div>
+                <div class="font-normal font-main mb-0 opacity-50 px-3">Warning</div>
                 <div class="flex flex-row">
                     <div class="w-28 px-3 rounded-lg pt-3">
                         <div class="text-center rounded aspect-square py-8 px-3 squircle squircle-lg border-neutral-300 bg-warning-100"></div>
@@ -1767,116 +1740,183 @@
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Container Queries
             </div>
-            <div id="ContainerQuery" class="flex flex-col space-y-6 px-6">
-                <div class="flex flex-row space-x-6">
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+            <style>
+                #left,
+                #right {
+                    padding: 12px;
+                    overflow: hidden;
+                    display: grid;
+                    align-items: center;
+                }
+                #left {
+                    width: 75%;
+                    text-align: right;
+                }
+                #resize {
+                    height: 300px;
+                    width: 14px;
+                    cursor: col-resize;
+                    flex-shrink: 0;
+                    position: relative;
+                    z-index: 10;
+                    user-select: none;
+                }
+                #resize::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 3px;
+                    height: 15px;
+                    border-inline: 1px solid #fff;
+                }
+                #right {
+                    flex-grow: 1;
+                }
+            </style>
+            <div id="ContainerQuery" class="flex items-center justify-center">
+                <div class="flex flex-col space-y-6 px-6" id="left">
+                    <div class="flex flex-row space-x-6">
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
+                        <div class="w-1/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                        </div>
                     </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                    <div class="flex flex-row space-x-6">
+                        <div class="w-2/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
+                        </div>
+                        <div class="w-2/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
+                        </div>
+                        <div class="w-2/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
+                        </div>
+                        <div class="w-2/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
+                        </div>
+                        <div class="w-2/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
+                        </div>
+                        <div class="w-2/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
+                        </div>
                     </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                    <div class="flex flex-row space-x-6">
+                        <div class="w-3/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
+                        </div>
+                        <div class="w-3/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
+                        </div>
+                        <div class="w-3/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
+                        </div>
+                        <div class="w-3/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
+                        </div>
                     </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                    <div class="flex flex-row space-x-6">
+                        <div class="w-4/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/4</div>
+                        </div>
+                        <div class="w-4/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/4</div>
+                        </div>
+                        <div class="w-4/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/4</div>
+                        </div>
                     </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                    <div class="flex flex-row space-x-6">
+                        <div class="w-6/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/2</div>
+                        </div>
+                        <div class="w-6/12 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/2</div>
+                        </div>
                     </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
-                    </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
-                    </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
-                    </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
-                    </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
-                    </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
-                    </div>
-                    <div class="w-1/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/12</div>
+                    <div class="flex flex-row space-x-6">
+                        <div class="w-1/5 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
+                        </div>
+                        <div class="w-1/5 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
+                        </div>
+                        <div class="w-1/5 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
+                        </div>
+                        <div class="w-1/5 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
+                        </div>
+                        <div class="w-1/5 h-10">
+                            <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex flex-row space-x-6">
-                    <div class="w-2/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
-                    </div>
-                    <div class="w-2/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
-                    </div>
-                    <div class="w-2/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
-                    </div>
-                    <div class="w-2/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
-                    </div>
-                    <div class="w-2/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
-                    </div>
-                    <div class="w-2/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-2/12</div>
-                    </div>
-                </div>
-                <div class="flex flex-row space-x-6">
-                    <div class="w-3/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
-                    </div>
-                    <div class="w-3/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
-                    </div>
-                    <div class="w-3/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
-                    </div>
-                    <div class="w-3/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/3</div>
-                    </div>
-                </div>
-                <div class="flex flex-row space-x-6">
-                    <div class="w-4/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/4</div>
-                    </div>
-                    <div class="w-4/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/4</div>
-                    </div>
-                    <div class="w-4/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/4</div>
-                    </div>
-                </div>
-                <div class="flex flex-row space-x-6">
-                    <div class="w-6/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/2</div>
-                    </div>
-                    <div class="w-6/12 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/2</div>
-                    </div>
-                </div>
-                <div class="flex flex-row space-x-6">
-                    <div class="w-1/5 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
-                    </div>
-                    <div class="w-1/5 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
-                    </div>
-                    <div class="w-1/5 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
-                    </div>
-                    <div class="w-1/5 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
-                    </div>
-                    <div class="w-1/5 h-10">
-                        <div class="bg-danger-200 w-full h-full text-xs text-danger-1000 flex items-center justify-center squircle squircle-lg">w-1/5</div>
-                    </div>
-                </div>
+                <div id="resize" class="m-auto h-32 bg-contrast rounded"></div>
+                <div id="right">&larr;</div>
             </div>
+            <script>
+                var resize = document.getElementById("resize");
+                var left = document.getElementById("left");
+                var container = document.getElementById("ContainerQuery");
+                console.log(left);
+                var moveX =
+                    left.getBoundingClientRect().width +
+                    resize.getBoundingClientRect().width / 2;
+
+                var drag = false;
+                resize.addEventListener("mousedown", function (e) {
+                    drag = true;
+                    moveX = e.x;
+                });
+
+                container.addEventListener("mousemove", function (e) {
+                    moveX = e.x;
+                    if (drag) {
+                        left.style.width =
+                            moveX - resize.getBoundingClientRect().width / 2 + "px";
+                        e.preventDefault();
+                    }
+                });
+
+                container.addEventListener("mouseup", function (e) {
+                    drag = false;
+                });
+            </script>
         </section>
 
         <!----------------------------------------------------->
@@ -2363,10 +2403,9 @@
     <!---------------------section------------------------->
     <!-----------------Base Compononents------------------->
     <!----------------------------------------------------->
-    <section class="flex flex-col space-y-6" class="flex flex-col space-y-12">
-        <div class="font-title text-[48px] py-4 px-6 rounded-lg text-secondary text-right sticky top-0 z-50"
-             id="BaseCompononents">
-            <span class="bg-neutral-100">Base compononents</span>
+    <section class="flex flex-col space-y-6 mt-24">
+        <div id="BaseCompononents" class="font-title text-[48px] rounded-lg text-secondary text-right sticky top-0 z-[41] flex items-center justify-end">
+            <span class="h-16 bg-secondary p-3 text-white">Base compononents</span>
         </div>
 
         <!----------------------------------------------------->
@@ -2379,7 +2418,7 @@
                 <div class="flex space-x-3 px-6">
                     <div class="flex">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Contrast</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Contrast</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-contrast">
@@ -2712,7 +2751,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Contrast border</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Contrast border</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-contrast btn-border">
@@ -3045,7 +3084,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Contrast ghost</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Contrast ghost</div>
                             <div class="flex">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-contrast btn-ghost">
@@ -3381,7 +3420,7 @@
                 <div class="flex space-x-3 px-6">
                     <div class="flex">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Secondary</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Secondary</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-secondary">
@@ -3714,7 +3753,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Secondary border</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Secondary border</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-secondary btn-border">
@@ -4047,7 +4086,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Secondary ghost</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Secondary ghost</div>
                             <div class="flex">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-secondary btn-ghost">
@@ -4384,7 +4423,7 @@
                 <div class="flex space-x-3 px-6">
                     <div class="flex">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Danger</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Danger</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-danger">
@@ -4717,7 +4756,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Danger border</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Danger border</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-danger btn-border">
@@ -5050,7 +5089,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">Danger ghost</div>
+                            <div class="font-normal font-main mb-0 opacity-50">Danger ghost</div>
                             <div class="flex">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-danger btn-ghost">
@@ -5386,7 +5425,7 @@
                 <div class="flex space-x-3 px-6">
                     <div class="flex">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">success</div>
+                            <div class="font-normal font-main mb-0 opacity-50">success</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-success">
@@ -5719,7 +5758,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">success border</div>
+                            <div class="font-normal font-main mb-0 opacity-50">success border</div>
                             <div class="flex space-x-3">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-success btn-border">
@@ -6052,7 +6091,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="self-center space-y-3">
-                            <div class="font-normal font-main mb-0">success ghost</div>
+                            <div class="font-normal font-main mb-0 opacity-50">success ghost</div>
                             <div class="flex">
                                 <div class="self-center">
                                     <button class="btn-lg btn btn-success btn-ghost">
@@ -6389,7 +6428,7 @@
                     <div class="flex space-x-3">
                         <div class="flex">
                             <div class="self-center space-y-3">
-                                <div class="font-normal font-main mb-0 text-white">Light</div>
+                                <div class="font-normal font-main mb-0 opacity-50 text-white">Light</div>
                                 <div class="flex space-x-3">
                                     <div class="self-center">
                                         <button class="btn-lg btn btn-light">
@@ -6722,7 +6761,7 @@
                         </div>
                         <div class="flex space-x-3">
                             <div class="self-center space-y-3">
-                                <div class="font-normal font-main mb-0 text-white">Light border</div>
+                                <div class="font-normal font-main mb-0 opacity-50 text-white">Light border</div>
                                 <div class="flex space-x-3">
                                     <div class="self-center">
                                         <button class="btn-lg btn btn-light btn-border">
@@ -7055,7 +7094,7 @@
                         </div>
                         <div class="flex space-x-3">
                             <div class="self-center space-y-3">
-                                <div class="font-normal font-main mb-0 text-white">Light ghost</div>
+                                <div class="font-normal font-main mb-0 opacity-50 text-white">Light ghost</div>
                                 <div class="flex">
                                     <div class="self-center">
                                         <button class="btn-lg btn btn-light btn-ghost">
@@ -11960,12 +11999,8 @@
         </section>
 
         <!----------------------------------------------------->
-        <!---Chips--->
-        <section class="flex flex-col space-y-6" id="Chips" class="flex flex-col space-y-6">
-
-        </section>
-        <div class="flex flex-col space-y-6">
-
+        <!---Notifications--->
+        <section class="flex flex-col space-y-6" id="Notifications" class="flex flex-col space-y-6">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Notifications
             </div>
@@ -12299,7 +12334,10 @@
                     </div>
                 </div>
             </div>
-
+        </section>
+        <!----------------------------------------------------->
+        <!---Chips--->
+        <section class="flex flex-col space-y-6" id="Chips">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Chip & Tag
             </div>
@@ -12784,7 +12822,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="relative overflow-hidden rounded-lg z-[2] px-6 py-5 squircle squircle-xl before:absolute after:absolute before:-z-[2] after:-z-[1] before:w-full before:h-full after:w-full after:h-full before:top-0 after:top-0 before:left-0 after:left-0 before:content-['']  after:content-[''] before:bg-cover before:bg-[url('bg-example-nocolor.jpg')] after:bg-contrast/80 space-y-3">
                 <div class="flex space-x-3 items-center">
                     <div class="flex space-x-3 items-center">
@@ -13106,7 +13143,11 @@
                     </div>
                 </div>
             </div>
+        </section>
 
+        <!----------------------------------------------------->
+        <!---Avatar--->
+        <section class="flex flex-col space-y-6" id="Avatar">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Avatar
             </div>
@@ -13439,42 +13480,62 @@
                     </div>
                 </div>
             </div>
+        </section>
 
+        <!----------------------------------------------------->
+        <!---Navigation--->
+        <section class="flex flex-col space-y-6" id="Navigation">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Navigation
             </div>
             <div class="flex flex-row">
                 <div class="self-center p-2"></div>
             </div>
+        </section>
 
+
+        <!----------------------------------------------------->
+        <!---Tooltip--->
+        <section class="flex flex-col space-y-6" id="Tooltip">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Tooltip
             </div>
             <div class="flex flex-row">
                 <div class="self-center p-2"></div>
             </div>
+        </section>
 
+
+        <!----------------------------------------------------->
+        <!---Chat--->
+        <section class="flex flex-col space-y-6" id="Chat">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Chat
             </div>
             <div class="flex flex-row">
                 <div class="self-center p-2"></div>
             </div>
+        </section>
 
+
+        <!----------------------------------------------------->
+        <!---Table--->
+        <section class="flex flex-col space-y-6" id="Table">
             <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
                 Table
             </div>
-        </div>
-    </section>
+        </section>
 
     <!---------------------section------------------------->
     <!-------------Prebuild Compononents------------------->
     <!----------------------------------------------------->
     <section class="flex flex-col space-y-6" class="flex flex-col space-y-12">
-        <div class="bg-contrast font-title h1 text-neutral-100 py-4 px-6 rounded-lg tracking-[5px]">
-            Prebuild components
+        <div id="Prebuildcomponents" class="font-title text-[48px] rounded-lg text-secondary text-right sticky top-0 z-[41] flex items-center justify-end">
+            <span class="h-16 bg-secondary p-3 text-white">Prebuild components</span>
         </div>
+
     </section>
+
 
 
     <script src="/src/main.ts" type="module"></script>
