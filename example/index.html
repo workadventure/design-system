@@ -12,13 +12,17 @@
             rel="stylesheet"
     />
     <script src="tailwind.config.js"></script>
+    <script src="https://unpkg.com/css-paint-polyfill"></script>
     <script>
-        // https://github.com/PavelLaptev/css-houdini-squircle
-        if ("paintWorklet" in CSS) {
+        (async function () {
+            if (!("paintWorklet" in CSS)) {
+                await import("css-paint-polyfill");
+            }
+
             CSS.paintWorklet.addModule(
-                "https://www.unpkg.com/css-houdini-squircle/squircle.min.js"
+                `https://www.unpkg.com/css-houdini-squircle/squircle.min.js`
             );
-        }
+        })();
     </script>
 
     <link rel="icon" type="image/svg" href="logos/light/Logo-small.svg" media="(prefers-color-scheme:dark)" />
