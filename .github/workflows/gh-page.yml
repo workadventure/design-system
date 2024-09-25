@@ -4,7 +4,7 @@ name: Deploy example sheet to GitHub Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [master]
+    branches: [main]
   release:
     types: [created]
   pull_request:
