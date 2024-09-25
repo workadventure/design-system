@@ -15,7 +15,7 @@
 }
 
 .input-text {
-    @apply outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 user-invalid:border-danger user-invalid:hover:border-danger-500 user-invalid:focus:border-danger-900 user-invalid:text-danger disabled:cursor-not-allowed;
+    @apply outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
 
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
@@ -53,7 +53,7 @@
         } 
     }
     &-light {
-        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 user-invalid:border-danger user-invalid:text-danger-1000 user-invalid:bg-danger-100 user-invalid:hover:bg-danger-200  user-invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
         }
@@ -70,7 +70,7 @@
 }
 
 .input-number {
-    @apply appearance-none  outline-none text-center h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 user-invalid:border-danger user-invalid:hover:border-danger-500 user-invalid:focus:border-danger-900 user-invalid:text-danger disabled:cursor-not-allowed;
+    @apply appearance-none  outline-none text-center h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
     }
@@ -89,7 +89,7 @@
         @apply h-8 text-base rounded;
     }
     &-light {
-        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 user-invalid:border-danger user-invalid:text-danger-1000 user-invalid:bg-danger-100 user-invalid:hover:bg-danger-200  user-invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
         }
@@ -100,7 +100,7 @@
 }
 
 .input-search {
-    @apply appearance-none outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-6 rounded-full text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all user-invalid:border-danger user-invalid:hover:border-danger-500 user-invalid:focus:border-danger-900 user-invalid:text-danger disabled:cursor-not-allowed;
+    @apply appearance-none outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-6 rounded-full text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
     &-lg {
         @apply h-13 text-lg;
     }
@@ -111,12 +111,12 @@
         @apply h-8 text-sm px-3;
     }
     &-light {
-        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 user-invalid:border-danger user-invalid:text-danger-1000 user-invalid:bg-danger-100 user-invalid:hover:bg-danger-200  user-invalid:focus:bg-danger-100;
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100;
     }
 }
 
 .input-select {
-    @apply appearance-none outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 user-invalid:border-danger user-invalid:hover:border-danger-500 user-invalid:focus:border-danger-900 user-invalid:text-danger disabled:cursor-not-allowed bg-[url('../icon-dropdown.svg')] bg-no-repeat bg-right;
+    @apply appearance-none outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed bg-[url('../icon-dropdown.svg')] bg-no-repeat bg-right;
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
     }
@@ -153,7 +153,7 @@
         }
     }
     &-light {
-        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 user-invalid:border-danger user-invalid:text-danger-1000 user-invalid:bg-danger-100 user-invalid:hover:bg-danger-200  user-invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
         }
@@ -170,7 +170,7 @@
 }
 
 .input-tags {
-    @apply flex items-center space-x-1 outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-1 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 user-invalid:border-danger user-invalid:hover:border-danger-500 user-invalid:focus:border-danger-900 user-invalid:text-danger;
+    @apply flex items-center space-x-1 outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-1 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger;
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
     }
@@ -207,7 +207,7 @@
         }
     }
     &-light {
-        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 user-invalid:border-danger user-invalid:text-danger-1000 user-invalid:bg-danger-100 user-invalid:hover:bg-danger-200  user-invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
         }
