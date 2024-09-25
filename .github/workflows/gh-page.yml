@@ -4,7 +4,11 @@ name: Deploy example sheet to GitHub Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['main']
+    branches: [master]
+  release:
+    types: [created]
+  pull_request:
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -43,11 +47,14 @@ jobs:
         run: npm run build && cd example && npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        if: ${{ github.event_name == 'release' }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload dist repository
           path: './example/dist'
+        if: ${{ github.event_name == 'release' }}
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        if: ${{ github.event_name == 'release' }}
