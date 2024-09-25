@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/workadventure/design-system/compare/v1.0.4...v1.0.5) (2024-09-25)
+
+
+### Bug Fixes
+
+* user-invalid is not supported by Tailwind. ([8f97ba0](https://github.com/workadventure/design-system/commit/8f97ba0ad8060f6576a2be342839c1ee29bd883d))
+
 ## [1.0.4](https://github.com/workadventure/design-system/compare/v1.0.3...v1.0.4) (2024-09-25)
 
 
