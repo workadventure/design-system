@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.4](https://github.com/workadventure/design-system/compare/v1.0.3...v1.0.4) (2024-09-25)
+
+
+### Bug Fixes
+
+* Adding a .error class for fields ([e4bd82b](https://github.com/workadventure/design-system/commit/e4bd82b535c5c1322b715f5e90a79adbf40e7230))
+* Fixing missing css-paint-polyfill dependency ([b80a4f7](https://github.com/workadventure/design-system/commit/b80a4f75e4d165ec01af0eab68a3cfb1de8b28ea))
+* Fixing missing css-paint-polyfill dependency ([5233253](https://github.com/workadventure/design-system/commit/52332537db890ef89f25e4615228a5574d6c4fc6))
+* Fixing target branch for build ([4eee00b](https://github.com/workadventure/design-system/commit/4eee00b9352711468287043d834cd0fe85c95c81))
+* Removing css-paint-polyfill and loading it from unpkg ([ab369d5](https://github.com/workadventure/design-system/commit/ab369d58dddf7625ed1f59abd9ed5a78d39e88af))
+
 ## [1.0.3](https://github.com/workadventure/design-system/compare/v1.0.2...v1.0.3) (2024-05-02)
 
 
