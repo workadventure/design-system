@@ -5,8 +5,6 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: [main]
-  release:
-    types: [created]
   pull_request:
 
 
@@ -48,7 +46,7 @@ jobs:
           path: ./example/dist
 
   deploy:
-    if: ${{ github.event_name == 'release' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
