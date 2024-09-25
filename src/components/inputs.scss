@@ -21,6 +21,10 @@
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
     }
 
+    &.error {
+        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+    }
+
     &-lg {
         @apply h-13 text-lg;
         &.input-icon-left {
@@ -53,6 +57,9 @@
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
         }
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
+        }
     }
     &.input-icon-left {
         @apply pl-11;
@@ -68,6 +75,10 @@
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
     }
 
+    &.error {
+        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+    }
+
     &-lg {
         @apply h-13 text-xl;
     }
@@ -81,6 +92,9 @@
         @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 invalid:border-danger invalid:text-danger-1000 invalid:bg-danger-100 invalid:hover:bg-danger-200  invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        }
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
         }
     }
 }
@@ -105,6 +119,10 @@
     @apply appearance-none outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 invalid:border-danger invalid:hover:border-danger-500 invalid:focus:border-danger-900 invalid:text-danger disabled:cursor-not-allowed bg-[url('../icon-dropdown.svg')] bg-no-repeat bg-right;
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
+    }
+
+    &.error {
+        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
     }
 
     &-lg {
@@ -139,6 +157,9 @@
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
         }
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
+        }
     }
     &.input-icon-left {
         @apply pl-11;
@@ -152,6 +173,10 @@
     @apply flex items-center space-x-1 outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-1 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 invalid:border-danger invalid:hover:border-danger-500 invalid:focus:border-danger-900 invalid:text-danger;
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
+    }
+
+    &.error {
+        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
     }
 
     &-lg {
@@ -185,6 +210,9 @@
         @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 invalid:border-danger invalid:text-danger-1000 invalid:bg-danger-100 invalid:hover:bg-danger-200  invalid:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
         &.success {
             @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        }
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
         }
     }
     &.input-icon-left {
