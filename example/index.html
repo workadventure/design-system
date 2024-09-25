@@ -15,7 +15,7 @@
     <script>
         (async function () {
             if (!("paintWorklet" in CSS)) {
-                await import("css-paint-polyfill");
+                await import("https://unpkg.com/css-paint-polyfill");
             }
 
             CSS.paintWorklet.addModule(
