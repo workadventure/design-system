@@ -19,7 +19,7 @@
     "build:style": "npm run build:base && npm run build:utilities && npm run build:components",
     "build:ts": "tsc",
     "build": "npm run build:style && npm run build:ts",
-    "watch": "ts-node-esm src/watcher.ts",
+    "watch": "ts-node src/watcher.ts",
     "dev": "npm run build:style && npm run watch & cd example && npm run dev",
     "precommit": "lint-staged",
     "prepare": "husky install"
