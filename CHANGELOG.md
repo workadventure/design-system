@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/workadventure/design-system/compare/v1.0.5...v1.0.6) (2024-11-14)
+
+
+### Bug Fixes
+
+* Fixing base64 image and bug with ts-node ([142f85d](https://github.com/workadventure/design-system/commit/142f85d0cb42dc604cb9ac8ef5d7a4ce8a5a19e0))
+
 ## [1.0.5](https://github.com/workadventure/design-system/compare/v1.0.4...v1.0.5) (2024-09-25)
 
 
