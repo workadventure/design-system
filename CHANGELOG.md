@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.7](https://github.com/workadventure/design-system/compare/v1.0.6...v1.0.7) (2025-03-12)
+
+
+### Bug Fixes
+
+* Add disabled for buttons and remove squircle ([8325f73](https://github.com/workadventure/design-system/commit/8325f73b7b1bc3a0727ab9626c93ade873a4e2ba))
+* upgrading github actions ([47fe0b3](https://github.com/workadventure/design-system/commit/47fe0b3e9b354e8c76a85c776e044f6599d8640d))
+
 ## [1.0.6](https://github.com/workadventure/design-system/compare/v1.0.5...v1.0.6) (2024-11-14)
 
 
