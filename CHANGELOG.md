@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/workadventure/design-system/compare/v1.0.7...v1.0.8) (2025-03-19)
+
+
+### Bug Fixes
+
+* Inlining SVGs ([50aacba](https://github.com/workadventure/design-system/commit/50aacba537d128892ac9ca7cd0431d93575e98c8))
+
 ## [1.0.7](https://github.com/workadventure/design-system/compare/v1.0.6...v1.0.7) (2025-03-12)
 
 
