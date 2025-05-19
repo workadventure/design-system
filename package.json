@@ -1,6 +1,6 @@
 {
   "name": "@workadventure/design-system",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Tailwind Theme for WorkAdventure",
   "main": "dist/index.js",
   "scripts": {
@@ -43,6 +43,7 @@
     "postcss": "^8.4.29",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
+    "postcss-inline-svg": "^6.0.0",
     "prejss-cli": "^0.3.3",
     "prettier": "^3.0.3",
     "release-please": "^15.13.0",

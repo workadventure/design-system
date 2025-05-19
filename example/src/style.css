@@ -22,49 +22,49 @@ input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance:none;
 }
 
-.squircle,
-.chip:not(.chip-border),
-.btn:not(.btn-border, a) {
-    --squircle-smooth: 1;
-    --squircle-radius: 8px;
-    mask-image: paint(squircle);
-}
-.btn.btn-border {
-    border: none !important;
-    position: relative;
-}
-.chip.chip-border {
-    border: none !important;
-    position: relative;
-}
-.squircle-border,
-.chip-border:before,
-.btn.btn-border:after
- {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index:0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    --squircle-smooth: 1;
-    --squircle-radius: 8px;
-    mask-image: paint(squircle);
-    --squircle-outline: 1.25px;
-    background-color: #4156F6;
-}
+/*.squircle,*/
+/*.chip:not(.chip-border),*/
+/*.btn:not(.btn-border, a) {*/
+/*    --squircle-smooth: 1;*/
+/*    --squircle-radius: 8px;*/
+/*    mask-image: paint(squircle);*/
+/*}*/
+/*.btn.btn-border {*/
+/*    border: none !important;*/
+/*    position: relative;*/
+/*}*/
+/*.chip.chip-border {*/
+/*    border: none !important;*/
+/*    position: relative;*/
+/*}*/
+/*.squircle-border,*/
+/*.chip-border:before,*/
+/*.btn.btn-border:after*/
+/* {*/
+/*    content: "";*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    z-index:0;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    --squircle-smooth: 1;*/
+/*    --squircle-radius: 8px;*/
+/*    mask-image: paint(squircle);*/
+/*    --squircle-outline: 1.25px;*/
+/*    background-color: #4156F6;*/
+/*}*/
 
-.squircle.squircle-sm {
-    --squircle-radius: 4px;
-}
-.squircle.squircle-md {
-    --squircle-radius: 12px;
-}
-.squircle.squircle-lg {
-    --squircle-radius: 16px;
-}
-.squircle.squircle-xl {
-    --squircle-radius: 24px;
-}
+/*.squircle.squircle-sm {*/
+/*    --squircle-radius: 4px;*/
+/*}*/
+/*.squircle.squircle-md {*/
+/*    --squircle-radius: 12px;*/
+/*}*/
+/*.squircle.squircle-lg {*/
+/*    --squircle-radius: 16px;*/
+/*}*/
+/*.squircle.squircle-xl {*/
+/*    --squircle-radius: 24px;*/
+/*}*/
