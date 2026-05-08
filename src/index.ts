@@ -10,18 +10,8 @@ import colorFunctions from "./theming/colorFunctions";
 function main({ addBase, addComponents, config }: any) {
     console.log("☕ WorkAdventure UI");
 
-    const baseWithFontFace = {
-        ...base,
-        "@font-face": {
-            fontFamily: "Oswald",
-            src: `url(${config("workadventureUi").oswaldFontUrl}) format('truetype')`,
-            fontWeight: "normal",
-            fontStyle: "normal",
-        },
-    };
-
     // Add base styles
-    addBase(baseWithFontFace);
+    addBase(base);
 
     // Add utilities
     addComponents(utilities, { variants: ["responsive"] });
