@@ -27,9 +27,6 @@ export default {
         extend: {},
     },
     plugins: [workadventureUi],
-    workadventureUi: {
-        oswaldFontUrl: './path/to/font.ttf',
-    },
 };
 ```
 > [!IMPORTANT]
