@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/workadventure/design-system/compare/v2.0.0...v2.0.1) (2026-05-11)
+
+
+### Bug Fixes
+
+* upgrading release-please ([8c601b0](https://github.com/workadventure/design-system/commit/8c601b0f211591c127c81dfa57264f111755ae8a))
+
 ## [2.0.0](https://github.com/workadventure/design-system/compare/v1.0.8...v2.0.0) (2026-05-11)
 
 
