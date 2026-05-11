@@ -53,7 +53,6 @@
   },
   "dependencies": {
     "@fontsource-variable/oswald": "^5.2.8",
-    "@fontsource/press-start-2p": "^4.3.0",
     "@fontsource/roboto": "^4.5.8",
     "@fontsource/roboto-condensed": "^4.5.9",
     "colord": "^2.9.3",
