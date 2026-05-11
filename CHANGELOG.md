@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/workadventure/design-system/compare/v2.0.3...v2.0.4) (2026-05-11)
+
+
+### Bug Fixes
+
+* Build dual ESM and CJS entrypoints ([#46](https://github.com/workadventure/design-system/issues/46)) ([4eab775](https://github.com/workadventure/design-system/commit/4eab7757c79f574a9d6e22529b6a59bced4ff342))
+
 ## [2.0.3](https://github.com/workadventure/design-system/compare/v2.0.2...v2.0.3) (2026-05-11)
 
 
