@@ -2,7 +2,15 @@
   "name": "@workadventure/design-system",
   "version": "1.0.8",
   "description": "Tailwind Theme for WorkAdventure",
+  "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "compile:base": "postcss --config src/base src/base/*.scss --base src --dir dist/style --ext .css",
     "concat:base": "cat dist/style/base/*.css > dist/style/base.css",
@@ -19,7 +27,7 @@
     "build:style": "npm run build:base && npm run build:utilities && npm run build:components",
     "build:ts": "tsc",
     "build": "npm run build:style && npm run build:ts",
-    "watch": "ts-node src/watcher.ts",
+    "watch": "ts-node-esm src/watcher.ts",
     "dev": "npm run build:style && npm run watch & cd example && npm run dev",
     "precommit": "lint-staged",
     "prepare": "husky install"

@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { execSync } = require("child_process");
-const fs = require("fs");
+import { execSync } from "node:child_process";
+import fs from "node:fs";
 
 console.log("WorkAdventure UI watcher started.");
 

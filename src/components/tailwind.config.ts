@@ -4,7 +4,7 @@ import colors from "../theming/colors";
 import fontFamily from "../theming/fontFamily";
 import base from "../../dist/style/base";
 import utilities from "../../dist/style/utilities";
-import { Config } from "tailwindcss";
+import type { Config } from "tailwindcss";
 import opacity from "../theming/opacity";
 
 export default {

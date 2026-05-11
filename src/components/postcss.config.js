@@ -1,4 +1,7 @@
 import postcssSass from "@csstools/postcss-sass";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
 
 const sassPlugin = postcssSass({
     importer(url, _prev, done) {
@@ -15,6 +18,12 @@ const sassPlugin = postcssSass({
     },
 });
 
-module.exports = {
-    plugins: [require("postcss-import"), require("tailwindcss/nesting"), sassPlugin],
+export default {
+    plugins: [
+        require("postcss-import"),
+        require("tailwindcss/nesting"),
+        sassPlugin,
+        require("postcss-inline-svg"),
+        require("tailwindcss")("./src/components/tailwind.config.ts"),
+    ],
 };
