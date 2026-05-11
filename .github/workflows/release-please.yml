@@ -5,6 +5,7 @@ on:
 
 permissions:
     contents: write
+    id-token: write
     pull-requests: write
 
 name: release-please
@@ -18,22 +19,19 @@ jobs:
               with:
                 release-type: node
             # The logic below handles the npm publication:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v6
                 # these if statements ensure that a publication only occurs when
                 # a new release is created:
               if: ${{ steps.release.outputs.release_created }}
-            - uses: actions/setup-node@v1
+            - uses: actions/setup-node@v6
               with:
-                node-version: 18
+                node-version: 24
                 registry-url: 'https://registry.npmjs.org'
-              if: ${{ steps.release.outputs.release_created }}
-            - run: npm install
-              if: ${{ steps.release.outputs.release_created }}
-            - run: npm run build
+                package-manager-cache: false
               if: ${{ steps.release.outputs.release_created }}
             - run: npm ci
               if: ${{ steps.release.outputs.release_created }}
+            - run: npm run build
+              if: ${{ steps.release.outputs.release_created }}
             - run: npm publish --access public
-              env:
-                NODE_AUTH_TOKEN: ""
               if: ${{ steps.release.outputs.release_created }}
