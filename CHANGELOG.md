@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/workadventure/design-system/compare/v1.0.8...v2.0.0) (2026-05-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* @workadventure/design-system is now published as an ESM package. CommonJS require() consumers must migrate to import syntax or an ESM-compatible build pipeline.
+
+### Features
+
+* publish package as ESM ([59b85c1](https://github.com/workadventure/design-system/commit/59b85c136e5321b7c87675b7f0992bf4e18c9666))
+
+
+### Bug Fixes
+
+* **font:** load fonts and fix example ([2b17c6b](https://github.com/workadventure/design-system/commit/2b17c6bbc3c867ac41f2f1d46692010340f11231))
+
 ## [1.0.8](https://github.com/workadventure/design-system/compare/v1.0.7...v1.0.8) (2025-03-19)
 
 
