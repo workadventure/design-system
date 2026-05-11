@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/workadventure/design-system/compare/v2.0.1...v2.0.2) (2026-05-11)
+
+
+### Bug Fixes
+
+* Removing reference to NPM_TOKEN due to new NPM publish workflow ([f5d39f7](https://github.com/workadventure/design-system/commit/f5d39f72ef595bf6f4a84ec75a7b80d3c672367f))
+
 ## [2.0.1](https://github.com/workadventure/design-system/compare/v2.0.0...v2.0.1) (2026-05-11)
 
 
