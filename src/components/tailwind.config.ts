@@ -1,4 +1,4 @@
-import plugin from "tailwindcss/plugin";
+import plugin from "tailwindcss/plugin.js";
 import responsiveRegex from "../lib/responsiveRegex";
 import colors from "../theming/colors";
 import fontFamily from "../theming/fontFamily";
