@@ -1,4 +1,4 @@
-import plugin from "tailwindcss/plugin";
+import plugin from "tailwindcss/plugin.js";
 import baseConfig from "./baseConfig";
 import base from "../dist/style/base";
 import utilities from "../dist/style/utilities";

@@ -3,13 +3,16 @@
   "version": "2.0.3",
   "description": "Tailwind Theme for WorkAdventure",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": "./*"
   },
   "scripts": {
     "compile:base": "postcss --config src/base src/base/*.scss --base src --dir dist/style --ext .css",
@@ -25,8 +28,10 @@
     "jss:components": "prejss-cli dist/style/components.css --format es6",
     "build:components": "npm run compile:components && npm run concat:components && npm run jss:components",
     "build:style": "npm run build:base && npm run build:utilities && npm run build:components",
-    "build:ts": "tsc",
-    "build": "npm run build:style && npm run build:ts",
+    "build:js": "vite build",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:ts": "npm run build:types",
+    "build": "npm run build:style && npm run build:js && npm run build:types",
     "watch": "ts-node-esm src/watcher.ts",
     "dev": "npm run build:style && npm run watch & cd example && npm run dev",
     "precommit": "lint-staged",
@@ -57,7 +62,8 @@
     "release-please": "^15.13.0",
     "sass": "^1.66.1",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^8.0.12"
   },
   "dependencies": {
     "@fontsource-variable/oswald": "^5.2.8",
