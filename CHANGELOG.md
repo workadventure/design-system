@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/workadventure/design-system/compare/v2.0.2...v2.0.3) (2026-05-11)
+
+
+### Bug Fixes
+
+* fix release publishing workflow ([#44](https://github.com/workadventure/design-system/issues/44)) ([1bc42ee](https://github.com/workadventure/design-system/commit/1bc42eed49b34c4d3c9639db9939d96b7e319036))
+
 ## [2.0.2](https://github.com/workadventure/design-system/compare/v2.0.1...v2.0.2) (2026-05-11)
 
 
