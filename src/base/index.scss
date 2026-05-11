@@ -1,6 +1,6 @@
 @use "pkg:@fontsource/roboto/index.css" as *;
 @use "pkg:@fontsource/roboto-condensed/index.css" as *;
-@use "pkg:@fontsource/oswald/index.css" as *;
+@use "pkg:@fontsource-variable/oswald/index.css" as *;
 
 * {
     @apply box-border antialiased;
@@ -145,4 +145,3 @@ h6,
 .subtitle {
     @apply text-neutral text-center m-0;
 }
-
