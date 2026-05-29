@@ -1,15 +1,8 @@
-import plugin from "tailwindcss/plugin.js";
-import responsiveRegex from "../lib/responsiveRegex";
 import colors from "../theming/colors";
 import fontFamily from "../theming/fontFamily";
-import base from "../../dist/style/base";
-import utilities from "../../dist/style/utilities";
-import type { Config } from "tailwindcss";
 import opacity from "../theming/opacity";
 
 export default {
-    content: [{ raw: "" }],
-    safelist: responsiveRegex,
     theme: {
         extend: {
             height: {
@@ -32,10 +25,4 @@ export default {
         colors,
         fontFamily,
     },
-    plugins: [
-        plugin(function ({ addBase, addUtilities }) {
-            addBase(base);
-            addUtilities(utilities);
-        }),
-    ],
-} satisfies Config;
+};

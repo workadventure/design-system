@@ -3,14 +3,14 @@
   "version": "2.0.4",
   "description": "Tailwind Theme for WorkAdventure",
   "type": "module",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
     },
     "./*": "./*"
   },
@@ -44,13 +44,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@csstools/postcss-sass": "^5.1.1",
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^25.9.1",
-    "@typescript-eslint/eslint-plugin": "^8.60.0",
-    "@typescript-eslint/parser": "^8.60.0",
     "autoprefixer": "^10.5.0",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.6.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5",
     "postcss": "^8.5.15",
@@ -63,6 +63,7 @@
     "sass": "^1.100.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.0",
     "vite": "^8.0.14"
   },
   "dependencies": {

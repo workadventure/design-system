@@ -1,0 +1,61 @@
+@reference "tailwindcss";
+
+@utility paragraph {
+    @apply font-normal;
+}
+
+@utility paragraph-xxs {
+    @apply text-xxs;
+}
+
+@utility paragraph-xs {
+    @apply text-xs;
+}
+
+@utility paragraph-sm {
+    @apply text-sm;
+}
+
+@utility paragraph-lg {
+    @apply text-lg;
+}
+
+@utility paragraph-xl {
+    @apply text-xl;
+}
+
+@utility paragraph-bold {
+    @apply font-bold;
+}
+
+@utility paragraph-italic {
+    @apply italic;
+}
+
+@utility h1 {
+    @apply font-title m-0 uppercase text-4xl leading-10;
+}
+
+@utility h2 {
+    @apply font-title m-0 uppercase text-3xl leading-10;
+}
+
+@utility h3 {
+    @apply font-title m-0 uppercase text-2xl leading-10;
+}
+
+@utility h4 {
+    @apply font-title m-0 uppercase text-xl;
+}
+
+@utility h5 {
+    @apply font-title m-0 uppercase text-lg;
+}
+
+@utility h6 {
+    @apply font-title m-0 uppercase text-lg;
+}
+
+@utility bg-blur {
+    @apply bg-contrast/80 backdrop-blur;
+}

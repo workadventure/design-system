@@ -1,4 +1,3 @@
-import type { Config } from "tailwindcss";
 import opacity from "./theming/opacity";
 import fontFamily from "./theming/fontFamily";
 import colors from "./theming/colors";
@@ -60,4 +59,4 @@ export default {
             opacity,
         },
     },
-} satisfies Partial<Config>;
+};

@@ -1,5 +1,3 @@
-import type { Config } from "tailwindcss";
-
 export default [
     {
         pattern: /.*/,
@@ -13,4 +11,4 @@ export default [
             /(bg|to|via|from|text|fill|stroke|border|outline|text)-(primary|secondary|neutral|contrast|info|success|warning|danger|base)(-\d{2,4}|)(\/\d{2,3}|)/,
         variants: ["hover", "focus"],
     },
-] satisfies Config["safelist"];
+];

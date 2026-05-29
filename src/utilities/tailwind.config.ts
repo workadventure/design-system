@@ -1,14 +1,8 @@
-import plugin from "tailwindcss/plugin.js";
-import responsiveRegex from "../lib/responsiveRegex";
 import colors from "../theming/colors";
 import fontFamily from "../theming/fontFamily";
-import base from "../../dist/style/base";
 import opacity from "../theming/opacity";
-import type { Config } from "tailwindcss";
 
 export default {
-    content: [{ raw: "" }],
-    safelist: responsiveRegex,
     theme: {
         extend: {
             opacity,
@@ -19,9 +13,4 @@ export default {
         colors,
         fontFamily,
     },
-    plugins: [
-        plugin(function ({ addBase }) {
-            addBase(base);
-        }),
-    ],
-} satisfies Config;
+};
