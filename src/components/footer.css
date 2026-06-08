@@ -30,9 +30,6 @@
 
                         .footer-social-link {
                             @apply opacity-70 transition-all hover:opacity-100;
-
-                            & > img {
-                            }
                         }
                     }
                 }

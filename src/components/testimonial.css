@@ -19,9 +19,6 @@
         .testimonial-from {
             @apply self-center ml-2 text-center lg:text-left;
 
-            .testimonial-from-name {
-            }
-
             .testimonial-from-job {
                 @apply font-bold;
             }

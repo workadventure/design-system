@@ -1,6 +1,6 @@
-@use "pkg:@fontsource/roboto/index.css" as *;
-@use "pkg:@fontsource/roboto-condensed/index.css" as *;
-@use "pkg:@fontsource-variable/oswald/index.css" as *;
+@import "@fontsource/roboto/index.css";
+@import "@fontsource/roboto-condensed/index.css";
+@import "@fontsource-variable/oswald/index.css";
 
 * {
     @apply box-border antialiased;
@@ -13,34 +13,34 @@ body {
 
 .paragraph {
     @apply font-normal;
+}
 
-    &-xxs {
-        @apply text-xxs;
-    }
+.paragraph-xxs {
+    @apply text-xxs;
+}
 
-    &-xs {
-        @apply text-xs;
-    }
+.paragraph-xs {
+    @apply text-xs;
+}
 
-    &-sm {
-        @apply text-sm;
-    }
+.paragraph-sm {
+    @apply text-sm;
+}
 
-    &-lg {
-        @apply text-lg;
-    }
+.paragraph-lg {
+    @apply text-lg;
+}
 
-    &-xl {
-        @apply text-xl;
-    }
+.paragraph-xl {
+    @apply text-xl;
+}
 
-    &-bold {
-        @apply font-bold;
-    }
+.paragraph-bold {
+    @apply font-bold;
+}
 
-    &-italic {
-        @apply italic;
-    }
+.paragraph-italic {
+    @apply italic;
 }
 
 h1,
@@ -64,10 +64,13 @@ h6,
     .highlight {
         @apply relative z-10 after:content-[''] after:absolute after:top-0 after:left-[-5px] after:m-auto after:w-[110%] after:h-[110%] after:block after:bg-[url('../img/hightlight.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
 
-        span,
-        &-text {
+        span {
             @apply relative z-10 text-white;
         }
+    }
+
+    .highlight-text {
+        @apply relative z-10 text-white;
     }
 
     .stripe {

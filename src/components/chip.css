@@ -1,7 +1,6 @@
 .chip {
     @apply relative py-1 h-8 px-2 bg-contrast text-white flex items-center space-x-2 whitespace-nowrap;
 
-
     & > .chip-label {
         @apply text-white font-normal;
     }
@@ -12,24 +11,6 @@
 
     & > svg {
         @apply w-4 h-4 stroke-white;
-    }
-
-    &-lg {
-        @apply text-lg h-9;
-    }
-
-    &-sm {
-        @apply text-sm p-0 h-8 px-1.5;
-        & > .notification {
-            @apply mx-0;
-        }
-    }
-
-    &-xs {
-        @apply text-xs h-7 p-0 px-1.5;
-        & > .notification {
-            @apply mx-0;
-        }
     }
 
     &.chip-primary {
@@ -293,5 +274,25 @@
                 @apply stroke-neutral-100;
             }
         }
+    }
+}
+
+.chip-lg {
+    @apply text-lg h-9;
+}
+
+.chip-sm {
+    @apply text-sm p-0 h-8 px-1.5;
+
+    & > .notification {
+        @apply mx-0;
+    }
+}
+
+.chip-xs {
+    @apply text-xs h-7 p-0 px-1.5;
+
+    & > .notification {
+        @apply mx-0;
     }
 }
