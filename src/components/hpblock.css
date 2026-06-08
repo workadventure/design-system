@@ -4,9 +4,6 @@
     .hpblock-left {
         @apply basis-full xl:basis-1/2 p-2 min-h-full relative xl:p-0 p-8 lg:p-16;
 
-        .hpblock-left-pagination {
-        }
-
         .hpblock-left-dyntext {
             @apply pt-8;
 
@@ -95,11 +92,6 @@
 
                 .btn-play {
                     @apply hidden;
-
-                    svg {
-                        &.play {
-                        }
-                    }
                 }
             }
 

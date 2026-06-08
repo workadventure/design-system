@@ -15,15 +15,15 @@
     "./*": "./*"
   },
   "scripts": {
-    "compile:base": "postcss --config src/base src/base/*.scss --base src --dir dist/style --ext .css",
+    "compile:base": "postcss --config src/base src/base/*.css --base src --dir dist/style --ext .css",
     "concat:base": "cat dist/style/base/*.css > dist/style/base.css",
     "jss:base": "prejss-cli dist/style/base.css --format es6",
     "build:base": "npm run compile:base && npm run concat:base && npm run jss:base",
-    "compile:utilities": "postcss --config src/utilities src/utilities/*.scss --base src --dir dist/style --ext .css",
+    "compile:utilities": "postcss --config src/utilities src/utilities/*.css --base src --dir dist/style --ext .css",
     "concat:utilities": "cat dist/style/utilities/*.css > dist/style/utilities.css",
     "jss:utilities": "prejss-cli dist/style/utilities.css --format es6",
     "build:utilities": "npm run compile:utilities && npm run concat:utilities && npm run jss:utilities",
-    "compile:components": "postcss --config src/components src/components/*.scss --base src --dir dist/style --ext .css",
+    "compile:components": "postcss --config src/components src/components/*.css --base src --dir dist/style --ext .css",
     "concat:components": "cat dist/style/components/*.css > dist/style/components.css",
     "jss:components": "prejss-cli dist/style/components.css --format es6",
     "build:components": "npm run compile:components && npm run concat:components && npm run jss:components",
@@ -44,7 +44,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@csstools/postcss-sass": "^5.0.1",
     "@types/node": "^20.5.9",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
@@ -60,7 +59,6 @@
     "prejss-cli": "^0.3.3",
     "prettier": "^3.0.3",
     "release-please": "^15.13.0",
-    "sass": "^1.66.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "vite": "^8.0.12"
