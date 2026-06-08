@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
 .possibilities-bg {
     @apply relative after:content-[''] after:h-[calc(100%-3rem)] after:absolute after:left-0 after:top-6 after:w-full after:z-0 after:bg-[url('../img/pattern.png')] after:bg-repeat after:opacity-50;
 }

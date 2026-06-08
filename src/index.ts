@@ -1,5 +1,4 @@
 import plugin from "tailwindcss/plugin.js";
-import baseConfig from "./baseConfig";
 import base from "../dist/style/base";
 import utilities from "../dist/style/utilities";
 import components from "../dist/style/components";
@@ -23,4 +22,4 @@ function main({ addBase, addComponents, config }: any) {
     themeInjectorHsl;
 }
 
-export default plugin(main, baseConfig);
+export default plugin(main);

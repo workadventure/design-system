@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
 .testimonial {
     @apply pb-2 lg:pb-6 px-8 xl:px-0 pt-2 lg:pt-6;
 

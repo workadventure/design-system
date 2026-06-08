@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+
 .bg-blur {
     @apply bg-contrast/80 backdrop-blur;
 }
@@ -149,5 +153,13 @@
 }
 
 .container {
+    @apply max-w-screen-2xl mx-auto relative h-full lg:px-8 px-0;
+}
+
+@utility bg-blur {
+    @apply bg-contrast/80 backdrop-blur;
+}
+
+@utility container {
     @apply max-w-screen-2xl mx-auto relative h-full lg:px-8 px-0;
 }

@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
 .input-label {
     @apply text-white flex items-center pb-1.5 px-3 pt-3 space-x-1.5 peer-disabled:opacity-70 peer-disabled:cursor-not-allowed;
 

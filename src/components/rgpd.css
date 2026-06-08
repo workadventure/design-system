@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
 .rgpd {
     @apply relative after:content-[''] after:h-[50%] after:absolute after:left-0 after:bg-neutral-200 after:bottom-0 after:w-full after:z-0;
 

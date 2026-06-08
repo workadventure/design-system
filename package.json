@@ -6,15 +6,19 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "style": "dist/style.css",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./style.css": "./dist/style.css",
+    "./theme.css": "./dist/theme.css",
     "./*": "./*"
   },
   "scripts": {
+    "clean": "rm -rf dist",
     "compile:base": "postcss --config src/base src/base/*.css --base src --dir dist/style --ext .css",
     "concat:base": "cat dist/style/base/*.css > dist/style/base.css",
     "jss:base": "prejss-cli dist/style/base.css --format es6",
@@ -27,11 +31,13 @@
     "concat:components": "cat dist/style/components/*.css > dist/style/components.css",
     "jss:components": "prejss-cli dist/style/components.css --format es6",
     "build:components": "npm run compile:components && npm run concat:components && npm run jss:components",
-    "build:style": "npm run build:base && npm run build:utilities && npm run build:components",
+    "compile:style": "postcss --config src/components src/index.css -o dist/style.css",
+    "copy:theme": "cp src/theme.css dist/theme.css",
+    "build:style": "npm run build:base && npm run build:utilities && npm run build:components && npm run compile:style && npm run copy:theme",
     "build:js": "vite build",
     "build:types": "tsc --emitDeclarationOnly",
     "build:ts": "npm run build:types",
-    "build": "npm run build:style && npm run build:js && npm run build:types",
+    "build": "npm run clean && npm run build:style && npm run build:js && npm run build:types",
     "watch": "ts-node-esm src/watcher.ts",
     "dev": "npm run build:style && npm run watch & cd example && npm run dev",
     "precommit": "lint-staged",
@@ -44,17 +50,16 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^20.5.9",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
-    "autoprefixer": "^10.4.15",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "postcss": "^8.4.29",
     "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
     "postcss-inline-svg": "^6.0.0",
     "prejss-cli": "^0.3.3",
     "prettier": "^3.0.3",
@@ -68,7 +73,7 @@
     "@fontsource/roboto": "^4.5.8",
     "@fontsource/roboto-condensed": "^4.5.9",
     "colord": "^2.9.3",
-    "tailwindcss": "^3.4.13"
+    "tailwindcss": "^4.3.0"
   },
   "files": [
     "dist/**/*"

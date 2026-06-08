@@ -5,32 +5,31 @@
 
 
 ## Requirements
-- Node < v18
-- TailwindCSS < v3.3
+- Node 20.19+ or 22.12+
+- Tailwind CSS 4
+
 ## Installation
 
 Add the dependency:
 
 ```bash
-  npm install @workadventure/design-system
-```ncnp
-Add the plugin to the Tailwind configuration:
-```js
-// tailwind.config.js
-
-import workadventureUi from "@workadventure/design-system";
-
-/** @type {import('tailwindcss').Config} */
-export default {
-    content: ["./index.html", "./src/**/*.{js,ts}"],
-    theme: {
-        extend: {},
-    },
-    plugins: [workadventureUi],
-};
+npm install @workadventure/design-system
 ```
-> [!IMPORTANT]
-> Replace './path/to/font.ttf' by the path to your font file in ttf format
+
+Import Tailwind and the design system from your application CSS:
+
+```css
+@import "tailwindcss";
+@import "@workadventure/design-system/theme.css";
+@import "@workadventure/design-system/style.css";
+```
+
+Tailwind 4 detects source files automatically. If your project needs explicit paths, add them in CSS:
+
+```css
+@source "./index.html";
+@source "./src/**/*.{js,ts,jsx,tsx}";
+```
 
 ## Contribute
 
@@ -55,4 +54,3 @@ To build the package:
 ## Example sheet
 
 ![Design System](https://github.com/workadventure/design-system/blob/main/DesignSystem.jpg?raw=true)
-

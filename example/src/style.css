@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "../../dist/theme.css";
+@import "../../dist/style.css";
+
+@source "../*.html";
+@source "./**/*.{js,ts}";
 
 /*
 Override Tailwind's default color palette
