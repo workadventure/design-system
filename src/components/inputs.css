@@ -149,7 +149,7 @@
 
 .input-select {
     @apply appearance-none outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed bg-no-repeat bg-right;
-    background-image: svg-load("./icon-dropdown.svg");
+    background-image: url("./icon-dropdown.svg");
 
     &.success {
         @apply border-success text-success hover:border-success-500 focus:border-success-900;
@@ -300,13 +300,13 @@
 }
 
 .peer:checked ~ .input-checkbox::after {
-    background-image: svg-load("./icon-checkbox.svg");
+    background-image: url("./icon-checkbox.svg");
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .peer:checked ~ .input-checkbox.input-checkbox-white::after {
-    background-image: svg-load("./icon-checkbox-black.svg");
+    background-image: url("./icon-checkbox-black.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
