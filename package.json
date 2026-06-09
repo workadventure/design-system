@@ -17,7 +17,7 @@
         "watch": "vite build --watch",
         "dev": "npm run build:style && npm run watch & cd example && npm run dev",
         "precommit": "lint-staged",
-        "prepare": "husky install"
+        "prepare": "husky"
     },
     "author": "WorkAdventure",
     "repository": {
@@ -27,18 +27,16 @@
     "license": "MIT",
     "devDependencies": {
         "@tailwindcss/vite": "^4.3.0",
-        "eslint": "^8.48.0",
-        "eslint-config-prettier": "^9.0.0",
-        "husky": "^8.0.3",
-        "lint-staged": "^14.0.1",
-        "prettier": "^3.0.3",
-        "release-please": "^15.13.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^17.0.7",
+        "prettier": "^3.8.3",
+        "release-please": "^17.8.0",
         "vite": "^8.0.16"
     },
     "dependencies": {
         "@fontsource-variable/oswald": "^5.2.8",
-        "@fontsource/roboto": "^4.5.8",
-        "@fontsource/roboto-condensed": "^4.5.9",
+        "@fontsource/roboto": "^5.2.10",
+        "@fontsource/roboto-condensed": "^5.2.8",
         "tailwindcss": "^4.3.0"
     },
     "files": [
@@ -47,7 +45,6 @@
     ],
     "lint-staged": {
         "*.js": [
-            "eslint --fix",
             "prettier --write"
         ]
     }

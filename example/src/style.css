@@ -3,7 +3,7 @@
 @import "../../dist/style.css";
 
 @source "../*.html";
-@source "./**/*.{js,ts}";
+@source "./**/*.js";
 
 /*
 Override Tailwind's default color palette
