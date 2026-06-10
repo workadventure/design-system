@@ -45,11 +45,7 @@ How to run the example:
 
 After that, you can open the example in your browser.
 
-To build the package:
-
-```bash
-    npm run build
-```
+The package is published from source, so there is no separate build step.
 
 ## Example sheet
 

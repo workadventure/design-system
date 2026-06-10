@@ -37,8 +37,8 @@ jobs:
         run: npm install
       - name: Install dependencies on example
         run: cd example && npm install
-      - name: Build
-        run: npm run build && cd example && npm run build
+      - name: Build example
+        run: cd example && npm run build
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
