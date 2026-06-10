@@ -1,9 +1,9 @@
 @import "../theme.css";
-@reference "tailwindcss";
-
 @import "@fontsource/roboto/index.css";
 @import "@fontsource/roboto-condensed/index.css";
 @import "@fontsource-variable/oswald/index.css";
+
+@reference "tailwindcss";
 
 * {
     @apply box-border antialiased;
