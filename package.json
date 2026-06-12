@@ -1,82 +1,49 @@
 {
-  "name": "@workadventure/design-system",
-  "version": "2.0.4",
-  "description": "Tailwind Theme for WorkAdventure",
-  "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+    "name": "@workadventure/design-system",
+    "version": "2.0.4",
+    "description": "Tailwind Theme for WorkAdventure",
+    "type": "module",
+    "style": "src/index.css",
+    "exports": {
+        ".": "./src/index.css",
+        "./style.css": "./src/index.css",
+        "./theme.css": "./src/theme.css",
+        "./*": "./*"
     },
-    "./*": "./*"
-  },
-  "scripts": {
-    "compile:base": "postcss --config src/base src/base/*.css --base src --dir dist/style --ext .css",
-    "concat:base": "cat dist/style/base/*.css > dist/style/base.css",
-    "jss:base": "prejss-cli dist/style/base.css --format es6",
-    "build:base": "npm run compile:base && npm run concat:base && npm run jss:base",
-    "compile:utilities": "postcss --config src/utilities src/utilities/*.css --base src --dir dist/style --ext .css",
-    "concat:utilities": "cat dist/style/utilities/*.css > dist/style/utilities.css",
-    "jss:utilities": "prejss-cli dist/style/utilities.css --format es6",
-    "build:utilities": "npm run compile:utilities && npm run concat:utilities && npm run jss:utilities",
-    "compile:components": "postcss --config src/components src/components/*.css --base src --dir dist/style --ext .css",
-    "concat:components": "cat dist/style/components/*.css > dist/style/components.css",
-    "jss:components": "prejss-cli dist/style/components.css --format es6",
-    "build:components": "npm run compile:components && npm run concat:components && npm run jss:components",
-    "build:style": "npm run build:base && npm run build:utilities && npm run build:components",
-    "build:js": "vite build",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:ts": "npm run build:types",
-    "build": "npm run build:style && npm run build:js && npm run build:types",
-    "watch": "ts-node-esm src/watcher.ts",
-    "dev": "npm run build:style && npm run watch & cd example && npm run dev",
-    "precommit": "lint-staged",
-    "prepare": "husky install"
-  },
-  "author": "WorkAdventure",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/workadventure/design-system"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^20.5.9",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.48.0",
-    "eslint-config-prettier": "^9.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "postcss": "^8.4.29",
-    "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
-    "postcss-inline-svg": "^6.0.0",
-    "prejss-cli": "^0.3.3",
-    "prettier": "^3.0.3",
-    "release-please": "^15.13.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2",
-    "vite": "^8.0.12"
-  },
-  "dependencies": {
-    "@fontsource-variable/oswald": "^5.2.8",
-    "@fontsource/roboto": "^4.5.8",
-    "@fontsource/roboto-condensed": "^4.5.9",
-    "colord": "^2.9.3",
-    "tailwindcss": "^3.4.13"
-  },
-  "files": [
-    "dist/**/*"
-  ],
-  "lint-staged": {
-    "*.{ts,js}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  }
+    "scripts": {
+        "dev": "npm run dev:example",
+        "dev:example": "cd example && vite",
+        "build:example": "cd example && vite build",
+        "preview:example": "cd example && vite preview",
+        "precommit": "lint-staged",
+        "prepare": "husky"
+    },
+    "author": "WorkAdventure",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/workadventure/design-system"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^17.0.7",
+        "prettier": "^3.8.3",
+        "release-please": "^17.8.0",
+        "vite": "^8.0.16"
+    },
+    "dependencies": {
+        "@fontsource-variable/oswald": "^5.2.8",
+        "@fontsource/roboto": "^5.2.10",
+        "@fontsource/roboto-condensed": "^5.2.8",
+        "tailwindcss": "^4.3.0"
+    },
+    "files": [
+        "src/**/*"
+    ],
+    "lint-staged": {
+        "*.js": [
+            "prettier --write"
+        ]
+    }
 }

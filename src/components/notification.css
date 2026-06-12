@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
 .notification {
     @apply aspect-square w-6 h-6 bg-contrast rounded-full paragraph-bold text-center flex  items-center;
 

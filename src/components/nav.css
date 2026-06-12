@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
 .nav-website {
     @apply rounded-lg px-7 py-0 flex relative;
     @apply before:content-[''] before:w-full before:h-full before:absolute before:bg-blur before:z-[-1] before:left-0 before:rounded-lg;

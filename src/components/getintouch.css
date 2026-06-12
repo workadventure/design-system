@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
 .getintouch {
     @apply flex flex-col sm:flex-col md:flex-row items-center p-16;
 

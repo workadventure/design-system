@@ -1,6 +1,9 @@
+@import "../theme.css";
 @import "@fontsource/roboto/index.css";
 @import "@fontsource/roboto-condensed/index.css";
 @import "@fontsource-variable/oswald/index.css";
+
+@reference "tailwindcss";
 
 * {
     @apply box-border antialiased;
@@ -147,4 +150,60 @@ h6,
 
 .subtitle {
     @apply text-neutral text-center m-0;
+}
+
+@utility paragraph {
+    @apply font-normal;
+}
+
+@utility paragraph-xxs {
+    @apply text-xxs;
+}
+
+@utility paragraph-xs {
+    @apply text-xs;
+}
+
+@utility paragraph-sm {
+    @apply text-sm;
+}
+
+@utility paragraph-lg {
+    @apply text-lg;
+}
+
+@utility paragraph-xl {
+    @apply text-xl;
+}
+
+@utility paragraph-bold {
+    @apply font-bold;
+}
+
+@utility paragraph-italic {
+    @apply italic;
+}
+
+@utility h1 {
+    @apply text-4xl leading-10;
+}
+
+@utility h2 {
+    @apply text-3xl leading-10;
+}
+
+@utility h3 {
+    @apply text-2xl leading-10;
+}
+
+@utility h4 {
+    @apply text-xl;
+}
+
+@utility h5 {
+    @apply text-lg;
+}
+
+@utility h6 {
+    @apply text-lg;
 }

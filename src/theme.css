@@ -1,0 +1,239 @@
+@layer theme {
+    :root,
+    [data-theme="default"] {
+        color-scheme: dark;
+        --neutral-100: 210 25% 98%;
+        --neutral-200: 220 10% 94%;
+        --neutral-300: 223 11% 88%;
+        --neutral-400: 228 14% 86%;
+        --neutral-500: 223 9% 71%;
+        --neutral-600: 222 9% 61%;
+        --neutral: 225 8% 54%;
+        --neutral-800: 223 9% 46%;
+        --neutral-900: 222 9% 38%;
+        --neutral-1000: 223 9% 31%;
+        --neutral-1100: 228 8% 23%;
+        --neutral-1200: 223 9% 15%;
+        --neutral-1300: 220 8% 8%;
+
+        --contrast-100: 216 41% 88%;
+        --contrast-200: 216 41% 76%;
+        --contrast-300: 216 51% 65%;
+        --contrast-400: 216 41% 40%;
+        --contrast-500: 216 41% 36%;
+        --contrast-600: 216 41% 28%;
+        --contrast: 216 41% 18%;
+        --contrast-800: 216 41% 18%;
+        --contrast-900: 216 63% 12%;
+        --contrast-1000: 217 67% 8%;
+        --contrast-1100: 214 88% 6%;
+
+        --primary-100: 266 97% 57%;
+        --primary-200: 266 97% 57%;
+        --primary-300: 266 97% 57%;
+        --primary-400: 266 97% 57%;
+        --primary-500: 266 97% 57%;
+        --primary-600: 266 97% 57%;
+        --primary: 266 97% 57%;
+        --primary-800: 266 97% 57%;
+        --primary-900: 266 97% 57%;
+        --primary-1000: 266 97% 57%;
+        --primary-1100: 266 97% 57%;
+        --primary-1200: 266 97% 57%;
+        --primary-1300: 266 97% 57%;
+
+        --secondary-100: 229 73% 97%;
+        --secondary-200: 232 76% 90%;
+        --secondary-300: 232 61% 83%;
+        --secondary-400: 232 54% 73%;
+        --secondary-500: 232 66% 67%;
+        --secondary-600: 233 88% 67%;
+        --secondary: 233 91% 61%;
+        --secondary-800: 233 76% 54%;
+        --secondary-900: 233 74% 47%;
+        --secondary-1000: 233 85% 40%;
+        --secondary-1100: 234 89% 36%;
+
+        --danger-100: 0 48% 95%;
+        --danger-200: 0 47% 90%;
+        --danger-300: 15 65% 88%;
+        --danger-400: 11 100% 85%;
+        --danger-500: 11 82% 74%;
+        --danger-600: 11 92% 69%;
+        --danger: 11 78% 62%;
+        --danger-800: 0 73% 63%;
+        --danger-900: 0 55% 56%;
+        --danger-1000: 0 44% 49%;
+        --danger-1100: 0 44% 42%;
+        --danger-1200: 0 44% 35%;
+
+        --success-100: 129 100% 93%;
+        --success-200: 129 85% 90%;
+        --success-300: 129 84% 80%;
+        --success-400: 129 71% 75%;
+        --success-500: 129 69% 69%;
+        --success-600: 129 69% 65%;
+        --success: 129 75% 66%;
+        --success-800: 129 66% 59%;
+        --success-900: 129 62% 55%;
+        --success-1000: 129 48% 50%;
+        --success-1100: 129 41% 46%;
+        --success-1200: 130 49% 37%;
+
+        --warning-100: 47 100% 96%;
+        --warning-200: 47 90% 92%;
+        --warning-300: 47 94% 87%;
+        --warning-400: 47 90% 81%;
+        --warning-500: 47 87% 73%;
+        --warning-600: 47 75% 66%;
+        --warning: 47 78% 61%;
+        --warning-800: 30 64% 53%;
+        --warning-900: 30 58% 47%;
+        --warning-1000: 29 58% 41%;
+        --warning-1100: 29 58% 35%;
+        --warning-1200: 30 58% 29%;
+    }
+}
+
+@theme inline {
+    --font-main: "Roboto Condensed", "Arial";
+    --font-title: "Bebas Neue", "Arial";
+    --font-content: "Roboto", "Arial";
+    --font-oswald: "Oswald", "Arial";
+
+    --text-xxs: 11px;
+    --text-xxs--line-height: 1rem;
+    --text-xs: 13px;
+    --text-xs--line-height: 1.25rem;
+    --text-sm: 14px;
+    --text-sm--line-height: 1.5rem;
+    --text-base: 16px;
+    --text-base--line-height: 1.75rem;
+    --text-lg: 18px;
+    --text-lg--line-height: 1.75rem;
+    --text-xl: 24px;
+    --text-xl--line-height: 1.75rem;
+    --text-2xl: 28px;
+    --text-2xl--line-height: 1.75rem;
+    --text-3xl: 34px;
+    --text-3xl--line-height: 1.75rem;
+    --text-4xl: 42px;
+    --text-4xl--line-height: 1.75rem;
+
+    --spacing-13: 3.25rem;
+
+    --radius: 8px;
+    --radius-none: 0;
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+
+    --border-width: 1px;
+
+    --blur: 8px;
+    --blur-none: 0;
+    --blur-sm: 4px;
+    --blur-lg: 12px;
+
+    --shadow-xs: 0px 0px 2px rgba(24, 24, 28, 0.06), 0px 1px 2px rgba(24, 24, 28, 0.12);
+    --shadow-sm: 0px 2px 50px 3px rgba(24, 24, 28, 0.02), 0px 15px 24px -14px rgba(24, 24, 28, 0.12);
+    --shadow: 0px 8px 50px 5px rgba(24, 24, 28, 0.03), 0px 32px 40px -30px rgba(24, 24, 28, 0.12);
+    --shadow-lg: 0px 8px 50px 8px rgba(24, 24, 28, 0.06), 0px 32px 40px -20px rgba(24, 24, 28, 0.12);
+    --shadow-darkXs: 00px 0px 2px rgba(24, 24, 28, 0.5), 0px 1px 2px #18181c;
+    --shadow-darkSm: 0px 2px 50px 3px rgba(24, 24, 28, 0.25), 0px 15px 24px -14px rgba(24, 24, 28, 0.5);
+    --shadow-dark: 0px 8px 50px 5px rgba(24, 24, 28, 0.25), 0px 32px 40px -30px rgba(24, 24, 28, 0.75);
+    --shadow-darkLg: 0px 8px 50px 8px rgba(24, 24, 28, 0.5), 0px 32px 40px -20px #18181c;
+
+    --color-neutral-100: hsl(var(--neutral-100));
+    --color-neutral-200: hsl(var(--neutral-200));
+    --color-neutral-300: hsl(var(--neutral-300));
+    --color-neutral-400: hsl(var(--neutral-400));
+    --color-neutral-500: hsl(var(--neutral-500));
+    --color-neutral-600: hsl(var(--neutral-600));
+    --color-neutral: hsl(var(--neutral));
+    --color-neutral-800: hsl(var(--neutral-800));
+    --color-neutral-900: hsl(var(--neutral-900));
+    --color-neutral-1000: hsl(var(--neutral-1000));
+    --color-neutral-1100: hsl(var(--neutral-1100));
+    --color-neutral-1200: hsl(var(--neutral-1200));
+    --color-neutral-1300: hsl(var(--neutral-1300));
+
+    --color-contrast-100: hsl(var(--contrast-100));
+    --color-contrast-200: hsl(var(--contrast-200));
+    --color-contrast-300: hsl(var(--contrast-300));
+    --color-contrast-400: hsl(var(--contrast-400));
+    --color-contrast-500: hsl(var(--contrast-500));
+    --color-contrast-600: hsl(var(--contrast-600));
+    --color-contrast: hsl(var(--contrast));
+    --color-contrast-800: hsl(var(--contrast-800));
+    --color-contrast-900: hsl(var(--contrast-900));
+    --color-contrast-1000: hsl(var(--contrast-1000));
+    --color-contrast-1100: hsl(var(--contrast-1100));
+
+    --color-primary-100: hsl(var(--primary-100));
+    --color-primary-200: hsl(var(--primary-200));
+    --color-primary-300: hsl(var(--primary-300));
+    --color-primary-400: hsl(var(--primary-400));
+    --color-primary-500: hsl(var(--primary-500));
+    --color-primary-600: hsl(var(--primary-600));
+    --color-primary: hsl(var(--primary));
+    --color-primary-800: hsl(var(--primary-800));
+    --color-primary-900: hsl(var(--primary-900));
+    --color-primary-1000: hsl(var(--primary-1000));
+    --color-primary-1100: hsl(var(--primary-1100));
+    --color-primary-1200: hsl(var(--primary-1200));
+    --color-primary-1300: hsl(var(--primary-1300));
+
+    --color-secondary-100: hsl(var(--secondary-100));
+    --color-secondary-200: hsl(var(--secondary-200));
+    --color-secondary-300: hsl(var(--secondary-300));
+    --color-secondary-400: hsl(var(--secondary-400));
+    --color-secondary-500: hsl(var(--secondary-500));
+    --color-secondary-600: hsl(var(--secondary-600));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-800: hsl(var(--secondary-800));
+    --color-secondary-900: hsl(var(--secondary-900));
+    --color-secondary-1000: hsl(var(--secondary-1000));
+    --color-secondary-1100: hsl(var(--secondary-1100));
+
+    --color-danger-100: hsl(var(--danger-100));
+    --color-danger-200: hsl(var(--danger-200));
+    --color-danger-300: hsl(var(--danger-300));
+    --color-danger-400: hsl(var(--danger-400));
+    --color-danger-500: hsl(var(--danger-500));
+    --color-danger-600: hsl(var(--danger-600));
+    --color-danger: hsl(var(--danger));
+    --color-danger-800: hsl(var(--danger-800));
+    --color-danger-900: hsl(var(--danger-900));
+    --color-danger-1000: hsl(var(--danger-1000));
+    --color-danger-1100: hsl(var(--danger-1100));
+    --color-danger-1200: hsl(var(--danger-1200));
+
+    --color-success-100: hsl(var(--success-100));
+    --color-success-200: hsl(var(--success-200));
+    --color-success-300: hsl(var(--success-300));
+    --color-success-400: hsl(var(--success-400));
+    --color-success-500: hsl(var(--success-500));
+    --color-success-600: hsl(var(--success-600));
+    --color-success: hsl(var(--success));
+    --color-success-800: hsl(var(--success-800));
+    --color-success-900: hsl(var(--success-900));
+    --color-success-1000: hsl(var(--success-1000));
+    --color-success-1100: hsl(var(--success-1100));
+    --color-success-1200: hsl(var(--success-1200));
+
+    --color-warning-100: hsl(var(--warning-100));
+    --color-warning-200: hsl(var(--warning-200));
+    --color-warning-300: hsl(var(--warning-300));
+    --color-warning-400: hsl(var(--warning-400));
+    --color-warning-500: hsl(var(--warning-500));
+    --color-warning-600: hsl(var(--warning-600));
+    --color-warning: hsl(var(--warning));
+    --color-warning-800: hsl(var(--warning-800));
+    --color-warning-900: hsl(var(--warning-900));
+    --color-warning-1000: hsl(var(--warning-1000));
+    --color-warning-1100: hsl(var(--warning-1100));
+    --color-warning-1200: hsl(var(--warning-1200));
+}

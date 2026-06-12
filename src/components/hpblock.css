@@ -1,3 +1,36 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+@reference "../base/index.css";
+@reference "../utilities/general.css";
+
+@keyframes floating2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, 1rem);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(-4rem, 0);
+    }
+
+    50% {
+        transform: translate(-5rem, 1rem);
+    }
+
+    100% {
+        transform: translate(-4rem, 0);
+    }
+}
+
 .hpblock {
     @apply flex flex-col xl:flex-row pt-32 items-center;
 
@@ -40,20 +73,6 @@
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
 
-            @keyframes floating2 {
-                0% {
-                    transform: translate(0, 0);
-                }
-
-                50% {
-                    transform: translate(0, 1rem);
-                }
-
-                100% {
-                    transform: translate(0, 0);
-                }
-            }
-
             .hpblock-right-image-elt {
                 @apply relative z-10 w-1/2 lg:w-[440px];
             }
@@ -92,20 +111,6 @@
 
                 .btn-play {
                     @apply hidden;
-                }
-            }
-
-            @keyframes floating {
-                0% {
-                    transform: translate(-4rem, 0);
-                }
-
-                50% {
-                    transform: translate(-5rem, 1rem);
-                }
-
-                100% {
-                    transform: translate(-4rem, 0);
                 }
             }
 
