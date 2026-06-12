@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.0](https://github.com/workadventure/design-system/compare/v2.0.4...v3.0.0) (2026-06-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* Migration to tailwind 4 ([#50](https://github.com/workadventure/design-system/issues/50))
+
+### Bug Fixes
+
+* use gae instead of space and add whitespace-nowrap to buttons ([9e5c56f](https://github.com/workadventure/design-system/commit/9e5c56f24d30526b2b468d7684e3321136baf501))
+
+
+### Code Refactoring
+
+* Migration to tailwind 4 ([#50](https://github.com/workadventure/design-system/issues/50)) ([f38a17a](https://github.com/workadventure/design-system/commit/f38a17ae27554e79abbd60edd694ba84d3955118))
+
 ## [2.0.4](https://github.com/workadventure/design-system/compare/v2.0.3...v2.0.4) (2026-05-11)
 
 
