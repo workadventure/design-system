@@ -97,9 +97,8 @@
 
 @theme inline {
     --font-main: "Roboto Condensed", "Arial";
-    --font-title: "Bebas Neue", "Arial";
+    --font-title: "Oswald", "Arial";
     --font-content: "Roboto", "Arial";
-    --font-oswald: "Oswald", "Arial";
 
     --text-xxs: 11px;
     --text-xxs--line-height: 1rem;
