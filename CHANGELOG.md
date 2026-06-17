@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/workadventure/design-system/compare/v3.0.0...v3.0.1) (2026-06-17)
+
+
+### Bug Fixes
+
+* add css layers for classes ([60f20cf](https://github.com/workadventure/design-system/commit/60f20cfebbac9c9cf2d94df9cb5f458f172bb2a2))
+
 ## [3.0.0](https://github.com/workadventure/design-system/compare/v2.0.4...v3.0.0) (2026-06-12)
 
 
