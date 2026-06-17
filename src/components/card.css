@@ -3,18 +3,20 @@
 @reference "../base/index.css";
 @reference "../utilities/general.css";
 
-.card {
-    @apply bg-white border border-solid border-neutral-400 rounded-lg p-2;
+@layer components {
+    .card {
+        @apply bg-white border border-solid border-neutral-400 rounded-lg p-2;
 
-    .card-img {
-        @apply rounded h-64 bg-cover w-full;
-    }
+        .card-img {
+            @apply rounded h-64 bg-cover w-full;
+        }
 
-    .card-content {
-        @apply text-center pt-4 pb-12 px-8;
-    }
+        .card-content {
+            @apply text-center pt-4 pb-12 px-8;
+        }
 
-    .card-actions {
-        @apply flex;
+        .card-actions {
+            @apply flex;
+        }
     }
 }

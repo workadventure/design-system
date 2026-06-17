@@ -3,405 +3,422 @@
 @reference "../base/index.css";
 @reference "../utilities/general.css";
 
-.input-label {
-    @apply text-white flex items-center pb-1.5 px-3 pt-3 space-x-1.5 peer-disabled:opacity-70 peer-disabled:cursor-not-allowed;
+@layer components {
+    .input-label {
+        @apply text-white flex items-center pb-1.5 px-3 pt-3 space-x-1.5 peer-disabled:opacity-70 peer-disabled:cursor-not-allowed;
 
-    label {
-        @apply relative;
-    }
-}
-
-.input-label-sm {
-    @apply pb-1 px-2 space-x-1;
-}
-
-.input-label-light {
-    @apply text-contrast;
-}
-
-.input-label-inline {
-    @apply pb-0 px-3 pt-0 space-x-1.5;
-}
-
-.input-text {
-    @apply outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
-
-    &.success {
-        @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        label {
+            @apply relative;
+        }
     }
 
-    &.error {
-        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+    .input-label-sm {
+        @apply pb-1 px-2 space-x-1;
     }
 
-    &.input-icon-left {
-        @apply pl-11;
+    .input-label-light {
+        @apply text-contrast;
     }
 
-    &.input-icon-right {
-        @apply pr-11;
-    }
-}
-
-.input-text-lg {
-    @apply h-13 text-lg;
-
-    &.input-icon-left {
-        @apply pl-12;
+    .input-label-inline {
+        @apply pb-0 px-3 pt-0 space-x-1.5;
     }
 
-    &.input-icon-right {
-        @apply pr-12;
-    }
-}
+    .input-text {
+        @apply outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
+        line-height: 1.5rem;
 
-.input-text-sm {
-    @apply h-10 text-sm;
+        &.success {
+            @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        }
 
-    &.input-icon-left {
-        @apply pl-10;
-    }
+        &.error {
+            @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+        }
 
-    &.input-icon-right {
-        @apply pr-10;
-    }
-}
+        &.input-icon-left {
+            @apply pl-11;
+        }
 
-.input-text-xs {
-    @apply h-8 text-sm rounded;
-
-    &.input-icon-left {
-        @apply pl-10;
+        &.input-icon-right {
+            @apply pr-11;
+        }
     }
 
-    &.input-icon-right {
-        @apply pr-10;
-    }
-}
+    .input-text-lg {
+        @apply h-13 text-lg;
 
-.input-text-light {
-    @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        &.input-icon-left {
+            @apply pl-12;
+        }
 
-    &.success {
-        @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
-    }
-
-    &.error {
-        @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
-    }
-}
-
-.input-number {
-    @apply appearance-none  outline-none text-center h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
-
-    &.success {
-        @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        &.input-icon-right {
+            @apply pr-12;
+        }
     }
 
-    &.error {
-        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
-    }
-}
+    .input-text-sm {
+        @apply h-10 text-sm;
+        line-height: 1.25rem;
 
-.input-number-lg {
-    @apply h-13 text-xl;
-}
+        &.input-icon-left {
+            @apply pl-10;
+        }
 
-.input-number-sm {
-    @apply h-10 text-base;
-}
-
-.input-number-xs {
-    @apply h-8 text-base rounded;
-}
-
-.input-number-light {
-    @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
-
-    &.success {
-        @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        &.input-icon-right {
+            @apply pr-10;
+        }
     }
 
-    &.error {
-        @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
-    }
-}
+    .input-text-xs {
+        @apply h-8 text-sm rounded;
+        line-height: 1.25rem;
 
-.input-search {
-    @apply appearance-none outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-6 rounded-full text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
-}
+        &.input-icon-left {
+            @apply pl-10;
+        }
 
-.input-search-lg {
-    @apply h-13 text-lg;
-}
-
-.input-search-sm {
-    @apply h-10 text-sm px-3;
-}
-
-.input-search-xs {
-    @apply h-8 text-sm px-3;
-}
-
-.input-search-light {
-    @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100;
-}
-
-.input-select {
-    @apply appearance-none outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed bg-no-repeat bg-right;
-    background-image: url("./icon-dropdown.svg");
-
-    &.success {
-        @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        &.input-icon-right {
+            @apply pr-10;
+        }
     }
 
-    &.error {
-        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+    .input-text-light {
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+
+        &.success {
+            @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        }
+
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
+        }
     }
 
-    &.input-icon-left {
-        @apply pl-11;
+    .input-number {
+        @apply appearance-none  outline-none text-center h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-lg placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
+
+        &.success {
+            @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        }
+
+        &.error {
+            @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+        }
     }
 
-    &.input-icon-right {
-        @apply pr-11;
-    }
-}
-
-.input-select-lg {
-    @apply h-13 text-lg;
-
-    &.input-icon-left {
-        @apply pl-12;
+    .input-number-lg {
+        @apply h-13 text-xl;
+        font-size: 1.25rem;
     }
 
-    &.input-icon-right {
-        @apply pr-12;
-    }
-}
-
-.input-select-sm {
-    @apply h-10 text-sm;
-
-    &.input-icon-left {
-        @apply pl-10;
+    .input-number-sm {
+        @apply h-10 text-base;
+        line-height: 1.5rem;
     }
 
-    &.input-icon-right {
-        @apply pr-10;
-    }
-}
-
-.input-select-xs {
-    @apply h-8 text-sm rounded;
-
-    &.input-icon-left {
-        @apply pl-10;
+    .input-number-xs {
+        @apply h-8 text-base rounded;
+        line-height: 1.5rem;
     }
 
-    &.input-icon-right {
-        @apply pr-10;
-    }
-}
+    .input-number-light {
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
 
-.input-select-light {
-    @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        &.success {
+            @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        }
 
-    &.success {
-        @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
-    }
-
-    &.error {
-        @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
-    }
-}
-
-.input-tags {
-    @apply flex items-center space-x-1 outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-1 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger;
-
-    &.success {
-        @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
+        }
     }
 
-    &.error {
-        @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+    .input-search {
+        @apply appearance-none outline-none h-13 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-6 rounded-full text-base placeholder:font-normal placeholder:text-contrast-300 hover:border-secondary-500 focus:border-secondary transition-all [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed;
+        line-height: 1.5rem;
     }
 
-    &.input-icon-left {
-        @apply pl-11;
+    .input-search-lg {
+        @apply h-13 text-lg;
     }
 
-    &.input-icon-right {
-        @apply pr-11;
-    }
-}
-
-.input-tags-lg {
-    @apply h-13 text-lg space-x-1.5 px-1.5;
-
-    &.input-icon-left {
-        @apply pl-12;
+    .input-search-sm {
+        @apply h-10 text-sm px-3;
+        line-height: 1.25rem;
     }
 
-    &.input-icon-right {
-        @apply pr-12;
-    }
-}
-
-.input-tags-sm {
-    @apply h-10 text-sm;
-
-    &.input-icon-left {
-        @apply pl-10;
+    .input-search-xs {
+        @apply h-8 text-sm px-3;
+        line-height: 1.25rem;
     }
 
-    &.input-icon-right {
-        @apply pr-10;
-    }
-}
-
-.input-tags-xs {
-    @apply h-8 text-sm rounded;
-
-    &.input-icon-left {
-        @apply pl-10;
+    .input-search-light {
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100;
     }
 
-    &.input-icon-right {
-        @apply pr-10;
-    }
-}
+    .input-select {
+        @apply appearance-none outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-4 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger disabled:cursor-not-allowed bg-no-repeat bg-right;
+        line-height: 1.5rem;
+        background-image: url("./icon-dropdown.svg");
 
-.input-tags-light {
-    @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+        &.success {
+            @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        }
 
-    &.success {
-        @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
-    }
+        &.error {
+            @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+        }
 
-    &.error {
-        @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
-    }
-}
+        &.input-icon-left {
+            @apply pl-11;
+        }
 
-.input-checkbox {
-    @apply appearance-none relative top-0 right-0 bottom-0 left-0 h-5 w-5 bg-white border border-solid border-neutral-400 p-0 text-contrast inline-block outline-none rounded-sm
-    before:transition-all before:absolute  before:content-[''] before:bg-transparent before:h-0 before:w-0 before:top-[10px] before:left-[10px]
-    peer-checked:before:rounded-sm peer-checked:before:top-[-1px] peer-checked:before:left-[-1px] peer-checked:border-contrast peer-checked:before:bg-contrast peer-checked:before:h-5 peer-checked:before:w-5 peer-checked:before:content-[''] peer-checked:before:absolute
-
-    after:transition-all after:absolute  after:content-[''] after:h-0 after:w-0 after:top-[10px] after:left-[10px]
-    peer-checked:after:rounded-sm peer-checked:after:top-[-1px] peer-checked:after:left-[-1px] peer-checked:after:h-5 peer-checked:after:w-5 peer-checked:after:content-[''] peer-checked:after:absolute
-
-    peer-disabled:opacity-35 peer-disabled:cursor-not-allowed;
-}
-
-.input-checkbox.input-checkbox-white {
-    @apply bg-transparent border-neutral-100 border-[1.5px] border-solid;
-}
-
-.peer:checked ~ .input-checkbox::after {
-    background-image: url("./icon-checkbox.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.peer:checked ~ .input-checkbox.input-checkbox-white::after {
-    background-image: url("./icon-checkbox-black.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-}
-
-.input-radio {
-    @apply appearance-none relative top-0 right-0 bottom-0 left-0 h-5 w-5 bg-contrast hover:bg-contrast-800 hover:border-secondary-500 border border-solid border-contrast-400 p-0 text-contrast inline-block outline-none rounded-full
-    before:transition-all before:absolute  before:content-[''] before:bg-transparent before:h-0 before:w-0 before:top-[10px] before:left-[10px]
-
-    peer-checked:before:rounded-full peer-checked:before:top-[-1px] peer-checked:before:left-[-1px] peer-checked:border-contrast peer-checked:before:bg-contrast peer-checked:before:h-5 peer-checked:before:w-5 peer-checked:before:content-[''] peer-checked:before:absolute
-
-    after:transition-all after:absolute after:content-[''] after:h-0 after:w-0 after:m-auto after:top-0 after:left-0 after:bottom-0 after:right-0
-    peer-checked:after:rounded-full peer-checked:after:bg-white peer-checked:after:h-2.5 peer-checked:after:w-2.5 peer-checked:after:content-[''] peer-checked:after:absolute
-
-    peer-disabled:opacity-35 peer-disabled:cursor-not-allowed;
-}
-
-.input-radio-light {
-    @apply bg-neutral-100 hover:bg-neutral-200 hover:border-secondary-400 border-neutral-400 peer-checked:before:bg-secondary peer-checked:after:bg-white;
-}
-
-.input-radio-white {
-    @apply bg-neutral-100 hover:bg-white hover:border-white border-white/20 peer-checked:after:border-white after:bg-secondary after:border-contrast-400 peer-checked:bg-secondary peer-checked:border-white/50 peer-checked:after:bg-white;
-}
-
-.input-radio-contrast {
-    @apply bg-contrast hover:bg-contrast-600 hover:border-secondary-500 border-contrast-600 peer-checked:after:border-white after:bg-white after:border-contrast-400 peer-checked:bg-secondary peer-checked:after:bg-white;
-}
-
-.input-switch {
-    @apply cursor-pointer relative w-11 h-6 bg-contrast hover:bg-contrast-800 hover:border-secondary-500 border border-solid border-contrast-400 rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:start-[1px] after:bg-white after:border-contrast-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary peer-disabled:opacity-50 peer-disabled:cursor-not-allowed transition-all;
-}
-
-.input-switch-light {
-    @apply bg-neutral-100 hover:bg-neutral-200 hover:border-secondary-400 border-neutral-400 peer-checked:after:border-white after:bg-secondary after:border-contrast-400 peer-checked:bg-secondary peer-checked:after:bg-white;
-}
-
-.input-switch-white {
-    @apply bg-neutral-100 hover:bg-white hover:border-white border-white/20 peer-checked:after:border-white after:bg-secondary after:border-contrast-400 peer-checked:bg-secondary peer-checked:border-white/50 peer-checked:after:bg-white;
-}
-
-.input-switch-contrast {
-    @apply bg-contrast hover:bg-contrast-600 hover:border-secondary-500 border-contrast-600 peer-checked:after:border-white after:bg-white after:border-contrast-400 peer-checked:bg-secondary peer-checked:after:bg-white;
-}
-
-.input-range {
-    @apply relative h-2 bg-white/20 rounded my-2;
-
-    .input-range-slider {
-        @apply bg-white h-full rounded relative;
+        &.input-icon-right {
+            @apply pr-11;
+        }
     }
 
-    .input-range-btn {
-        @apply aspect-square h-6 w-6 border border-solid border-contrast rounded-full absolute top-0 bottom-0 my-auto bg-white flex items-center justify-center hover:bg-secondary hover:border-white transition-all cursor-pointer;
+    .input-select-lg {
+        @apply h-13 text-lg;
+
+        &.input-icon-left {
+            @apply pl-12;
+        }
+
+        &.input-icon-right {
+            @apply pr-12;
+        }
     }
 
-    &.input-range-light {
-        @apply bg-neutral-200;
+    .input-select-sm {
+        @apply h-10 text-sm;
+        line-height: 1.25rem;
+
+        &.input-icon-left {
+            @apply pl-10;
+        }
+
+        &.input-icon-right {
+            @apply pr-10;
+        }
+    }
+
+    .input-select-xs {
+        @apply h-8 text-sm rounded;
+        line-height: 1.25rem;
+
+        &.input-icon-left {
+            @apply pl-10;
+        }
+
+        &.input-icon-right {
+            @apply pr-10;
+        }
+    }
+
+    .input-select-light {
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+
+        &.success {
+            @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        }
+
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
+        }
+    }
+
+    .input-tags {
+        @apply flex items-center space-x-1 outline-none h-11 bg-contrast hover:bg-contrast-800 focus:bg-contrast-900 border border-solid border-contrast-400 font-bold px-1 rounded-md text-base placeholder:font-normal placeholder:text-contrast-400 hover:border-secondary-500 focus:border-secondary transition-all disabled:opacity-70 [&:user-invalid]:border-danger [&:user-invalid]:hover:border-danger-500 [&:user-invalid]:focus:border-danger-900 [&:user-invalid]:text-danger;
+        line-height: 1.5rem;
+
+        &.success {
+            @apply border-success text-success hover:border-success-500 focus:border-success-900;
+        }
+
+        &.error {
+            @apply border-danger text-danger hover:border-danger-500 focus:border-danger-900;
+        }
+
+        &.input-icon-left {
+            @apply pl-11;
+        }
+
+        &.input-icon-right {
+            @apply pr-11;
+        }
+    }
+
+    .input-tags-lg {
+        @apply h-13 text-lg space-x-1.5 px-1.5;
+
+        &.input-icon-left {
+            @apply pl-12;
+        }
+
+        &.input-icon-right {
+            @apply pr-12;
+        }
+    }
+
+    .input-tags-sm {
+        @apply h-10 text-sm;
+        line-height: 1.25rem;
+
+        &.input-icon-left {
+            @apply pl-10;
+        }
+
+        &.input-icon-right {
+            @apply pr-10;
+        }
+    }
+
+    .input-tags-xs {
+        @apply h-8 text-sm rounded;
+        line-height: 1.25rem;
+
+        &.input-icon-left {
+            @apply pl-10;
+        }
+
+        &.input-icon-right {
+            @apply pr-10;
+        }
+    }
+
+    .input-tags-light {
+        @apply bg-white border-neutral-400 text-contrast placeholder:text-contrast/50 focus:border-secondary hover:bg-secondary-400 hover:bg-neutral-100 focus:bg-secondary-100 disabled:bg-neutral-200 [&:user-invalid]:border-danger [&:user-invalid]:text-danger-1000 [&:user-invalid]:bg-danger-100 [&:user-invalid]:hover:bg-danger-200  [&:user-invalid]:focus:bg-danger-100 disabled:opacity-50 disabled:bg-contrast-100;
+
+        &.success {
+            @apply border-success-1000 text-success-1100 bg-success-100 hover:border-success-800 focus:border-success-1100;
+        }
+
+        &.error {
+            @apply border-danger-1000 text-danger-1100 bg-danger-100 hover:border-danger-800 focus:border-danger-1100;
+        }
+    }
+
+    .input-checkbox {
+        @apply appearance-none relative top-0 right-0 bottom-0 left-0 h-5 w-5 bg-white border border-solid border-neutral-400 p-0 text-contrast inline-block outline-none rounded-sm
+        before:transition-all before:absolute  before:content-[''] before:bg-transparent before:h-0 before:w-0 before:top-[10px] before:left-[10px]
+        peer-checked:before:rounded-sm peer-checked:before:top-[-1px] peer-checked:before:left-[-1px] peer-checked:border-contrast peer-checked:before:bg-contrast peer-checked:before:h-5 peer-checked:before:w-5 peer-checked:before:content-[''] peer-checked:before:absolute
+
+        after:transition-all after:absolute  after:content-[''] after:h-0 after:w-0 after:top-[10px] after:left-[10px]
+        peer-checked:after:rounded-sm peer-checked:after:top-[-1px] peer-checked:after:left-[-1px] peer-checked:after:h-5 peer-checked:after:w-5 peer-checked:after:content-[''] peer-checked:after:absolute
+
+        peer-disabled:opacity-35 peer-disabled:cursor-not-allowed;
+    }
+
+    .input-checkbox.input-checkbox-white {
+        @apply bg-transparent border-neutral-100 border-[1.5px] border-solid;
+    }
+
+    .peer:checked ~ .input-checkbox::after {
+        background-image: url("./icon-checkbox.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .peer:checked ~ .input-checkbox.input-checkbox-white::after {
+        background-image: url("./icon-checkbox-black.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+    }
+
+    .input-radio {
+        @apply appearance-none relative top-0 right-0 bottom-0 left-0 h-5 w-5 bg-contrast hover:bg-contrast-800 hover:border-secondary-500 border border-solid border-contrast-400 p-0 text-contrast inline-block outline-none rounded-full
+        before:transition-all before:absolute  before:content-[''] before:bg-transparent before:h-0 before:w-0 before:top-[10px] before:left-[10px]
+
+        peer-checked:before:rounded-full peer-checked:before:top-[-1px] peer-checked:before:left-[-1px] peer-checked:border-contrast peer-checked:before:bg-contrast peer-checked:before:h-5 peer-checked:before:w-5 peer-checked:before:content-[''] peer-checked:before:absolute
+
+        after:transition-all after:absolute after:content-[''] after:h-0 after:w-0 after:m-auto after:top-0 after:left-0 after:bottom-0 after:right-0
+        peer-checked:after:rounded-full peer-checked:after:bg-white peer-checked:after:h-2.5 peer-checked:after:w-2.5 peer-checked:after:content-[''] peer-checked:after:absolute
+
+        peer-disabled:opacity-35 peer-disabled:cursor-not-allowed;
+    }
+
+    .input-radio-light {
+        @apply bg-neutral-100 hover:bg-neutral-200 hover:border-secondary-400 border-neutral-400 peer-checked:before:bg-secondary peer-checked:after:bg-white;
+    }
+
+    .input-radio-white {
+        @apply bg-neutral-100 hover:bg-white hover:border-white border-white/20 peer-checked:after:border-white after:bg-secondary after:border-contrast-400 peer-checked:bg-secondary peer-checked:border-white/50 peer-checked:after:bg-white;
+    }
+
+    .input-radio-contrast {
+        @apply bg-contrast hover:bg-contrast-600 hover:border-secondary-500 border-contrast-600 peer-checked:after:border-white after:bg-white after:border-contrast-400 peer-checked:bg-secondary peer-checked:after:bg-white;
+    }
+
+    .input-switch {
+        @apply cursor-pointer relative w-11 h-6 bg-contrast hover:bg-contrast-800 hover:border-secondary-500 border border-solid border-contrast-400 rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:start-[1px] after:bg-white after:border-contrast-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary peer-disabled:opacity-50 peer-disabled:cursor-not-allowed transition-all;
+    }
+
+    .input-switch-light {
+        @apply bg-neutral-100 hover:bg-neutral-200 hover:border-secondary-400 border-neutral-400 peer-checked:after:border-white after:bg-secondary after:border-contrast-400 peer-checked:bg-secondary peer-checked:after:bg-white;
+    }
+
+    .input-switch-white {
+        @apply bg-neutral-100 hover:bg-white hover:border-white border-white/20 peer-checked:after:border-white after:bg-secondary after:border-contrast-400 peer-checked:bg-secondary peer-checked:border-white/50 peer-checked:after:bg-white;
+    }
+
+    .input-switch-contrast {
+        @apply bg-contrast hover:bg-contrast-600 hover:border-secondary-500 border-contrast-600 peer-checked:after:border-white after:bg-white after:border-contrast-400 peer-checked:bg-secondary peer-checked:after:bg-white;
+    }
+
+    .input-range {
+        @apply relative h-2 bg-white/20 rounded my-2;
 
         .input-range-slider {
-            @apply bg-contrast;
+            @apply bg-white h-full rounded relative;
         }
 
         .input-range-btn {
-            @apply border-contrast hover:bg-contrast hover:border-white;
-        }
-    }
-
-    &.input-range-secondary {
-        @apply bg-white/20;
-
-        .input-range-slider {
-            @apply bg-secondary;
-        }
-
-        .input-range-btn {
-            @apply border-secondary bg-white hover:bg-secondary hover:border-white;
+            @apply aspect-square h-6 w-6 border border-solid border-contrast rounded-full absolute top-0 bottom-0 my-auto bg-white flex items-center justify-center hover:bg-secondary hover:border-white transition-all cursor-pointer;
         }
 
         &.input-range-light {
             @apply bg-neutral-200;
 
             .input-range-slider {
+                @apply bg-contrast;
+            }
+
+            .input-range-btn {
+                @apply border-contrast hover:bg-contrast hover:border-white;
+            }
+        }
+
+        &.input-range-secondary {
+            @apply bg-white/20;
+
+            .input-range-slider {
                 @apply bg-secondary;
             }
 
             .input-range-btn {
-                @apply border-secondary hover:bg-secondary hover:border-white;
+                @apply border-secondary bg-white hover:bg-secondary hover:border-white;
+            }
+
+            &.input-range-light {
+                @apply bg-neutral-200;
+
+                .input-range-slider {
+                    @apply bg-secondary;
+                }
+
+                .input-range-btn {
+                    @apply border-secondary hover:bg-secondary hover:border-white;
+                }
             }
         }
-    }
 
-    &.input-range-square {
-        .input-range-btn {
-            @apply h-5 w-8 rounded;
+        &.input-range-square {
+            .input-range-btn {
+                @apply h-5 w-8 rounded;
+            }
         }
     }
 }

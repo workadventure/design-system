@@ -3,10 +3,12 @@
 @reference "../base/index.css";
 @reference "../utilities/general.css";
 
-.loading-wrapper {
-    @apply h-full w-full fixed bg-blur top-0;
+@layer components {
+    .loading-wrapper {
+        @apply h-full w-full fixed bg-blur top-0;
 
-    .loading {
-        @apply grid h-screen place-items-center;
+        .loading {
+            @apply grid h-screen place-items-center;
+        }
     }
 }

@@ -3,19 +3,21 @@
 @reference "../base/index.css";
 @reference "../utilities/general.css";
 
-table {
-    @apply border border-solid border-neutral-400 rounded-lg mt-4 mb-8;
+@layer components {
+    table {
+        @apply border border-solid border-neutral-400 rounded-lg mt-4 mb-8;
 
-    tbody {
-        tr {
-            th {
-                @apply paragraph-lg paragraph-bold bg-neutral-200 text-left py-4 px-8;
+        tbody {
+            tr {
+                th {
+                    @apply paragraph-lg paragraph-bold bg-neutral-200 text-left py-4 px-8;
+                }
             }
-        }
 
-        tr {
-            td {
-                @apply py-4 px-8;
+            tr {
+                td {
+                    @apply py-4 px-8;
+                }
             }
         }
     }
