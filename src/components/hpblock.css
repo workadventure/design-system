@@ -3,127 +3,129 @@
 @reference "../base/index.css";
 @reference "../utilities/general.css";
 
-@keyframes floating2 {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(0, 1rem);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@keyframes floating {
-    0% {
-        transform: translate(-4rem, 0);
-    }
-
-    50% {
-        transform: translate(-5rem, 1rem);
-    }
-
-    100% {
-        transform: translate(-4rem, 0);
-    }
-}
-
-.hpblock {
-    @apply flex flex-col xl:flex-row pt-32 items-center;
-
-    .hpblock-left {
-        @apply basis-full xl:basis-1/2 p-2 min-h-full relative xl:p-0 p-8 lg:p-16;
-
-        .hpblock-left-dyntext {
-            @apply pt-8;
-
-            .title-home {
-                @apply flex-row lg:flex-col;
-
-                .title-home-dyn {
-                    @apply w-full pb-[85px] lg:pb-[35px];
-
-                    .splited-text {
-                        @apply w-full -left-[9px];
-                    }
-                }
-            }
+@layer components {
+    @keyframes floating2 {
+        0% {
+            transform: translate(0, 0);
         }
 
-        .hpblock-left-desc {
-            @apply paragraph-lg pb-0 lg:pb-8 text-contrast lg:pr-32 p-0;
+        50% {
+            transform: translate(0, 1rem);
         }
 
-        .hpblock-left-btn {
-            @apply pb-8;
+        100% {
+            transform: translate(0, 0);
         }
     }
 
-    .hpblock-right {
-        @apply basis-full xl:basis-1/2 p-0 h-[calc(720px-110px)] pt-8 w-full xl:w-auto hidden xl:block;
-
-        .hpblock-right-image-1 {
-            @apply relative float-right hidden;
-
-            animation-name: floating2;
-            animation-duration: 10s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-
-            .hpblock-right-image-elt {
-                @apply relative z-10 w-1/2 lg:w-[440px];
-            }
-
-            .hpblock-right-image-blurry {
-                @apply blur-3xl absolute z-0 left-0 w-1/2 xl:w-[440px] translate-y-8 opacity-60;
-            }
+    @keyframes floating {
+        0% {
+            transform: translate(-4rem, 0);
         }
 
-        .hpblock-right-image-2 {
-            @apply relative translate-x-0 lg:-translate-x-16 translate-y-0 z-10 rounded-lg;
+        50% {
+            transform: translate(-5rem, 1rem);
+        }
 
-            animation-name: floating;
-            animation-duration: 8s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
+        100% {
+            transform: translate(-4rem, 0);
+        }
+    }
 
-            &.play {
-                animation-play-state: paused;
+    .hpblock {
+        @apply flex flex-col xl:flex-row pt-32 items-center;
 
-                &:hover {
-                    .btn-play {
-                        @apply block opacity-50;
+        .hpblock-left {
+            @apply basis-full xl:basis-1/2 p-2 min-h-full relative xl:p-0 p-8 lg:p-16;
 
-                        svg {
-                            &.pause {
-                                @apply block;
-                            }
+            .hpblock-left-dyntext {
+                @apply pt-8;
 
-                            &.play {
-                                @apply hidden;
-                            }
+                .title-home {
+                    @apply flex-row lg:flex-col;
+
+                    .title-home-dyn {
+                        @apply w-full pb-[85px] lg:pb-[35px];
+
+                        .splited-text {
+                            @apply w-full -left-[9px];
                         }
                     }
                 }
+            }
 
-                .btn-play {
-                    @apply hidden;
+            .hpblock-left-desc {
+                @apply paragraph-lg pb-0 lg:pb-8 text-contrast lg:pr-32 p-0;
+            }
+
+            .hpblock-left-btn {
+                @apply pb-8;
+            }
+        }
+
+        .hpblock-right {
+            @apply basis-full xl:basis-1/2 p-0 h-[calc(720px-110px)] pt-8 w-full xl:w-auto hidden xl:block;
+
+            .hpblock-right-image-1 {
+                @apply relative float-right hidden;
+
+                animation-name: floating2;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+
+                .hpblock-right-image-elt {
+                    @apply relative z-10 w-1/2 lg:w-[440px];
+                }
+
+                .hpblock-right-image-blurry {
+                    @apply blur-3xl absolute z-0 left-0 w-1/2 xl:w-[440px] translate-y-8 opacity-60;
                 }
             }
 
-            .hpblock-right-image-elt {
-                @apply relative z-10 rounded-lg w-1/2 lg:w-full;
-            }
+            .hpblock-right-image-2 {
+                @apply relative translate-x-0 lg:-translate-x-16 translate-y-0 z-10 rounded-lg;
 
-            .hpblock-right-image-blurry {
-                @apply blur-3xl absolute z-0 left-0 w-1/2 lg:w-full translate-y-8 opacity-60;
-            }
+                animation-name: floating;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
 
-            video {
-                @apply rounded-lg z-10 relative;
+                &.play {
+                    animation-play-state: paused;
+
+                    &:hover {
+                        .btn-play {
+                            @apply block opacity-50;
+
+                            svg {
+                                &.pause {
+                                    @apply block;
+                                }
+
+                                &.play {
+                                    @apply hidden;
+                                }
+                            }
+                        }
+                    }
+
+                    .btn-play {
+                        @apply hidden;
+                    }
+                }
+
+                .hpblock-right-image-elt {
+                    @apply relative z-10 rounded-lg w-1/2 lg:w-full;
+                }
+
+                .hpblock-right-image-blurry {
+                    @apply blur-3xl absolute z-0 left-0 w-1/2 lg:w-full translate-y-8 opacity-60;
+                }
+
+                video {
+                    @apply rounded-lg z-10 relative;
+                }
             }
         }
     }
