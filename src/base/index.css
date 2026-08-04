@@ -73,7 +73,7 @@
             @apply relative z-10 after:content-[''] after:absolute after:top-0 after:left-[-5px] after:m-auto after:w-[110%] after:h-[110%] after:block after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
 
             &::after {
-                background-image: url("../img/hightlight.svg");
+                background-image: url("../img/highlight.svg");
             }
 
             span {
