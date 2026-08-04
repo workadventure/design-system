@@ -88,7 +88,7 @@
                                     @apply absolute right-0 basis-0;
 
                                     .nav-menu-item-link {
-                                        @apply relative opacity-80 hover:bg-transparent hover:border-transparent w-[200px] text-center py-10  relative before:content-[''] before:absolute before:h-3 before:w-3 before:block before:top-0 before:bottom-0 before:right-8 before:m-auto hover:before:translate-x-1 before:-rotate-90 before:transition-all;
+                                        @apply relative opacity-80 hover:bg-transparent hover:border-transparent w-[200px] text-center py-10 before:content-[''] before:absolute before:h-3 before:w-3 before:block before:top-0 before:bottom-0 before:right-8 before:m-auto hover:before:translate-x-1 before:-rotate-90 before:transition-all;
 
                                         @apply after:content-[''] after:absolute after:h-[50px] after:w-[1px] after:m-auto after:block after:top-0 after:bottom-0 after:left-2 after:bg-white after:opacity-50;
 
