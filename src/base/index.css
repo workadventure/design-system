@@ -62,11 +62,19 @@
         @apply font-title m-0 uppercase;
 
         .underline {
-            @apply relative no-underline text-secondary z-10 after:content-[''] after:absolute after:bottom-0 after:left-0 after:m-auto after:w-full after:h-[6px] after:block after:bg-[url('../img/underline.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+            @apply relative no-underline text-secondary z-10 after:content-[''] after:absolute after:bottom-0 after:left-0 after:m-auto after:w-full after:h-[6px] after:block after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+
+            &::after {
+                background-image: url("../img/underline.svg");
+            }
         }
 
         .highlight {
-            @apply relative z-10 after:content-[''] after:absolute after:top-0 after:left-[-5px] after:m-auto after:w-[110%] after:h-[110%] after:block after:bg-[url('../img/hightlight.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+            @apply relative z-10 after:content-[''] after:absolute after:top-0 after:left-[-5px] after:m-auto after:w-[110%] after:h-[110%] after:block after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+
+            &::after {
+                background-image: url("../img/hightlight.svg");
+            }
 
             span {
                 @apply relative z-10 text-white;
@@ -79,7 +87,11 @@
 
         .stripe {
             &.stripe-blue {
-                @apply relative z-20 leading-[4rem] pl-6 pr-4 after:content-[''] after:absolute after:top-0 after:left-[-15px] after:m-auto after:w-[115%] after:h-[100%] after:block after:bg-[url('../img/stripe-blue.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-10;
+                @apply relative z-20 leading-[4rem] pl-6 pr-4 after:content-[''] after:absolute after:top-0 after:left-[-15px] after:m-auto after:w-[115%] after:h-[100%] after:block after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-10;
+
+                &::after {
+                    background-image: url("../img/stripe-blue.svg");
+                }
 
                 .stripe-blue-text,
                 span {
@@ -88,7 +100,11 @@
             }
 
             &.stripe-white {
-                @apply relative z-10 mt-2 after:content-[''] after:absolute after:top-0 after:left-[-32px] after:m-auto after:min-w-[250px] after:w-[120%] after:h-[100%] after:block after:bg-[url('../img/stripe-white.svg')] after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+                @apply relative z-10 mt-2 after:content-[''] after:absolute after:top-0 after:left-[-32px] after:m-auto after:min-w-[250px] after:w-[120%] after:h-[100%] after:block after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
+
+                &::after {
+                    background-image: url("../img/stripe-white.svg");
+                }
 
                 .stripe-white-text,
                 span {
