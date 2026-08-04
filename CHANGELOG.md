@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.2](https://github.com/workadventure/design-system/compare/v3.0.1...v3.0.2) (2026-08-04)
+
+
+### Bug Fixes
+
+* correct the highlight asset filename and drop a duplicate utility ([cbd4479](https://github.com/workadventure/design-system/commit/cbd4479d16fa9fa347b73d69d8b5f21b11469d90))
+* ship the six images the CSS references ([cf7da83](https://github.com/workadventure/design-system/commit/cf7da83cbcd440273d5ec8544df8c7a7105ae97d))
+
 ## [3.0.1](https://github.com/workadventure/design-system/compare/v3.0.0...v3.0.1) (2026-06-17)
 
 
