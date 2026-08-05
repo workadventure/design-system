@@ -123,6 +123,26 @@
         }
     }
 
+    /* Tailwind's preflight resets heading weight to `inherit`, which leaves every
+       heading at 400. Up to v2 the design system shipped `corePlugins.preflight =
+       false`, so no reset was emitted and the browser default `bold` applied. The
+       Tailwind 4 migration enabled preflight (v4 dropped `corePlugins`) and lost
+       that weight along with it, so restore it explicitly.
+
+       Element selectors only, deliberately: the browser default only ever applied
+       to real heading elements, so `.h1`–`.h6` were not bold in v2 either. That is
+       why rules like `.brick-feature-text_title` (`@apply h3 font-bold`) and the
+       pricing header add the weight themselves — bolding the classes here would
+       change those, and every consumer's `<div class="h2">`, on top of the fix. */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold;
+    }
+
     h1,
     .h1 {
         @apply text-4xl leading-10;
