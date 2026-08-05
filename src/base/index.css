@@ -61,6 +61,10 @@
     .h6 {
         @apply font-title m-0 uppercase;
 
+        /* The `no-underline` here does NOT survive on its own — see the
+           `@layer utilities` block at the end of this file, which is what
+           actually removes the text decoration. It is kept for readability, so
+           the rule still states its own intent. */
         .underline {
             @apply relative no-underline text-secondary z-10 after:content-[''] after:absolute after:bottom-0 after:left-0 after:m-auto after:w-full after:h-[6px] after:block after:bg-center after:bg-[length:100%_100%] after:bg-no-repeat after:z-0;
 
@@ -244,4 +248,34 @@
 
 @utility h6 {
     @apply text-lg;
+}
+
+/* `.underline` inside a heading must not draw a text decoration.
+ *
+ * The rule above already says `no-underline`, and it is more specific than
+ * anything Tailwind generates — `:is(h1,…,.h6) .underline` is (0,2,0) against the
+ * utility's (0,1,0). It loses anyway, because the class name collides with
+ * Tailwind's built-in `underline` utility and CASCADE LAYERS BEAT SPECIFICITY:
+ *
+ *   @layer base      { :is(h1,…,.h6) .underline { … text-decoration-line: none } }
+ *   @layer utilities { .underline { text-decoration-line: underline } }
+ *
+ * so every one of these spans renders the brush stroke AND a plain rule through
+ * the text. Nothing an author writes on the element can reach it either.
+ *
+ * This was invisible in the Tailwind 3 → 4 migration diff: v3 emitted no layers
+ * at all, so plain source order decided it and the component rule — emitted after
+ * the utility — won.
+ *
+ * Restated here inside `@layer utilities` so it is judged against the built-in
+ * utility on equal terms, where the higher specificity finally settles it.
+ *
+ * Deliberately NOT `@utility underline { … }`: that would REPLACE Tailwind's
+ * built-in everywhere, so consumers could no longer use `underline` as a plain
+ * text-decoration utility outside a heading. This keeps the fix to the one place
+ * the design system actually owns. */
+@layer utilities {
+    :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) .underline {
+        text-decoration-line: none;
+    }
 }
