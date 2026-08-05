@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.3](https://github.com/workadventure/design-system/compare/v3.0.2...v3.0.3) (2026-08-05)
+
+
+### Bug Fixes
+
+* make .brick-feature stack on mobile ([#57](https://github.com/workadventure/design-system/issues/57)) ([5a6f6e1](https://github.com/workadventure/design-system/commit/5a6f6e15ec2dcabb51968107d0d16324c832fc4c))
+* restore the bold font-weight on headings ([bbfa64b](https://github.com/workadventure/design-system/commit/bbfa64be516669786eba881e9c7a6cd4b30529a8))
+
 ## [3.0.2](https://github.com/workadventure/design-system/compare/v3.0.1...v3.0.2) (2026-08-04)
 
 
