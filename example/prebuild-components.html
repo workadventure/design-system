@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>WorkAdventure UI Kit — Prebuild components</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+    />
+    <script>
+        (async function () {
+            if (!("paintWorklet" in CSS)) {
+                await import("https://unpkg.com/css-paint-polyfill");
+            }
+
+            CSS.paintWorklet.addModule(
+                `https://www.unpkg.com/css-houdini-squircle/squircle.min.js`
+            );
+        })();
+    </script>
+
+    <link rel="icon" type="image/svg" href="logos/light/Logo-small.svg" media="(prefers-color-scheme:dark)" />
+    <link rel="icon" type="image/svg" href="logos/dark/Logo-small.svg" media="(prefers-color-scheme:light)" />
+</head>
+<body class="relative" style="background: white;">
+<!--------------------Navigation----------------------->
+<div class="fixed bottom-0 left-0 h-screen bg-contrast w-[200px] hidden 3xl:block overflow-y-auto">
+    <nav>
+        <ul class="list-none m-0 p-0 pt-12">
+            <li class="mb-4">
+                <a class="bold no-underline text-white py-3 px-6 text-base transition-all flex items-center bg-secondary" href="index.html">&larr; Foundations &amp; components</a>
+            </li>
+            <li class="mb-4">
+                <label class="bold no-underline text-white py-3 px-6 text-base transition-all flex items-center bg-secondary">Prebuild components</label>
+                <ul class="list-none m-0 p-0">
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#BrickFeature">Brick Feature</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Stripes">Stripes &amp; Highlights</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#HpBlock">HP Block</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Possibilities">Possibilities</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Features">Features</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#UseCase">Use Case</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Clients">Clients</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Testimonial">Testimonial</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Card">Card</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Pricing">Pricing</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#GetInTouch">Get in Touch</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Rgpd">RGPD</a>
+                    </li>
+                    <li>
+                        <a class="no-underline text-white py-1 px-6 block text-base border border-solid border-x-0 border-t-0 border-white/10 opacity-80 hover:opacity-100 hover:translate-x-1 transition-all" href="#Footer">Footer</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container m-auto">
+    <!--------------------Title----------------------->
+    <div class="flex items-center">
+        <div class="font-title text-[72px] text-contrast py-4 px-6 rounded-lg tracking-[20px] pt-10 uppercase grow">
+            Prebuild
+            components
+        </div>
+        <a href="index.html" class="btn-lg btn btn-contrast btn-ghost mr-6">
+            <div class="btn-label">&larr; Back to the UI kit</div>
+        </a>
+    </div>
+
+    <div class="px-6 pb-8">
+        <p class="paragraph text-neutral">
+            The page-level blocks: heroes, feature rows, cards, bands and the footer. Most of them
+            change layout at a breakpoint, so <strong>resize the window</strong> while you read —
+            each section notes what should happen and where.
+        </p>
+    </div>
+
+        <section class="flex flex-col space-y-6" id="BrickFeature">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Brick Feature
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">
+                    An alternating text/image row. <strong>Resize the window</strong> to check it:
+                    the columns sit side by side from <code>lg</code> (64rem) up and stack below it,
+                    and the image swaps from <code>.img-brick</code> to <code>.img-brick-mobile</code>
+                    at <code>sm</code> (40rem).
+                </p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="brick-feature">
+                    <div class="brick-feature-text">
+                        <div class="brick-feature-text_title">Default</div>
+                        <div class="brick-feature-text_desc">Text takes a third, image two thirds, from lg up. Below lg they stack, text first.</div>
+                    </div>
+                    <div class="brick-feature-image">
+                        <img class="img-brick" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='280'%3E%3Crect width='1024' height='280' fill='%23e8e8f0'/%3E%3Ctext x='512' y='150' font-family='Arial' font-size='28' fill='%236b6b8a' text-anchor='middle'%3E.img-brick (shown from sm up)%3C/text%3E%3C/svg%3E" alt="" />
+                        <img class="img-brick-mobile" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='280'%3E%3Crect width='560' height='280' fill='%23d8e8e4'/%3E%3Ctext x='280' y='150' font-family='Arial' font-size='22' fill='%236b6b8a' text-anchor='middle'%3E.img-brick-mobile (below sm)%3C/text%3E%3C/svg%3E" alt="" />
+                    </div>
+                </div>
+
+
+                <div class="brick-feature revert">
+                    <div class="brick-feature-text">
+                        <div class="brick-feature-text_title">Revert</div>
+                        <div class="brick-feature-text_desc">Same block with <code>.revert</code> — the image leads on wide screens. It still stacks text-first below lg.</div>
+                    </div>
+                    <div class="brick-feature-image">
+                        <img class="img-brick" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='280'%3E%3Crect width='1024' height='280' fill='%23e8e8f0'/%3E%3Ctext x='512' y='150' font-family='Arial' font-size='28' fill='%236b6b8a' text-anchor='middle'%3E.img-brick (shown from sm up)%3C/text%3E%3C/svg%3E" alt="" />
+                        <img class="img-brick-mobile" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='280'%3E%3Crect width='560' height='280' fill='%23d8e8e4'/%3E%3Ctext x='280' y='150' font-family='Arial' font-size='22' fill='%236b6b8a' text-anchor='middle'%3E.img-brick-mobile (below sm)%3C/text%3E%3C/svg%3E" alt="" />
+                    </div>
+                </div>
+
+
+                <div class="brick-feature">
+                    <div class="brick-feature-text half">
+                        <div class="brick-feature-text_title">Half and half</div>
+                        <div class="brick-feature-text_desc"><code>.half</code> on both the text and the image splits the row evenly instead of 1/3–2/3.</div>
+                    </div>
+                    <div class="brick-feature-image half">
+                        <img class="img-brick" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='280'%3E%3Crect width='1024' height='280' fill='%23e8e8f0'/%3E%3Ctext x='512' y='150' font-family='Arial' font-size='28' fill='%236b6b8a' text-anchor='middle'%3E.img-brick (shown from sm up)%3C/text%3E%3C/svg%3E" alt="" />
+                        <img class="img-brick-mobile" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='280'%3E%3Crect width='560' height='280' fill='%23d8e8e4'/%3E%3Ctext x='280' y='150' font-family='Arial' font-size='22' fill='%236b6b8a' text-anchor='middle'%3E.img-brick-mobile (below sm)%3C/text%3E%3C/svg%3E" alt="" />
+                    </div>
+                </div>
+
+
+                <div class="brick-feature">
+                    <div class="brick-feature-text">
+                        <div class="brick-feature-text_title">No border</div>
+                        <div class="brick-feature-text_desc"><code>.no-border</code> on the image drops the frame.</div>
+                    </div>
+                    <div class="brick-feature-image no-border">
+                        <img class="img-brick" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='280'%3E%3Crect width='1024' height='280' fill='%23e8e8f0'/%3E%3Ctext x='512' y='150' font-family='Arial' font-size='28' fill='%236b6b8a' text-anchor='middle'%3E.img-brick (shown from sm up)%3C/text%3E%3C/svg%3E" alt="" />
+                        <img class="img-brick-mobile" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='280'%3E%3Crect width='560' height='280' fill='%23d8e8e4'/%3E%3Ctext x='280' y='150' font-family='Arial' font-size='22' fill='%236b6b8a' text-anchor='middle'%3E.img-brick-mobile (below sm)%3C/text%3E%3C/svg%3E" alt="" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Stripes">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Stripes &amp; Highlights
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">Title decorations from <code>base/index.css</code>. These are the assets that were missing from the package until 3.0.2, so they are worth having on screen.</p>
+            </div>
+
+            <div class="px-6">
+
+                <h1><span class="stripe stripe-blue"><span class="stripe-blue-text">Stripe blue</span></span></h1>
+                <div class="bg-contrast rounded-lg p-8 mt-8">
+                    <h1><span class="stripe stripe-white"><span class="stripe-white-text">Stripe white</span></span></h1>
+                </div>
+                <h2 class="mt-12"><span class="stripe stripe-inline stripe-blue"><span class="stripe-blue-text">Inline</span></span></h2>
+                <h3 class="mt-12">An <span class="underline">underlined</span> word</h3>
+                <h3 class="mt-8">A <span class="highlight"><span class="highlight-text">highlighted</span></span> word</h3>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="HpBlock">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                HP Block
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">The homepage hero. <code>.hpblock-right</code> is <code>hidden</code> below <code>xl</code> (80rem), so the imagery only appears on wide screens; the two images float on a CSS animation.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="hpblock">
+                    <div class="hpblock-left">
+                        <div class="hpblock-left-dyntext">
+                            <h1><span class="stripe stripe-blue"><span class="stripe-blue-text">Your workplace,</span></span></h1>
+                            <h1 class="mt-2"><span class="stripe stripe-white"><span class="stripe-white-text">better</span></span></h1>
+                        </div>
+                        <div class="hpblock-left-desc">A virtual world where teams meet, talk and collaborate naturally.</div>
+                        <div class="hpblock-left-btn btn-wrapper flex gap-4">
+                            <a href="#HpBlock" class="btn btn-lg btn-secondary">Try it for free</a>
+                            <a href="#HpBlock" class="btn btn-lg btn-contrast btn-border">Book a demo</a>
+                        </div>
+                    </div>
+                    <div class="hpblock-right">
+                        <div class="hpblock-right-image-2">
+                            <img class="hpblock-right-image-elt rounded-lg" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27440%27%20height=%27280%27%3E%3Crect%20width=%27440%27%20height=%27280%27%20fill=%27%23e8e8f0%27/%3E%3Ctext%20x=%27220%27%20y=%27149%27%20font-family=%27Arial%27%20font-size=%2728%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Ehpblock-right-image-2%3C/text%3E%3C/svg%3E" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Possibilities">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Possibilities
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">A row of square tiles over the repeating <code>pattern.png</code> background (<code>.possibilities-bg</code>). The tiles do not wrap — the row is <code>flex-row</code> at every breakpoint.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="possibilities-bg py-12">
+                    <div class="possibilities-wrapper mx-auto">
+                        <div class="possibilities-title"><h2>Endless possibilities</h2></div>
+                        <div class="possibilities">
+                            <div class="possibility">
+                                <img class="possibility-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2764%27%20height=%2764%27%3E%3Crect%20width=%2764%27%20height=%2764%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2732%27%20y=%2736%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" />
+                                <div class="possibility-content"><div class="possibility-text">Meet</div></div>
+                            </div>
+                            <div class="possibility">
+                                <img class="possibility-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2764%27%20height=%2764%27%3E%3Crect%20width=%2764%27%20height=%2764%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2732%27%20y=%2736%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" />
+                                <div class="possibility-content"><div class="possibility-text">Learn</div></div>
+                            </div>
+                            <div class="possibility">
+                                <img class="possibility-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2764%27%20height=%2764%27%3E%3Crect%20width=%2764%27%20height=%2764%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2732%27%20y=%2736%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" />
+                                <div class="possibility-content"><div class="possibility-text">Recruit</div></div>
+                            </div>
+                            <div class="possibility">
+                                <img class="possibility-icon" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2764%27%20height=%2764%27%3E%3Crect%20width=%2764%27%20height=%2764%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2732%27%20y=%2736%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" />
+                                <div class="possibility-content"><div class="possibility-text">Celebrate</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Features">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Features
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">A feature row: icon, title and description. <code>.feature-content-icon</code> is hidden below <code>sm</code>. The row highlights on hover.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="feature-title-wrapper">
+                    <div class="feature-title"><span>What you get</span></div>
+                </div>
+                <div class="features">
+                    <div class="feature-content">
+                        <div class="feature-content-wrapper">
+                            <div class="feature-content-icon"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2748%27%20height=%2748%27%3E%3Crect%20width=%2748%27%20height=%2748%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2724%27%20y=%2728%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></div>
+                            <div class="feature-content-content">
+                                <div class="feature-content-title"><p><strong>Spatial audio</strong> — hear who is near you</p></div>
+                                <div class="feature-content-desc"><p>Volume follows proximity, so conversations start and end naturally.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="features">
+                    <div class="feature-content">
+                        <div class="feature-content-wrapper">
+                            <div class="feature-content-icon"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2748%27%20height=%2748%27%3E%3Crect%20width=%2748%27%20height=%2748%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2724%27%20y=%2728%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></div>
+                            <div class="feature-content-content">
+                                <div class="feature-content-title"><p><strong>Custom maps</strong> — build your own office</p></div>
+                                <div class="feature-content-desc"><p>Design a space that matches how your team actually works.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="UseCase">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Use Case
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">Linked cards, <code>basis-1/3</code> from <code>lg</code> up and full width below. The whole card is the link and scales on hover. Put them in a <code>flex flex-wrap</code> parent.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="flex flex-wrap">
+                    <a href="#UseCase" class="usecase">
+                        <div class="usecase-wrapper">
+                            <div class="usecase-img">
+                                <div class="usecase-img-wrapper" style="background-image:url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27600%27%20height=%27200%27%3E%3Crect%20width=%27600%27%20height=%27200%27%20fill=%27%23e8e8f0%27/%3E%3Ctext%20x=%27300%27%20y=%27109%27%20font-family=%27Arial%27%20font-size=%2728%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Eusecase-img-wrapper%3C/text%3E%3C/svg%3E)"></div>
+                                <div class="usecase-img-title"><div class="h3"><span class="stripe stripe-blue"><span class="stripe-blue-text">Onboarding</span></span></div></div>
+                            </div>
+                            <div class="usecase-logo"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27250%27%20height=%2780%27%3E%3Crect%20width=%27250%27%20height=%2780%27%20fill=%27%23f0f0f6%27/%3E%3Ctext%20x=%27125%27%20y=%2745%27%20font-family=%27Arial%27%20font-size=%2717%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></div>
+                            <div class="usecase-desc">How a distributed team welcomes new joiners.</div>
+                        </div>
+                    </a>
+                    <a href="#UseCase" class="usecase">
+                        <div class="usecase-wrapper">
+                            <div class="usecase-img">
+                                <div class="usecase-img-wrapper" style="background-image:url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27600%27%20height=%27200%27%3E%3Crect%20width=%27600%27%20height=%27200%27%20fill=%27%23e8e8f0%27/%3E%3Ctext%20x=%27300%27%20y=%27109%27%20font-family=%27Arial%27%20font-size=%2728%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Eusecase-img-wrapper%3C/text%3E%3C/svg%3E)"></div>
+                                <div class="usecase-img-title"><div class="h3"><span class="stripe stripe-blue"><span class="stripe-blue-text">Events</span></span></div></div>
+                            </div>
+                            <div class="usecase-logo"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27250%27%20height=%2780%27%3E%3Crect%20width=%27250%27%20height=%2780%27%20fill=%27%23f0f0f6%27/%3E%3Ctext%20x=%27125%27%20y=%2745%27%20font-family=%27Arial%27%20font-size=%2717%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></div>
+                            <div class="usecase-desc">Running a two-day conference in a custom map.</div>
+                        </div>
+                    </a>
+                    <a href="#UseCase" class="usecase">
+                        <div class="usecase-wrapper">
+                            <div class="usecase-img">
+                                <div class="usecase-img-wrapper" style="background-image:url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27600%27%20height=%27200%27%3E%3Crect%20width=%27600%27%20height=%27200%27%20fill=%27%23e8e8f0%27/%3E%3Ctext%20x=%27300%27%20y=%27109%27%20font-family=%27Arial%27%20font-size=%2728%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Eusecase-img-wrapper%3C/text%3E%3C/svg%3E)"></div>
+                                <div class="usecase-img-title"><div class="h3"><span class="stripe stripe-blue"><span class="stripe-blue-text">Campus</span></span></div></div>
+                            </div>
+                            <div class="usecase-logo"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27250%27%20height=%2780%27%3E%3Crect%20width=%27250%27%20height=%2780%27%20fill=%27%23f0f0f6%27/%3E%3Ctext%20x=%27125%27%20y=%2745%27%20font-family=%27Arial%27%20font-size=%2717%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></div>
+                            <div class="usecase-desc">A university that moved its open days online.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Clients">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Clients
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">A row of customer logos, held at 50% opacity until hover. It is a <code>&lt;ul&gt;</code> — <code>.client</code> is the list item.</p>
+            </div>
+
+            <div class="px-6">
+
+                <ul class="clients">
+                    <li class="client"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27160%27%20height=%2760%27%3E%3Crect%20width=%27160%27%20height=%2760%27%20fill=%27%23d8d8e8%27/%3E%3Ctext%20x=%2780%27%20y=%2734%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></li>
+                    <li class="client"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27160%27%20height=%2760%27%3E%3Crect%20width=%27160%27%20height=%2760%27%20fill=%27%23d8d8e8%27/%3E%3Ctext%20x=%2780%27%20y=%2734%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></li>
+                    <li class="client"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27160%27%20height=%2760%27%3E%3Crect%20width=%27160%27%20height=%2760%27%20fill=%27%23d8d8e8%27/%3E%3Ctext%20x=%2780%27%20y=%2734%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></li>
+                    <li class="client"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27160%27%20height=%2760%27%3E%3Crect%20width=%27160%27%20height=%2760%27%20fill=%27%23d8d8e8%27/%3E%3Ctext%20x=%2780%27%20y=%2734%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></li>
+                    <li class="client"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27160%27%20height=%2760%27%3E%3Crect%20width=%27160%27%20height=%2760%27%20fill=%27%23d8d8e8%27/%3E%3Ctext%20x=%2780%27%20y=%2734%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></li>
+                    <li class="client"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27160%27%20height=%2760%27%3E%3Crect%20width=%27160%27%20height=%2760%27%20fill=%27%23d8d8e8%27/%3E%3Ctext%20x=%2780%27%20y=%2734%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Elogo%3C/text%3E%3C/svg%3E" alt="" /></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Testimonial">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Testimonial
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">A quote with an avatar and attribution. Stacks below <code>lg</code>, and the quote is centred there rather than left-aligned.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="testimonial">
+                    <div class="testimonial-content">“We replaced our daily stand-up with a five-minute walk across the map. Attendance went up.”</div>
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-image"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2796%27%20height=%2796%27%3E%3Crect%20width=%2796%27%20height=%2796%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2748%27%20y=%2752%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></div>
+                        <div class="testimonial-from">
+                            <div>Alex Dupont</div>
+                            <div class="testimonial-from-job">Head of Remote, Example Co</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Card">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Card
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">A simple content card: image, centred content and an actions row. <code>.card-img</code> takes a background image.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card">
+                        <div class="card-img" style="background-image:url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27400%27%20height=%27256%27%3E%3Crect%20width=%27400%27%20height=%27256%27%20fill=%27%23e8e8f0%27/%3E%3Ctext%20x=%27200%27%20y=%27137%27%20font-family=%27Arial%27%20font-size=%2728%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3Ecard-img%3C/text%3E%3C/svg%3E)"></div>
+                        <div class="card-content">
+                            <h4>Card title</h4>
+                            <p class="paragraph text-neutral">A short supporting line for the card.</p>
+                        </div>
+                        <div class="card-actions"><a href="#Card" class="btn btn-secondary">Action</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Pricing">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Pricing
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">A plan card. The title overlaps the top border by design (<code>-mt-8</code>), so leave room above it.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="pricing">
+                        <h3 class="pricing-title"><span class="stripe stripe-blue"><span class="stripe-blue-text">Free</span></span></h3>
+                        <div class="pricing-sub">For trying things out</div>
+                        <div class="pricing-content"><p>Up to 10 people in a shared map.</p></div>
+                        <div class="pricing-pricing">€0</div>
+                    </div>
+                    <div class="pricing">
+                        <h3 class="pricing-title"><span class="stripe stripe-blue"><span class="stripe-blue-text">Team</span></span></h3>
+                        <div class="pricing-sub">For a working team</div>
+                        <div class="pricing-content"><p>Your own map, custom domain, priority support.</p></div>
+                        <div class="pricing-pricing">€9 / user / month</div>
+                    </div>
+                    <div class="pricing">
+                        <h3 class="pricing-title"><span class="stripe stripe-blue"><span class="stripe-blue-text">Scale</span></span></h3>
+                        <div class="pricing-sub">For a whole company</div>
+                        <div class="pricing-content"><p>SSO, analytics and a dedicated success manager.</p></div>
+                        <div class="pricing-pricing">Contact us</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="GetInTouch">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Get in Touch
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">An illustration beside a heading, paragraph and buttons. Stacks below <code>md</code>, where the content also centres.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="getintouch">
+                    <div class="getintouch-image"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27187%27%20height=%27187%27%3E%3Crect%20width=%27187%27%20height=%27187%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2793%27%20y=%2797%27%20font-family=%27Arial%27%20font-size=%2713%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></div>
+                    <div class="getintouch-content">
+                        <div class="h3">Get in touch?</div>
+                        <div class="paragraph">Talk to us about what you are trying to build.</div>
+                        <div class="btn-wrapper flex flex-wrap gap-4 mt-6">
+                            <a href="#GetInTouch" class="btn btn-border btn-contrast btn-inline-block">Book a demo</a>
+                            <a href="#GetInTouch" class="btn btn-contrast btn-inline-block">Try it for free</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Rgpd">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                RGPD
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">A dark full-bleed band with two decorative pixels and an illustration. The illustration column is hidden below <code>md</code>. Note that <code>.rgpd-title</code> sets no colour of its own, so the heading needs <code>text-white</code> to be legible against the band.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="rgpd">
+                    <div class="rgpd-bg">
+                        <div class="rgpd-bg-wrapper">
+                            <div class="rgpd-bg-pixel-1"></div>
+                            <div class="rgpd-bg-pixel-2"></div>
+                        </div>
+                    </div>
+                    <div class="rgpd-content">
+                        <div class="rgpd-content-flex">
+                            <div class="rgpd-content-col">
+                                <div class="m-auto">
+                                    <h2 class="rgpd-title text-white">GDPR <span class="highlight"><span class="highlight-text">compliant</span></span></h2>
+                                    <p class="paragraph-lg pb-8 text-white/65">All our services are hosted within the European Union.</p>
+                                </div>
+                            </div>
+                            <div class="rgpd-content-image"><img class="mx-auto" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27300%27%20height=%27298%27%3E%3Crect%20width=%27300%27%20height=%27298%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%27150%27%20y=%27156%27%20font-family=%27Arial%27%20font-size=%2721%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col space-y-6" id="Footer">
+            <div class="text-secondary py-4 px-6 text-xl sticky top-0 z-40 bold border border-t-4 border-solid border-secondary border-b-0 border-x-0 bg-neutral-100">
+                Footer
+            </div>
+
+            <div class="px-6">
+                <p class="paragraph text-neutral">Columns separated by a hairline rule (the first column suppresses its own). Links grow an underline on hover; <code>.footer-social</code> lays icons out inline.</p>
+            </div>
+
+            <div class="px-6">
+
+                <div class="footer">
+                    <div class="footer-wrapper">
+                        <div class="footer-col">
+                            <div class="footer-col-title">Product</div>
+                            <ul class="footer-menu">
+                                    <li class="footer-menu-element"><a class="footer-menu-link" href="#Footer">Virtual office</a></li>
+                                    <li class="footer-menu-element"><a class="footer-menu-link" href="#Footer">Events</a></li>
+                                    <li class="footer-menu-element"><a class="footer-menu-link" href="#Footer">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <div class="footer-col-title">Company</div>
+                            <ul class="footer-menu">
+                                    <li class="footer-menu-element"><a class="footer-menu-link" href="#Footer">About us</a></li>
+                                    <li class="footer-menu-element"><a class="footer-menu-link" href="#Footer">Careers</a></li>
+                                    <li class="footer-menu-element"><a class="footer-menu-link" href="#Footer">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <div class="footer-col-title">Follow us</div>
+                            <ul class="footer-menu footer-social">
+                                    <li class="footer-social-elt"><a class="footer-social-link" href="#Footer"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%3E%3Crect%20width=%2724%27%20height=%2724%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2712%27%20y=%2716%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></a></li>
+                                    <li class="footer-social-elt"><a class="footer-social-link" href="#Footer"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%3E%3Crect%20width=%2724%27%20height=%2724%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2712%27%20y=%2716%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></a></li>
+                                    <li class="footer-social-elt"><a class="footer-social-link" href="#Footer"><img src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%3E%3Crect%20width=%2724%27%20height=%2724%27%20fill=%27%23dfe3ff%27/%3E%3Ctext%20x=%2712%27%20y=%2716%27%20font-family=%27Arial%27%20font-size=%2712%27%20fill=%27%236b6b8a%27%20text-anchor=%27middle%27%3E%3C/text%3E%3C/svg%3E" alt="" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</div>
+
+<script src="/src/main.js" type="module"></script>
+</body>
+</html>
