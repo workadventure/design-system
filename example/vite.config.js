@@ -11,6 +11,7 @@ export default defineConfig({
                 botList: "./bot-list.html",
                 botEdit: "./bot-edit.html",
                 botLogs: "./bot-logs.html",
+                prebuildComponents: "./prebuild-components.html",
             },
         },
     },

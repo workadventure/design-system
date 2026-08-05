@@ -61,10 +61,10 @@
     }
 
     .brick-feature {
-        @apply flex lg:flex-row flex-col flex-row mt-32 p-0 lg:px-8 xl:px-0;
+        @apply flex flex-col lg:flex-row mt-32 p-0 lg:px-8 xl:px-0;
 
         &.revert {
-            @apply flex lg:flex-row-reverse flex-col flex-row;
+            @apply flex flex-col lg:flex-row-reverse;
 
             .brick-feature-text {
                 @apply text-center lg:text-left;
