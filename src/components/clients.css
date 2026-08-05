@@ -8,7 +8,14 @@
         @apply m-0 p-0 flex flex-row items-center text-center;
 
         .client {
-            @apply grow list-none lg:basis-1/6 p-4 lg:basis-1/4;
+            /* One `lg:basis-*` only. This used to list `lg:basis-1/6` and
+               `lg:basis-1/4` together, and under Tailwind 4 the winner is decided
+               by the utilities' order in the generated sheet rather than by the
+               order written here — `basis-1/6` came out on top, so the row laid
+               out at 6 per line instead of 4 and every logo was squeezed to two
+               thirds of its intended width. 25% is the value the original theme
+               shipped. */
+            @apply grow list-none p-4 lg:basis-1/4;
 
             img {
                 @apply opacity-50 hover:opacity-100 sm:w-full xl:w-auto;
