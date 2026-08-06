@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.4](https://github.com/workadventure/design-system/compare/v3.0.3...v3.0.4) (2026-08-06)
+
+
+### Bug Fixes
+
+* lay the client logo row out at 4 per line, not 6 ([d32606a](https://github.com/workadventure/design-system/commit/d32606a1e8b5141bd3586e40ce408713c05fd47e))
+* stop .underline drawing a text decoration inside headings ([948832a](https://github.com/workadventure/design-system/commit/948832a527827cc9a1378033dda18f7779626d19))
+
 ## [3.0.3](https://github.com/workadventure/design-system/compare/v3.0.2...v3.0.3) (2026-08-05)
 
 
