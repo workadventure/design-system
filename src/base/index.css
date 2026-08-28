@@ -147,6 +147,27 @@
         @apply font-bold;
     }
 
+    /* The same story one element down. Preflight sets `b, strong { font-weight:
+       bolder }`, and `bolder` is not a weight — it is a step relative to the
+       parent: 400 → 700, but 300 → 400 and 700 → 900. So one `<strong>` renders
+       as three different things depending on what it sits in, and inside light
+       text (`.light`, `font-light`) it comes out at 400 — no emphasis at all,
+       which is the one thing the tag is for.
+
+       An absolute weight is the only value that reads the same wherever the tag
+       lands. Element selectors only, like the heading rule above: `.bold` is
+       already the class for "make this bold", and consumers use it deliberately.
+
+       COLOUR IS DELIBERATELY NOT SET. `<strong>` marks importance, not
+       interactivity; `--secondary` is what buttons and links are, and a reader
+       who sees brand colour should be able to click it. So a `<strong>` takes
+       the colour of the text around it — including inside a link, where it
+       keeps the link's colour. */
+    b,
+    strong {
+        @apply font-bold;
+    }
+
     h1,
     .h1 {
         @apply text-4xl leading-10;
