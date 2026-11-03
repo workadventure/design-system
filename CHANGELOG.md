@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.5](https://github.com/workadventure/design-system/compare/v3.0.4...v3.0.5) (2026-11-03)
+
+
+### Bug Fixes
+
+* render font-title in Oswald instead of Arial ([abd5a4c](https://github.com/workadventure/design-system/commit/abd5a4cf2dc4ea6f28d30097632e08bb0d23f4fc))
+
 ## [3.0.4](https://github.com/workadventure/design-system/compare/v3.0.3...v3.0.4) (2026-08-06)
 
 
